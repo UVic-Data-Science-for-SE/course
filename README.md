@@ -223,13 +223,16 @@ The project is a semester long replication of an MSR/ICSE/ASE paper using artifa
 **Course participation**: 15%
 Assessed through participation in assigned group activity submissions, participation in class (e.g., asking questions and contributing to discussions), and commenting on student blog posts. 
 
+**Blog posts**: 10%
+Post on 2 papers we read to the discussion forum.
+
 **Assignments**: 30%
 There are three (four) assignments in the course, each assignment is worth 10% (7.5%) (for a total of 30% of your final grade). Parentheticals apply to grad students.
 
 **Project**: 45%
 The project will be a substantial data science analysis of a software engineering problem of your choosing (with my guidance). The project will be completed in groups of 4 to 6 students (this may vary depending on course enrollment).
 
-The grading breakdown is the same for undergraduate and graduate students, however, assignment/project expectations will differ.
+The grading breakdown is the same for undergraduate and graduate students, however, assignment/project expectations will differ, and grad students do one extra assignment.
 
 Class attendance is required to pass the course (if you are sick, please let me know in advance of the lecture).
 
@@ -244,7 +247,7 @@ Please use Brightspace to message the TA first with programming questions and gr
 
 ## Mechanics
 
-The class will use [Github](https://github.com/SENG330) (course notes, slides) and Brightspace (discussions, assignment posting, grades). Students will have to register their Github username (either a permanent one or a throwaway) with the instructors. Those with an objection to using Github please contact the instructor for workarounds. All Github activity is private to the class organization. Please see the privacy notice.
+The class will use [Github](https://github.com/UVic-Data-Science-for-SE) (course notes, slides) and Brightspace (discussions, assignment posting, grades). All Github activity is private to the class organization. 
 
 Grades and any interviews or videos are distributed via Brightspace for privacy compliance.
 
