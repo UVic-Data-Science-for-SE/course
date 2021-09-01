@@ -1,19 +1,19 @@
-# Outline
+# Project Outline
 
 *(Much of this outline taken from Dr Storey's EMSE course)*
 
-The goal of this project is to take a software analytics question and provide a 10 page report summarizing the approach taken and conclusions drawn.
+The goal of this project is to take a software analytics question and provide a 10 page report summarizing the approach taken and conclusions drawn. Good examples will be papers published at MSR, ICPC, SANER and similar venues.
 
 For this project, you will conduct a replication of an existing study published in a software engineering research venue, or you may wish to design a novel study.  The replication is likely to be a conceptual replication where you retest the same theoretical ideas or hypotheses, but with a different population, or different study design, different ways of manipulating or measuring variables.
-A literal replication may also be acceptable, especially if you carefully follow the same steps and provide some kind of reflection and critique of the study (with perhaps suggestions of what you would do differently next time or if it worked well, how you might broaden the study in future). (Refer to our earlier slides on replications).
+A literal replication may also be acceptable, especially if you carefully follow the same steps and provide some kind of reflection and critique of the study (with perhaps suggestions of what you would do differently next time or if it worked well, how you might broaden the study in future).
 
 ## Teams 
 
-The project should ideally be completed in teams of 3-4 students, but students can complete it alone or in pairs if they wish.  The main contribution from this project is about the insights you gained concerning the empirical aspects rather than new knowledge gained through the study. You MAY NOT mix graduate students and undergraduate students in your teams.
+The project should ideally be completed in teams of 3-4 students, but students can complete it alone or in pairs if they wish.  The main contribution from this project is about the insights you gained concerning the empirical aspects rather than new knowledge gained through the study. You **MAY NOT** mix graduate students and undergraduate students in your teams.
 
 ## Research Ethics
 
-If your project will involve a study with the direct participation of human subjects (e.g., developers or students or other stakeholders participating in a lab experiment, observations, focus group, interviews, surveys), you will need to submit a brief application for ethics approval. We will guide you in this process (you cannot change your mind on this aspect after Nov 16th). Note you cannot use deception as part of this study. Further details on how to submit an ethics application can be found [here](./activities/project-2-ethics/README.md).
+If your project will involve a study with the direct participation of human subjects (e.g., developers or students or other stakeholders participating in a lab experiment, observations, focus group, interviews, surveys), you will need to submit a brief application for ethics approval. We will guide you in this process (you cannot change your mind on this aspect after Nov 16th). Note you cannot use deception or study classmates as part of this study. Further details on how to submit an ethics application can be found [here](https://github.com/margaretstorey/EmseUvic2020/tree/master/activities/project-2-ethics).
 
 ## Relation to thesis work or other course work
 
@@ -22,6 +22,11 @@ Please note that this project should be independent from other course projects y
 ## Submissions, due dates, milestones
 
 All of the submissions should take place on Brightspace in the appropriate category. 
+
+	| Project Proposal    |  10% of project | 6th week |
+	| Project interim report | 20% of project | 8th week |
+	| Project presentation | 10% of project | Last week | 
+	| Project final report | 60%  of project | Last week +1 | 
 
 ## Project Advice
 

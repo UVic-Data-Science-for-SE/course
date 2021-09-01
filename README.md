@@ -2,7 +2,7 @@
 
 See the [HEAT course syllabus](https://heat.csc.uvic.ca/coview/outline/2020/Fall/SENG/330) for all mark weights and course policies, textbooks, etc. The syllabus also contains the important information on course communication and schedules and COVID information. 
 
-Course content will be lectures and readings. Currently the plan is to mostly convene in person. [Email me](mailto:nernst@uvic.ca) if you think you may miss lectures due to travel restrictions or other reasons.
+Course content will be mostly based on paper discussions with some more technical lecture sessions on specific tools. Currently the plan is to mostly convene in person. [Email me](mailto:nernst@uvic.ca) if you think you may miss lectures due to travel restrictions or other reasons.
 
 <!--The first part of the course will be more lecture based, establishing some foundations in the topics taught and explored in this course.-->
 <!--The second part of the course will be workshop based, with guest speakers and ample activities to drill into specific topics more deeply. The workshops will be on the following topics: code assessment techniques, knowledge sharing and collaboration, continuous software engineering, diversity and inclusion in software engineering, software engineering productivity, and ethics and reliability of empirical research in software engineering.-->
@@ -36,34 +36,60 @@ There are no mandatory texts. We will cover public tutorials and papers. However
 | *Optional:* | Data Mining: Practical Machine Learning Tools and Techniques (Fourth Edition) |
 | ----------- | ------------------------------------------------------------ |
 |             | Ian H. Witten, Eibe Frank, Mark A. Hall, Christopher J. Pal  |
-|             | Morgan Kaufmann (2016) , ISBN: 0128042915 |
-| *Optional:* | Introduction to Data Mining (Second Edition) |
-|             | Pang-Ning Tan, Michael Steinbach, Vipin Kumar  |
-|             | Addison Wesley (2018) , ISBN: 9780133128901 |
-
+|             | Morgan Kaufmann (2016) , ISBN: 0128042915                    |
+| *Optional:* | [Data Mining from Scratch](https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/1492041130/) (with examples in Python) |
+|             | Joel Grus                                                    |
+|             | OReilly 2019                                                 |
 
 # Schedule and Topics
 
-Due dates are all on Brightspace. Tues and Wednesday will be lectures and short in class exercises, including discussion of the readings (which you should do before class). Friday will be dedicated to demos and tutorials of the tecnuqes covered earlier that week.
+Due dates are all on Brightspace. Tues and Wednesday will be lectures and short in class exercises, including discussion of the readings (which you must do before class). Friday will be dedicated to demos and tutorials of the techniques covered earlier that week.
+
+The first few weeks will be a brief intro to some data science approaches particularly useful in analyzing software data. The remaining part of the course will look at specific data science questions. 
 
 ## [Introduction](slides/intro.pdf)
 
-Why the topic matters; ethical considerations. 
+Why the topic matters. 
 
 **Readings**
 
-* Applied data science - how FB/Google etc use data science in SE.
-* Watch Codex demo
-* Apply to install Copilot
+* [Cross-tool logs at Google](https://research.google/pubs/pub49446/)
+* [Watch Codex demo](https://www.youtube.com/watch?v=SGUCcjHTmGY)
+* (Optional) [Facebook and static analysis](https://research.fb.com/wp-content/uploads/2018/05/from-start-ups-to-scale-ups-opportunities-and-open-problems-for-static-and-dynamic-program-analysis.pdf)
 
-## [Early Approaches](slides/early.pdf)
+**Exercises**
 
-How the field started; lessons from the past.
+* Apply to install Copilot and/or access to OpenAI
+* Go through Copilot and Codex demos and (ideally) do them yourself.
+
+## Early Approaches
+
+How the field started; lessons from the past. Taylorism. Is SE "engineering" or factory work? Contrarianism.
 
 **Readings**
 
-* Tu and Godfrey, Linux evolution 
-* 10 X productivity study
+* [Tu and Godfrey, Linux evolution](https://ieeexplore.ieee.org/document/883030) 
+* [Kitchenham, Empirical SE Guidelines](http://people.ucalgary.ca/~far/Lectures/SENG421/PDF/Guidelines.pdf)
+* [10 X productivity study](https://dl.acm.org/doi/10.1145/362851.362858) and [critiques](https://www.construx.com/blog/the-origins-of-10x-how-valid-is-the-underlying-research/)
+* [Interview with Bossavit](https://blog.fogbugz.com/10x-programmer-and-other-myths-in-software-engineering)
+
+**Optional:**
+
+The Mythical Man-Month
+
+Peopleware
+
+Q&A: Mike Godfrey
+
+## [Techniques: Data Mining Basics include search and optimize](slides/dm_basic.pdf)
+
+The basic concepts of statistical data mining.
+
+Readings
+
+Exercises
+
+
 
 ## Techniques: Basic Statistical Inference from a  Bayesian Perspective
 
@@ -71,17 +97,54 @@ How the field started; lessons from the past.
 
 * Feldt, Bayes in SE paper<br />
 * Apel, Bayes for performance prediction 
+* Prior selection
+* Gelman, Statistical Inference (Radon study)
+* Ernst, Thresholds
 * https://www.bayesrulesbook.com
 
-## Techniques: Principle Components, Search, Optimization in SE
+### Exercises 
+
+Follow the [tutorial](https://github.com/torkar/icse_tutorial) notebook; we will go over it in class. 
+
+Get familiar with RStudio notebooks as that is what we will use for Assignment 1. 
+
+Either clone mine or make sure when you import the ICSE one, you type
+
+```R
+install.packages(c("coda","mvtnorm","devtools","loo", "here", "foreign", "cmdstan","dagitty"))
+devtools::install_github("rmcelreath/rethinking")
+```
+
+
+
+Q&A: Richard Torkar 
+
+## Techniques: Principle Components, Search, Optimization in SE, How Well Are Doing?
+
+ML for SE is different
+
+- Novielli, Sentiment traine on nonSE data
+- Binkley
 
 ### Readings: Tim's ICSME keynote
 
+
+
+Q&A: Tim Menzies
+
 ## Techniques: Ethical Considerations in AI/ML 4 SE
 
-https://theconvivialsociety.substack.com/p/the-questions-concerning-technology 
+![](https://pbs.twimg.com/media/E9kbliIXsAUf8m2?format=png&name=medium)
 
-## Applications: Cost estimation
+### Readings:
+
+* https://theconvivialsociety.substack.com/p/the-questions-concerning-technology 
+* Answer the assigned questions on the [41 Questions google doc](https://docs.google.com/document/d/1gypuJ0cJZ0PdDcZRNddlCKSrznCm8DPbAdw9N46grWY/edit) (student #s ending in 0-2, Q1-10, 3-4, Q11-20, 5-6, Q21-30, 7-9, Q31-41)
+* Watch [The Social Dilemma](https://www.documentaryarea.tv/player.php?title=The%20Social%20Dilemma)
+
+## Applications: Cost estimation and Clone Detection
+
+Q: How much/how long will it take to build/deliver this code? 
 
 ### Readings
 
@@ -89,11 +152,17 @@ Boehm, Software Engineering Economics. COCOMO.
 
 Menzies, replication of COCOMO
 
+Chanchal, Clones and clone types
+
 ## Applications: Traceability
 
 ### Readings 
 
 Cleland-Huang, NFR traceability. Guo, ICSE20.
+
+Germán, Token level tracing demo
+
+Q&A: Nan Niu
 
 ## Applications: Search Based SE
 
@@ -123,23 +192,20 @@ Bob Stoddard and GCMs
 
 # Assignments
 
-See [exercises/design-rubric.md](exercises/design-rubric.md) for details on exercises.
+Grads have to do 4 assignments, same total weight.  
 
-Grads have to do 5 assignments, same total weight.  
+- Assignment 1: BRMS and software data
 
-Assignment 1: BRMS and software data
+- Assignment 2: NLP and App Store data
 
-Assignment 2: NLP and App Store data
+- Assignment 4: deep learning for SE
 
-Assign,emt 3: MOEA problem 
-
-Assignment 4: deep learning for SE
 
 Grad Assignment: take on one of the outstanding issues in DOR and get it to DONE
 
 # Readings
 
-Each week there are 2 readings. You should prepare two of those readings and do a brief extended abstract of them that we can discuss. Post those to the class Brightspace page. You are also expected to comment on other blog posts as part of the class participation mark. 
+Each week there are 2 readings. Everyone must do the readings before that class. In addition,  I have randomly assigned discussion leaders to the articles we are reading. If You are a discussion lead that week, you should prepare two of those readings and do a brief extended abstract of them that we can discuss. Post those to the class Brightspace page. You are also expected to comment on other blog posts as part of the class participation mark. 
 
 # Project
 
@@ -158,9 +224,9 @@ The project is a semester long replication of an MSR/ICSE/ASE paper using artifa
 Assessed through participation in assigned group activity submissions, participation in class (e.g., asking questions and contributing to discussions), and commenting on student blog posts. 
 
 **Assignments**: 30%
-There are four assignments in the course, each assignment is worth 7.5% (for a total of 30% of your final grade). 
+There are three (four) assignments in the course, each assignment is worth 10% (7.5%) (for a total of 30% of your final grade). Parentheticals apply to grad students.
 
-**Project**: 55%
+**Project**: 45%
 The project will be a substantial data science analysis of a software engineering problem of your choosing (with my guidance). The project will be completed in groups of 4 to 6 students (this may vary depending on course enrollment).
 
 The grading breakdown is the same for undergraduate and graduate students, however, assignment/project expectations will differ.
