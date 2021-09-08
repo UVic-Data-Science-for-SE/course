@@ -1,6 +1,6 @@
 #  Data Science for Software Engineering
 
-See the [HEAT course syllabus](https://heat.csc.uvic.ca/coview/outline/2020/Fall/SENG/330) for all mark weights and course policies, textbooks, etc. The syllabus also contains the important information on course communication and schedules and COVID information. 
+See the [HEAT course syllabus](https://heat.csc.uvic.ca/coview/outline/2021/Fall/SENG/480b) for all mark weights and course policies, textbooks, etc. The syllabus also contains the important information on course communication and schedules and COVID information. Note that all three sections share the same syllabus.
 
 Course content will be mostly based on paper discussions with some more technical lecture sessions on specific tools. Currently the plan is to mostly convene in person. [Email me](mailto:nernst@uvic.ca) if you think you may miss lectures due to travel restrictions or other reasons.
 
@@ -43,7 +43,7 @@ There are no mandatory texts. We will cover public tutorials and papers. However
 
 # Schedule and Topics
 
-Due dates are all on Brightspace. Tues and Wednesday will be lectures and short in class exercises, including discussion of the readings (which you must do before class). Friday will be dedicated to demos and tutorials of the techniques covered earlier that week.
+Due dates are all on Brightspace. Tuesday and Wednesday will be lectures and short in class exercises, including discussion of the readings (which you must do before class). Friday will be dedicated to demos and tutorials of the techniques covered earlier that week.
 
 The first few weeks will be a brief intro to some data science approaches particularly useful in analyzing software data. The remaining part of the course will look at specific data science questions. 
 
@@ -79,15 +79,20 @@ The Mythical Man-Month
 
 Peopleware
 
-Q&A: Mike Godfrey
+Maybe: *Q&A: Mike Godfrey*
 
 ## [Techniques: Data Mining Basics include search and optimize](slides/dm_basic.pdf)
 
-The basic concepts of statistical data mining.
+Basic challenges with SE data. Basic concepts of statistical data mining.
 
-Readings
+**Readings**
 
-Exercises
+* [Promises and Perils of Mining Github](https://kblincoe.github.io/publications/2014_MSR_Promises_Perils.pdf)
+* [Promises and Perils of Mining Git](https://www.researchgate.net/publication/232621717_The_Promises_and_Perils_of_Mining_Git)
+* (opt)[Threats of Aggregating Software Repository Data](https://www.cs.mcgill.ca/~martin/papers/icsme2018.pdf) 
+* [Bad Smells in Software Analytics Papers](https://arxiv.org/abs/1803.05518)
+
+**Exercises**
 
 
 
@@ -117,20 +122,9 @@ devtools::install_github("rmcelreath/rethinking")
 
 
 
-Q&A: Richard Torkar 
-
-## Techniques: Principle Components, Search, Optimization in SE, How Well Are Doing?
-
-ML for SE is different
-
-- Novielli, Sentiment traine on nonSE data
-- Binkley
-
-### Readings: Tim's ICSME keynote
+Maybe: Q&A: Richard Torkar 
 
 
-
-Q&A: Tim Menzies
 
 ## Techniques: Ethical Considerations in AI/ML 4 SE
 
@@ -142,7 +136,18 @@ Q&A: Tim Menzies
 * Answer the assigned questions on the [41 Questions google doc](https://docs.google.com/document/d/1gypuJ0cJZ0PdDcZRNddlCKSrznCm8DPbAdw9N46grWY/edit) (student #s ending in 0-2, Q1-10, 3-4, Q11-20, 5-6, Q21-30, 7-9, Q31-41)
 * Watch [The Social Dilemma](https://www.documentaryarea.tv/player.php?title=The%20Social%20Dilemma)
 
-## Applications: Cost estimation and Clone Detection
+## Applications 1 : Principle Components,  Optimization in SE, SE is different?
+
+- Novielli, Sentiment trained on nonSE data
+- Binkley
+
+### Readings: 
+
+* Tim's ICSME keynote
+
+Maybe: Q&A: Tim Menzies
+
+## Applications 2: Cost estimation and Clone Detection
 
 Q: How much/how long will it take to build/deliver this code? 
 
@@ -154,7 +159,7 @@ Menzies, replication of COCOMO
 
 Chanchal, Clones and clone types
 
-## Applications: Traceability
+## Applications 3: Traceability and Refactoring Detection
 
 ### Readings 
 
@@ -164,7 +169,7 @@ Germán, Token level tracing demo
 
 Q&A: Nan Niu
 
-## Applications: Search Based SE
+## Applications 4 : Search Based SE
 
 ### Readings
 
@@ -174,42 +179,33 @@ Local lessons vs global lessons
 
 KEYS
 
-## Applications: NLP for SE (2 weeks)
+## Applications 5: NLP for SE (2 weeks)
 
 ### Readings
 
 Topic modeling. Naturalness. OOV problem. Autocomplete.
 
-## Applications: Automated Program Repair/Program Synthesis
+## Applications 6: Automated Program Repair/Program Synthesis
 
 ### Readings
 
 LeGoues, Survey of APR
 
-## Techniques: Causal analysis in SE (maybe)
+## <!--Techniques: Causal analysis in SE (maybe)-->
 
-Bob Stoddard and GCMs
+<!--Bob Stoddard and GCMs-->
 
 # Assignments
 
-Grads have to do 4 assignments, same total weight.  
-
-- Assignment 1: BRMS and software data
-
-- Assignment 2: NLP and App Store data
-
-- Assignment 4: deep learning for SE
-
-
-Grad Assignment: take on one of the outstanding issues in DOR and get it to DONE
+Grads have to do 4 assignments, same total weight.  Assignment details are in the corresponding assignment page on Brightspace.
 
 # Readings
 
-Each week there are 2 readings. Everyone must do the readings before that class. In addition,  I have randomly assigned discussion leaders to the articles we are reading. If You are a discussion lead that week, you should prepare two of those readings and do a brief extended abstract of them that we can discuss. Post those to the class Brightspace page. You are also expected to comment on other blog posts as part of the class participation mark. 
+Each week there are 2-3 readings. Everyone must do the readings before the Tuesday class. Summarize the readings in Brightspace and post those to the class Brightspace forum. You are also expected to comment on other blog posts as part of the class participation mark, as well as engage in discussion in the class itself. 
 
 # Project
 
-The project is a semester long replication of an MSR/ICSE/ASE paper using artifacts. Projects may be completed in groups up to 3.
+The [project](project.md) is a semester long replication of an MSR/ICSE/ASE paper using artifacts. Projects may be completed in groups up to 3.
 
 # Assessment
 
@@ -221,20 +217,11 @@ The project is a semester long replication of an MSR/ICSE/ASE paper using artifa
 | Participation                                     | 15%   |
 
 **Course participation**: 15%
-Assessed through participation in assigned group activity submissions, participation in class (e.g., asking questions and contributing to discussions), and commenting on student blog posts. 
+Based on class discussions, forum posts, and group participation. Missing a few classes will NOT hurt your participation mark. If you are sick please stay home.
 
-**Blog posts**: 10%
-Post on 2 papers we read to the discussion forum.
+**Blog Posts**: 10% Assessed using a series of short, 400 word or so forum posts. See the description of how to do [blog posts](blogposts.md).
 
-**Assignments**: 30%
-There are three (four) assignments in the course, each assignment is worth 10% (7.5%) (for a total of 30% of your final grade). Parentheticals apply to grad students.
-
-**Project**: 45%
-The project will be a substantial data science analysis of a software engineering problem of your choosing (with my guidance). The project will be completed in groups of 4 to 6 students (this may vary depending on course enrollment).
-
-The grading breakdown is the same for undergraduate and graduate students, however, assignment/project expectations will differ, and grad students do one extra assignment.
-
-Class attendance is required to pass the course (if you are sick, please let me know in advance of the lecture).
+Assignment/project expectations will differ for graduate students and undergraduate students.
 
 Course marks will be distributed via Brightspace.
 
@@ -247,7 +234,7 @@ Please use Brightspace to message the TA first with programming questions and gr
 
 ## Mechanics
 
-The class will use [Github](https://github.com/UVic-Data-Science-for-SE) (course notes, slides) and Brightspace (discussions, assignment posting, grades). All Github activity is private to the class organization. 
+The class will use [Github](https://github.com/SENG330) (course notes, slides) and Brightspace (discussions, assignment posting, grades). 
 
 Grades and any interviews or videos are distributed via Brightspace for privacy compliance.
 
@@ -257,12 +244,9 @@ This course is a mostly held as a synchronous in-person-only offering.
 
 Many course activities (such as group design activities, chat sessions) will expect synchronous participation (i.e. at the scheduled time).
 Students should plan to attend all course components.
-Courses will not be able to accommodate personal scheduling issues, including time zone variations (from Pacific Daylight time). Online sessions will be hosted using Zoom video conferencing sessions, some of which will be recorded.
+Courses will not be able to accommodate personal scheduling issues, including time zone variations (from Pacific Daylight time). Online sessions, if any, will be hosted using Zoom video conferencing sessions, some of which will be recorded.
 
 To access Zoom you will be required to login through the UVic portal ([[https://uvic.zoom.us](https://uvic.zoom.us/)]) and you consequently will not be anonymous.
-
-Participation in this course requires reliable and consistent access to on-line technology: a computer (desktop or laptop) and an Internet connection.
-It will not be possible to adjust the course expectations, due dates, or learning outcomes for students who do not have the technological means to complete the course. Course expectations (learning outcomes, due dates, etc.) will assume on-line technology, without exception.
 
 The university and the Faculty of Engineering has strong mandate to support Equity, Diversity and Inclusion: https://www.uvic.ca/engineering/about/equity/index.php
 We as a teaching team will do what we can to create a positive, safe, and supportive environment for you to participate in all components of this course offering. I (the instructor) appreciate all feedback from you and ask that you feel free to message me to voice concerns or to arrange a time to discuss virtually in-person.
