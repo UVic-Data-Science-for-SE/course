@@ -87,9 +87,10 @@ Basic challenges with SE data. Basic concepts of statistical data mining.
 
 **Readings**
 
-* [Promises and Perils of Mining Github](https://kblincoe.github.io/publications/2014_MSR_Promises_Perils.pdf)
+* (Opt) [Promises and Perils of Mining Github](https://kblincoe.github.io/publications/2014_MSR_Promises_Perils.pdf)
 * [Promises and Perils of Mining Git](https://www.researchgate.net/publication/232621717_The_Promises_and_Perils_of_Mining_Git)
-* (opt)[Threats of Aggregating Software Repository Data](https://www.cs.mcgill.ca/~martin/papers/icsme2018.pdf) 
+* Aranda and Venolia, [The secret life of bugs: Going past the errors and omissions in software repositories](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/secret.pdf)
+* (opt) [Threats of Aggregating Software Repository Data](https://www.cs.mcgill.ca/~martin/papers/icsme2018.pdf) 
 * [Bad Smells in Software Analytics Papers](https://arxiv.org/abs/1803.05518)
 
 **Exercises**
@@ -128,7 +129,7 @@ Maybe: Q&A: Richard Torkar
 
 ## Techniques: Ethical Considerations in AI/ML 4 SE
 
-![](https://pbs.twimg.com/media/E9kbliIXsAUf8m2?format=png&name=medium)
+<img src="https://pbs.twimg.com/media/E9kbliIXsAUf8m2?format=png&name=medium" style="zoom:25%;" />
 
 ### Readings:
 
@@ -201,7 +202,7 @@ Grads have to do 4 assignments, same total weight.  Assignment details are in th
 
 # Readings
 
-Each week there are 2-3 readings. Everyone must do the readings before the Tuesday class. Summarize the readings in Brightspace and post those to the class Brightspace forum. You are also expected to comment on other blog posts as part of the class participation mark, as well as engage in discussion in the class itself. 
+Each week there are 2-3 readings. Everyone must do the readings before the Tuesday class. Summarize the readings in Brightspace and [post those to the class](blogposts.md) Brightspace forum. You are also expected to comment on other blog posts as part of the class participation mark, as well as engage in discussion in the class itself. 
 
 # Project
 
