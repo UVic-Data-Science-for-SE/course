@@ -60,9 +60,9 @@ Why the topic matters.
 **Exercises**
 
 * Apply to install Copilot and/or access to OpenAI
-* Go through Copilot and Codex demos and (ideally) do them yourself.
+* Go through Copilot and [Codex demos](https://beta.openai.com/playground) and (ideally) do them yourself.
 
-## Early Approaches
+## [Early Approaches](slides/early.md)
 
 How the field started; lessons from the past. Taylorism. Is SE "engineering" or factory work? Contrarianism.
 

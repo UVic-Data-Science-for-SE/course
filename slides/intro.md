@@ -1,9 +1,8 @@
-----
+---
 Author: Neil Ernst
 Date: September 8 2021
 Title: Intro to Data Science for SE
-----
-
+---
 # Intro
 
 This course is about applying Data Science to software engineering data. Data science is a broad term, but I will use it to describe using analytical techniques to support decision making. It combines hacking, statistics, domain expertise, and problem solving. The analytical techniques can include:
@@ -78,7 +77,7 @@ And we can combine both: optimizing the results of a data miner, finding optimal
 
 # Ethics
 
-Since we can tweak data and analysis approaches in a variety of ways, one question we should think seriously about is ethical implications. People tend to ascribe a lot of weight to a data analysis, and ignore the many assumptions that underpin that analysis (e.g., how did we get the data in the first place? What was *Not* captured?)
+Since we can tweak data and analysis approaches in a variety of ways, one question we should think seriously about is ethical implications. People tend to ascribe a lot of weight to a data analysis, and ignore the many assumptions that underpin that analysis (e.g., how did we get the data in the first place? What was *Not* captured?)
 
 Some ethical dimensions include privacy, regulatory compliance and safety, diversity and inclusion, etc. ...
 
