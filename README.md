@@ -47,9 +47,7 @@ Due dates are all on Brightspace. Tuesday and Wednesday will be lectures and sho
 
 The first few weeks will be a brief intro to some data science approaches particularly useful in analyzing software data. The remaining part of the course will look at specific data science questions. 
 
-## [Introduction](slides/intro.pdf)
-
-Why the topic matters. 
+## [Introduction](slides/intro.pdf) [Sep 7-11]
 
 **Readings**
 
@@ -62,7 +60,7 @@ Why the topic matters.
 * Apply to install Copilot and/or access to OpenAI
 * Go through Copilot and [Codex demos](https://beta.openai.com/playground) and (ideally) do them yourself.
 
-## [Early Approaches](slides/early.md)
+## [Early Approaches](slides/early.md) [Sep 14-17]
 
 How the field started; lessons from the past. Taylorism. Is SE "engineering" or factory work? Contrarianism.
 
@@ -75,31 +73,12 @@ How the field started; lessons from the past. Taylorism. Is SE "engineering" or 
 
 **Optional:**
 
-The Mythical Man-Month
+- [The Mythical Man-Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month)
+- [Peopleware](https://en.wikipedia.org/wiki/Peopleware:_Productive_Projects_and_Teams)
 
-Peopleware
+## Techniques: Basic Statistical Inference from a  Bayesian Perspective[Sep 20-24, 27]
 
-Maybe: *Q&A: Mike Godfrey*
-
-## [Techniques: Data Mining Basics include search and optimize](slides/dm_basic.pdf)
-
-Basic challenges with SE data. Basic concepts of statistical data mining.
-
-**Readings**
-
-* (Opt) [Promises and Perils of Mining Github](https://kblincoe.github.io/publications/2014_MSR_Promises_Perils.pdf)
-* [Promises and Perils of Mining Git](https://www.researchgate.net/publication/232621717_The_Promises_and_Perils_of_Mining_Git)
-* Aranda and Venolia, [The secret life of bugs: Going past the errors and omissions in software repositories](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/secret.pdf)
-* (opt) [Threats of Aggregating Software Repository Data](https://www.cs.mcgill.ca/~martin/papers/icsme2018.pdf) 
-* [Bad Smells in Software Analytics Papers](https://arxiv.org/abs/1803.05518)
-
-**Exercises**
-
-
-
-## Techniques: Basic Statistical Inference from a  Bayesian Perspective
-
-### Readings 
+### Readings
 
 * Feldt, Bayes in SE paper<br />
 * Apel, Bayes for performance prediction 
@@ -121,9 +100,21 @@ install.packages(c("coda","mvtnorm","devtools","loo", "here", "foreign", "cmdsta
 devtools::install_github("rmcelreath/rethinking")
 ```
 
-
-
 Maybe: Q&A: Richard Torkar 
+
+## [Techniques: Data Mining Basics include search and optimize](slides/dm_basic.pdf) [Sep 28-1, Oct 5-7]
+
+Basic challenges with SE data. Basic concepts of statistical data mining.
+
+**Readings**
+
+* (Opt) [Promises and Perils of Mining Github](https://kblincoe.github.io/publications/2014_MSR_Promises_Perils.pdf)
+* [Promises and Perils of Mining Git](https://www.researchgate.net/publication/232621717_The_Promises_and_Perils_of_Mining_Git)
+* Aranda and Venolia, [The secret life of bugs: Going past the errors and omissions in software repositories](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/secret.pdf)
+* (opt) [Threats of Aggregating Software Repository Data](https://www.cs.mcgill.ca/~martin/papers/icsme2018.pdf) 
+* [Bad Smells in Software Analytics Papers](https://arxiv.org/abs/1803.05518)
+
+**Exercises**
 
 
 
