@@ -26,9 +26,7 @@ The paper by Tu and Godfrey (readings) represents one of these early approaches.
 
 Now this seems a bit trivial, but at the time it was pretty novel to be able to even download source code to your machine with ease. 
 
-This triggered the move to a focus on Empirical SE, like Kitchenham outlines. Now there was enough data to be able to systematize what we were studying and how we were studying it. 
-
-
+This triggered the move to a focus on Empirical SE, like Kitchenham outlines. Now there was enough data to be able to systematize what we were studying and how we were studying it. One issue that remained, of course, was to be able to move between industry relevance and academic tractability.
 
 # Bringing Insights into Practice: The Sapienz Example
 

@@ -64,6 +64,8 @@ The first few weeks will be a brief intro to some data science approaches partic
 
 How the field started; lessons from the past. Taylorism. Is SE "engineering" or factory work? Contrarianism.
 
+[How to read a paper (from ResearchSkills class)](https://github.com/neilernst/ResearchSkillsUVic/blob/main/resources/reviewing/M4%20Reading.md#efficiently-reading-a-paper)
+
 **Readings**
 
 * [Tu and Godfrey, Linux evolution](https://ieeexplore.ieee.org/document/883030) 
