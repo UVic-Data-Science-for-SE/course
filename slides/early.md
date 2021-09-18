@@ -1,7 +1,7 @@
 ---
-Title: Early Approaches to Data Science in SE
-Author: Neil Ernst
-Date: September 2021
+title: Early Approaches to Data Science in SE
+author: Neil Ernst
+date: September 2021
 ---
 
 # Early Days
@@ -14,11 +14,15 @@ This was ultimately shown to be false in two seminal analyses: Brooks's mythical
 
 Data has therefore been part of software development and software management since the beginning, as part of this cultural legacy of measure what you manage: how long does it take to compile, how many lines of code are people writing, etc. The 10X study is a good example. 
 
+----
+
 # The Open Source Era
 
 <img src="/Users/nernst/Documents/teaching/DataScience4SE/slides/linux.png" style="zoom:33%;" />
 
 
+
+----
 
 While plenty of data was available for studies like the 10x study, the challenge for researchers was (and is) getting access to data that is cheap to acquire (i.e. licensing) and still representative of the problems in practice. The rise of open source software like Linux was therefore very important in developing data science approaches, and more broadly, the field of empirical software engineering. 
 
@@ -28,9 +32,11 @@ Now this seems a bit trivial, but at the time it was pretty novel to be able to 
 
 This triggered the move to a focus on Empirical SE, like Kitchenham outlines. Now there was enough data to be able to systematize what we were studying and how we were studying it. One issue that remained, of course, was to be able to move between industry relevance and academic tractability.
 
+----
+
 # Bringing Insights into Practice: The Sapienz Example
 
-From the [SCAM Facebook paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=883030) by O'Hearn and Harman:
+From the [SCAM Facebook paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=883030) by O'Hearn and Harman:
 
 1. **Irrelevant**: ‘Academics need to make their research more industrially-relevant’, 
 2. **Unconvincing**: ‘Scientific work should be evaluated on large-scale real-world problems’, 
@@ -38,6 +44,8 @@ From the [SCAM Facebook paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&a
 4. **Unsupportive**: ‘Industry needs to provide more funding for research’, 
 5. **Closed** **System**: ‘Industrialists need to make engineering production code and software engineering artifacts available for academic study’, and 
 6. **Closed** **Mind**: ‘Industrialists are unwilling to adopt promising research’.
+
+----
 
 ## Insights into the human aspect
 

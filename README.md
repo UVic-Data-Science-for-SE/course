@@ -60,6 +60,8 @@ The first few weeks will be a brief intro to some data science approaches partic
 * Apply to install Copilot and/or access to OpenAI
 * Go through Copilot and [Codex demos](https://beta.openai.com/playground) and (ideally) do them yourself.
 
+----
+
 ## [Early Approaches](slides/early.md) [Sep 14-17]
 
 How the field started; lessons from the past. Taylorism. Is SE "engineering" or factory work? Contrarianism.
@@ -78,24 +80,30 @@ How the field started; lessons from the past. Taylorism. Is SE "engineering" or 
 - [The Mythical Man-Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month)
 - [Peopleware](https://en.wikipedia.org/wiki/Peopleware:_Productive_Projects_and_Teams)
 
+----
 ## Techniques: Basic Statistical Inference from a  Bayesian Perspective[Sep 20-24, 27]
+
+One approach building inferential analyses is to use a frequentist, hypothesis testing approach where you examine the long-run probability of the data-generating mechanisms to assess how likely the results are under a null hypothesis.
+
+The alternative is to set some limits on what you feel is likely to be true a priori, model the data generating process statistically, i.e. with a probability distribution, and then run Bayes's theorem *P(A|B) = (P(B|A) * P(A))/P(B)* over the data collected. This produces the posterior probability of the parameters of interest, allowing for inferences to be drawn. 
+
+We will start with some motivation from McElreath: https://speakerdeck.com/rmcelreath/l01-statistical-rethinking-winter-2019 and associated videos
 
 ### Readings
 
-* Feldt, Bayes in SE paper<br />
-* Apel, Bayes for performance prediction 
-* Prior selection
-* Gelman, Statistical Inference (Radon study)
-* Ernst, Thresholds
+* Furia, Torkar, Feldt, [Applying Bayesian Analysis Guidelines to Empirical Software Engineering Data: The Case of Programming Languages and Code Quality](https://arxiv.org/abs/2101.12591)
+* Ernst, [Thresholds](https://arxiv.org/abs/1804.02443)
+* Ray, Devanbu, Filkov, ["Rebuttal to Berger et al 2019"](https://arxiv.org/abs/1911.07393) - a rebuttal to a replication on code quality and language choice on Github.
+* (opt) Dorn, Apel, [Mastering Uncertainty in Performance Estimations of Configurable Software Systems](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9286072) 
+* (opt) [McElreath, Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/) (a super approachable, gentle introduction with R examples, but also translated into Julia and Python)
+* (opt) [Gelman, Bayesian Data Analysis](http://www.stat.columbia.edu/~gelman/book/) (book)
 * https://www.bayesrulesbook.com
 
 ### Exercises 
 
-Follow the [tutorial](https://github.com/torkar/icse_tutorial) notebook; we will go over it in class. 
-
-Get familiar with RStudio notebooks as that is what we will use for Assignment 1. 
-
-Either clone mine or make sure when you import the ICSE one, you type
+* Follow the [tutorial](https://github.com/torkar/icse_tutorial) notebook; we will go over it in class. 
+* Get familiar with [RStudio notebooks](https://blog.rstudio.com/2016/10/05/r-notebooks/) as that is what we will use for Assignment 1. 
+* Make sure when you import the ICSE one, you type
 
 ```R
 install.packages(c("coda","mvtnorm","devtools","loo", "here", "foreign", "cmdstan","dagitty"))
