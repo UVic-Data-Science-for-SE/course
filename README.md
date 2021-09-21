@@ -85,7 +85,7 @@ How the field started; lessons from the past. Taylorism. Is SE "engineering" or 
 
 One approach building inferential analyses is to use a frequentist, hypothesis testing approach where you examine the long-run probability of the data-generating mechanisms to assess how likely the results are under a null hypothesis.
 
-The alternative is to set some limits on what you feel is likely to be true a priori, model the data generating process statistically, i.e. with a probability distribution, and then run Bayes's theorem *P(A|B) = (P(B|A) * P(A))/P(B)* over the data collected. This produces the posterior probability of the parameters of interest, allowing for inferences to be drawn. 
+The alternative is to set some limits on what you feel is likely to be true a priori, model the data generating process statistically, i.e. with a probability distribution, and then run Bayes's theorem $$P(A|B) = (P(B|A) * P(A))/P(B)$$ over the data collected. This produces the posterior probability of the parameters of interest, allowing for inferences to be drawn. 
 
 We will start with some motivation from McElreath: https://speakerdeck.com/rmcelreath/l01-statistical-rethinking-winter-2019 and associated videos
 
@@ -93,7 +93,8 @@ We will start with some motivation from McElreath: https://speakerdeck.com/rmcel
 
 * Furia, Torkar, Feldt, [Applying Bayesian Analysis Guidelines to Empirical Software Engineering Data: The Case of Programming Languages and Code Quality](https://arxiv.org/abs/2101.12591)
 * Ernst, [Thresholds](https://arxiv.org/abs/1804.02443)
-* Ray, Devanbu, Filkov, ["Rebuttal to Berger et al 2019"](https://arxiv.org/abs/1911.07393) - a rebuttal to a replication on code quality and language choice on Github.
+* McElreath, [Statistical Rethinking ch 2](https://learning-oreilly-com.ezproxy.library.uvic.ca/library/view/statistical-rethinking-2nd/9780429639142/xhtml/10_Chapter02.xhtml) (netlink id required) and/or watch his [lecture video](https://www.youtube.com/watch?v=4WVelCswXo4)
+* (opt) Ray, Devanbu, Filkov, ["Rebuttal to Berger et al 2019"](https://arxiv.org/abs/1911.07393) - a rebuttal to a replication on code quality and language choice on Github.
 * (opt) Dorn, Apel, [Mastering Uncertainty in Performance Estimations of Configurable Software Systems](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9286072) 
 * (opt) [McElreath, Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/) (a super approachable, gentle introduction with R examples, but also translated into Julia and Python)
 * (opt) [Gelman, Bayesian Data Analysis](http://www.stat.columbia.edu/~gelman/book/) (book)
@@ -112,19 +113,23 @@ devtools::install_github("rmcelreath/rethinking")
 
 Maybe: Q&A: Richard Torkar 
 
-## [Techniques: Data Mining Basics include search and optimize](slides/dm_basic.pdf) [Sep 28-1, Oct 5-7]
+----
+## Techniques: [The Nature of SE Data]() [Sep 28-1, Oct 5-7]
 
-Basic challenges with SE data. Basic concepts of statistical data mining.
+Basic challenges with SE data mining.
 
 **Readings**
 
-* (Opt) [Promises and Perils of Mining Github](https://kblincoe.github.io/publications/2014_MSR_Promises_Perils.pdf)
+* [Bad Smells in Software Analytics Papers](https://arxiv.org/abs/1803.05518)
 * [Promises and Perils of Mining Git](https://www.researchgate.net/publication/232621717_The_Promises_and_Perils_of_Mining_Git)
 * Aranda and Venolia, [The secret life of bugs: Going past the errors and omissions in software repositories](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/secret.pdf)
+* (Opt) [Promises and Perils of Mining Github](https://kblincoe.github.io/publications/2014_MSR_Promises_Perils.pdf)
 * (opt) [Threats of Aggregating Software Repository Data](https://www.cs.mcgill.ca/~martin/papers/icsme2018.pdf) 
-* [Bad Smells in Software Analytics Papers](https://arxiv.org/abs/1803.05518)
 
 **Exercises**
+
+----
+## Techniques: [Data Mining Basics include search and optimize](slides/dm_basic.pdf)
 
 
 
@@ -134,10 +139,15 @@ Basic challenges with SE data. Basic concepts of statistical data mining.
 
 ### Readings:
 
+* Gold, Krinke, [Ethical Mining](https://doi.org/10.1145/3379597.3387462)
 * https://theconvivialsociety.substack.com/p/the-questions-concerning-technology 
-* Answer the assigned questions on the [41 Questions google doc](https://docs.google.com/document/d/1gypuJ0cJZ0PdDcZRNddlCKSrznCm8DPbAdw9N46grWY/edit) (student #s ending in 0-2, Q1-10, 3-4, Q11-20, 5-6, Q21-30, 7-9, Q31-41)
-* Watch [The Social Dilemma](https://www.documentaryarea.tv/player.php?title=The%20Social%20Dilemma)
 
+**Exercises**
+
+* Answer the assigned questions on the [41 Questions google doc](https://docs.google.com/document/d/1gypuJ0cJZ0PdDcZRNddlCKSrznCm8DPbAdw9N46grWY/edit) (student #s ending in 0-2, Q1-10, 3-4, Q11-20, 5-6, Q21-30, 7-9, Q31-41)
+* (Opt) Watch [The Social Dilemma](https://www.documentaryarea.tv/player.php?title=The%20Social%20Dilemma)
+
+----
 ## Applications 1 : Principle Components,  Optimization in SE, SE is different?
 
 - Novielli, Sentiment trained on nonSE data
@@ -148,7 +158,7 @@ Basic challenges with SE data. Basic concepts of statistical data mining.
 * Tim's ICSME keynote
 
 Maybe: Q&A: Tim Menzies
-
+----
 ## Applications 2: Cost estimation and Clone Detection
 
 Q: How much/how long will it take to build/deliver this code? 
@@ -161,6 +171,7 @@ Menzies, replication of COCOMO
 
 Chanchal, Clones and clone types
 
+----
 ## Applications 3: Traceability and Refactoring Detection
 
 ### Readings 
@@ -171,6 +182,7 @@ Germán, Token level tracing demo
 
 Q&A: Nan Niu
 
+----
 ## Applications 4 : Search Based SE
 
 ### Readings
@@ -181,12 +193,14 @@ Local lessons vs global lessons
 
 KEYS
 
+----
 ## Applications 5: NLP for SE (2 weeks)
 
 ### Readings
 
 Topic modeling. Naturalness. OOV problem. Autocomplete.
 
+----
 ## Applications 6: Automated Program Repair/Program Synthesis
 
 ### Readings
@@ -196,7 +210,7 @@ LeGoues, Survey of APR
 ## <!--Techniques: Causal analysis in SE (maybe)-->
 
 <!--Bob Stoddard and GCMs-->
-
+----
 # Assignments
 
 Grads have to do 4 assignments, same total weight.  Assignment details are in the corresponding assignment page on Brightspace.
