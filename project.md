@@ -21,12 +21,12 @@ Please note that this project should be independent from other course projects y
 
 ## Submissions, due dates, milestones
 
-All of the submissions should take place on Brightspace in the appropriate category. 
+All of the submissions should take place on Brightspace in the appropriate category. See Brightspace for deadlines. Do NOT wait to get started.
 
-	| Project Proposal    |  10% of project | 6th week |
-	| Project interim report | 20% of project | 8th week |
-	| Project presentation | 10% of project | Last week | 
-	| Project final report | 60%  of project | Last week +1 | 
+	| Project Proposal    |  10% of project | |
+	| Project interim report | 20% of project |  |
+	| Project presentation | 10% of project | | 
+	| Project final report | 60%  of project |  | 
 
 ## Project Advice
 
