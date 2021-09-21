@@ -23,10 +23,12 @@ Please note that this project should be independent from other course projects y
 
 All of the submissions should take place on Brightspace in the appropriate category. See Brightspace for deadlines. Do NOT wait to get started.
 
-	| Project Proposal    |  10% of project | |
-	| Project interim report | 20% of project |  |
-	| Project presentation | 10% of project | | 
-	| Project final report | 60%  of project |  | 
+| Milestone | Value | 
+|---|---|
+| Project Proposal    |  10% of project | 
+| Project interim report | 20% of project | 
+| Project presentation | 10% of project | 
+| Project final report | 60%  of project | 
 
 ## Project Advice
 
