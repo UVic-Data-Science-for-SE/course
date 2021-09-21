@@ -44,12 +44,24 @@ Each student/team member is required to do the following:
     - Your grade will also reflect how much you refer to and integrate course concepts throughout the term
     - Extra points may be given for: challenging projects, original ideas, collaboration with external organizations.
 
+### Proposals
+It is tempting to treat the proposal as a gimme and not put effort into it. And yet in MY view, it is the most critical part of the project. **Spend some serious time on it.** (like 5-10 hours I would say) 
+
+Your proposal should answer the following questions:
+1. What is the existing study or studies that you are replicating or building on? Even for a new study, you should have a clear sense of other approaches to this problem. Your life will be easier if you have a clear guide. Don't worry if it feels like "cheating" because the original paper was so clear and the data so accessible. We can easily add complexity; it is very hard to take it away. 
+2. The dataset you are using, and the experiments you have done with it. Don't just trust that the paper URL is still there, or that the data is accessible or useful. Download it, load it into R/Jupyter, and do some simple experiments. 
+3. Any other tools you will need, how well you know them, and what they cost. For example, you might require a .NET component that the original study used, but you do not have a Windows machine. Or you will use a DL approach that requires Google TPUs to train. 
+4. The research questions you are trying to answer. What is the contribution your paper will make?  I suggest using the answers to #1 above, checking what those papers say was either hard, interesting new directions, or questions they didn't have time to answer. You might also find gaps in the original analysis.
+5. Rough sense of methodology you will follow and *who* will be doing each task. At the very least there will be writing of the paper, creating the video, running the analysis, processing/preparing the data, writing analysis code, reading relevant background papers, ... start outlining that. 
+6. Relative to the methodology, specify exactly what the workflow is: data sources, filtering criteria, data science algorithms to use, analysis validation etc. Don't underestimate how long it takes to acquire data and write analysis code. 
+
 # Potential Data Sources
 
 For some ideas of projects you can replicate that are based on data traces only, you may get some ideas from this book: http://www.knosof.co.uk/ESEUR/ (see also http://www.knosof.co.uk/ESEUR/ESEUR-draft.pdf and
 https://github.com/Derek-Jones/ESEUR-code-data for the code and data).
 Or you may wish to replicate a study from an existing paper that has replication materials available. GHTorrent is another possibility but pay attention to the Perils paper we read by Kalliamvakou et al.!
 The MSR challenges may provide some ideas, e.g. see [2020 MSR challenge papers](https://2020.msrconf.org/track/msr-2020-mining-challenge?track=MSR%20Mining%20Challenge#Resources-for-Participants), see other MSR challenge years. This page also lists some datasets: https://github.com/woc-hack/msr-hackathon/blob/master/README.md
+
 Also smaller workshops (e.g., CHASE) at ICSE may have studies that are of smaller scope that do not rely on data mining. You may take one of these designs, critique it, redesign and if possible run a pilot with a new design.
 
 - [Software Heritage graph](https://docs.softwareheritage.org/devel/swh-dataset/graph/)
