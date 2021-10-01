@@ -90,7 +90,7 @@ How the field started; lessons from the past. Taylorism. Is SE "engineering" or 
 - [Peopleware](https://en.wikipedia.org/wiki/Peopleware:_Productive_Projects_and_Teams)
 
 ----
-## Techniques: Basic Statistical Inference from a  Bayesian Perspective[Sep 20-24, 27, 28]
+## Techniques: [Basic Statistical Inference from a  Bayesian Perspective](slides/bayes.md) [Sep 20-24, 27, 28]
 
 One approach building inferential analyses is to use a frequentist, hypothesis testing approach where you examine the long-run probability of the data-generating mechanisms to assess how likely the results are under a null hypothesis.
 
@@ -120,7 +120,6 @@ install.packages(c("coda","mvtnorm","devtools","loo", "here", "foreign", "cmdsta
 devtools::install_github("rmcelreath/rethinking")
 ```
 
-Maybe: Q&A: Richard Torkar 
 
 ----
 ## Techniques: [The Nature of SE Data]() [Oct 1, 5-7]
