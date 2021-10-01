@@ -31,15 +31,24 @@ After this class students are able to:
 
 # Books
 
-There are no mandatory texts. We will cover public tutorials and papers. However, you might like learning from books - books are awesome. Two from the Data mining course might help:
+There are no mandatory texts. We will cover public tutorials and papers. However, you might like learning from books - books are awesome. 
 
-| *Optional:* | Data Mining: Practical Machine Learning Tools and Techniques (Fourth Edition) |
-| ----------- | ------------------------------------------------------------ |
-|             | Ian H. Witten, Eibe Frank, Mark A. Hall, Christopher J. Pal  |
-|             | Morgan Kaufmann (2016) , ISBN: 0128042915                    |
-| *Optional:* | [Data Mining from Scratch](https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/1492041130/) (with examples in Python) |
-|             | Joel Grus                                                    |
-|             | OReilly 2019                                                 |
+| **Data Mining: Practical Machine Learning Tools and Techniques (Fourth Edition)** |
+| ------------------------------------------------------------ |
+ | Ian H. Witten, Eibe Frank, Mark A. Hall, Christopher J. Pal  |
+ | Morgan Kaufmann (2016) , ISBN: 0128042915 |
+| [Data Mining from Scratch](https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/1492041130/) |
+| No libraries in this one ...  examples in Python |
+ | Joel Grus |
+ | OReilly 2019 |
+ | [**R for Data Science**](https://r4ds.had.co.nz/tibbles.html) | 
+ | A nice intro showing the R approach to importing, cleaning, visualizing data |
+ | Hadley Wickham & Garrett Grolemund| 
+ | OReilly 2017 |
+ | [**Statistical Rethinking**](https://xcelab.net/rm/statistical-rethinking/) | 
+ | Bayesian approach to statistical inference with excellent and gentle intro. Available via the library e-collection. | 
+ | Richard McElreath |
+| CRC Press 2020 (2nd) | 
 
 # Schedule and Topics
 
@@ -81,7 +90,7 @@ How the field started; lessons from the past. Taylorism. Is SE "engineering" or 
 - [Peopleware](https://en.wikipedia.org/wiki/Peopleware:_Productive_Projects_and_Teams)
 
 ----
-## Techniques: Basic Statistical Inference from a  Bayesian Perspective[Sep 20-24, 27]
+## Techniques: [Basic Statistical Inference from a  Bayesian Perspective](slides/bayes.md) [Sep 20-24, 27, 28]
 
 One approach building inferential analyses is to use a frequentist, hypothesis testing approach where you examine the long-run probability of the data-generating mechanisms to assess how likely the results are under a null hypothesis.
 
@@ -111,10 +120,9 @@ install.packages(c("coda","mvtnorm","devtools","loo", "here", "foreign", "cmdsta
 devtools::install_github("rmcelreath/rethinking")
 ```
 
-Maybe: Q&A: Richard Torkar 
 
 ----
-## Techniques: [The Nature of SE Data]() [Sep 28-1, Oct 5-7]
+## Techniques: [The Nature of SE Data]() [Oct 1, 5-7]
 
 Basic challenges with SE data mining.
 
