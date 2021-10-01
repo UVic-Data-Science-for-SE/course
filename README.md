@@ -133,7 +133,7 @@ Basic challenges with SE data mining.
 * Aranda and Venolia, [The secret life of bugs: Going past the errors and omissions in software repositories](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/secret.pdf)
 * (Opt) [Promises and Perils of Mining Github](https://kblincoe.github.io/publications/2014_MSR_Promises_Perils.pdf)
 * (opt) [Threats of Aggregating Software Repository Data](https://www.cs.mcgill.ca/~martin/papers/icsme2018.pdf) 
-
+* (opt) [Sampling in SE Research](https://arxiv.org/pdf/2002.07764.pdf)
 **Exercises**
 
 ----
