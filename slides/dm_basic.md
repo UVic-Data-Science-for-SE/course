@@ -22,7 +22,9 @@ Loading data is initially easy but quickly becomes a major challenge as data get
 
 Let us consider the following datasets: http://promise.site.uottawa.ca/SERepository/datasets-page.html. They are mostly in a common data exchange format called ARFF. 
 
-## Descriptive stats  - mean, median, variance
+----
+
+## Loading Data - Tibbles
 
 We can begin by (after reading the dataset description) looking at common **descriptive** properties of the data.
 
@@ -36,17 +38,37 @@ Tidy Data:
 
 Factors: factors are categorical data, possibly ordered, like "letter grade" (ordered) or country name.
 
-Let's say we are interested in how well Halstead complexity `v(g)` predicts defects. 
+Let's say we are interested in how well Halstead complexity `v(g)` predicts defects. 
+
+
+----
 
 ### Filtering and aggregating
 
 In Tidyverse language, use the TidyVerse chaining operator %>% (pipe) to group operations on dataframes/tibbles.
 
-Useful operations include `mutate`, `filter`, `count`. I find these operations extremely powerful for manipulating the data. You can think of them as data frame analogues for SQL query statements. 
+Useful operations include `mutate`, `filter`, `summarize/group_by`. I find these operations extremely powerful for manipulating the data. You can think of them as data frame analogues for SQL query statements. 
 
-##Probability distributions and fit 
+I suggest you load your data into a data frame and then chain filters into it, rather than "fixing" the dataset in a separate step. That way you get to see all the data wrangling in one place. It can be *really* easy to miss a step and end up with outliers that are included, aggregations that don't make sense, etc.
 
-## Visualization MPL and GGplot
+----
+
+## Probability distributions and fit 
+the ``ggplot()`` library in R (and MatPlotLib in Python) are best in class visualization approaches with a vast amount of options and when combined with the filtering/aggregating, can do almost anything. 
+
+Use ggplot to explore your data and dimensionality as we showed in the R walkthru. Don't feel bad about using SO or references; I did preparing this tutorial! 
+
+Visualization can help understand what is happening. Descriptive stats such as mean, median, variance can give some numeric information conditional on the distribution involved. These are typically generalized as **location** and **dispersion**, e.g., where the big clump of data lives in the normal, and how spread out it is.
+
+----
+
+### Correlation
+
+Thinking back to our causal models, some of the variables are correlated, possibly causally. We should look for correlation because it is a great source of confusion; either implying some effect that is really due to a hidden mediator, or making us run extra analyses that are all based on the same underlying mechanism.
+
+### Checking Distributions with QQ Plots
+
+----
 
 # Regression
 
@@ -58,12 +80,14 @@ SGD alg Grus p 187
 
 Regularization (Grus p 200)
 
+----
 # Clustering
 
 (Group things) 
 
 K-means in Python (Grus P 170)
 
+----
 # Optimization
 
 The simplest approach: GATE
@@ -76,6 +100,7 @@ The simplest approach: GATE
 
 https://github.com/txt/ase19/blob/master/docs/optimize.md#top
 
+----
 ## Genetic Algorithms
 
 ​	NSGAII
