@@ -102,7 +102,7 @@ We will start with some motivation from McElreath: https://speakerdeck.com/rmcel
 
 * Furia, Torkar, Feldt, [Applying Bayesian Analysis Guidelines to Empirical Software Engineering Data: The Case of Programming Languages and Code Quality](https://arxiv.org/abs/2101.12591)
 * Ernst, [Thresholds](https://arxiv.org/abs/1804.02443)
-* McElreath, [Statistical Rethinking ch 2](https://learning-oreilly-com.ezproxy.library.uvic.ca/library/view/statistical-rethinking-2nd/9780429639142/xhtml/10_Chapter02.xhtml) (netlink id required) and/or watch his [lecture video](https://www.youtube.com/watch?v=4WVelCswXo4)
+* McElreath, [Statistical Rethinking ch 2](https://learning-oreilly-com.ezproxy.library.uvic.ca/library/view/statistical-rethinking-2nd/9780429639142/xhtml/10_Chapter02.xhtml) (netlink id required) and/or watch his [lecture video](https://www.youtube.com/watch?v=4WVelCswXo4)
 * (opt) Ray, Devanbu, Filkov, ["Rebuttal to Berger et al 2019"](https://arxiv.org/abs/1911.07393) - a rebuttal to a replication on code quality and language choice on Github.
 * (opt) Dorn, Apel, [Mastering Uncertainty in Performance Estimations of Configurable Software Systems](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9286072) 
 * (opt) [McElreath, Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/) (a super approachable, gentle introduction with R examples, but also translated into Julia and Python)
@@ -122,7 +122,7 @@ devtools::install_github("rmcelreath/rethinking")
 
 
 ----
-## Techniques: [The Nature of SE Data]() [Oct 1, 5-7]
+## Techniques: [The Nature of SE Data](slides/problems.md) [Oct 1, 5,6]
 
 Basic challenges with SE data mining.
 
@@ -137,7 +137,7 @@ Basic challenges with SE data mining.
 **Exercises**
 
 ----
-## Techniques: [Data Mining Basics include search and optimize](slides/dm_basic.pdf)
+## Techniques: [Data Mining Basics include search and optimize](slides/dm_basic.md) [Oct 8, 12-15]
 
 
 
