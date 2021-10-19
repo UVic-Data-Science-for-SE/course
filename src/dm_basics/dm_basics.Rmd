@@ -1,9 +1,11 @@
 ---
 title: "R and Data Mining Basics"
-output: html_notebook
-author: nernst
-date: Oct 2021
-marp: true
+author: "nernst"
+date: "Oct 2021"
+output:
+  html_document:
+    df_print: paged
+marp: yes
 ---
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
@@ -162,6 +164,7 @@ library(ggfortify)
 autoplot(jm1.pc, data = jm1, colour = 'defects')
 ```
 This plot shows us the first 2 components with the associated labels. We don't see any obvious separation here.
+
 # Regression
 A useful approach, which we covered in Assignment 1, is to do a simple linear regression. In the simplest sense this is about finding the line that best fits the data. Extending the line to unseen datapoints is a *prediction* about what the y value should be for that data. 
 
@@ -169,30 +172,43 @@ Ordinary least squares (OLS) regression is possible when there is a simple relat
 $$ y_i = \beta x_i + \alpha + \epsilon_i$$
 And our task is to find $\alpha, \beta$ to minimize the (squared) error in our estimated $\hat{y}$, i.e. the value $y_i - \hat{y}$ for all the $y$s. If we think about y as predicting individual height h, we can simply say your height is some intercept $\alpha$ and an error term.
 
-And this has a precise solution. 
+This has a precise (algebraic) solution. 
 
-This is the alternative representation of the Gaussian model we can represent in Stan: 
+This is the alternative representation of the Gaussian model we can represent in Stan/Rethinking: 
 
-$$ y_i \sim $$ Normal($\mu, \sigma$)
-$\mu \sim $ Normal(param, param)
-$\sigma \sim $ Uniform(param, param)
+$$ y_i \sim \mathcal{N}(\mu, \sigma) \\
+\mu \sim  Normal(param, param) \\
+\sigma \sim Uniform(param, param)
+$$
 
 (I generally prefer the latter)
 
 The generalized version of this is a *generalized linear model* or GLM, and accounts for things like how the data and the marginals (the error) are distributed, as we saw in A1. 
 
 R has a built in GLM approach that is frequentist:
-``` {r}
-fit = glm(defects ~ ., data=jm1, family=binomial)
-```
-From a Bayesian point of view we can use the convenient `rstanarm` library:
 
-```{r bayesian glm}
-library(rstanarm)
-options(mc.cores = parallel::detectCores())
-fit_1 = stan_lm(defects ~ loc , data = jm1, family=binomial)
-print(fit_1)
+``` {r}
+fit <-  glm(defects ~ ., data=jm1, family=binomial)
+summary(fit)
 ```
+
+You might say "the outputs of both of these approaches are very similar" and thus, who cares if it is frequentist. Pragmatically I suppose that is true but you can get into trouble in the edges. In some sense we would hope that two different inferential approaches will find the *same* outcomes, if that outcome is a real thing. 
+
+| Bayes | Frequentist |
+| ---- | ----|
+| Prior captures past knowledge | Assumption of ignorance about past |
+| Sample from likelihood | Maximum likelihood estimation (MLE) | 
+| Computationally more costly | Cheap | 
+| Posterior represents probability of the parameter being true | p-value captures likelihood of observing data as extreme under null hypothesis |
+
+<!-- From a Bayesian point of view we can use the convenient `rstanarm` library: -->
+
+<!-- ```{r bayesian glm} -->
+<!-- library(rstanarm) -->
+<!-- options(mc.cores = parallel::detectCores()) -->
+<!-- fit_1 = stan_lm(defects ~ loc , data = jm1, family=binomial) -->
+<!-- print(fit_1) -->
+<!-- ``` -->
 
 One problem is that a model with 8 datapoints is perfectly explained by 8 variables. This overfitting issue can occur in regression as well, if we have models - like this jm1 dataset - with many variables. It also makes interpretation harder, as we have to explain the outputs based on more of these inputs. Thus we might penalize the regression model to prevent overfitting and reward simpler models. Two such approaches are *ridge* and *lasso* regression. In ridge regression we penalize the $\beta$ parameter above and seek to minimize the error AND the penalty; in lasso (least absolute shrinkage and selection operator) the penalty acts to see which coefficients can be forced to 0 (and discarded). This creates a sparser model; our error will probably be higher, but the explainability and generalizability should be increased.
 
@@ -206,12 +222,58 @@ We have been working on problems where we have columns X and labels Y. But what 
 
 Unsupervised learning is about finding relationships between the Xs (sort of like PCA was doing). One simple approach is to ask, can I cluster my data points into (N-dimensional) groups, such that a point $m$ is in cluster $J$ iff there is no closer cluster? This assumes "distance" in vector space means similarity in the real world, of course. 
 
-``` {r nn}
-library(class)
-# create a train/test split 
-train <- jm1p
-jm1.knn <- knn(jm1[c(1:10)])
+One useful library for doing this, aside from the builtin libraries in Scikit-learn and R, is [Weka](https://www.cs.waikato.ac.nz/ml/weka/). 
+ 
+----
+
+# Supervised Stuff
+Now let's say we have Y (the labels / ground truth) and want to partition our data so we maximize the accuracy with which we label the instances.
+
+There's a long list of approaches to this problem (so-called shallow learning): decision trees, support vector machines, etc.
+
+
+I like Weka for exploration but for bigger datasets and more extensive experimentation, the command line or a notebook (hence usually Python) is best. Aside: SAVE YOUR EXPERIMENTS! Always record the steps and params you chose for a given exploration. It will save you headaches later.
+
+## Confusion Matrices
+If we have two labels, True and False, then our task is to correctly predict the label for a given instance. When we do that on all the data instances, we get a set of correctly labeled instances (true positives and true negatives) and a set of incorrectly labeled instances (false positives/negatives). Our general task is to create a 
+
 ```
+%    -- Defect detectors can be assessed according to the following measures:
+%
+%                                                module actually has defects
+%                                               +-------------+------------+
+%                                               |     no      |     yes    |
+%                                         +-----+-------------+------------+
+%          classifier predicts no defects |  no |      a      |      b     |
+%                                         +-----+-------------+------------+
+%        classifier predicts some defects | yes |      c      |      d     |
+%                                         +-----+-------------+------------+
+%
+%        accuracy                   = acc          = (a+d)/(a+b+c+d
+%        probability of detection   = pd  = recall = d/(b+d)
+%        probability of false alarm = pf           = c/(a+c)
+%        precision                  = prec         = d/(c+d)
+%        effort                     = amount of code selected by detector
+%                                   = (c.LOC + d.LOC)/(Total LOC)
+%
+%        Ideally, detectors have high PDs, low PFs, and low
+%        effort. This ideal state rarely happens:
+```
+My favorite, most comprehensive guide is [from Wikipedia](https://en.wikipedia.org/wiki/Confusion_matrix)
+
+Some other common metrics include:
+
+* ROC - AUC (and the curve itself)
+* Matthews Correlation Coefficient
+
+These can all be implemented using library calls. The ROC curve metric is pretty 
+The key is to understand what you are aiming to optimize. In some cases, like assessing ambiguous requirements, 100% recall is better than improved precision. 
+
+Another key is to **have a valid baseline**. This might be ZeroR, the classifier that predicts the majority class; a random classifier; or the current SOTA (state of the art). 
+
+
+# Hyper-parameters
+If we have X and Y (columns and labels) we can also think about a third set, Z, which constitutes the parameters for our classifiers and clusterers. We might also want to find an effective Z. Hyper-parameter optimization searches for optimal parameters for the learners. How should we do this search? Remember that SE data is usually pretty simple. Optimization can be very effective.
 
 ----
 
@@ -229,11 +291,19 @@ https://github.com/txt/ase19/blob/master/docs/optimize.md#top
 
 ----
 
+# Active Learning and Weakly Supervised Learning
+Generating labels is expensive. Usually it invovles human annotators; often it is messy and ambiguous. 
+
+**Active Learning** asks us to label a smaller set of instances that are closer to a decision boundary, e.g., the images that look somewhat like a cross-walk but also somewhat like a fence. 
+
+**Weakly Supervised** learning (aka Few Shot learning) tries to do a lot with few initial labels.
+
+----
+
 ## Genetic Algorithms
 
-​	NSGAII
-
-​	Diff Evolution 
+- NSGAII
+- Diff Evolution 
 
 [JMetal](https://jmetal.github.io/jMetal/) 
 
