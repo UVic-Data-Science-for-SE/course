@@ -137,13 +137,13 @@ Basic challenges with SE data mining.
 **Exercises**
 
 ----
-## Techniques: [Data Mining Basics include search and optimize](slides/dm_basic.md) [Oct 8, 12-15]
+## Techniques: [Data Mining Basics include search and optimize](src/dm_basic.Rmd) [Oct 8, 12-15]
 
+See the linked notebook. We will go over basic approaches like correlation analysis, regression etc.
 
+## Techniques: Ethical Considerations in AI/ML 4 SE [Oct 19, 20, 22]
 
-## Techniques: Ethical Considerations in AI/ML 4 SE
-
-<img src="https://pbs.twimg.com/media/E9kbliIXsAUf8m2?format=png&name=medium" style="zoom:25%;" />
+Data mining, data science, and machine learning open up probelmatic (and interesting) research questions and obligations. We will go over some of the basic problems, some approaches to resolve those, and discuss current issues.
 
 ### Readings:
 
