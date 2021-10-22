@@ -266,11 +266,11 @@ Some other common metrics include:
 * ROC - AUC (and the curve itself)
 * Matthews Correlation Coefficient
 
-These can all be implemented using library calls. The ROC curve metric is pretty 
+These can all be implemented using library calls. The ROC curve metric is pretty useful: https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5 
+
 The key is to understand what you are aiming to optimize. In some cases, like assessing ambiguous requirements, 100% recall is better than improved precision. 
 
 Another key is to **have a valid baseline**. This might be ZeroR, the classifier that predicts the majority class; a random classifier; or the current SOTA (state of the art). 
-
 
 # Hyper-parameters
 If we have X and Y (columns and labels) we can also think about a third set, Z, which constitutes the parameters for our classifiers and clusterers. We might also want to find an effective Z. Hyper-parameter optimization searches for optimal parameters for the learners. How should we do this search? Remember that SE data is usually pretty simple. Optimization can be very effective.
@@ -291,19 +291,33 @@ https://github.com/txt/ase19/blob/master/docs/optimize.md#top
 
 ----
 
-# Active Learning and Weakly Supervised Learning
-Generating labels is expensive. Usually it invovles human annotators; often it is messy and ambiguous. 
+# Active Learning and Few Shot Supervised Learning
+Generating labels is expensive. Usually it involves human annotators; often it is messy and ambiguous. 
 
 **Active Learning** asks us to label a smaller set of instances that are closer to a decision boundary, e.g., the images that look somewhat like a cross-walk but also somewhat like a fence. 
 
-**Weakly Supervised** learning (aka Few Shot learning) tries to do a lot with few initial labels.
+**Low / Few  Shot / Semi- Supervised** learning tries to do a lot with [few initial labels](https://arxiv.org/pdf/2110.02922.pdf).
+
+* say you have a search approach that suggests lines of code that might have bugs. We have many goals to optimize for: different parameters unique to our application, security bugs vs other bugs, who authored the code, when it was committed, etc. 
+* black-box: unclear how solutions are generated, so ask humans what they prefer
+* but how much can we ask human raters? 
+
+----
+# Semi-supervised
+Train data on a few amount of labels with lots of unlabeled data assuming:
+- the data is largely the same wrt dimensions 
+- data is continuous along dimensions (close in space = close semantically)
+- clusters represent multiple items
+- often able to get close to similar performance with fractions of labels required
 
 ----
 
 ## Genetic Algorithms
 
+We will cover these in a later week.
+
 - NSGAII
 - Diff Evolution 
 
-[JMetal](https://jmetal.github.io/jMetal/) 
+[JMetal](https://jmetal.github.io/jMetal/) is a great GA library/framework.
 
