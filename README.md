@@ -160,54 +160,44 @@ Data mining, data science, and machine learning open up problematic (and interes
 
 **Exercises**
 
-* Answer the assigned questions on the [41 Questions google doc](https://docs.google.com/document/d/1gypuJ0cJZ0PdDcZRNddlCKSrznCm8DPbAdw9N46grWY/edit) (student #s ending in 0-2, Q1-10, 3-4, Q11-20, 5-6, Q21-30, 7-9, Q31-41)
+* Assignment 2, on brightspace
 * (Opt) Watch [The Social Dilemma](https://www.documentaryarea.tv/player.php?title=The%20Social%20Dilemma)
 
 ----
 ## Applications 1 : Search-based SE and SE vs Non-SE Data
 
-- [Novielli, Sentiment trained on nonSE data](https://arxiv.org/abs/2004.00300)
-- Binkley
+- Harman, [Search-Based SE](https://www.sciencedirect.com/science/article/pii/S0950584901001896)
+- Novielli, [Sentiment trained on nonSE data](https://arxiv.org/abs/2004.00300)
+- (opt) Binkley, [The need for software specific NL techniques](https://link.springer.com/article/10.1007/s10664-017-9566-5)
+- (opt) McMinn, [Search-based software testing](https://mcminn.io/publications/c18.pdf)
+- (opt) Menzies, [SSBSE notes](https://github.com/txt/ase16/blob/master/doc/talk4ssbse.md)
 
 ### Readings: 
 
-* Tim's ICSME keynote
 
 Maybe: Q&A: Tim Menzies
 ----
-## Applications 2: Cost estimation and Clone Detection
+## Applications 2: Cost Estimation and Clone Detection
 
 Q: How much/how long will it take to build/deliver this code? 
 
 ### Readings
 
-Boehm, Software Engineering Economics. COCOMO. 
-
-Menzies, replication of COCOMO
-
-Chanchal, Clones and clone types
+* Boehm, [COCOMO II](https://link.springer.com/content/pdf/10.1007/BF02249046.pdf)  **(Sections 1-4 only)**
+* Menzies, [Negative Results for software effort estimation](https://link.springer.com/content/pdf/10.1007/s10664-016-9472-2.pdf) (replication of COCOMO)
+* Roy, Chanchal, [A Survey on Clone Detection](https://plg.uwaterloo.ca/~migod/846/papers/roy-CloningSurveyTechReport.pdf)
 
 ----
 ## Applications 3: Traceability and Refactoring Detection
 
 ### Readings 
 
-Cleland-Huang, NFR traceability. Guo, ICSE20.
+Cleland-Huang, [A machine learning approach for tracing regulatory codes to product specific requirements](https://dl.acm.org/doi/pdf/10.1145/1806799.1806825)
+* Guo, [Semantically Enhanced Software Traceability using DL Techniques](https://ieeexplore.ieee.org/abstract/document/7985645)
+* Germán, [`cregit`: token-level blame information in `git` version control repositories](https://link.springer.com/article/10.1007/s10664-019-09704-x)
 
-Germán, Token level tracing demo
+Maybe: Q&A: Nan Niu
 
-Q&A: Nan Niu
-
-----
-## Applications 4 : Search Based SE
-
-### Readings
-
-Harman, Search Based SE. Next Release Problem. Menzies, Optimize loop
-
-Local lessons vs global lessons
-
-KEYS
 
 ----
 ## Applications 5: NLP for SE (2 weeks)
