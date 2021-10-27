@@ -176,6 +176,7 @@ Data mining, data science, and machine learning open up problematic (and interes
 
 
 Maybe: Q&A: Tim Menzies
+
 ----
 ## Applications 2: Cost Estimation and Clone Detection
 
@@ -198,19 +199,24 @@ Cleland-Huang, [A machine learning approach for tracing regulatory codes to prod
 
 Maybe: Q&A: Nan Niu
 
-
 ----
 ## Applications 5: NLP for SE (2 weeks)
 
 ### Readings
 
-Topic modeling. Naturalness. OOV problem. Autocomplete.
-
+Barua, [What Are Developers Talking About? An Analysis of Topics and Trends in Stack Overflow](https://cs.uwaterloo.ca/~m2nagapp/courses/CS846/1171/papers/barua_ese12.pdf) 
+Agrawal, [What is Wrong with Topic Modeling](https://www.researchgate.net/profile/Tim-Menzies/publication/307303102_What_is_Wrong_with_Topic_Modeling_and_How_to_Fix_it_Using_Search-based_SE/links/57e4a55a08ae9e8425a25dd5/What-is-Wrong-with-Topic-Modeling-and-How-to-Fix-it-Using-Search-based-SE.pdf)
+Hindle et al., [On the Naturalness of Software](https://dl.acm.org/doi/10.5555/2337223.2337322)
+Karampatsis, [Big Code != Big Vocabulary](https://ieeexplore.ieee.org/abstract/document/9284032) 
+Autocomplete.
+[Codex](https://arxiv.org/pdf/2107.03374.pdf)
+Xu, Vasilescu, Neubig, ["In IDE Code Generation from Natural Language"](https://arxiv.org/abs/2101.11149)
 ----
 ## Applications 6: Automated Program Repair/Program Synthesis
 
 ### Readings
-
+Defect Prediction
+Harman, SapFix
 LeGoues, Survey of APR
 
 ## <!--Techniques: Causal analysis in SE (maybe)-->
