@@ -186,7 +186,7 @@ Q: How much/how long will it take to build/deliver this code?
 
 * Boehm, [COCOMO II](https://link.springer.com/content/pdf/10.1007/BF02249046.pdf)  **(Sections 1-4 only)**
 * Menzies, [Negative Results for software effort estimation](https://link.springer.com/content/pdf/10.1007/s10664-016-9472-2.pdf) (replication of COCOMO)
-* Roy, Chanchal, [A Survey on Clone Detection](https://plg.uwaterloo.ca/~migod/846/papers/roy-CloningSurveyTechReport.pdf)
+* Roy, Chanchal, [A Survey on Clone Detection](https://plg.uwaterloo.ca/~migod/846/papers/roy-CloningSurveyTechReport.pdf) **Section 1-5, and then 16-17.**
 
 ----
 ## Applications 3: Traceability and Refactoring Detection
