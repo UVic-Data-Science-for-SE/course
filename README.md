@@ -210,7 +210,7 @@ Maybe: Q&A: Nan Niu
 ### Readings
 * Hindle et al., [On the Naturalness of Software](https://dl.acm.org/doi/10.5555/2337223.2337322)
 * [Codex](https://arxiv.org/pdf/2107.03374.pdf)
-* Xu, Vasilescu, Neubig, ["In IDE Code Generation from Natural Language"](https://arxiv.org/abs/2101.11149)
+* Xu, Vasilescu, Neubig, ["In IDE Code Generation from Natural Language"](https://arxiv.org/abs/2101.11149) [sections 1-4, 8,9]
 * (opt) Karampatsis, [Big Code != Big Vocabulary](https://ieeexplore.ieee.org/abstract/document/9284032) 
 Autocomplete.
 ----
