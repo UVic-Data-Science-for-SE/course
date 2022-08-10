@@ -33,111 +33,132 @@ After this class students are able to:
 
 There are no mandatory texts. We will cover public tutorials and papers. However, you might like learning from books - books are awesome. 
 
-1. **[Data Mining from Scratch](https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/1492041130/)** . No libraries in this one ...  examples in Python. Joel Grus  OReilly 2019.
-2. [**R for Data Science**](https://r4ds.had.co.nz/tibbles.html). A nice intro showing the R approach to importing, cleaning, visualizing data. Hadley Wickham & Garrett Grolemund.  OReilly 2017, is under revision.
+1. **[Data Mining from Scratch](https://search.library.uvic.ca/discovery/fulldisplay?docid=cdi_askewsholts_vlebooks_9781491904404&)** . No libraries in this one ...  examples in Python. Joel Grus  OReilly 2019.
+2. [**R for Data Science**](https://r4ds.had.co.nz/tibbles.html). A nice intro showing the R approach to importing, cleaning, visualizing data. Hadley Wickham & Garrett Grolemund.  OReilly 2017, is under revision. This version is freely available as HTML.
 3. [**Statistical Rethinking**](https://xcelab.net/rm/statistical-rethinking/). Bayesian approach to statistical inference with excellent and gentle intro. Available via the library e-collection.  Richard McElreath. CRC Press 2020 (2nd).
 
 # Schedule and Topics
 
-Due dates are all on Brightspace. Tuesday and Wednesday will be lectures and short in class exercises, including discussion of the readings (which you must do before class). Friday will be dedicated to demos and tutorials of the techniques covered earlier that week.
+Due dates are all on Brightspace. Class format will be lectures and short in class exercises, including discussion of the readings (which you must do before class).
 
 The first few weeks will be a brief intro to some data science approaches particularly useful in analyzing software data. The remaining part of the course will look at specific data science questions. 
 
-## [Introduction](slides/intro.pdf) [Sep 7-11]
+## Introduction (covers class Sep 7-11)
+### Lecture Notes
+* [lecture notes](slides/intro.md)
 
-**Readings**
+### Required Readings
 
 * [Cross-tool logs at Google](https://research.google/pubs/pub49446/)
 * [Watch Codex demo](https://www.youtube.com/watch?v=SGUCcjHTmGY)
-* (Optional) [Facebook and static analysis](https://research.fb.com/wp-content/uploads/2018/05/from-start-ups-to-scale-ups-opportunities-and-open-problems-for-static-and-dynamic-program-analysis.pdf)
 
-**Exercises**
+### Optional Readings and Activities
+* [Facebook and static analysis](https://research.fb.com/wp-content/uploads/2018/05/from-start-ups-to-scale-ups-opportunities-and-open-problems-for-static-and-dynamic-program-analysis.pdf)
 
-* Apply to install Copilot and/or access to OpenAI
-* Go through Copilot and [Codex demos](https://beta.openai.com/playground) and (ideally) do them yourself.
+### Exercises
+
+* Signup for one of Copilot, Codex/OpenAi, CodeWhisperer, Tab9
+* Use Copilot and other AIDEs on a programming contest problem (e.g., from LeetCode).
 
 ----
 
-## [Early Approaches](slides/early.md) [Sep 14-17]
-
+## Early Approaches (Sep 14-17)
 How the field started; lessons from the past. Taylorism. Is SE "engineering" or factory work? Contrarianism.
 
-[How to read a paper (from ResearchSkills class)](https://github.com/neilernst/ResearchSkillsUVic/blob/main/resources/reviewing/M4%20Reading.md#efficiently-reading-a-paper)
+### Lecture Notes
+* [early](slides/early.md)
 
-**Readings**
-
+### Required Readings
 * [Tu and Godfrey, Linux evolution](https://ieeexplore.ieee.org/document/883030) 
 * [Kitchenham, Empirical SE Guidelines](http://people.ucalgary.ca/~far/Lectures/SENG421/PDF/Guidelines.pdf)
 * [10 X productivity study](https://dl.acm.org/doi/10.1145/362851.362858) and [critiques](https://www.construx.com/blog/the-origins-of-10x-how-valid-is-the-underlying-research/)
 * [Interview with Bossavit](https://blog.fogbugz.com/10x-programmer-and-other-myths-in-software-engineering)
-
-**Optional:**
+  
+### Optional Readings and Activities
 
 - [The Mythical Man-Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month)
 - [Peopleware](https://en.wikipedia.org/wiki/Peopleware:_Productive_Projects_and_Teams)
+### Exercises
+Apply the notes here: [How to read a paper (from ResearchSkills class)](https://github.com/neilernst/ResearchSkillsUVic/blob/main/resources/reviewing/M4%20Reading.md#efficiently-reading-a-paper) to the papers in Required Readings.
 
 ----
-## Techniques: [Basic Statistical Inference from a  Bayesian Perspective](slides/bayes.md) [Sep 20-24, 27, 28]
+## Techniques: Bayesian Inference (Sep 20-24, 27, 28)
 
 One approach building inferential analyses is to use a frequentist, hypothesis testing approach where you examine the long-run probability of the data-generating mechanisms to assess how likely the results are under a null hypothesis.
 
 The alternative is to set some limits on what you feel is likely to be true a priori, model the data generating process statistically, i.e. with a probability distribution, and then run Bayes's theorem $$P(A|B) = (P(B|A) * P(A))/P(B)$$ over the data collected. This produces the posterior probability of the parameters of interest, allowing for inferences to be drawn. 
 
 We will start with some motivation from McElreath: https://speakerdeck.com/rmcelreath/l01-statistical-rethinking-winter-2019 and associated videos
+### Lecture Notes
+* [Basic Statistical Inference from a  Bayesian Perspective](slides/bayes.md)
 
-### Readings
-
+### Required Readings
 * Furia, Torkar, Feldt, [Applying Bayesian Analysis Guidelines to Empirical Software Engineering Data: The Case of Programming Languages and Code Quality](https://arxiv.org/abs/2101.12591)
 * Ernst, [Thresholds](https://arxiv.org/abs/1804.02443)
 * McElreath, [Statistical Rethinking ch 2](https://learning-oreilly-com.ezproxy.library.uvic.ca/library/view/statistical-rethinking-2nd/9780429639142/xhtml/10_Chapter02.xhtml) (netlink id required) and/or watch his [lecture video](https://www.youtube.com/watch?v=4WVelCswXo4)
+
+### Optional Readings and Activities
 * (opt) Ray, Devanbu, Filkov, ["Rebuttal to Berger et al 2019"](https://arxiv.org/abs/1911.07393) - a rebuttal to a replication on code quality and language choice on Github.
 * (opt) Dorn, Apel, [Mastering Uncertainty in Performance Estimations of Configurable Software Systems](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9286072) 
 * (opt) [McElreath, Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/) (a super approachable, gentle introduction with R examples, but also translated into Julia and Python)
 * (opt) [Gelman, Bayesian Data Analysis](http://www.stat.columbia.edu/~gelman/book/) (book)
 * https://www.bayesrulesbook.com
 
-### Exercises 
-
-* Follow the [tutorial](https://github.com/torkar/icse_tutorial) notebook; we will go over it in class. 
-* Get familiar with [RStudio notebooks](https://blog.rstudio.com/2016/10/05/r-notebooks/) as that is what we will use for Assignment 1. 
-* Make sure when you import the ICSE one, you type
-
-```R
-install.packages(c("coda","mvtnorm","devtools","loo", "here", "foreign", "cmdstan","dagitty"))
-devtools::install_github("rmcelreath/rethinking")
-```
-
+### Exercises
+* Get set up with the CS department JupyterHub machine and make sure you can get the sample [tutorial](https://github.com/torkar/icse_tutorial) notebook to run in its entirety.
+* Get familiar with [RStudio notebooks](https://blog.rstudio.com/2016/10/05/r-notebooks/) as that is what we will use for Assignment 1.  
 
 ----
-## Techniques: [The Nature of SE Data](slides/problems.md) [Oct 1, 5,6]
+## Techniques: Problems with SE Data [Oct 1, 5,6]
 
 Basic challenges with SE data mining.
 
-**Readings**
+### Lecture Notes
+* [The Nature of SE Data](slides/problems.md)
 
+### Required Readings
 * [Bad Smells in Software Analytics Papers](https://arxiv.org/abs/1803.05518)
 * [Promises and Perils of Mining Git](https://www.researchgate.net/publication/232621717_The_Promises_and_Perils_of_Mining_Git)
 * Aranda and Venolia, [The secret life of bugs: Going past the errors and omissions in software repositories](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/secret.pdf)
+
+### Optional Readings and Activities
 * (Opt) [Promises and Perils of Mining Github](https://kblincoe.github.io/publications/2014_MSR_Promises_Perils.pdf)
 * (opt) [Threats of Aggregating Software Repository Data](https://www.cs.mcgill.ca/~martin/papers/icsme2018.pdf) 
 * (opt) [Sampling in SE Research](https://arxiv.org/pdf/2002.07764.pdf)
-**Exercises**
+
+### Exercises
+None
 
 ----
-## Techniques: [Data Mining Basics include search and optimize](src/dm_basic/dm_basic.Rmd) [Oct 8, 12-15]
+## Techniques: Basics [Oct 8, 12-15]
 
 See the linked notebook. We will go over basic approaches like correlation analysis, regression etc.
 
-## Techniques: [Ethical Considerations in Data Science 4 SE](slides/ethics.md) [Oct 19, 20, 22]
+### Lecture Notes
+* [Data Mining Basics include search and optimize](src/dm_basic/dm_basic.Rmd)
+
+### Required Readings
+* None 
+
+### Optional Readings and Activities
+* None 
+
+### Exercises
+* Go over the notebook and ensure you can reproduce it.
+
+
+## Techniques: Ethics (Oct 19, 20, 22)
 
 Data mining, data science, and machine learning open up problematic (and interesting) research questions and obligations. We will go over some of the basic problems, some approaches to resolve those, and discuss current issues.
 
-### Readings:
+### Lecture Notes
+* [Ethical Considerations in Data Science 4 SE](slides/ethics.md) 
 
-* Gold, Krinke, [Ethical Mining](https://doi.org/10.1145/3379597.3387462)
+### Required Readings
+* * Gold, Krinke, [Ethical Mining](https://doi.org/10.1145/3379597.3387462)
 * https://theconvivialsociety.substack.com/p/the-questions-concerning-technology 
 
-##### Optional 
+### Optional Readings and Activities
 * [The Tuskegee Study](https://www.mcgill.ca/oss/article/history/40-years-human-experimentation-america-tuskegee-study	)
 * Casey Fiesler's twitter feed (and [post that inspired](https://howwegettonext.com/the-black-mirror-writers-room-teaching-technology-ethics-through-speculation-f1a9e2deccf4) this class)
 * [RetractionWatch](https://retractionwatch.com)
@@ -145,23 +166,28 @@ Data mining, data science, and machine learning open up problematic (and interes
   * [Does ACM's code of ethics change decision making](https://dl.acm.org/doi/10.1145/3236024.3264833) 
 * [What we learned from NeurIPS 2020 reviewing process](https://neuripsconf.medium.com/what-we-learned-from-neurips-2020-reviewing-process-e24549eea38f)
 
-**Exercises**
-
-* Assignment 2, on brightspace
+### Exercises
+* Assignment 2, on Brightspace
 * (Opt) Watch [The Social Dilemma](https://www.documentaryarea.tv/player.php?title=The%20Social%20Dilemma)
 
 ----
 ## Applications 1 : Search-based SE and SE vs Non-SE Data
 
-- Harman, [Search-Based SE](https://www.sciencedirect.com/science/article/pii/S0950584901001896)
+### Lecture Notes
+* in class discussion, no notes
+
+### Required Readings
+* Harman, [Search-Based SE](https://www.sciencedirect.com/science/article/pii/S0950584901001896)
 - Novielli, [Sentiment trained on nonSE data](https://arxiv.org/abs/2004.00300)
+
+
+### Optional Readings and Activities
 - (opt) Binkley, [The need for software specific NL techniques](https://link.springer.com/article/10.1007/s10664-017-9566-5)
 - (opt) McMinn, [Search-based software testing](https://mcminn.io/publications/c18.pdf)
 - (opt) Menzies, [SSBSE notes](https://github.com/txt/ase16/blob/master/doc/talk4ssbse.md)
 
-### Readings: 
 
-
+### Exercises
 Maybe: Q&A: Tim Menzies
 
 ----
@@ -169,44 +195,85 @@ Maybe: Q&A: Tim Menzies
 
 Q: How much/how long will it take to build/deliver this code? 
 
-### Readings
+### Lecture Notes
+* 
 
+### Required Readings
 * Boehm, [COCOMO II](https://link.springer.com/content/pdf/10.1007/BF02249046.pdf)  **(Sections 1-4 only)**
 * Menzies, [Negative Results for software effort estimation](https://link.springer.com/content/pdf/10.1007/s10664-016-9472-2.pdf) (replication of COCOMO)
 * Roy, Chanchal, [A Survey on Clone Detection](https://plg.uwaterloo.ca/~migod/846/papers/roy-CloningSurveyTechReport.pdf) **Section 1-5, and then 16-17.**
 
+### Optional Readings and Activities
+
+
+### Exercises
+
 ----
 ## Applications 3: Traceability and Refactoring Detection
 
-### Readings 
+### Lecture Notes
+* 
 
-Cleland-Huang, [A machine learning approach for tracing regulatory codes to product specific requirements](https://dl.acm.org/doi/pdf/10.1145/1806799.1806825)
+### Required Readings
+* Cleland-Huang, [A machine learning approach for tracing regulatory codes to product specific requirements](https://dl.acm.org/doi/pdf/10.1145/1806799.1806825)
 * Guo, [Semantically Enhanced Software Traceability using DL Techniques](https://ieeexplore.ieee.org/abstract/document/7985645)
+
+
+### Optional Readings and Activities
 * Germán, [`cregit`: token-level blame information in `git` version control repositories](https://link.springer.com/article/10.1007/s10664-019-09704-x)
 
+### Exercises
 Maybe: Q&A: Nan Niu
 
 ----
-## Applications 4: Topic Modeling for SE 
+## Applications 4: NLP and Topic Modeling for SE 
+### Lecture Notes
+* 
 
-### Readings
+### Required Readings
 * Barua, [What Are Developers Talking About? An Analysis of Topics and Trends in Stack Overflow](https://cs.uwaterloo.ca/~m2nagapp/courses/CS846/1171/papers/barua_ese12.pdf) 
 * Agrawal, [What is Wrong with Topic Modeling](https://www.researchgate.net/profile/Tim-Menzies/publication/307303102_What_is_Wrong_with_Topic_Modeling_and_How_to_Fix_it_Using_Search-based_SE/links/57e4a55a08ae9e8425a25dd5/What-is-Wrong-with-Topic-Modeling-and-How-to-Fix-it-Using-Search-based-SE.pdf)
 
+### Optional Readings and Activities
+* Lasrado, CorEx
+
+### Exercises
+
+----
 ## Applications 5: Code as Language 
-### Readings
+
+### Lecture Notes
+* 
+
+### Required Readings
 * Hindle et al., [On the Naturalness of Software](https://dl.acm.org/doi/10.5555/2337223.2337322)
 * [Codex](https://arxiv.org/pdf/2107.03374.pdf)
 * Xu, Vasilescu, Neubig, ["In IDE Code Generation from Natural Language"](https://arxiv.org/abs/2101.11149) [sections 1-4, 8,9]
+
+
+### Optional Readings and Activities
 * (opt) Karampatsis, [Big Code != Big Vocabulary](https://ieeexplore.ieee.org/abstract/document/9284032) 
 Autocomplete.
+
+### Exercises
+
 ----
 ## Applications 6: Automated Program Repair
 
-### Readings
+### Lecture Notes
+* 
 
+### Required Readings
 * Marginean, [SapFix](https://research.fb.com/publications/sapfix-automated-end-to-end-repair-at-scale/)
-* LeGoues, [Survey of APR](http://www.cs.cmu.edu/~clegoues/docs/legoues-cacm2019.pdf) • [podcast audio](https://www.youtube.com/watch?v=YPfyRT80VJI) (opt)
+* LeGoues, [Survey of APR](http://www.cs.cmu.edu/~clegoues/docs/legoues-cacm2019.pdf) 
+
+### Optional Readings and Activities
+* [LeGoues podcast audio](https://www.youtube.com/watch?v=YPfyRT80VJI)
+
+### Exercises
+
+
+----
 
 ## <!--Techniques: Causal analysis in SE (maybe)-->
 
