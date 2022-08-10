@@ -33,22 +33,9 @@ After this class students are able to:
 
 There are no mandatory texts. We will cover public tutorials and papers. However, you might like learning from books - books are awesome. 
 
-| **Data Mining: Practical Machine Learning Tools and Techniques (Fourth Edition)** |
-| ------------------------------------------------------------ |
- | Ian H. Witten, Eibe Frank, Mark A. Hall, Christopher J. Pal  |
- | Morgan Kaufmann (2016) , ISBN: 0128042915 |
-| [Data Mining from Scratch](https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/1492041130/) |
-| No libraries in this one ...  examples in Python |
- | Joel Grus |
- | OReilly 2019 |
- | [**R for Data Science**](https://r4ds.had.co.nz/tibbles.html) | 
- | A nice intro showing the R approach to importing, cleaning, visualizing data |
- | Hadley Wickham & Garrett Grolemund| 
- | OReilly 2017 |
- | [**Statistical Rethinking**](https://xcelab.net/rm/statistical-rethinking/) | 
- | Bayesian approach to statistical inference with excellent and gentle intro. Available via the library e-collection. | 
- | Richard McElreath |
-| CRC Press 2020 (2nd) | 
+1. **[Data Mining from Scratch](https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/1492041130/)** . No libraries in this one ...  examples in Python. Joel Grus  OReilly 2019.
+2. [**R for Data Science**](https://r4ds.had.co.nz/tibbles.html). A nice intro showing the R approach to importing, cleaning, visualizing data. Hadley Wickham & Garrett Grolemund.  OReilly 2017, is under revision.
+3. [**Statistical Rethinking**](https://xcelab.net/rm/statistical-rethinking/). Bayesian approach to statistical inference with excellent and gentle intro. Available via the library e-collection.  Richard McElreath. CRC Press 2020 (2nd).
 
 # Schedule and Topics
 
