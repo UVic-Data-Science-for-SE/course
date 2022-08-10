@@ -298,13 +298,13 @@ The [project](project.md) is a semester long replication of an MSR/ICSE/ASE pape
 | ------------------------------------------------- | ----- |
 | Project                                           | 45%   |
 | Assignments (undergrad: 3 * 10%) (Grad: 4 * 7.5%) | 30%   |
-| Paper summary blog posts                          | 10%   |
-| Participation                                     | 15%   |
+| Paper summary blog posts                          | 15%   |
+| Participation                                     | 10%   |
 
-**Course participation**: 15%
+**Course participation**: 10%
 Based on class discussions, forum posts, and group participation. Missing a few classes will NOT hurt your participation mark. If you are sick please stay home.
 
-**Blog Posts**: 10% Assessed using a series of short, 400 word or so forum posts. See the description of how to do [blog posts](blogposts.md).
+**Blog Posts**: 15% Assessed using a series of short, 400 word or so forum posts. See the description of how to do [blog posts](blogposts.md).
 
 Assignment/project expectations will differ for graduate students and undergraduate students.
 
@@ -319,7 +319,7 @@ Please use Brightspace to message the TA first with programming questions and gr
 
 ## Mechanics
 
-The class will use [Github](https://github.com/SENG330) (course notes, slides) and Brightspace (discussions, assignment posting, grades). 
+The class will use [Github](https://github.com/UVic-Data-Science-for-SE) (course notes, slides) and Brightspace (discussions and blogs, assignment posting, grades). 
 
 Grades and any interviews or videos are distributed via Brightspace for privacy compliance.
 
