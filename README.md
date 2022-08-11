@@ -31,7 +31,7 @@ After this class students are able to:
 
 # Books
 
-There are no mandatory texts. We will cover public tutorials and papers. However, you might like learning from books - books are awesome. 
+There are no mandatory texts. We will cover public tutorials and papers. I occasionally refer to chapters from the following: 
 
 1. **[Data Mining from Scratch](https://search.library.uvic.ca/discovery/fulldisplay?docid=cdi_askewsholts_vlebooks_9781491904404&)** . No libraries in this one ...  examples in Python. Joel Grus  OReilly 2019.
 2. [**R for Data Science**](https://r4ds.had.co.nz/tibbles.html). A nice intro showing the R approach to importing, cleaning, visualizing data. Hadley Wickham & Garrett Grolemund.  OReilly 2017, is under revision. This version is freely available as HTML.
