@@ -6,7 +6,7 @@ date: September 2021
 
 # Early Days
 
-"Computers" → women doing slide rule calculations as shown in Hidden Figures. 
+"Computers" → women doing slide rule calculations as shown in Hidden Figures. 
 
 Proprietary data from big projects: the A7 software project, IBM's OS/360 project. An era of positivism and Taylorism: if only we can measure what people are doing, we can manage it like we would building pyramids.
 
@@ -18,7 +18,7 @@ Data has therefore been part of software development and software management sin
 
 # The Open Source Era
 
-<img src="/Users/nernst/Documents/teaching/DataScience4SE/slides/linux.png" style="zoom:33%;" />
+<img src="linux.png" style="zoom:33%;" />
 
 
 
