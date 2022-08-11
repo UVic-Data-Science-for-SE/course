@@ -135,7 +135,7 @@ None
 See the linked notebook. We will go over basic approaches like correlation analysis, regression etc.
 
 ### Lecture Notes
-* [Data Mining Basics include search and optimize](src/dm_basic/dm_basic.Rmd)
+* [Data Mining Basics include search and optimize](https://github.com/UVic-Data-Science-for-SE/course/blob/main/src/dm_basics/dm_basics.Rmd)
 
 ### Required Readings
 * None 
