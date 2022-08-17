@@ -31,7 +31,7 @@ After this class students are able to:
 
 # Books
 
-There are no mandatory texts. We will cover public tutorials and papers. I occasionally refer to chapters from the following: 
+There are no mandatory texts. We will cover public tutorials and papers. I occasionally refer to chapters from the following, all available "free" from the Uvic library: 
 
 1. **[Data Mining from Scratch](https://search.library.uvic.ca/discovery/fulldisplay?docid=cdi_askewsholts_vlebooks_9781491904404&)** . No libraries in this one ...  examples in Python. Joel Grus  OReilly 2019.
 2. [**R for Data Science**](https://r4ds.had.co.nz/tibbles.html). A nice intro showing the R approach to importing, cleaning, visualizing data. Hadley Wickham & Garrett Grolemund.  OReilly 2017, is under revision. This version is freely available as HTML.
@@ -78,11 +78,12 @@ How the field started; lessons from the past. Taylorism. Is SE "engineering" or 
 
 - [The Mythical Man-Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month)
 - [Peopleware](https://en.wikipedia.org/wiki/Peopleware:_Productive_Projects_and_Teams)
+
 ### Exercises
 Apply the notes here: [How to read a paper (from ResearchSkills class)](https://github.com/neilernst/ResearchSkillsUVic/blob/main/resources/reviewing/M4%20Reading.md#efficiently-reading-a-paper) to the papers in Required Readings.
 
 ----
-## Techniques: Bayesian Inference (Sep 20-24, 27, 28)
+## Techniques: Bayesian Inference (Sep 19-23, 27, 28)
 
 One approach building inferential analyses is to use a frequentist, hypothesis testing approach where you examine the long-run probability of the data-generating mechanisms to assess how likely the results are under a null hypothesis.
 
@@ -107,6 +108,11 @@ We will start with some motivation from McElreath: https://speakerdeck.com/rmcel
 ### Exercises
 * Get set up with the CS department JupyterHub machine and make sure you can get the sample [tutorial](https://github.com/torkar/icse_tutorial) notebook to run in its entirety.
 * Get familiar with [RStudio notebooks](https://blog.rstudio.com/2016/10/05/r-notebooks/) as that is what we will use for Assignment 1.  
+* Optionally, install my Docker image (which the lab machines are using) from DockerHub.
+  * With Docker installed, run `docker pull neilernst/dsse_bayes`. 
+  * Then run `docker run -d -p 8787:8787 -e PASSWORD=foo -e ROOT=TRUE neilernst/dsse_bayes`
+  * Navigate to https://localhost:8787, and login with rstudio:foo to get an RStudio IDE.
+  * VS Code users may want to use the VS Code [Remote Containers](https://code.visualstudio.com/docs/remote/containers) extension in order to start a command line session for R - `Remote-Containers: Attach to Running Container`. Ask the TAs for technical help with Docker and the image.
 
 ----
 ## Techniques: Problems with SE Data [Oct 1, 5,6]
