@@ -43,7 +43,7 @@ Due dates are all on Brightspace. Class format will be lectures and short in cla
 
 The first few weeks will be a brief intro to some data science approaches particularly useful in analyzing software data. The remaining part of the course will look at specific data science questions. 
 
-## Introduction (covers class Sep 7-11)
+## Introduction (covers class Sep 7-9)
 ### Lecture Notes
 * [lecture notes](slides/intro.md)
 
@@ -54,6 +54,7 @@ The first few weeks will be a brief intro to some data science approaches partic
 
 ### Optional Readings and Activities
 * [Facebook and static analysis](https://research.fb.com/wp-content/uploads/2018/05/from-start-ups-to-scale-ups-opportunities-and-open-problems-for-static-and-dynamic-program-analysis.pdf)
+* [Hullman and Gelman 2021](https://hdsr.mitpress.mit.edu/pub/w075glo6/release/3?readingCollection=c6a3a10e)
 
 ### Exercises
 
