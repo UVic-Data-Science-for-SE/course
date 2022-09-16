@@ -63,7 +63,7 @@ The first few weeks will be a brief intro to some data science approaches partic
 
 ----
 
-## Early Approaches (Sep 14-17)
+## Early Approaches (Sep 12-16)
 How the field started; lessons from the past. Taylorism. Is SE "engineering" or factory work? Contrarianism.
 
 ### Lecture Notes
@@ -84,7 +84,7 @@ How the field started; lessons from the past. Taylorism. Is SE "engineering" or 
 Apply the notes here: [How to read a paper (from ResearchSkills class)](https://github.com/neilernst/ResearchSkillsUVic/blob/main/resources/reviewing/M4%20Reading.md#efficiently-reading-a-paper) to the papers in Required Readings.
 
 ----
-## Techniques: Bayesian Inference (Sep 19-23, 27, 28)
+## Techniques: Bayesian Inference (Sep 19-23)
 
 One approach building inferential analyses is to use a frequentist, hypothesis testing approach where you examine the long-run probability of the data-generating mechanisms to assess how likely the results are under a null hypothesis.
 
@@ -116,7 +116,24 @@ We will start with some motivation from McElreath: https://speakerdeck.com/rmcel
   * VS Code users may want to use the VS Code [Remote Containers](https://code.visualstudio.com/docs/remote/containers) extension in order to start a command line session for R - `Remote-Containers: Attach to Running Container`. Ask the TAs for technical help with Docker and the image.
 
 ----
-## Techniques: Problems with SE Data [Oct 1, 5,6]
+## Techniques: Basics [Sep 26-30]
+
+See the linked notebook. We will go over basic approaches like correlation analysis, regression etc.
+
+### Lecture Notes
+* [Data Mining Basics include search and optimize](https://github.com/UVic-Data-Science-for-SE/course/blob/main/src/dm_basics/dm_basics.Rmd)
+
+### Required Readings
+* None 
+
+### Optional Readings and Activities
+* None 
+
+### Exercises
+* Go over the notebook and ensure you can reproduce it.
+
+----
+## Techniques: Problems with SE Data [Oct 3-7]
 
 Basic challenges with SE data mining.
 
@@ -137,23 +154,6 @@ Basic challenges with SE data mining.
 None
 
 ----
-## Techniques: Basics [Oct 8, 12-15]
-
-See the linked notebook. We will go over basic approaches like correlation analysis, regression etc.
-
-### Lecture Notes
-* [Data Mining Basics include search and optimize](https://github.com/UVic-Data-Science-for-SE/course/blob/main/src/dm_basics/dm_basics.Rmd)
-
-### Required Readings
-* None 
-
-### Optional Readings and Activities
-* None 
-
-### Exercises
-* Go over the notebook and ensure you can reproduce it.
-
-
 ## Techniques: Ethics (Oct 19, 20, 22)
 
 Data mining, data science, and machine learning open up problematic (and interesting) research questions and obligations. We will go over some of the basic problems, some approaches to resolve those, and discuss current issues.
@@ -178,7 +178,7 @@ Data mining, data science, and machine learning open up problematic (and interes
 * (Opt) Watch [The Social Dilemma](https://www.documentaryarea.tv/player.php?title=The%20Social%20Dilemma)
 
 ----
-## Applications 1 : Search-based SE and SE vs Non-SE Data
+## Applications 1 : Search-based SE and SE vs Non-SE Data (Oct 17-21)
 
 ### Lecture Notes
 * in class discussion, no notes
@@ -198,7 +198,7 @@ Data mining, data science, and machine learning open up problematic (and interes
 Maybe: Q&A: Tim Menzies
 
 ----
-## Applications 2: Cost Estimation and Clone Detection
+## Applications 2: Cost Estimation and Clone Detection (Oct 24-28)
 
 Q: How much/how long will it take to build/deliver this code? 
 
