@@ -1,6 +1,6 @@
 ---
 title: Bayesian Data Analysis in SE
-date: Sep 2021
+date: Sep 2022
 author: Neil Ernst
 marp: true
 ---
@@ -11,12 +11,16 @@ marp: true
 
 McElreath has this notion of *golem*, essentially a mechanical device that for a given input produces some statistical test output. In our world these are the *models* we work with. 
 
+![](images/iron_golem.png)
+
+----
+
 For example, if I have two sample populations with mean $x_i$ and $x_j$, st dev $s_i,s_j$, then my golem might tell me to use a t-test to compare the means. And importantly (hence the golem metaphor) without any awareness of what the inputs are, and especially with no idea if that is the right golem to use for the problem. Thus we should be very careful when relying only on statistical tests, as their results may not be accurate.
 
 ----
 
-![width:700px](mcelreath-decision.png)
-from Ch 1
+![width:700px](images/mcelreath-decision.png)
+(Ch 1)
 
 ----
 
@@ -33,7 +37,6 @@ Model **plausibility**: instead of falsifying some (often arbitrary and unrealis
 
 *Marbles example* - see text chapter 2
 
-We have a bag with 4 
 
 ----
 ## Bayes as marbles 
