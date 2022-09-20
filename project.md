@@ -69,3 +69,25 @@ Also smaller workshops (e.g., CHASE) at ICSE may have studies that are of smalle
 - TravisTorrent
 - [GrimoireLab](https://chaoss.github.io/grimoirelab/)
 * Various datasets from the MSR Data Challenges
+
+# Past Projects
+(nb: do not do these projects again without checking with me)
+
+## Fall 2021
+- replicating with a Bayesian analysis of the survival of Python OSS projects
+- the use of Copilot to solve undergrad assignments
+- security vulnerability types in Javascript vs Python
+- knowledge types in API reference docs
+- detecting programmer expertise by looking at commit logs
+- evolution patterns of Python API frameworks
+- Python coding style compliance on GitHub
+- Do software evolution laws hold?
+- Method chaining use in Java
+- comparing clone detection techniques
+- predicting OSS delivery capability
+- Impact of StackOverflow code snippets on cohesion metrics
+- deep learning based code completion
+- applying newer statistical techniques to software cost modeling
+- polyglot programming and evolution patterns
+- characteristics of the Python package ecosystem
+- 
