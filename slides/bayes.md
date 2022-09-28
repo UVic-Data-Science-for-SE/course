@@ -57,6 +57,20 @@ Than we can use Bayes's law to say `Posterior prob is proportional to Prob of da
 What is happening [in the code](https://github.com/neilernst/icse_tutorial) (see Github).
 
 ----
+# A Bayesian Workflow
+
+See Fig 1 in https://arxiv.org/pdf/2011.01808.pdf
+
+1. Pick a model
+2. Check the model and prior against domain knowledge
+3. Fit the model (e.g. call `ulam()` or `brms()` or similar)
+4. Validate the computation/sampling: convergence diagnostics, r-hat
+5. Fix the computation - rewrite the model
+6. Evaluate and Use Model (predict, cross-validate, posterior predictive checks)
+7. Modify the model - new priors, more data, new predictors
+8. Compare models - leave-one-out information criterion, model averaging
+
+----
 ## A short intro to causal models and DAGs
 
 (McElreath chapter 5; hint: helpful for assignment)
