@@ -175,7 +175,7 @@ Data mining, data science, and machine learning open up problematic (and interes
 
 ### Exercises
 * Assignment 2, on Brightspace
-* (Opt) Watch [The Social Dilemma](https://www.documentaryarea.tv/player.php?title=The%20Social%20Dilemma)
+* Watch [The Social Dilemma](https://www.documentaryarea.tv/player.php?title=The%20Social%20Dilemma) **OR** listen to [the RabbitHole podcast](https://www.nytimes.com/2020/04/16/podcasts/rabbit-hole-internet-youtube-virus.html)
 
 ----
 ## Applications 1 : Search-based SE and SE vs Non-SE Data (Oct 17-21)
