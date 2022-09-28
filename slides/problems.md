@@ -1,6 +1,6 @@
 ---
 author: Neil Ernst
-date: Oct 2021
+date: Oct 2022
 title: Problems with Data in SE
 marp: true
 paginate: true
@@ -151,36 +151,6 @@ See also [ACM SigSOFT Empirical Review Standards](https://github.com/acmsigsoft/
 - gender and demographics
 
 
-----
-## Daniel and background
-- formal spec unpublishable
-- MSR and change history in OSS more powerful 
-- compilers used to cost $$ 
-- RMS and OSS actually useful
-- OSS gives you history
-- impossible to verify empirical results from closed source
-- 2000-2015 the golden era of MSR
-- triangle of research includes OSS, IP and MSR
-- empirical SE is tricky because we observe few and try to conclude for many e.g. for Apache SF
-- crisis: arrival of ML
-- use ML/AI for everything in SE. Delta papers - to improve ROC
-- out of sample prediction is never done well
-- predicting defects is not that useful what helps dev
-- how do we trust the ML output
-  - compare Tesla and observing devs and changes. Not in real time. All of the interesting data is lost when in the repo. Failuares do not appear
-  - Zurich and IDE recovery
-- observability of driving is much higher than SW
-- what are the benefits of seeing the flaws?
-  - changes in how ML helps user vs how it helps devs
-  - how can it help the developer 
-    - e,.g IDE features the editor can learn my approach e.g. to show my morning summary
-    - maybe mining a "Repo" is less useful than mining individual approaches
-    - migrating APIs - could leanr from big data to know how to migrate
-    - future; not how to use ML, but rather how to effectively build software with ML components
-      - other one is security 
-  - Github: what types of repos should it host? should there be another spot for personal repos
-    - great Venn diagram of research available repos (private, on Github, and willing to use Git)
 
-Add survey on what basics to cover
 
 
