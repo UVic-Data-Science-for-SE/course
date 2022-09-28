@@ -105,6 +105,8 @@ We will start with some motivation from McElreath: https://speakerdeck.com/rmcel
 * (opt) [McElreath, Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/) (a super approachable, gentle introduction with R examples, but also translated into Julia and Python)
 * (opt) [Gelman, Bayesian Data Analysis](http://www.stat.columbia.edu/~gelman/book/) (book)
 * https://www.bayesrulesbook.com
+* https://chi-feng.github.io/mcmc-demo/app.html - Hamiltonian MC visualization
+* [A Conceptual introduction to HMC](https://arxiv.org/pdf/1701.02434.pdf)
 
 ### Exercises
 * Get set up with the CS department JupyterHub machine and make sure you can get the sample [tutorial](https://github.com/torkar/icse_tutorial) notebook to run in its entirety.
