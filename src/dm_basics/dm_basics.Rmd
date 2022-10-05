@@ -1,7 +1,7 @@
 ---
 title: "R and Data Mining Basics"
 author: "nernst"
-date: "Oct 2021"
+date: "Oct 2022"
 output:
   html_document:
     df_print: paged
@@ -68,9 +68,9 @@ Useful operations include `mutate`, `filter`, `summarize/group_by`. I find these
 
 I suggest you load your data into a data frame and then chain filters into it, rather than "fixing" the dataset in a separate step. That way you get to see all the data wrangling in one place. It can be *really* easy to miss a step and end up with outliers that are included, aggregations that don't make sense, etc.
 
-``` {r tibble} 
+```{r filter}
 jm1 = jm1 %>% mutate(norm = i / loc)
-as.factor(jm1$defects) #(but should be logical)
+invisible(as.factor(jm1$defects)) #(but should be logical)
 jm1 %>% count(defects)
 ggplot(data = jm1) +
   geom_point(mapping = aes(y=`v(g)`, x=defects))
@@ -96,6 +96,9 @@ ggplot(data = binned, mapping = aes(x=loc,y = ..density..)) +
   geom_freqpoly(mapping = aes(colour = bin), binwidth=100)
 ggplot(data = binned, mapping = aes(x = bin, y = `v(g)`)) + 
          geom_violin()
+
+d <- density(jm1$loc)
+plot(d)
 
 ```
 
