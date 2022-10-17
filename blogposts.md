@@ -11,6 +11,16 @@ Please make any changes by the following Monday at 6pm and make sure we can easi
 
 We will be using Brightspace's forum as a platform for your blogposts. Threads representing the different topics have already been created. When you author a post related to a particular week in the course, please assign it the appropriate category as well.
 
+### Schedule (2022)
+All blog posts due by 6pm Monday the week of the module.
+
+* Applications 1: SBSE due Oct 24
+* Applications 2: Cost Estimation due Nov 7
+* Applications 3: Traceability and Refactoring Detection due Nov 14
+* Applications 4: Code as Language and Automated Program Repair due Nov 21
+* Applications 5:  NLP and Topic Modeling for SE due Nov 28
+
+
 ### Blog Post Quality Criteria
 
 Blog posts are marked pass/fail. You can miss one post; we look at the five highest.
