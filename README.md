@@ -180,7 +180,7 @@ Data mining, data science, and machine learning open up problematic (and interes
 * Watch [The Social Dilemma](https://www.documentaryarea.tv/player.php?title=The%20Social%20Dilemma) **OR** listen to [the RabbitHole podcast](https://www.nytimes.com/2020/04/16/podcasts/rabbit-hole-internet-youtube-virus.html)
 
 ----
-## Applications 1 : Search-based SE and SE vs Non-SE Data (Oct 17-21)
+## Applications 1 : Search-based SE and SE vs Non-SE Data (Oct 24-28)
 
 ### Lecture Notes
 * in class discussion, no notes
@@ -200,7 +200,7 @@ Data mining, data science, and machine learning open up problematic (and interes
 Maybe: Q&A: Tim Menzies
 
 ----
-## Applications 2: Cost Estimation and Clone Detection (Oct 24-28)
+## Applications 2: Cost Estimation and Clone Detection (Nov 8)
 
 Q: How much/how long will it take to build/deliver this code? 
 
@@ -218,7 +218,7 @@ Q: How much/how long will it take to build/deliver this code?
 ### Exercises
 
 ----
-## Applications 3: Traceability and Refactoring Detection
+## Applications 3: Traceability and Refactoring Detection (Nov 14-18)
 
 ### Lecture Notes
 * 
@@ -232,10 +232,31 @@ Q: How much/how long will it take to build/deliver this code?
 * Germán, [`cregit`: token-level blame information in `git` version control repositories](https://link.springer.com/article/10.1007/s10664-019-09704-x)
 
 ### Exercises
-Maybe: Q&A: Nan Niu
+Q&A: Nan Niu
+
+
 
 ----
-## Applications 4: NLP and Topic Modeling for SE 
+## Applications 4: Code as Language and Automated Program Repair (Nov 21-25)
+
+### Lecture Notes
+
+### Required Readings
+* Hindle et al., [On the Naturalness of Software](https://dl.acm.org/doi/10.5555/2337223.2337322)
+* [Codex](https://arxiv.org/pdf/2107.03374.pdf)
+* Marginean, [SapFix](https://research.fb.com/publications/sapfix-automated-end-to-end-repair-at-scale/)
+
+### Optional Readings and Activities
+* Karampatsis, [Big Code != Big Vocabulary](https://ieeexplore.ieee.org/abstract/document/9284032) 
+Autocomplete.
+* Xu, Vasilescu, Neubig, ["In IDE Code Generation from Natural Language"](https://arxiv.org/abs/2101.11149) [sections 1-4, 8,9]
+* [LeGoues podcast audio](https://www.youtube.com/watch?v=YPfyRT80VJI)
+* LeGoues, [Survey of APR](http://www.cs.cmu.edu/~clegoues/docs/legoues-cacm2019.pdf) 
+
+### Exercises
+
+----
+## Applications 5: NLP and Topic Modeling for SE (Nov 28,29)
 ### Lecture Notes
 * 
 
@@ -247,41 +268,6 @@ Maybe: Q&A: Nan Niu
 * Lasrado, CorEx
 
 ### Exercises
-
-----
-## Applications 5: Code as Language 
-
-### Lecture Notes
-* 
-
-### Required Readings
-* Hindle et al., [On the Naturalness of Software](https://dl.acm.org/doi/10.5555/2337223.2337322)
-* [Codex](https://arxiv.org/pdf/2107.03374.pdf)
-* Xu, Vasilescu, Neubig, ["In IDE Code Generation from Natural Language"](https://arxiv.org/abs/2101.11149) [sections 1-4, 8,9]
-
-
-### Optional Readings and Activities
-* (opt) Karampatsis, [Big Code != Big Vocabulary](https://ieeexplore.ieee.org/abstract/document/9284032) 
-Autocomplete.
-
-### Exercises
-
-----
-## Applications 6: Automated Program Repair
-
-### Lecture Notes
-* 
-
-### Required Readings
-* Marginean, [SapFix](https://research.fb.com/publications/sapfix-automated-end-to-end-repair-at-scale/)
-* LeGoues, [Survey of APR](http://www.cs.cmu.edu/~clegoues/docs/legoues-cacm2019.pdf) 
-
-### Optional Readings and Activities
-* [LeGoues podcast audio](https://www.youtube.com/watch?v=YPfyRT80VJI)
-
-### Exercises
-
-
 ----
 
 ## <!--Techniques: Causal analysis in SE (maybe)-->
@@ -295,7 +281,7 @@ Grads have to do 4 assignments, same total weight.  Assignment details are in th
 
 # Readings
 
-Each week there are 2-3 readings. Everyone must do the readings before the Tuesday class. Summarize the readings in Brightspace and [post those to the class](blogposts.md) Brightspace forum. You are also expected to comment on other blog posts as part of the class participation mark, as well as engage in discussion in the class itself. 
+Each week there are 2-3 readings. Everyone must do the readings before the Tuesday class. **For the Applications topics (second half of term)**, summarize the readings in Brightspace and [post those to the class](blogposts.md) Brightspace forum. You are also expected to comment on other blog posts as part of the class participation mark, as well as engage in discussion in the class itself. 
 
 # Project
 
