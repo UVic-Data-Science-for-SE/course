@@ -11,8 +11,14 @@ theme:
 # Dataset Challenges in SE Data Science
 
 What are the data sources? 
+## Learning Objectives
+1. Understand sources of software data.
+2. Model the chance of finding an effect of interest.
+3. Explore the limiations of software datasets.
+4. Categorize sources of error in software research.
 
 ----
+
 
 * Commits
 * Issue trackers
@@ -30,7 +36,29 @@ What are the data sources?
 5. Questionable research practices
 
 ----
-One of the biggest problems - and best places to spend money - is **getting good data**. The most obvious example of this is building big freaking telescopes or high energy physics instruments. Too often we go and use grad students to do a task instead of spending more time getting professionals. If you are looking for a small effect, you need to have a precision instrument! 
+One of the biggest problems - and best places to spend money - is **getting good data**. The most obvious example of this is building big telescopes or high energy physics instruments. 
+
+Too often we go and use grad students to do a task instead of spending more time getting professionals. If you are looking for a small effect, you need to have a precision instrument! 
+
+----
+# Power Analysis
+* Power is the probability before a study is done that it will achieve statistical significance for $\alpha < 0.05$ (or other values).
+* First, we guess an "effect size" for our test (e.g., difference of means), then guess at sample size and variation.
+* Most funders would expect studies to have power > 80%.
+* Power analysis is inherently exploratory and hypothetical - simulation can help.
+* What about study costs? Maybe it is cheap to collect data. 
+* See Fig 16.1 of Regression and other stories.
+
+----
+![winners curse from Regression and Other Stories, Fig 16.1](winnerscurse.png)
+
+----
+# Noisy data
+* when noise is high and signal is low,  statistically significant results are unlikely to replicate.
+* type M - magnitude and type S - sign errors more likely in low-powered studies
+* Best approach is to design a study to maximize effect size rather than population
+* E.g., look at groups more likely to respond, increase treatment amounts
+* Everything has an effect!
 
 ----
 # Effect sizes (briefly)

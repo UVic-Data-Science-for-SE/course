@@ -306,6 +306,7 @@ Generating labels is expensive. Usually it involves human annotators; often it i
 * but how much can we ask human raters? 
 
 ----
+
 # Semi-supervised
 Train data on a few amount of labels with lots of unlabeled data assuming:
 - the data is largely the same wrt dimensions 

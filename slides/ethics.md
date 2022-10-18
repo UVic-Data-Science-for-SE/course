@@ -1,6 +1,6 @@
 ---
 author: nernst
-date: Oct 2021
+date: Oct 2022
 marp: true
 title: Ethics of Data Mining in SE
 paginate: true
@@ -64,6 +64,8 @@ Hidden confounds (or at least, not included in the model) interact with group me
 2. It's fine; unlikely means 20% chance of action
 3. But 40/100 people in B were wrongly predicted to be likely to do something!
 
+See also ["21 Types of Fairness"](https://shubhamjain0594.github.io/post/tlds-arvind-fairness-definitions/) by Arvind Narayanan.
+ 
 ----
 # Collaboration
 Who and what do we work with? Surveillance equipment for totalitarian regimes? Face recognition for drones used by a powerful military? Do we hand over user info for any legal request? 
