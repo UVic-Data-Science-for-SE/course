@@ -240,6 +240,7 @@ Q&A: Nan Niu
 ## Applications 4: Code as Language and Automated Program Repair (Nov 21-25)
 
 ### Lecture Notes
+* [LLM overview](slides/llm-intro.md)
 
 ### Required Readings
 * Hindle et al., [On the Naturalness of Software](https://dl.acm.org/doi/10.5555/2337223.2337322)

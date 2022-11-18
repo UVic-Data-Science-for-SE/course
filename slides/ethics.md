@@ -74,7 +74,7 @@ Who and what do we work with? Surveillance equipment for totalitarian regimes? F
 # Interpretation and Explainability
 Can we show why a model arrived at the decisions it does? Does it matter? Compare decision trees to CNNs.
 
-LIME
+[LIME](https://github.com/marcotcr/lime) - a tool for interpreting machine learning results.
 
 ----
 # Recommendations
@@ -118,6 +118,14 @@ G&K then go on to describe common MSR datasets and how to apply the principles a
 4. Compliance: what about uncovered bug reports? 
 
 Our understanding of these issues is *constantly evolving!*
+
+----
+## Stack Overflow example
+1. Identification: T&C of Stack Overflow (being read?)
+2. Balancing: personal identifiers, job locations, minors
+3. Equity: location used to discriminate
+4. Compliance: explicit licence to use data, but what about code? 
+
 
 ----
 # Research and Professional Ethics
