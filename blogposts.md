@@ -23,7 +23,7 @@ All blog posts due by 6pm Monday the week of the module.
 
 ### Blog Post Quality Criteria
 
-Blog posts are marked pass/fail. You can miss one post; we look at the five highest.
+Blog posts are marked pass/fail. You can miss one post; we look at the four highest.
 
 A pass mark is given for meeting all of the following:
 
