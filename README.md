@@ -241,6 +241,7 @@ Q&A: Nan Niu
 
 ### Lecture Notes
 * [LLM overview](slides/llm-intro.md)
+* [Grad Studies/Accessibility](slides/Grad-Opportunities.md)
 
 ### Required Readings
 * Hindle et al., [On the Naturalness of Software](https://dl.acm.org/doi/10.5555/2337223.2337322)
