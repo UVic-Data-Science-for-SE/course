@@ -53,15 +53,17 @@ This works OK ... but language is pretty complicated. The word embedding model i
 
 # Attention and Transformers
 
-Another approach is to use deep learning via attention models in transformer models. This is how BERT, GPT3, T5 etc work.
+###### Another approach is to use deep learning via attention mechanisms in transformer models. This is how BERT, GPT3, T5 etc work.
 
 Digression: supervision. Supervision is when a human labels or validates the machine's results. Fully supervised = humans provide a complete, labeled dataset. Unsupervised - there is no label, the machine just tries to clump similar things together. Weakly supervised: the human annotates a few important instances to bootstrap the machine. Self-supervised: the machine manipulates the data to "hide" various pieces in order to train. Masking is a self-supervised training approach. Which of these is most effective, and which is most costly? 
 
 Two key concepts in these language models: attention, and transformers.
 
+##### Digression: structure and abstractions in language. Tokens, parts of speech, grammar, semantics.
+
 ## Transformers
 
-A transformer is a ML archtecitrue that encodes an input and decodes output:
+A transformer is a ML architecture that encodes an input and decodes output:
 
 ![encoder architecture from jalammar](http://jalammar.github.io/images/t/The_transformer_encoders_decoders.png)
 
@@ -88,3 +90,7 @@ https://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/
 https://jalammar.github.io/illustrated-word2vec/
 
 https://towardsdatascience.com/attention-is-all-you-need-discovering-the-transformer-paper-73e5ff5e0634
+
+http://jalammar.github.io/illustrated-transformer/
+
+h

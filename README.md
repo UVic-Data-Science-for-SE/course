@@ -39,27 +39,27 @@ There are no mandatory texts. We will cover public tutorials and papers. I occas
 
 # Schedule and Topics
 
-Due dates are all on Brightspace. Class format will be lectures and short in class exercises, including discussion of the readings (which you must do before class).
+Due dates are all on Brightspace. Class format will be lectures and short in class exercises, including discussion of the readings (which you must do before class). Class in Summer 2023 will be 3 hours. The plan will be to take 2 short breaks (5 mins) and one longer break (20 mins) at appropriate times. You should come to class prepared to follow along on your computer or tablet.
 
-The first few weeks will be a brief intro to some data science approaches particularly useful in analyzing software data. The remaining part of the course will look at specific data science questions. 
+| Week    | Topic                                                   | Due  |
+| ------- | ------------------------------------------------------- | ---- |
+| May 9   | Course Intro and Data Science Basics                    |      |
+| May 16  | Topics in Data Science: Bayesian Modeling and Inference |      |
+| May 23  | Early Approaches and SE Data Problems                   |      |
+| May 30  | Ethical SE Data Science                                 |      |
+| June 6  |                                                         |      |
+| June 13 |                                                         |      |
+| June 20 |                                                         |      |
+| June 27 |                                                         |      |
+| July 4  | Reading Break                                           |      |
+| July 11 |                                                         |      |
+| July 18 |                                                         |      |
+| July 25 |                                                         |      |
+|         |                                                         |      |
 
-## Introduction (covers class Sep 7-9)
-### Lecture Notes
-* [lecture notes](slides/intro.md)
 
-### Required Readings
 
-* [Cross-tool logs at Google](https://research.google/pubs/pub49446/)
-* [Watch Codex demo](https://www.youtube.com/watch?v=SGUCcjHTmGY)
 
-### Optional Readings and Activities
-* [Facebook and static analysis](https://research.fb.com/wp-content/uploads/2018/05/from-start-ups-to-scale-ups-opportunities-and-open-problems-for-static-and-dynamic-program-analysis.pdf)
-* [Hullman and Gelman 2021](https://hdsr.mitpress.mit.edu/pub/w075glo6/release/3?readingCollection=c6a3a10e)
-
-### Exercises
-
-* Signup for one of Copilot, Codex/OpenAi, CodeWhisperer, Tab9
-* Use Copilot and other AIDEs on a programming contest problem (e.g., from LeetCode).
 
 ----
 
