@@ -2,11 +2,11 @@
 
 See the [HEAT course syllabus](https://heat.csc.uvic.ca/coview/outline/2021/Fall/SENG/480b) for all mark weights and course policies, textbooks, etc. The syllabus also contains the important information on course communication and schedules and COVID information. Note that all three sections share the same syllabus.
 
-Course content will be mostly based on paper discussions with some more technical lecture sessions on specific tools. Currently the plan is to mostly convene in person. [Email me](mailto:nernst@uvic.ca) if you think you may miss lectures due to travel restrictions or other reasons.
+Course content will be mostly based on paper discussions with some more technical lecture sessions on specific tools. Attendance in class is essential. [Email me](mailto:nernst@uvic.ca) if you think you may miss a lecture.
 
 # Course Overview and Learning Objectives
 
-Software development activities (expansively defined as requirements, testing, deployment, design, development ,... ) generate a lot of raw quantitative data (and qualitative data as well, but that is a [separate course](https://github.com/margaretstorey/EmseUvic2020). We can use what are now cheap and readily available tools—machine learning classics like regression, but also deep learning, optimization, NLP—to try and make sense of this data. Thus this class is essentially about how we can use *data science* to analyze software data, in order to predict, understand, improve software practices. This is also known as ML4SE, and might be contrasted with SE4ML, the application of software engineering practices to machine learning and data science.
+Software development activities (expansively defined as requirements, testing, deployment, design, development ,...) generate a lot of raw quantitative data (and qualitative data as well, but that is a [separate course](https://github.com/margaretstorey/EmseUvic2020)). We can use what are now cheap and readily available tools—machine learning classics like regression, but also deep learning, optimization, NLP—to try and make sense of this data. Thus this class is essentially about how we can use *data science* to analyze software data, in order to predict, understand, improve software practices. This is also known as ML4SE, and might be contrasted with SE4ML, the application of software engineering practices to machine learning and data science.
 
 Some basic questions we might start with (h/t to [Greg](https://third-bit.com/2019/05/30/software-engineering-revisited/)):
 
