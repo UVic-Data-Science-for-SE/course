@@ -12,9 +12,9 @@ You should know how to use Github, be familiar with statistical concepts from se
 
 The details of the assignments are as follows:
 
-- Assignment 1: Getting Started with R and Data Science
-- Assignment 2: Bayesian Inference
-- Assignment 3: Ethical Data Science
-- Grad Assignment: Replication Project
+- [Assignment 1: Getting Started with R and Data Science](assignment1.md)
+- [Assignment 2: Bayesian Inference](assignment2.md)
+- [Assignment 3: Ethical Data Science](assignment3.md)
+- [Grad Assignment: Replication Project](grad-assignment.md)
 
 Click on the individual links to understand what each assignment entails. 
