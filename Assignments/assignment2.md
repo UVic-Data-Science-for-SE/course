@@ -5,6 +5,8 @@ author: Neil Ernst
 date: May 2023
 ---
 
+NB: **To view the Brightspace assignment you must enroll in a Group ('Bayes') first. It will not appear until you are in a group, even a group of 1.**
+
 In this assignment you will use Bayesian analysis to evaluate a software engineering result that was derived from conventional means.
 
 Note: you may work on this in teams of 2. In that case, submit the identical file for both individuals but LET ME KNOW you are working with someone else in the document preamble.
