@@ -79,6 +79,15 @@ For example, a lot of software data is log-normal, often [zero-inflated](https:/
 Typically we follow this [nine step AI pipeline](https://github.com/txt/ase19/blob/master/docs/REFS.md#amershi-2019): ![](https://github.com/txt/ase19/blob/master/etc/img/9steps.png?raw=true)
 
 ----
+Another way to think about this is using the *six steps of statistical modeling*: 
+1. specification (create a model)
+2. [identification]([url](https://en.wikipedia.org/wiki/Identifiability)) (check if, given a new parameterization, your model's predictions change)
+3. estimation (use the model to produce estimates)
+4. evaluation (check the model; does the estimate match reality)
+5. respecification (redo the model or try other models)
+6. interpretation 
+
+----
 # Model comparison and exploratory data analysis
 When presented with data or a theory about how data is created, what should we do?
 
