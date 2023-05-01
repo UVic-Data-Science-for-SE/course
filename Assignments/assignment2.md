@@ -11,9 +11,7 @@ In this assignment you will use Bayesian analysis to evaluate a software enginee
 
 Note: you may work on this in teams of 2. In that case, submit the identical file for both individuals but LET ME KNOW you are working with someone else in the document preamble.
 
-This is an individual or paired assignment, i.e., you must work alone or with at most one other person. The assignment will be graded pass/fail.
-
-There are two deadlines for grading: X and X+2weeks. If you fail on X, you should resubmit at X+2 or fail the assignment.
+This is an individual or paired assignment, i.e., you must work alone or with at most one other person.
 
 If you need help with the assignment then please talk to Neil.
 
