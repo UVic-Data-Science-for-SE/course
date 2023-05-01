@@ -10,6 +10,8 @@ You should know how to use Github, be familiar with statistical concepts from se
 
 **All due dates will be on Brightspace. All submissions should be on Brightspace in the appropriate assignment folder.** 
 
+Assignments are due on Friday by midnight. You may take 2 days more to update your assignment (i.e., Sunday night) once you have submitted. You **must** submit something by Friday. I will not answer assignment questions after Friday, however.
+
 The details of the assignments are as follows:
 
 - [Assignment 1: Getting Started with R and Data Science](assignment1.md)
