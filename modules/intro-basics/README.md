@@ -14,9 +14,8 @@ Intro to data science applied to Software Engineering problems. Refresher/intro 
 
 | #    | Topic | Readings | Exercises |
 | ---- | ----- | -------- | --------- |
-| 1-1  |  [intro notes](slides/intro.md)     |   [Cross-tool logs at Google](https://research.google/pubs/pub49446/)       |     [Getting Started with R](https://avehtari.github.io/ROS-Examples/Regression_and_Other_Stories_Appendix_A.pdf) •  Go over the notebook and ensure you can reproduce it.    |
-| 1-2  |   * [Data Mining Basics include search and optimize](https://github.com/UVic-Data-Science-for-SE/course/blob/main/src/dm_basics/dm_basics.Rmd)
-    |  [Watch Codex demo](https://www.youtube.com/watch?v=SGUCcjHTmGY)        |       install and use Copilot/Codex/ChatGPT to solve a LeetCode problem    |
+| 1-1  |  [intro notes](slides/intro.md)     |   [Cross-tool logs at Google](https://research.google/pubs/pub49446/)       |     [Getting Started with R](https://avehtari.github.io/ROS-Examples/Regression_and_Other_Stories_Appendix_A.pdf) •  Go over the notebook for 1-2 and ensure you can reproduce it.    |
+| 1-2  |  [Data Mining Basics include search and optimize](https://github.com/UVic-Data-Science-for-SE/course/blob/main/src/dm_basics/dm_basics.Rmd)    |  [Watch Codex demo](https://www.youtube.com/watch?v=SGUCcjHTmGY)        |       install and use Copilot/Codex/ChatGPT to solve a LeetCode problem    |
 
 ### Optional Readings and Activities
 
