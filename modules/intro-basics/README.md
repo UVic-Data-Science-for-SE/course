@@ -16,6 +16,7 @@ Intro to data science applied to Software Engineering problems. Refresher/intro 
 | ---- | ----- | -------- | --------- |
 | 1-1  |  [intro notes](intro.md)     |   [Cross-tool logs at Google](https://research.google/pubs/pub49446/)       |     [Getting Started with R](https://avehtari.github.io/ROS-Examples/Regression_and_Other_Stories_Appendix_A.pdf) •  Go over the notebook for 1-2 and ensure you can reproduce it.    |
 | 1-2  |  [Data Mining Basics include search and optimize](dm_basic.Rmd)    |  [Watch Codex demo](https://www.youtube.com/watch?v=SGUCcjHTmGY)        |       install and use Copilot/Codex/ChatGPT to solve a LeetCode problem    |
+| 1-3 | [Regression](regression.md) | ROS ch 1-5 | | 
 
 ### Optional Readings and Activities
 
