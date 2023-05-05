@@ -42,17 +42,17 @@ Due dates are all on Brightspace. Class format will be lectures and short in cla
 | Week    | Topic                                                                                     | Due                            |
 | ------- | ----------------------------------------------------------------------------------------- | ------------------------------ |
 | May 9   | [Course Intro and Data Science Basics](modules/intro-basics/README.md)                    |                                |
-| May 16  | [Statistical Modeling and Bayesian Inference](modules/bayes/README.md)                    | A1                             |
-| May 23  | [Early Approaches and SE Data Problems](modules/early-problems/README.md)                 | Project Proposal               |
+| May 16  | [Early Approaches and SE Data Problems](modules/early-problems/README.md)                 | A1                             |
+| May 23  | [Statistical Modeling and Bayesian Inference](modules/bayes/README.md)                    | Project Proposal               |
 | May 30  | [Ethical SE Data Science](modules/ethics/README.md)                                       |                                |
 | June 6  | [Applications I: Simple Data Mining](modules/simpleDM/README.md)                          | A2; Blog 1                     |
 | June 13 | Applications II: [Search Based SE](modules/sbse/README.md)                                | Blog 2                         |
 | June 20 | Applications III: [Traceability and Refactoring](modules/traceability-refactor/README.md) | Blog 3; Project Interim report |
-| June 27 | [Applications IV: Topic Modeling and NLP](modules/NLP/README.md)                          | Blog 4; A3 (A2 redos)          |
+| June 27 | [Applications IV: Topic Modeling and NLP](modules/NLP/README.md)                          | Blog 4;                        |
 | July 4  | Reading Break                                                                             |                                |
-| July 11 | [Applications V: Large Language Models for SE](modules/llm/README.md)                     | Blog 5                         |
+| July 11 | [Applications V: Large Language Models for SE](modules/llm/README.md)                     | A3; Blog 5                     |
 | July 18 | [Applications V: Large Language Models for SE](modules/llm/README.md) (part the second)   |                                |
-| July 25 | Project presentations                                                                     | A4; Project Report             |
+| July 25 | Project presentations                                                                     | A4 (grads); Project Report     |
 
 # Assignments
 

@@ -12,6 +12,8 @@ You should install R, RStudio, or similar tool (there are good plugins for VSCod
 
 You should follow this [set up and tutorial on R.](https://avehtari.github.io/ROS-Examples/Regression_and_Other_Stories_Appendix_A.pdf).
 
+We will be using RStudio/R for this and assignment 2. Follow [this overview](docker.md) to get started.
+
 # Dataset and Problem
 
 This assignment will work on the following problem set. Download it and use it in your notebook. Submit the notebook as a Rmd file for marking, via Brightspace. You should answer all the questions (below, in bold) in the notebook directly, supported by the R code as necessary.
