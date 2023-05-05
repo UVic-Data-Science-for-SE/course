@@ -33,6 +33,7 @@ There are no mandatory texts. We will cover public tutorials and papers. I occas
 1. **[Data Mining from Scratch](https://search.library.uvic.ca/discovery/fulldisplay?docid=cdi_askewsholts_vlebooks_9781491904404&)** . No libraries in this one ...  examples in Python. Joel Grus  OReilly 2019.
 2. [**R for Data Science**](https://r4ds.had.co.nz/tibbles.html). A nice intro showing the R approach to importing, cleaning, visualizing data. Hadley Wickham & Garrett Grolemund.  OReilly 2017, is under revision. This version is freely available as HTML.
 3. [**Statistical Rethinking**](https://xcelab.net/rm/statistical-rethinking/). Bayesian approach to statistical inference with excellent and gentle intro. Available via the library e-collection. Also see his excellent Youtube recordings and Github material. Richard McElreath. CRC Press 2020 (2nd).
+4. [**Regression and Other Stories**](https://avehtari.github.io/ROS-Examples/). Intro to regression and inference with clear examples. Gelman, Hill, Vehtari. Cambridge 2021.
 
 # Schedule and Topics
 
