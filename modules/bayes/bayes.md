@@ -70,50 +70,6 @@ See Fig 1 in https://arxiv.org/pdf/2011.01808.pdf
 7. Modify the model - new priors, more data, new predictors
 8. Compare models - leave-one-out information criterion, model averaging
 
-----
-## A short intro to causal models and DAGs
-
-(McElreath chapter 5; hint: helpful for assignment)
-
-A DAG can show the causal associations in the model you are building. It helps answer the qestion, What are the elements that matter in understanding the inference and potential confounding factors? 
-
-The DAG forces us to be explicit about our theory about how the phenomenon comes to be. There are testable implications of the causal graph. For example, are two variables associated? (presumably Yes, if they are connected). Are two variables independent? We can look at simple correlations to check this. 
-
-----
-> Is there any additional value in knowing a variable, once I already know all of the other predictor variables?
-
-This might help us identify when we are collecting useless extra data.
-
-If we look at the model in 5.1.3, we see how we build a model to check the ways in which two variables, or factors, influence the model.
-
-----
-## Causal Workflow
-
-The point of causal modeling is to create a model *outside of statistics* to describe what we think is happening in our research world. 
-
-It is about causation, i.e., we specifically want to see if some intervention is bringing about a change in the predicted variable. If we don't care about causation then this model wouldn't apply. But note in my experience that is usually the type of question data science is curious about. 
-
-----
-## Causal Workflow: paths
-1. Identify the data we have collected or will collect (lines of code, complexity, hours worked, etc). Since the universe is itself causal, we clearly cannot collect data on everything. 
-2. Consider unobserved (latent) variables - we won't or cannot measure it (e.g. for privacy reasons), but we need to account for it. 
-3. Decompose the DAG into three elemental paths: **forks** ($X \leftarrow Z \rightarrow Y$) **pipes** ($X \rightarrow Z \rightarrow Y$) and **colliders** ($X \rightarrow Z \leftarrow Y$)
-
-----
-### Pipes
-
-- If ignore Z, then X and Y are associated. Stratify by Z, X and Y not associated. All of the information about X comes to Y through Z. No additional information about X if we know Z. 
-
-### Forks
-
-* Same structure as pipes. X and Y are associated because they both have information only from Z. Once you learn Z, learning X doesn't give more data on Y. 
-* Need more data to distinguish forks from pipes. 
-
-### Collider
-
-* Ignore Z, X and Y NOT associated. Stratify by Z, X and Y are associated. 
-* X and Y are independent causes of Z. 
-* X and Y have mutual information: learning X tells me something about Y
 
 ----
 ## Building Models
@@ -128,49 +84,6 @@ From Chapter 4.2 (a language for describing models):
 4. Use these predictors to define the shape and location of the likelihood (here, $\mu,\sigma$)
 5. Choose priors to define our *initial* information state for all model parameters. (Where should the mean be? What should sigma be? )
 
-----
-## A short digression into priors
-
-How should we choose our priors? Isn't this biasing the inference?
-
-We will **set** priors using statistical probability distributions (in R type `?Distributions`). These distributions cover a range of widely understood generative processes and include:
-
-* Gaussian/Normal distribution
-* Binomial
-* Uniform
-* Student's T
-* Poisson
-* InvGamma
-* Weibull
-
-And [many many others](https://en.wikipedia.org/wiki/List_of_probability_distributions).
-
-----
- In R, these distributions are included by default, and can be used typically with the following prefixes:
-
-` d`, for "density", `r` for "random generation" (ie. draw one number from the distribution at random), `p` for the distribution, `q` for quantile. To do a simulation of the grades of 100 students at random assuming the grades are normally distributed with mean 75 and SD 10, we could say 
-
-`grades = rnorm(100, 75, 10)` and get a vector of grades, again randomly distributed according to the normal we specified. (Hmm, new grading idea!)
-
-![width:400px](grades.png)
-
-----
-One thing to note: although libraries like Seaborn allow you to fit distributions to your data, in a principled Bayesian workflow we would try to choose the prior based on our domain understanding. 
-
-In other words, taking the data and fitting a distribution implies we think the data perfectly determines the distribution. This may not be (and often isn't) the case.
-
-----
-One of the bigger challenges for non-statisticians like us is understanding the underlying assumptions and applicability of probability distributions. In a lot of cases the Normal, Poisson, logNormal distributions (in addition to Uniform) give us most of what we need for this course. 
-
-* The Poisson is good for simulating discrete event arrivals, like bugs in code or cars at a stoplight. 
-* The logNormal simulates the possibility that there is a fat tail (skewness) in the data, which is often the case in software data (especially for networks). Of course we could take the log of the measured data that is logNormally distributed and then model the result using the simple Normal distribution.
-* The Uniform is an equal probability distribution across all outcomes, and often models the situation when we don't know any better.
-  
-----
-## Dealing with Zeros
-A further consideration is *zero-inflation* which means distributions are padded with more zero values. This reflects the scenario in which a lot of results are empty, e.g., if you are looking at defect data and some group of files have no bugs reported. 
-
-Again, base your choice on the **domain process as you see it**. And then **compare the models** using info criterion like AIC to see which model is best suited. 
 
 ----
 ## Statistical Model Specification in R and Stan

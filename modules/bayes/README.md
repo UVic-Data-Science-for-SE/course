@@ -2,21 +2,7 @@
 author: Neil Ernst
 title: Statistical Modeling and Bayesian inference
 
-
 ---
-
-Intro to data science applied to Software Engineering problems. Refresher/intro to data science concepts and tools. 
-
-# Learning Outcomes
-
-- .
-
-| #    | Topic | Readings | Exercises |
-| ---- | ----- | -------- | --------- |
-| 1-1  |       |          |           |
-| 1-2  |       |          |           |
-
-## Techniques: Bayesian Inference (Sep 19-23)
 
 One approach building inferential analyses is to use a frequentist, hypothesis testing approach where you examine the long-run probability of the data-generating mechanisms to assess how likely the results are under a null hypothesis.
 
@@ -24,11 +10,25 @@ The alternative is to set some limits on what you feel is likely to be true a pr
 
 We will start with some motivation from McElreath: https://speakerdeck.com/rmcelreath/l01-statistical-rethinking-winter-2019 and associated videos
 
-### Lecture Notes
 
-* [Basic Statistical Inference from a  Bayesian Perspective](slides/bayes.md)
+# Learning Outcomes
 
-### Required Readings
+- Apply Bayesian inference to software problems
+- Relate statistical sampling problems to numerical analysis problems (e.g., as discussed in detail in CSC 349a).
+- Apply statistical probability distributions to model software problems.
+- Appreciate the rationale for causal graphs and causal language. 
+  
+
+| #   | Topic                                                                       | Readings | Exercises |
+| --- | --------------------------------------------------------------------------- | -------- | --------- |
+| 3-1 | [Basic Statistical Inference from a  Bayesian Perspective](slides/bayes.md) |          |           |
+| 3-2 | [Statistical Modeling](models.md)                                           |          |           |
+| 3-3 | [Sampling](sampling.md)                                                     | https://chi-feng.github.io/mcmc-demo/app.html - Hamiltonian MC visualization |           |
+| 3-4 | [Causal Modeling](causal.md)                                                |          |           |
+| 3-5 | [Probability Distributions and Priors](prior.md)                            |          |           |
+
+
+### Required Readings 3-1
 
 * Furia, Torkar, Feldt, [Applying Bayesian Analysis Guidelines to Empirical Software Engineering Data: The Case of Programming Languages and Code Quality](https://arxiv.org/abs/2101.12591)
 * Ernst, [Thresholds](https://arxiv.org/abs/1804.02443)
@@ -41,15 +41,13 @@ We will start with some motivation from McElreath: https://speakerdeck.com/rmcel
 * (opt) [McElreath, Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/) (a super approachable, gentle introduction with R examples, but also translated into Julia and Python)
 * (opt) [Gelman, Bayesian Data Analysis](http://www.stat.columbia.edu/~gelman/book/) (book)
 * https://www.bayesrulesbook.com
-* https://chi-feng.github.io/mcmc-demo/app.html - Hamiltonian MC visualization
+
 * [A Conceptual introduction to HMC](https://arxiv.org/pdf/1701.02434.pdf)
 
 ### Exercises
 
-* Get set up with the CS department JupyterHub machine and make sure you can get the sample [tutorial](https://github.com/torkar/icse_tutorial) notebook to run in its entirety.
 * Get familiar with [RStudio notebooks](https://blog.rstudio.com/2016/10/05/r-notebooks/) as that is what we will use for Assignment 1.  
-* Optionally, install my Docker image (which the lab machines are using) from DockerHub.
-  * With Docker installed, run `docker pull neilernst/dsse_bayes`. 
-  * Then run `docker run -d -p 8787:8787 -e PASSWORD=foo -e ROOT=TRUE neilernst/dsse_bayes`
-  * Navigate to https://localhost:8787, and login with rstudio:foo to get an RStudio IDE.
-  * VS Code users may want to use the VS Code [Remote Containers](https://code.visualstudio.com/docs/remote/containers) extension in order to start a command line session for R - `Remote-Containers: Attach to Running Container`. Ask the TAs for technical help with Docker and the image.
+* Use [Docker to install locally](../docker.md)
+* VS Code users may want to use the VS Code [Remote Containers](https://code.visualstudio.com/docs/remote/containers) extension in order to start a command line session for R - `Remote-Containers: Attach to Running Container`. Ask the TAs for technical help with Docker and the image.
+* You can also use the CS department JupyterHub machine. 
+* Make sure you can get the sample [tutorial](https://github.com/neilernst/icse_tutorial) notebook to run in its entirety.
