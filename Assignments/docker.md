@@ -21,3 +21,7 @@ You can install RStudio and these packages locally on your computer, of course, 
 4. Navigate to https://localhost:8787 to get the RStudio interface. Login with "rstudio:yourpassword". 
 
 Remember that containers, if killed, will not save your data [without some work on your end](https://docs.docker.com/storage/). I highly recommend saving the files you work on to your own disk, and not the "fake" disk that the container creates. 
+
+## Helpful commands
+* [`docker cp`](https://docs.docker.com/engine/reference/commandline/cp/) - transfers files from containers to local file system and vice versa.
+* `docker image` - list current images 

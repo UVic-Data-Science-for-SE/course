@@ -111,7 +111,8 @@ You are expected to be respectful of other students and the instructor/TAs: mute
 Strict monitoring of academic integrity will be performed in this course for any work submitted for marks. See course component descriptions and Course Policies and Guidelines below for details on academic integrity expectations. Substantiated academic integrity violations will be referred to the Department's Academic Integrity Committee which will determine penalty and ensure a record of the violation is kept with the university.
 
 ## AI supported work
-You are permitted to use generative AI in this course except where explicitly forbidden (mainly, because it will get in the way of you actually learning and understanding the concepts!)
+You are permitted to use generative AI (ChatGPT, Copilot, MidJourney etc. etc.) in this course except where explicitly forbidden (mainly, because it will get in the way of you actually learning and understanding the concepts!). Any use of these assistants beyond simple grammar help **must be accompanied by a dedicated section in the assignment submission outlining how it was used and why it helped**.
+
 ## License
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
