@@ -64,7 +64,7 @@ Each week there are 2-3 readings. Everyone must do the readings before the Tuesd
 
 # Project
 
-The [project](project.md) is a semester long SE data science project tackling an SE-specific problem, using techniques discussed in class. See the project page for details.
+The [project](project.md) is a semester long SE data science project tackling an SE-specific problem, using techniques discussed in class. See the [project page](project.md) for details.
 
 # Assessment
 
@@ -75,8 +75,8 @@ The [project](project.md) is a semester long SE data science project tackling an
 | Paper summary blog posts                          | 15%   |
 | Participation                                     | 10%   |
 
-**Course participation**: 10%
-Based on class discussions, forum posts, and group participation. We will use Sli.do or similar tool to enable participation for those less comfortable with speaking in class.
+**Course engagement**: 10%
+Based on class discussions, forum posts, and group participation. We will use Sli.do or similar tool to enable participation for those less comfortable with speaking in class. At the midway point, I will post interim engagement marks so you can assess your standing. Not coming to class, not doing readings, failing to attend group meetings, are all good ways to get a 0 for this component. 
 
 **Blog Posts**: 15% Assessed using a series of short, 400 word or so forum posts. See the description of how to do [blog posts](blogposts.md).
 
@@ -110,6 +110,8 @@ You are expected to be respectful of other students and the instructor/TAs: mute
 
 Strict monitoring of academic integrity will be performed in this course for any work submitted for marks. See course component descriptions and Course Policies and Guidelines below for details on academic integrity expectations. Substantiated academic integrity violations will be referred to the Department's Academic Integrity Committee which will determine penalty and ensure a record of the violation is kept with the university.
 
+## AI supported work
+You are permitted to use generative AI in this course except where explicitly forbidden (mainly, because it will get in the way of you actually learning and understanding the concepts!)
 ## License
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
