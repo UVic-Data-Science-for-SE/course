@@ -60,7 +60,7 @@ For example, a lot of software data is log-normal, often [zero-inflated](https:/
 ----
 
 > And some of those choices are very important. 
-> For example [Linares-Vásquez et al.](REFS.md#lin-2015) use a genetic algorithm (which is a kind of optimizer)to propose better color schemes for cell phones. For example, of the screens shown below, the left-hand-side  is an original, energy expensive design while the right-hand-side is far less energy demanding.
+> For example [Linares-Vásquez et al.](REFS.md#lin-2015) use a genetic algorithm (which is a kind of optimizer) to propose better color schemes for cell phones. For example, of the screens shown below, the left-hand-side  is an original, energy expensive design while the right-hand-side is far less energy demanding.
 
 ----
 ![width:1000px](https://raw.githubusercontent.com/txt/ase19/master/etc/img/cellphone.png) 
@@ -100,8 +100,8 @@ When presented with data or a theory about how data is created, what should we d
 * Explore vs. confirm
   * Confirm: verify data support/reject hypothesis
 * Hard to draw a line (Hullman and Gelman, 2021)
-* Better intuition: explore means comparing data (typically visually) to an pseudo-statistical model (our prior).
-* Then, create a more statistical model and compare alternatives.
+* Better intuition: explore means comparing data (typically visually) to a pseudo-statistical model (our prior).
+* Then, create a more rigorous statistical model and compare alternatives.
 
 ----
 
