@@ -1,8 +1,8 @@
 #  Data Science for Software Engineering
 
-See the [HEAT course syllabus](https://heat.csc.uvic.ca/coview/outline/2021/Fall/SENG/480b) for all mark weights and course policies, textbooks, etc. The syllabus also contains the important information on course communication and schedules and COVID information. Note that all three sections share the same syllabus.
+See the [HEAT course syllabus](https://heat.csc.uvic.ca/coview/course/2023051/SENG480B) for all mark weights and course policies, textbooks, etc. The syllabus also contains the important information on course communication and schedules. Note that all three sections share the same syllabus.
 
-Course content will be mostly based on paper discussions with some more technical lecture sessions on specific tools. Attendance in class is essential. [Email me](mailto:nernst@uvic.ca) if you think you may miss a lecture.
+Course content will be mostly based on paper discussions with some more technical lecture sessions on specific tools. Attendance and engagement in class is mandatory and essential. [Email me](mailto:nernst@uvic.ca) if you think you may miss a lecture.
 
 # Course Overview and Learning Objectives
 
@@ -60,7 +60,7 @@ See the [Assignments page](Assignments/README.md). Note: grad students have to d
 
 # Readings
 
-Each week there are 2-3 readings. Everyone must do the readings before the Tuesday class. **For the Applications topics (second half of term)**, summarize the readings in Brightspace and [post those to the class](blogposts.md) Teams channel. You are also expected to comment on other blog posts as part of the class participation mark, as well as engage in discussion in the class itself. 
+Each week there are 2-3 readings. Everyone must do the readings before the Tuesday class. **For the Applications topics (second half of term)**, summarize the readings, add your insights, and [post those to the class](blogposts.md) Teams channel. You are also expected to comment on other blog posts as part of the class participation mark, as well as engage in discussion in the class itself. 
 
 # Project
 
@@ -89,7 +89,7 @@ Course marks will be distributed via Brightspace.
 * [Neil Ernst](http://neilernst.net), instructor. Please message me for office hours per HEAT (TBD) or request a Zoom meeting on Brightspace or email. 
 * TBD
 
-Please use Brightspace to message the TA first with programming questions and group issues. Direct personal issues to the instructor, nernst@uvic.ca
+Please use Teams to message the TAs first with programming questions and group issues. Direct personal issues to the instructor, nernst@uvic.ca
 
 ## Mechanics
 
