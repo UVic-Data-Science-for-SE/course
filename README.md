@@ -64,7 +64,7 @@ Each week there are 2-3 readings. Everyone must do the readings before the Tuesd
 
 # Project
 
-The [project](project.md) is a semester long SE data science project tackling an SE-specific problem, using techniques discussed in class. See the [project page](project.md) for details.
+The [project](project/README.md) is a semester long SE data science project tackling an SE-specific problem, using techniques discussed in class. See the [project page](project/README.md) for details.
 
 # Assessment
 

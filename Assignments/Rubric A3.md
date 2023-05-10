@@ -1,4 +1,4 @@
-# Rubric A2
+# Rubric A3
 20 marks, 4 overall, 10 part 1, 6 part 2
 
 ## Overall Criteria
