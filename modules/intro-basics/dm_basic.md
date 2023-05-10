@@ -5,6 +5,8 @@ marp: true
 title: Basics of Data Mining in SE
 ---
 
+**( Note: most of this material is covered in the corresponding [R Notebook](../../src/dm_basics/dm_basics.Rmd))**
+
 # Data Exploration
 (A lot of this material is from [R for Data Science](https://r4ds.had.co.nz/), a freely available book)
 
