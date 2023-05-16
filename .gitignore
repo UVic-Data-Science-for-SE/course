@@ -25,4 +25,4 @@ Assignments/a1/EMSE-gender-code-review/*
 *.pdf
 src/datasets/*
 src/stat_rethinking_2022/
-modules/intro-basics/regression_files/
+*_files/

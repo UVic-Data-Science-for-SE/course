@@ -14,8 +14,8 @@ Intro to data science applied to Software Engineering problems. Refresher/intro 
 
 | #   | Topic                                 | Readings | Exercises                                                                                                                                                                                                                              |
 | --- | ------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1-1 | [Early Work in DSSE](slides/early.md) |          | Apply the notes here: [How to read a paper (from ResearchSkills class)](https://github.com/neilernst/ResearchSkillsUVic/blob/main/resources/reviewing/M4%20Reading.md#efficiently-reading-a-paper) to the papers in Required Readings. |
-| 1-2 | [Problems in Data Science for SE](slides/problems.md)       |          |                                                                                                                                                                                                                                        |
+| 1-1 | [Early Work in DSSE](early.md) |          | Apply the notes here: [How to read a paper (from ResearchSkills class)](https://github.com/neilernst/ResearchSkillsUVic/blob/main/resources/reviewing/M4%20Reading.md#efficiently-reading-a-paper) to the papers in Required Readings. |
+| 1-2 | [Problems in Data Science for SE](problems.md)       |          |                                                                                                                                                                                                                                        |
 ### Required Readings 1-1
 
 * [Tu and Godfrey, Linux evolution](https://ieeexplore.ieee.org/document/883030) 

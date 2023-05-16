@@ -104,6 +104,10 @@ plot(d)
 
 Thinking back to our causal models, some of the variables are correlated, possibly causally. We should look for correlation because it is a great source of confusion; either implying some effect that is really due to a hidden mediator, or making us run extra analyses that are all based on the same underlying mechanism.
 
+Furthermore, correlation - aka *multi-collinearity* - is something we try to remove in regression analysis as it makes the model overly sensitive and possibly inaccurate.
+
+Keep in mind this can be a problem with artificial variables too (the ones made up of other variables).
+
 ```{r correlation}
 ggplot(binned, aes(x=loc, y = `v(g)`)) + geom_point() + geom_smooth(method=lm)
 ggplot(binned, aes(sample= `v(g)`)) + geom_qq_line() + geom_qq()
@@ -121,6 +125,7 @@ corrplot(cor(jm1[, 1:10]))
 ```
 
 as a rough approximation of correlation. Remember to plot the data first, to see what the numbers are telling you.
+
 
 ------------------------------------------------------------------------
 
@@ -166,7 +171,6 @@ autoplot(jm1.pc, data = jm1, colour = 'defects')
 ```
 
 This plot shows us the first 2 components with the associated labels. We don't see any obvious separation here.
-
 
 
 # Unsupervised Stuff

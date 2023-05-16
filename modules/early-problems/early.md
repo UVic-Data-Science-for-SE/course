@@ -1,7 +1,7 @@
 ---
 title: Early Approaches to Data Science in SE
 author: Neil Ernst
-date: September 2021
+date: May 2023
 ---
 
 # Early Days
@@ -18,7 +18,7 @@ Data has therefore been part of software development and software management sin
 
 # The Open Source Era
 
-<img src="linux.png" style="zoom:33%;" />
+![width:400px](../images/linux.png)
 
 
 
@@ -36,7 +36,7 @@ This triggered the move to a focus on Empirical SE, like Kitchenham outlines. No
 
 # Bringing Insights into Practice: The Sapienz Example
 
-From the [SCAM Facebook paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=883030) by O'Hearn and Harman:
+From the [SCAM Facebook paper](https://www.scinapse.io/papers/2901387825) by O'Hearn and Harman:
 
 1. **Irrelevant**: ‘Academics need to make their research more industrially-relevant’, 
 2. **Unconvincing**: ‘Scientific work should be evaluated on large-scale real-world problems’, 
