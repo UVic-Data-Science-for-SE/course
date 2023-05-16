@@ -1,0 +1,144 @@
+---
+title: Prior Probability Distribution Selection and Discrimination
+date: May 2023
+author: Neil Ernst
+format: revealjs
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+```
+
+## A short digression into priors
+
+How should we choose our priors? Isn't this biasing the inference?
+
+We will **set** priors using statistical probability distributions (in R type `?Distributions`). These distributions cover a range of widely understood generative processes and include:
+
+* Gaussian/Normal distribution
+* Binomial
+* Uniform
+* Student's T
+* Poisson
+* InvGamma
+* Weibull
+
+And [many many others](https://en.wikipedia.org/wiki/List_of_probability_distributions).
+
+# Probability Distributions
+Recall that a probability distribution maps an event (along the x-axis) to its probability of happening (a Probability Density Function, PDF). Probabilities range from 0-1. A Cumulative Density Function (CDF) represents the cumulative probability, eventually approaching 1. 
+
+Distributions can be modeled mathematically - the above Wikipedia link details this. For the Normal distribution, for example, its PDF is represented as
+
+${\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}$
+
+and the 'free' parameters are $\mu$, $\sigma$, and a data point x.
+
+Often our interest in a Bayesian context is recovering the location parameter $\mu$ and the shape parameter $\sigma$ of the posterior distribution.
+
+# Looking at Distributions in R
+ In R, these distributions are included by default, and can be used typically with the following prefixes:
+
+` d`, for "density", `r` for "random generation" (ie. draw one number from the distribution at random), `p` for the distribution, `q` for quantile. To do a simulation of the grades of 100 students at random assuming the grades are normally distributed with $\mu=$ 75 and $\sigma$=10, we could say 
+
+```{r}
+#| label: grade distribution 
+grades = rnorm(100, 75, 10)
+plot(grades)
+hist(grades)
+```
+
+ and get a vector of grades, again randomly distributed according to the parameterization we specified. (Hmm, new grading idea!)
+
+
+# Playing with Distributions
+```{r}
+#| label: rrdist
+library(ggdist)
+library(distributional)
+data.frame(alpha = seq(5, 100, length.out = 10), beta = seq(1,10,length.out=10)) %>%
+  ggplot(aes(xdist = dist_normal(mu=alpha, sigma=beta), color = alpha)) +
+  stat_slab(fill = NA) +
+  coord_cartesian(expand = FALSE) +
+  scale_color_viridis_c() +
+  labs(
+    title = "stat_slab()",
+    subtitle = "aes(xdist = dist_beta(alpha, 10), color = alpha)",
+    x = "Normal(alpha,10) distribution",
+    y = NULL
+  )
+
+```
+
+# Choosing A Prior
+
+One thing to note: although libraries like Seaborn allow you to fit distributions to your data, in a principled Bayesian workflow we would try to choose the prior based on our domain understanding. 
+
+## Weakly-informative, Uninformative, Opionated
+A prior acts like a sea anchor or drogue chute on the engine of the data and likelihood. 
+
+Here's a sea anchor: 
+![](../images/sea-anchor.jpeg)
+
+## Regularization
+It *regularizes* the data fitting, essentially saying "sure, look at the data, but keep these biases in mind". And yes, they are biases, but at least we are being explicit about them! And it makes sense; if we see strange data about how a particular project has Zero defects, we have two choices:
+
+1. what an amazing team! they have uniquely figured out how to write defect-free code.
+2. something is off; our data collection is not accounting for defects somehow.
+
+In the case of (2) we need to assign a bias that explains how we *expect* defects to occur. 
+
+## Basic Choices
+We have three choices. 
+
+* **uninformative** prior: we don't know what to expect (1). Don't let the prior affect our posterior output at all. This is almost certainly not the case.
+* **opionated** prior: we have a very strong belief in what the output should look like. Only very extreme data should change this. This might be true if, for example, we were working with laws of physics like the gravitational constant.
+* **weakly informative** prior: the Goldilocks choice, these priors give a range of expected outputs, but within those parameters, the output can change dramatically. For example, we know each file has to have greater than or equal to zero defects. Getting a value of -1 in the output predictions would be an error. We can improve our inferences by making that clear. 
+
+## Playing with Choices
+Here are the three choices, after I ran simple inference with Stan. See also `?rstanarm::priors`
+
+First, the flat prior on the `wt` parameter. This data is from `mtcars`, a built-in dataset about cars and weight, miles per gallon (mpg), etc.
+
+```{r}
+#| label: stan and flat priors
+library(rstanarm)
+m1 <- 'mpg ~ wt'
+mean(mtcars$mpg) # 20.091
+flat_prior_test <- stan_glm(m1, family=gaussian, data=mtcars, prior=NULL)
+prior_summary(flat_prior_test)
+pp_check(flat_prior_test)
+```
+----
+```{r}
+#| label: stan_weak
+# same model
+weak_prior_test <- stan_glm(m1, family=gaussian, data=mtcars)
+prior_summary(weak_prior_test)
+pp_check(weak_prior_test)
+```
+
+```{r} 
+#| label: stan_strong
+strong_prior_test <- stan_glm(m1, family=gaussian, data=mtcars)
+prior_summary(strong_prior_test)
+pp_check(strong_prior_test)
+```
+
+In other words, taking the data and fitting a distribution implies we think the data perfectly determines the distribution. This may not be (and often isn't) the case. 
+
+**For the purposes of this course the defaults will be fine**.
+ 
+One of the bigger challenges for non-statisticians like us is understanding the underlying assumptions and applicability of probability distributions. In a lot of cases the Normal, Poisson, logNormal distributions (in addition to Uniform) give us most of what we need for this course. 
+
+## Simple Prior Choices
+* The Poisson is good for simulating discrete event arrivals, like bugs in code or cars at a stoplight. 
+* The logNormal simulates the possibility that there is a fat tail (skewness) in the data, which is often the case in software data (especially for networks). Of course we could take the log of the measured data that is logNormally distributed and then model the result using the simple Normal distribution.
+* The Uniform is an equal probability distribution across all outcomes, and often models the situation when we don't know any better.
+  
+
+## Dealing with Zeros
+A further consideration is *zero-inflation* which means distributions are padded with more zero values. This reflects the scenario in which a lot of results are empty, e.g., if you are looking at defect data and some group of files have no bugs reported. 
+
+Again, base your choice on the **domain process as you see it**. And then **compare the models** using info criterion like AIC to see which model is best suited. 
