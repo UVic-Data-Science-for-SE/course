@@ -14,7 +14,7 @@ What are the data sources?
 ## Learning Objectives
 1. Understand sources of software data.
 2. Model the chance of finding an effect of interest.
-3. Explore the limiations of software datasets.
+3. Explore the limitations of software datasets.
 4. Categorize sources of error in software research.
 
 ----
@@ -50,7 +50,7 @@ Too often we go and use grad students to do a task instead of spending more time
 * See Fig 16.1 of Regression and other stories.
 
 ----
-![winners curse from Regression and Other Stories, Fig 16.1](winnerscurse.png)
+![winners curse from Regression and Other Stories, Fig 16.1](../images/winnerscurse.png)
 
 ----
 # Noisy data
@@ -62,7 +62,7 @@ Too often we go and use grad students to do a task instead of spending more time
 
 ----
 # Effect sizes (briefly)
-* Connect statistical outcomes (difference of means) to real-world impact.
+* Connect statistical outcomes (difference of means) to real-world impact -- **practical significance**.
 * E.g. Cliff's D, R^2 (explained variance), Cohen's d, etc. 
 * Section 2.3 of my [paper](https://arxiv.org/pdf/1809.09849.pdf)
 > "effect size ignores the context of decision making. A raw number reflecting (for example) the standardized difference of means is hard for practitioners to interpret and must be contextualized.
@@ -82,7 +82,7 @@ What is the "secret"?
 
 ----
 # Stark differences in data available
-![width:500px](secret-humans.png)![width:500px](secret-events.png)
+![width:500px](../images/secret-humans.png)![width:500px](../images/secret-events.png)
 
 ----
 # Sampling 
@@ -131,7 +131,7 @@ and
 ----
 ## Data Analytics Methodology Problems
 
-![width:300px](bad-smells.png)
+![width:300px](../images/bad-smells.png)
 
 ----
 1. Not interesting

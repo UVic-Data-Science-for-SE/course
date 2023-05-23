@@ -49,7 +49,7 @@ R has a built in function, `glm()` (for generalized linear model) that is freque
 
 ```{r}
 #| label: simple logistic regression
-fit_1 <- lm(defects ~ loc, data=jm1, family=binomial)
+fit_1 <- glm(defects ~ loc, data=jm1, family=binomial)
 ```
 
 Let's break this down a bit. The first part is the `defects ~ loc` notation. This is R's way of encoding the statistical model. In this case, we are saying that the response in whether the row has `defect=True` is modeled by the `loc` (lines of code) feature (predictors). We could maybe write `defects ~ loc + v(g)`. These are two separate models; the  two include linear predictors with no interactions. Special variants include `defects ~ .` (all predictors) and `defects ~ 1` (no predictors).
@@ -114,7 +114,17 @@ You might say "the outputs of both of these approaches are very similar" and thu
 
 # Model Comparison and Evaluation
 
-For the frequentist linear regression approach, we have a metric such as $R^2$, which measures the goodness of fit or proportion of variance explained. A perfect linear model would have $R^2$ of 1.0, indicating *all* the variance in the data is captured in the model. For our `fit_1` object above, which is a logistic regression model, a better measure is the classification accuracy (defective/not defective). We can use the model's fitted values (`fit_1$fitted.values`) to compare. I'm not an expert in this, however. 
+For the frequentist linear regression approach, we have a metric such as $R^2$, which measures the goodness of fit or proportion of variance explained. A perfect linear model would have $R^2$ of 1.0, indicating *all* the variance in the data is captured in the model. 
+
+```{r}
+#| label: predict
+m1 <- 'mpg ~ hp'
+m1_o <- lm(m1, data=mtcars)
+summary(m1_o)
+new_data <- data.frame(hp=c(250,300,450))
+predict(m1_o, newdata=new_data,interval="confidence")
+```
+For our `fit_1` object above, which is a logistic regression model, a better measure is the classification accuracy (defective/not defective). We can use the model's fitted values (`fit_1$fitted.values`) to compare. I'm not an expert in this, however. 
 
 I'm not an expert in the Bayesian approach, either, but I do know more about it! 
 

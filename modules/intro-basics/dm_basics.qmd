@@ -58,7 +58,7 @@ Let's say we are interested in how well Halstead complexity `v(g)` predicts defe
 
 ### Filtering and aggregating
 
-In Tidyverse language, use the TidyVerse chaining operator %\>% (pipe) to group operations on dataframes/tibbles.
+In Tidyverse language, use the TidyVerse chaining operator `%>%` (pipe) to group operations on dataframes/tibbles.
 
 Useful operations include `mutate`, `filter`, `summarize/group_by`. I find these operations extremely powerful for manipulating the data. You can think of them as data frame analogues for SQL query statements.
 
@@ -141,6 +141,7 @@ The good news is we believe, empirically, that most SE data has low inherent dim
 -   SE data have lower intrinsic dimensionality
 
 ![](rapina.png) ![](se-vs-uci.png)
+
 
 See 10.1109/TSE.2021.3073242
 

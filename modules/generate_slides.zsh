@@ -15,12 +15,11 @@
 # done
 
 # Find all Quarto files in the directory
-quarto_files=(modules/**/*.qmd)
+quarto_files=(**/*.qmd)
 echo $quarto_files
 # Loop through each file
 for file in $quarto_files; do
-  # Check if the file contains the string "marp: true"
-    quarto render "$file" --to html 
     file_name=$(basename "$file")
-    mv "${file:r}.html" "${file:r}_files" "/Users/nernst/Documents/teaching/DataScience4SE/modules/slide_pdfs/"
+    quarto render "$file"  
+    # mv -f "${file:r}.html" "${file:r}_files" "slide_pdfs/"
 done
