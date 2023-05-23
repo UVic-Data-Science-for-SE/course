@@ -1,8 +1,13 @@
 ---
 title: Statistical sampling and inference
-date: May 2023
-author: Neil Ernst
-marp: true
+format:
+  clean-revealjs: default
+author:
+  - name: Neil Ernst
+    orcid: 0000-0001-5992-2366 
+    email: nernst@uvic.ca
+    affiliations: UVic
+date: last-modified
 ---
 
 # Sampling and inference
@@ -15,7 +20,7 @@ For a lot of problems, in particular, all that stuff from Algebra 12, we want to
 
 We could use the handy *quadratic formula* to do this for quadratics. However, there does not appear to be similar formula for cubics, quartics, and certainly not for more complex functions. 
 
-So how do we find zeroes (or other values) in these complex functions? This is just 349a material.
+So how do we find zeroes (or other values) in these complex functions? This is CSC349a material.
 
 This is an optimization problem and we can apply a variety of optimization techniques. Essentially we can choose a starting point, then explore the space to see if we are getting closer to an optimum (hill-climbing, linear programming, etc). In Stan, the `optimize` function uses [L-BFGS](https://machinelearningmastery.com/bfgs-optimization-in-python/).
 
