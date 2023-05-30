@@ -3,6 +3,11 @@ title: Prior Probability Distributions
 subtitle: "Selection and Discrimination"
 format:
   clean-revealjs: default
+  revealjs:
+    slide-number: true
+    show-slide-number: print
+    embed-resources: true
+    chalkboard: true
 author:
   - name: Neil Ernst
     orcid: 0000-0001-5992-2366 
@@ -88,7 +93,7 @@ data.frame(alpha = seq(5, 100, length.out = 10), beta = seq(1,10,length.out=10))
 
 # Choosing A Prior
 
-One thing to note: libraries like [Seaborn](https://seaborn.pydata.org/tutorial/distributions.html) (via the `kdeplot()` function for example) allow you to fit distributions to your data (in this case, using kernel density estimation to 'smooth' the underlying probability density), 
+One thing to note: libraries like Python's [Seaborn](https://seaborn.pydata.org/tutorial/distributions.html) (via the `kdeplot()` function for example) allow you to *fit distributions to the data* (in this case, using kernel density estimation to 'smooth' the underlying probability density). 
 
 ```{python}
 #| label: seaborn
@@ -98,13 +103,20 @@ sns.kdeplot(data=tips, x="total_bill")
 sns.histplot(data=tips, x="total_bill")
 ```
 
-## Choosing A Prior
-In a principled Bayesian workflow we would try to choose the prior based on our domain understanding first, perhaps basing this on what we have seen in similar research projects.
+## Choosing A Prior 
+
+- This is fine in our *inductive* mode, but totally unacceptable in a *deductive* study. Why?
+
+. . . 
+
+- In a principled Bayesian workflow we would try to choose the prior based on our domain understanding first, perhaps basing this on what we have seen in similar research projects.
+
 
 ## Weakly-informative, Uninformative, Opionated
 A prior acts like a sea anchor or drogue chute on the engine of the data and likelihood. 
 
 Here's a sea anchor: 
+
 ![](sea-anchor.jpeg)
 
 ## Regularization
@@ -113,16 +125,15 @@ It *regularizes* the data fitting, essentially saying "sure, look at the data, b
 1. what an amazing team! they have uniquely figured out how to write defect-free code.
 2. something is off; our data collection is not accounting for defects somehow.
 
+. . . 
+
 In the case of (2) we need to assign a bias that explains how we *expect* defects to occur. 
 
-## Basic Choices
+## Basic Choices {.smaller}
 We have three choices. 
 
 (@) **uninformative** prior: we don't know what to expect (1). Don't let the prior affect our posterior output at all. This is almost certainly not the case.
 (@) **opionated** prior: we have a very strong belief in what the output should look like. Only very extreme data should change this. This might be true if, for example, we were working with laws of physics like the gravitational constant.
-
-----
-
 (@) **weakly informative** prior: the Goldilocks choice, these priors give a range of expected outputs, but within those parameters, the output can change dramatically. For example, we know each file has to have greater than or equal to zero defects. Getting a value of -1 in the output predictions would be an error. We can improve our inferences by making that clear. 
 
 ## Playing with Choices

@@ -6,7 +6,7 @@ title: Statistical Modeling and Bayesian inference
 
 One approach building inferential analyses is to use a frequentist, hypothesis testing approach where you examine the long-run probability of the data-generating mechanisms to assess how likely the results are under a null hypothesis.
 
-The alternative is to set some limits on what you feel is likely to be true a priori, model the data generating process statistically, i.e. with a probability distribution, and then run Bayes's theorem $$P(A|B) = (P(B|A) * P(A))/P(B)$$ over the data collected. This produces the posterior probability of the parameters of interest, allowing for inferences to be drawn. 
+The alternative is to set some limits on what you feel is likely to be true a priori, model the data generating process statistically, i.e. with a probability distribution, and then run Bayes's theorem $P(A|B) = (P(B|A) * P(A))/P(B)$ over the data collected. This produces the posterior probability of the parameters of interest, allowing for inferences to be drawn. 
 
 We will start with some motivation from McElreath: https://speakerdeck.com/rmcelreath/l01-statistical-rethinking-winter-2019 and associated videos
 
@@ -23,18 +23,17 @@ We will start with some motivation from McElreath: https://speakerdeck.com/rmcel
 | --- | --------------------------------------------------------------------------- | -------- | --------- |
 | 3-1 | [Basic Statistical Inference from a  Bayesian Perspective](slides/bayes.md) |          |           |
 | 3-2 | [Statistical Modeling](models.md)                                           |          |           |
-| 3-3 | [Sampling](sampling.md)                                                     | https://chi-feng.github.io/mcmc-demo/app.html - Hamiltonian MC visualization |           |
 | 3-4 | [Causal Modeling](causal.md)                                                |          |           |
 | 3-5 | [Probability Distributions and Priors](prior.md)                            |          |           |
+| extra | [Sampling](sampling.md)                                                     | https://chi-feng.github.io/mcmc-demo/app.html - Hamiltonian MC visualization |           |
 
-
-### Required Readings 3-1
+# Required Readings 
 
 * Furia, Torkar, Feldt, [Applying Bayesian Analysis Guidelines to Empirical Software Engineering Data: The Case of Programming Languages and Code Quality](https://arxiv.org/abs/2101.12591)
 * Ernst, [Thresholds](https://arxiv.org/abs/1804.02443)
 * McElreath, [Statistical Rethinking ch 2](https://learning-oreilly-com.ezproxy.library.uvic.ca/library/view/statistical-rethinking-2nd/9780429639142/xhtml/10_Chapter02.xhtml) (netlink id required) and/or watch his [lecture video](https://www.youtube.com/watch?v=4WVelCswXo4)
 
-### Optional Readings and Activities
+# Optional Readings and Activities
 
 * (opt) Ray, Devanbu, Filkov, ["Rebuttal to Berger et al 2019"](https://arxiv.org/abs/1911.07393) - a rebuttal to a replication on code quality and language choice on Github.
 * (opt) Dorn, Apel, [Mastering Uncertainty in Performance Estimations of Configurable Software Systems](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9286072) 
@@ -44,7 +43,7 @@ We will start with some motivation from McElreath: https://speakerdeck.com/rmcel
 
 * [A Conceptual introduction to HMC](https://arxiv.org/pdf/1701.02434.pdf)
 
-### Exercises
+# Exercises
 
 * Get familiar with [RStudio notebooks](https://blog.rstudio.com/2016/10/05/r-notebooks/) as that is what we will use for Assignment 1.  
 * Use [Docker to install locally](../docker.md)
