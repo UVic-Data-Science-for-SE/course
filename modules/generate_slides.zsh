@@ -20,6 +20,6 @@ echo $quarto_files
 # Loop through each file
 for file in $quarto_files; do
     file_name=$(basename "$file")
-    quarto render "$file"  
-    # mv -f "${file:r}.html" "${file:r}_files" "slide_pdfs/"
+    quarto render "$file"  --to pdf --toc 
+    # mv -f "${file:r}.pdf" "slide_pdfs/"
 done

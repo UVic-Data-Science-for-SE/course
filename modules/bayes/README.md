@@ -21,11 +21,11 @@ We will start with some motivation from McElreath: https://speakerdeck.com/rmcel
 
 | #   | Topic                                                                       | Readings | Exercises |
 | --- | --------------------------------------------------------------------------- | -------- | --------- |
-| 3-1 | [Basic Statistical Inference from a  Bayesian Perspective](slides/bayes.md) |          |           |
-| 3-2 | [Statistical Modeling](models.md)                                           |          |           |
-| 3-4 | [Causal Modeling](causal.md)                                                |          |           |
-| 3-5 | [Probability Distributions and Priors](prior.md)                            |          |           |
-| extra | [Sampling](sampling.md)                                                     | https://chi-feng.github.io/mcmc-demo/app.html - Hamiltonian MC visualization |           |
+| 3-1 | [Basic Statistical Inference from a  Bayesian Perspective](bayes.qmd) • [video (Echo360)](https://echo360.ca/media/2265c066-6ff8-4452-9d9f-8e48dedd804c/public) |          |           |
+| 3-2 | [Statistical Modeling](models.qmd)                                           |          |           |
+| 3-4 | [Causal Modeling](causal.qmd)                                                |          |           |
+| 3-5 | [Probability Distributions and Priors](prior.qmd)                            |          |           |
+| extra | [Sampling](sampling.qmd)                                                     | https://chi-feng.github.io/mcmc-demo/app.html - Hamiltonian MC visualization |           |
 
 # Required Readings 
 
@@ -40,7 +40,6 @@ We will start with some motivation from McElreath: https://speakerdeck.com/rmcel
 * (opt) [McElreath, Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/) (a super approachable, gentle introduction with R examples, but also translated into Julia and Python)
 * (opt) [Gelman, Bayesian Data Analysis](http://www.stat.columbia.edu/~gelman/book/) (book)
 * https://www.bayesrulesbook.com
-
 * [A Conceptual introduction to HMC](https://arxiv.org/pdf/1701.02434.pdf)
 
 # Exercises

@@ -137,6 +137,7 @@ Similarly, in our case we are implicitly comparing two files, with 100 lines of 
 
 ```{r}
 #| label: examining bayesian predictions
+plot.new()
 sims_1 <- as.matrix(fit_b)
 n_sims <- nrow(sims_1)
 for (j in sample(n_sims, 20)){
