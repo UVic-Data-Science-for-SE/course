@@ -1,41 +1,43 @@
 ---
-author: nernst
-date: Oct 2022
-marp: true
+format:
+  revealjs: 
+    chalkboard: true
+author:
+  - name: Neil Ernst
+    orcid: 0000-0001-5992-2366 
+    email: nernst@uvic.ca
+    affiliations: University of Victoria
+date: last-modified
 title: Ethics of Data Mining in SE
-paginate: true
 ---
+
 # Ethics of Data Mining in SE
 
-----
 ![](clam-research-ethics.png)
 
-----
+
 # Reminder on civility
 Ethical questions can be contentious and personal. Please be respectful of other people's right to speak and learn in this classroom.
 
-----
+
 # Why Care About Ethics?
 * right and wrong?
 * legal frameworks and penalties?
 
-----
 # Ethics topics in ML and Data Science
 * The *Tay* bot
 * Skin tone and soap dispensers
  
-![width:500px](https://pbs.twimg.com/media/E9kbliIXsAUf8m2?format=png&name=medium)
+<img src="https://pbs.twimg.com/media/E9kbliIXsAUf8m2?format=png&name=medium">
 
 Pretty easy to make "innocent" mistakes when we look at lots of data. Still unacceptable. 
 
----- 
 # Ethics in **SE for Data Science**
 Q: Lots of ethics problems. Which are SE specific? 
 
 A: Maybe everything: software is used everywhere? 
 
 
-----
 # Trading Accuracy and Fairness
 (these headings and examples are taken from "Data Science from Scratch" by Grus)
 
@@ -46,7 +48,6 @@ Fairness might mean being less accurate. For example, using k-anonymity to hide 
 | Unlikely | 125 | 25 | 20% |
 | Likely | 125 | 75 | 60% |
 
-----
 # But ... what if we have two groups, A and B
 
 |Group | Prediction | People | Actions | %|
@@ -58,29 +59,25 @@ Fairness might mean being less accurate. For example, using k-anonymity to hide 
 
 Hidden confounds (or at least, not included in the model) interact with group membership. 
 
-----
 # Arguments
+
 1. 80% of A is unlikely but 80% of B is likely 
 2. It's fine; unlikely means 20% chance of action
 3. But 40/100 people in B were wrongly predicted to be likely to do something!
 
 See also ["21 Types of Fairness"](https://shubhamjain0594.github.io/post/tlds-arvind-fairness-definitions/) by Arvind Narayanan.
  
-----
 # Collaboration
 Who and what do we work with? Surveillance equipment for totalitarian regimes? Face recognition for drones used by a powerful military? Do we hand over user info for any legal request? 
 
-----
 # Interpretation and Explainability
 Can we show why a model arrived at the decisions it does? Does it matter? Compare decision trees to CNNs.
 
 [LIME](https://github.com/marcotcr/lime) - a tool for interpreting machine learning results.
 
-----
 # Recommendations
 What should we be recommending? Everything, even if our users are unsavory? What should a company be required to "censor"? (note free speech is usually only applied to government restrictions).
 
-----
 # Biased Data
 We train our data on datasets that might themselves reflect the existing biases in our world.
   - English-language text
@@ -89,45 +86,41 @@ We train our data on datasets that might themselves reflect the existing biases 
 
 We also need to reflect on how well the dataset we trained on reflects the current problems we are interested in!
 
-----
 # Data Protection and Privacy
 How much individual information is obtainable from the model? How much protection does a user get? Can the model be retrained to forget that person?
 
-----
 # Ethical Data Mining in SE
 (see Gold & Krinke paper)
 
 Mining data comes with implications. There are humans creating the data we analyze, and humans affected by our analyses. 
 
+## Menlo Report
 Gold and Krinke discuss first the principles that we should think about, from the [Menlo Report](https://en.wikipedia.org/wiki/Menlo_Report)
 
-----
+## Principles
 1. **Respect for Persons** ==> identification of stakeholders and informed consent; 
 2. **Beneficence** ==> balancing risks and benefits; 
 3. **Justice** ==> fairness and equity
 4.  **Respect for Law and Public Interest** ==> compliance, transparency and accountability.
 
-----
 # MSR and ethics
 G&K then go on to describe common MSR datasets and how to apply the principles and operationalizations. 
 
 ## Issue Tracker example
-1. Identification: via terms and conditions of issue tracker use.
-2. Balancing: issue tracker data could profile users.
-3. Equity: unlikely (?) to include personal information
-4. Compliance: what about uncovered bug reports? 
+1. **Identification**: via terms and conditions of issue tracker use.
+2. **Balancing**: issue tracker data could profile users.
+3. **Equity**: unlikely (?) to include personal information
+4. **Compliance**: what about uncovered bug reports? 
 
 Our understanding of these issues is *constantly evolving!*
 
-----
 ## Stack Overflow example
-1. Identification: T&C of Stack Overflow (being read?)
-2. Balancing: personal identifiers, job locations, minors
-3. Equity: location used to discriminate
-4. Compliance: explicit licence to use data, but what about code? 
+1. **Identification**: T&C of Stack Overflow (being read?)
+2. **Balancing**: personal identifiers, job locations, minors
+3. **Equity**: location used to discriminate
+4. **Compliance**: explicit licence to use data, but what about code? 
 
 
-----
 # Research and Professional Ethics
 
 As students at UVic you agree to abide by several [ethical](https://www.uvic.ca/sexualizedviolence/policy/index.php) [pledges](https://www.uvic.ca/students/academics/academic-integrity/). 
@@ -136,3 +129,5 @@ In addition, if you publish at places like Elsevier journals, ACM conferences, o
 
 As software engineers, you may fall under the [EGBC code of ethics](https://www.egbc.ca/Complaints-Discipline/Code-of-Ethics/Code-of-Ethics), or professional standards like the [ACM Ethics Code](https://www.acm.org/code-of-ethics).
 
+# Examples/Discussion
+<img src="https://files.mastodon.social/media_attachments/files/110/459/237/279/265/832/original/c8e34d350ed25369.jpg" width="500px">
