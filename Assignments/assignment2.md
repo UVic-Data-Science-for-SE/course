@@ -74,11 +74,11 @@ df <- read.arff("nasa93.arff")
 ```
 This is R code to parse an ARFF file directly into a data frame.
 
-Alternately, you can use the CSV	 file provided in this directory, in which I selected certain columns to keep things simple.
+Alternately, you can use the [CSV file provided in the data directory](a2-files/nasa93_subset.csv), in which I selected certain columns to keep things simple.
 
 ## Requirements for the Assignment 
 
-The report shall consist of not more than *four* (4) pages, font size *11*, including plots. The report shall be submitted as a PDF. The report shall be made in groups of no more than 2, and submitted as such, i.e., there must be *at most two names on the report*. You should both submit a version - this makes the marking simpler for Brightspace grading. 
+The report shall consist of not more than *six* (6) pages, font size *11*, including plots. The report shall be submitted as a PDF. The report shall be made in groups of no more than 2, and submitted as such, i.e., there must be *at most two names on the report*. You should both submit a version - this makes the marking simpler for Brightspace grading. 
 
 You can use Overleaf for the writing of reports. There is a [LATEX template](https://www.overleaf.com/read/vnkvxqjfjjmh) that you can use for your report. It includes examples of the most common things you might want to use in a report for any assignment. The link is a read- only version of the original template. To be able to actually write your report, you *might* have to create a copy of the project (Menu→ Copy Project, in Overleaf). You can then edit the copy to your heart’s content.
 
@@ -111,6 +111,3 @@ Depending on the strength of your arguments, the wise use of visualization, and 
 
 [^data]: Negative Results for Software Effort Estimation by [Tim Menzies](https://arxiv.org/search/cs?searchtype=author&query=Menzies%2C+T), [Ye Yang](https://arxiv.org/search/cs?searchtype=author&query=Yang%2C+Y), [George Mathew](https://arxiv.org/search/cs?searchtype=author&query=Mathew%2C+G), [Barry Boehm](https://arxiv.org/search/cs?searchtype=author&query=Boehm%2C+B), [Jairus Hihn](https://arxiv.org/search/cs?searchtype=author&query=Hihn%2C+J) available: https://arxiv.org/abs/1609.05563
 
-nasa93_subset.csv
-
-nasa93.arff - full file
