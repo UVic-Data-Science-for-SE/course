@@ -3,23 +3,18 @@
 You will write a short blogpost of approx. 3-4 paragraphs based on your reflections of the assigned materials (readings/videos/podcasts) for that workshop.
 Note, this post should not be merely a summary of the readings but your personal reflection of how these relate to your own experience and knowledge, and the content discussed earlier in the course. Your post should make it clear though that you've read and thought about these materials in preparation for the discussion that week.
 
-In addition, each blogpost should list at most one clearly stated question per assigned material/guest.
+In addition, each blogpost should 
+- list at most one clearly stated question per assigned material/guest.
+- ask a question or leave a comment on one other person's post (being professional and polite, naturally)
 
 The blogposts are due by 6pm Monday of that Applications topic.
 You may update your posts with additional thoughts and reflections during the week (e.g., how your question was answered explicitly or indirectly).
 Please make any changes by the following Monday at 6pm and make sure we can easily identify the changed content.
 
-We will be using Brightspace's forum as a platform for your blogposts. Threads representing the different topics have already been created. When you author a post related to a particular week in the course, please assign it the appropriate category as well.
+We will be using Teams as a platform for your blogposts. Channels representing the different topics have already been created. 
 
-### Schedule (2022)
-All blog posts due by 6pm Monday the week of the module.
-
-* Applications 1: SBSE due Oct 24
-* Applications 2: Cost Estimation due Nov 7
-* Applications 3: Traceability and Refactoring Detection due Nov 14
-* Applications 4: Code as Language and Automated Program Repair due Nov 21
-* Applications 5:  NLP and Topic Modeling for SE due Nov 28
-
+### Schedule (2023)
+All blog posts due by 6pm Monday the week of the module. I.e., the Applications: Simple Data Mining topic will be discussed in class June 6, so your post is due June 5. 
 
 ### Blog Post Quality Criteria
 
