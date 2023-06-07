@@ -25,7 +25,7 @@ library(tidyverse)
 
 How should we choose our priors? Isn't this biasing the inference?
 
-We will **set** priors using statistical probability distributions (in R type `?Distributions`). These distributions cover a range of widely understood generative processes
+We will **set** likelihoods using statistical probability distributions (in R type `?Distributions`). These distributions cover a range of widely understood generative processes. Our *priors* will come from our choice of the parameters for these distributions. 
 
 ## Types of Priors
 
@@ -102,6 +102,9 @@ tips = sns.load_dataset("tips")
 sns.kdeplot(data=tips, x="total_bill")
 sns.histplot(data=tips, x="total_bill")
 ```
+
+## Choosing A Prior - Visualizing Distributions
+[A handy set of probability distributions](https://observablehq.com/collection/@mattiasvillani/distributions)
 
 ## Choosing A Prior 
 
