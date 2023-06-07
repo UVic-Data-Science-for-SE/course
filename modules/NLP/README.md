@@ -25,4 +25,4 @@ Lots of software engineering involves processing unstructured text, e.g., from i
 
 ### Optional Readings and Activities
 - compare this to the Novielli work on sentiment analysis.
-- Blei, LDA. Classic paper introducing Latent Dirichlet Allocation.
+- Blei, Ng, Jordan, [LDA](https://jmlr.org/papers/volume3/blei03a/blei03a.pdf). Classic paper introducing Latent Dirichlet Allocation.
