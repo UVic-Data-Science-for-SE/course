@@ -10,14 +10,11 @@ Our second unit will be the way in which SE data differs from non-SE data.
 - introductory understanding of how heuristics can improve SE problem solutions
 - awareness of domain-specific nature of SE machine learning needs
 
-
-## Applications 2 : Search-based SE and SE vs Non-SE Data (Oct 24-28)
-
-### Lecture Notes
+## Lecture Notes
 
 * in class discussion, no notes
 
-### Required Readings
+## Required Readings
 
 - Harman, [Search-Based SE](https://www.sciencedirect.com/science/article/pii/S0950584901001896)
 - McMinn, [Search-based software testing](https://mcminn.io/publications/c18.pdf)
@@ -26,6 +23,6 @@ Our second unit will be the way in which SE data differs from non-SE data.
 - Binkley, [The need for software specific NL techniques](https://link.springer.com/article/10.1007/s10664-017-9566-5)
 
 
-### Optional Readings and Activities
+## Optional Readings and Activities
 - (opt) Menzies, [SSBSE notes](https://github.com/txt/ase16/blob/master/doc/talk4ssbse.md)
 

@@ -47,7 +47,7 @@ Due dates are all on Brightspace. Class format will be lectures and short in cla
 | May 30  | [Ethical SE Data Science](modules/ethics/README.md)                                       |                                |
 | June 6  | [Applications I: Simple Data Mining](modules/simpleDM/README.md)                          | A2; Blog 1                     |
 | June 13 | Applications II: [Search Based SE](modules/sbse/README.md)                                | Blog 2                         |
-| June 20 | Applications III: [Traceability and Refactoring](modules/traceability-refactor/README.md) | Blog 3; Project Interim report |
+| June 20 | Applications III: [Traceability and Refactoring](modules/traceability-clone/README.md) | Blog 3; Project Interim report |
 | June 27 | [Applications IV: Topic Modeling and NLP](modules/NLP/README.md)                          | Blog 4;                        |
 | July 4  | Reading Break                                                                             |                                |
 | July 11 | [Applications V: Large Language Models for SE](modules/llm/README.md)                     | A3; Blog 5                     |
