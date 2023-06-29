@@ -14,7 +14,7 @@ The interim report should be informal (yet professional) and based on a 1-1 meet
 - The report is clear, well formatted, and professional
 - Evidence of substantial progress since proposal
 - Clear and well described timeline for completion, including member tasking
-- Peer evaluations
+- Peer evaluations submitted using [Teammates](https://teammatesv4.appspot.com/web/front/home)
 
 # Late Submissions
 No late submissions. 
