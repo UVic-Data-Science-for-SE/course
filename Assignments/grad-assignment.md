@@ -31,7 +31,7 @@ You will need to retrieve the dataset and scripts from that paper. Then, run the
 # Report
 Your assignment submission should consist of:
 1. A link to a repo where you wrote the code / replicated the project. I would expect this to consist of Python source, Jupyter notebooks, etc.
-2. A *visual abstract* of the paper, explaining the key findings and technological rule. 
+2. A [*visual abstract* of the paper](https://www.margaretstorey.com/blog/2017/11/09/visual-abstracts/), explaining the key findings and technological rule. The template [can be found here](https://github.com/margaretstorey/VASE).
 3. A report of 5 pages (max 2000 words, min 1000 words), properly formatted in IEEE format, that explains your experiences:
    1. A 250 word abstract/summary of the paper, including the key research questions, methodology, and findings.
    2. How you picked the paper.
