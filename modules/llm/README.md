@@ -31,5 +31,9 @@ AI-supported development tools, like Codex, Copilot, ChatGPT, etc., have taken a
 * Xu, Vasilescu, Neubig, ["In IDE Code Generation from Natural Language"](https://arxiv.org/abs/2101.11149) [sections 1-4, 8,9]
 * [LeGoues podcast audio](https://www.youtube.com/watch?v=YPfyRT80VJI)
 * LeGoues, [Survey of APR](http://www.cs.cmu.edu/~clegoues/docs/legoues-cacm2019.pdf) 
+
+## Helpful tutorials and summaries
 * Alammar, [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/)
 * Vaswani et al. [Attention is all you need](https://arxiv.org/abs/1706.03762)
+* https://www.theverge.com/features/23764584/ai-artificial-intelligence-data-notation-labor-scale-surge-remotasks-openai-chatbots - how these tools are really improved
+* Willison, ["understanding GPT tokenizers"](https://simonwillison.net/2023/Jun/8/gpt-tokenizers/)
