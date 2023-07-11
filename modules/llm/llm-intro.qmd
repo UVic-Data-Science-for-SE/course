@@ -69,7 +69,7 @@ After preprocessing, we need to encode the tokens - a word like "function" - int
 ## Reuse
 * Most of the time [we can re-use embeddings](https://nlp.stanford.edu/projects/glove/) but should be careful the source data is close to our data (e.g., the train control system might not be represented by Wikipedia).
 
-<img src="https://nlp.stanford.edu/projects/glove/images/man_woman.jpg" width="400px">
+<img src="https://nlp.stanford.edu/projects/glove/images/man_woman.jpg" width="400px"/>
 
 This works OK ... but language is pretty complicated. The word embedding model is restricted to looking a few tokens ahead or behind (the window/context). That means learning more complex relationships (e.g., this phrase modifies a previous noun) are hard to do.
 
@@ -127,14 +127,10 @@ source: https://huggingface.co/blog/rlhf
 
 [^bench]: See this page for more benchmarks and metrics: https://slds-lmu.github.io/seminar_nlp_ss20/resources-and-benchmarks-for-nlp.html
 
-https://peterbloem.nl/blog/transformers
-
-https://colab.research.google.com/drive/1B_5ow3rvS0Qz1y-KyJtlMNnmgmx9w3kJ#scrollTo=1QOuke5yS3mc
-
-https://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/
-
-https://jalammar.github.io/illustrated-word2vec/
-
-https://towardsdatascience.com/attention-is-all-you-need-discovering-the-transformer-paper-73e5ff5e0634
-
-http://jalammar.github.io/illustrated-transformer/
+* https://peterbloem.nl/blog/transformers
+* https://colab.research.google.com/drive/1B_5ow3rvS0Qz1y-KyJtlMNnmgmx9w3kJ#scrollTo=1QOuke5yS3mc
+* https://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/
+* https://jalammar.github.io/illustrated-word2vec/
+* https://towardsdatascience.com/attention-is-all-you-need-discovering-the-transformer-paper-73e5ff5e0634
+* http://jalammar.github.io/illustrated-transformer/
+* Lambert, et al., ["Illustrating Reinforcement Learning from Human Feedback (RLHF)"](https://huggingface.co/blog/rlhf), Hugging Face Blog, 2022.
