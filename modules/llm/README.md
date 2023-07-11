@@ -3,7 +3,7 @@ author: Neil Ernst
 title: Large Language Models and Natural Language Processing in SE
 ---
 
-AI-supported development tools, like Codex, Copilot, ChatGPT, etc., have taken a big role in SE recently. What underpins these tools, how do they work so well, and what can we expect for SE in the AI future?
+AI-supported development tools, like Codex, Copilot, ChatGPT, etc., have taken a big role in SE recently. What underpins these tools, how do they work so well, what ethical concerns do they raise, and what can we expect for SE in the AI future?
 
 # Learning Outcomes
 
@@ -13,7 +13,7 @@ AI-supported development tools, like Codex, Copilot, ChatGPT, etc., have taken a
 
 | #     | Topic                   | Readings             | Exercises |
 | ----- | ----------------------- | -------------------- | --------- |
-| LLM-1 | [LLM overview](slides/llm-intro.md) • [Research Opportunities](slides/Grad-Opportunities.md)   | Naturalness paper |  [Self-Attention from Scratch](https://sebastianraschka.com/blog/2023/self-attention-from-scratch.html)        |
+| LLM-1 | [LLM overview](slides/llm-intro.md) • [Research Opportunities](slides/Grad-Opportunities.md)   | Naturalness paper |  [Command Pattern](https://github.com/UVic-Data-Science-for-SE/command_exercise/blob/main/README.md)       |
 | LLM-2 | Discussion and analysis |       Remaining 3 papers               |           |
 
 
@@ -37,3 +37,4 @@ AI-supported development tools, like Codex, Copilot, ChatGPT, etc., have taken a
 * Vaswani et al. [Attention is all you need](https://arxiv.org/abs/1706.03762)
 * https://www.theverge.com/features/23764584/ai-artificial-intelligence-data-notation-labor-scale-surge-remotasks-openai-chatbots - how these tools are really improved
 * Willison, ["understanding GPT tokenizers"](https://simonwillison.net/2023/Jun/8/gpt-tokenizers/)
+* [Self-Attention from Scratch](https://sebastianraschka.com/blog/2023/self-attention-from-scratch.html) 
