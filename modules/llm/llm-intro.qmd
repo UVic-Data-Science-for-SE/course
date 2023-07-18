@@ -49,14 +49,26 @@ As we will see, one way to think about a language model is that it can solve a t
 2. **Token** - an atomic "chunk" in the corpus. Could be a word; could be a source code token (`{`). 
 3. **Stop words** - words we don't think will be important. Typically, "the, an, and, or" (but which ones?)
 4. **Stemming**/**lemmatization** - shorten words to their essence. "Skillfully" -> skillful- / skill-
-5. **AST** - [Abstract Syntax Tree](https://arxiv.org/abs/2112.01184). A way of [representing](https://www.geeksforgeeks.org/abstract-syntax-tree-ast-in-java/) (encoding) programs using symbols and relationships. 
-6. **Distance**: historically ML has had a hard time understanding concepts separated in text. But this happens a lot in source code (`var theVar; ... ; theVar = 5;`). Need something to represent this span of relationship.
-7. **OOV**: out of vocabulary, a word that is not in the vocabulary (dictionary) learned in the model's training. E.g., a word that does not appear in Wikipedia, for the GloVe embedding. Such a word will have no representation (think about a self-driving car seeing a totally novel situation like a helicopter landing on the freeway).
+5. **Language Model** - for a set T of tokens in a vocabulary, map a probability distribution $p(.)$ to sets $S$ of tokens in $T^*$ 
+
+## Useful Terms (2)
+6. **AST** - [Abstract Syntax Tree](https://arxiv.org/abs/2112.01184). A way of [representing](https://www.geeksforgeeks.org/abstract-syntax-tree-ast-in-java/) (encoding) programs using symbols and relationships. 
+7. **Distance**: historically ML has had a hard time understanding concepts separated in text. But this happens a lot in source code (`var theVar; ... ; theVar = 5;`). Need something to represent this span of relationship.
+8. **OOV**: out of vocabulary, a word that is not in the vocabulary (dictionary) learned in the model's training. E.g., a word that does not appear in Wikipedia, for the GloVe embedding. Such a word will have no representation (think about a self-driving car seeing a totally novel situation like a helicopter landing on the freeway).
 
 # Tokenizing 
 Convert text into numeric representations of the text. Remember that in training we will be using these tokens billions of times. 
 
 Try out [https://simonwillison.net/2023/Jun/8/gpt-tokenizers/](https://simonwillison.net/2023/Jun/8/gpt-tokenizers/)
+
+# Simple model: N-grams
+Create a language model by effectively counting how often a particular set of n tokens occurs. For example (from the Hindle paper):
+
+$p(a_4|a_1a_2a_3) = \frac{count(a_1a_2a_3a_4)}{count(a_1a_2a_3*)}$
+
+Measure success by log *perplexity*, or cross-entropy:
+
+$H_{\mathcal{M}}(s) = - \frac{1}{n} log~p_\mathcal{M}(a_1 ... a_n)$
 
 # Encoding
 
@@ -104,12 +116,14 @@ Earlier we discussed the problem of sliding windows. Attention is a way to make 
 
 ![attention example from jalammar](http://jalammar.github.io/images/t/transformer_self-attention_visualization.png)
 
-# Key Step: Reinforcement Learning with Human Feedback (RLHF) {.scrollable}
+# Reinforcement Learning with Human Feedback (RLHF) {.scrollable}
 
 Get low-paid gig workers to solve the *knowledge acquisition bottleneck*. 
 
 From https://huggingface.co/blog/rlhf:
 
+# RLHF
+    
 >  the **policy** is a language model that takes in a prompt and returns a sequence of text (or just probability distributions over text). 
 > The **action space** of this policy is all the tokens corresponding to the vocabulary of the language model
 >  and **the observation space** is the distribution of possible input token sequences, which is also quite large given previous uses of RL. 
@@ -122,6 +136,35 @@ What other RLHF approaches have you been subjected to?
 <img width="500px" src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/blog/rlhf/reward-model.png" alt="the arch of RLHF: prompts are fed to a LLM, and the outputs are scored by humans to create a preference model">
 
 source: https://huggingface.co/blog/rlhf
+
+# Validation approaches
+What constitutes a good test for LLM coding?
+
+- BLEU score: how many n-grams match between the gold set and the predicted set, penalized for lack of brevity?
+  - [example](https://en.wikipedia.org/wiki/BLEU#Algorithm)
+- Programming problems: Codex used programs from LeetCode. 
+  - see [HumanEval](https://paperswithcode.com/sota/code-generation-on-humaneval)
+  - P@K "a benchmark problem is considered solved if any one of k code samples passes every test case."
+
+## Challenges
+Test set pollution: we have to assume the training data includes problems from online (e.g. LeetCode)
+
+"match-based metrics are unable to account for the large and complex space of programs functionally equivalent to a reference solution"
+
+What languages and programming problem types should be in the test set? 
+
+# Putting it all together
+
+```{mermaid}
+flowchart LR
+  Z[Collect Training Data] --> A[Data Curation]
+  A --> B[Tokenize]
+  B --> C[Train]
+  C --> D(LLM)
+  D --> E[Evaluate][Result one]
+  C --> E[Result two]
+```
+
 
 # Sources and Further Reading
 
