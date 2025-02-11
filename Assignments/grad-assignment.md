@@ -35,7 +35,7 @@ Your assignment submission should consist of:
 3. A report of 5 pages (max 2000 words, min 1000 words), properly formatted in IEEE format, that explains your experiences:
    1. A 250 word abstract/summary of the paper, including the key research questions, methodology, and findings.
    2. How you picked the paper.
-   3. The quality of the replication package, according to these criteria.
+   3. The quality of the replication package, according to [these criteria](https://2023.esec-fse.org/track/fse-2023-artifacts#badges-for-papers-published-at-esecfse-2023).
    4. The replication process, including any problems you had (e.g., in recovering data).
    5. With respect to the paper itself, your *personal* interpretation of the paper's research question, method, and findings. You should produce at least 2 critiques of the paper's approach and your suggested improvements.
 
