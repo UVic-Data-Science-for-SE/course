@@ -1,16 +1,20 @@
 ---
 title: "R and Data Mining Basics"
-author: "nernst"
-date: "May 2023"
-format: html
+author: "Neil Ernst"
+format: 
+  revealjs:
+    theme: default
+    slide-number: true
+    logo: img/ENGN_vert_bk.jpg
+    footer: "Neil Ernst (c)"
+date: last-modified
 ---
 
-This is a [Quarto](https://quarto.org)-based notebook. When you execute code within the notebook, the results appear beneath the code.
+This is a [Quarto](https://quarto.org)-based slideshow. When you execute code within the notebook, the results appear beneath the code.
 
 ```{r load tidy}
 library(tidyverse)
 library(foreign)
-
 ```
 
 # Data Exploration
@@ -19,15 +23,19 @@ library(foreign)
 
 ![](https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png)
 
+## Understanding the Data
+
 One of the first tasks is to better understand the data. We looked at that in the Bayesian context from the *epistemological* and *ontological* perspectives: how we think the data were created, and what properties exist in our data.
 
 Often that means background reading, e.g., a literature review or domain modeling. What are your intuitions about how the data would be generated, e.g., for job application information?
 
-------------------------------------------------------------------------
+## Loading Data
 
 Next, take the data and get it loaded into R or Jupyter. My favourite toolset is the [`Tidyverse`](https://www.tidyverse.org/), a set of libraries and philosophies for manipulating R data frames.
 
 Loading data is initially easy but quickly becomes a major challenge as data gets larger and more complex. A non-trivial amount of effort can be spent wrangling data into the correct format. A big part of TidyR is to get the data into a "shape" that is easy to work with.
+
+## Example Dataset
 
 Let us consider the following datasets: http://promise.site.uottawa.ca/SERepository/datasets-page.html. They are mostly in a common data exchange format called ARFF.
 
@@ -36,31 +44,25 @@ jm1 = read.arff("http://promise.site.uottawa.ca/SERepository/datasets/jm1.arff")
 jm1 <- as_tibble(jm1)
 ```
 
-------------------------------------------------------------------------
-
-## Loading Data - Tibbles
-
-We can begin by (after reading the dataset description) looking at common **descriptive** properties of the data.
-
-Use R's `$` column notation to explore each column.
+## Tidy Data Principles
 
 Tidy Data:
 
-1.  Each variable must have its own column.
-2.  Each observation must have its own row.
-3.  Each value must have its own cell.
+1. Each variable must have its own column.
+2. Each observation must have its own row.
+3. Each value must have its own cell.
 
 Factors: factors are categorical data, possibly ordered, like "letter grade" (ordered) or country name.
 
 Let's say we are interested in how well Halstead complexity `v(g)` predicts defects.
 
-------------------------------------------------------------------------
-
-### Filtering and aggregating
+## Filtering and Aggregating
 
 In Tidyverse language, use the TidyVerse chaining operator `%>%` (pipe) to group operations on dataframes/tibbles.
 
 Useful operations include `mutate`, `filter`, `summarize/group_by`. I find these operations extremely powerful for manipulating the data. You can think of them as data frame analogues for SQL query statements.
+
+## Data Wrangling
 
 I suggest you load your data into a data frame and then chain filters into it, rather than "fixing" the dataset in a separate step. That way you get to see all the data wrangling in one place. It can be *really* easy to miss a step and end up with outliers that are included, aggregations that don't make sense, etc.
 
@@ -73,15 +75,15 @@ ggplot(data = jm1) +
 jm1 %>% filter(loc > 1000) %>% select(`v(g)`)
 ```
 
-------------------------------------------------------------------------
+## Probability Distributions
 
-## Probability distributions and fit
-
-the `ggplot()` library in R (and MatPlotLib in Python) are best in class visualization approaches with a vast amount of options and when combined with the filtering/aggregating, can do almost anything.
+The `ggplot()` library in R (and MatPlotLib in Python) are best in class visualization approaches with a vast amount of options and when combined with the filtering/aggregating, can do almost anything.
 
 Use ggplot to explore your data and dimensionality as we showed in the R walkthru. Don't feel bad about using SO or references; I did preparing this tutorial!
 
 Visualization can help understand what is happening. Descriptive stats such as mean, median, variance can give some numeric information conditional on the distribution involved. These are typically generalized as **location** and **dispersion**, e.g., where the big clump of data lives in the normal, and how spread out it is.
+
+## Binning and Summarizing
 
 ```{r binning}
 sum <- jm1 %>% summarise(count = n(), loc_m = mean(loc), loc_med = median(loc), loc_sd = sd(loc))
@@ -95,16 +97,15 @@ ggplot(data = binned, mapping = aes(x = bin, y = `v(g)`)) +
 
 d <- density(jm1$loc)
 plot(d)
-
 ```
 
-------------------------------------------------------------------------
-
-### Correlation
+## Correlation
 
 Thinking back to our causal models, some of the variables are correlated, possibly causally. We should look for correlation because it is a great source of confusion; either implying some effect that is really due to a hidden mediator, or making us run extra analyses that are all based on the same underlying mechanism.
 
 Furthermore, correlation - aka *multi-collinearity* - is something we try to remove in regression analysis as it makes the model overly sensitive and possibly inaccurate.
+
+## Correlation Analysis
 
 Keep in mind this can be a problem with artificial variables too (the ones made up of other variables).
 
@@ -126,9 +127,6 @@ corrplot(cor(jm1[, 1:10]))
 
 as a rough approximation of correlation. Remember to plot the data first, to see what the numbers are telling you.
 
-
-------------------------------------------------------------------------
-
 # Dimensionality Reduction
 
 One challenge with datasets with lots of dimensions (variables/features/columns) is that running algorithms gets worse. For example, if we have an algoritym like nearest neighbours with a distance function, the distance function will perform very poorly in high-dimension spaces (the curse of dimensionality).
@@ -141,7 +139,6 @@ The good news is we believe, empirically, that most SE data has low inherent dim
 -   SE data have lower intrinsic dimensionality
 
 ![](rapina.png) ![](se-vs-uci.png)
-
 
 See 10.1109/TSE.2021.3073242
 
@@ -157,12 +154,16 @@ In some cases you can just do a correlation analysis and chuck predictors that a
 
 ![](peeking.png)
 
+## PCA Search Algorithm
+
 PEEKING2 is a search algorithm that relies on a variant of PCA, which tries to find the principle components which capture the most variance in the data
 
 ```{r pca}
 jm1.pc <- prcomp(jm1[c(1:10)], center = TRUE, scale = TRUE)
 summary(jm1.pc)
 ```
+
+## PCA Visualization
 
 And we can see that PC1 contains 63% of the variance, PC2 contains 11%, etc. Thus the variance in our 10 columns has been reduced to 3-4 principle components.
 
@@ -172,7 +173,6 @@ autoplot(jm1.pc, data = jm1, colour = 'defects')
 ```
 
 This plot shows us the first 2 components with the associated labels. We don't see any obvious separation here.
-
 
 # Unsupervised Stuff
 
@@ -195,6 +195,8 @@ I like Weka for exploration but for bigger datasets and more extensive experimen
 ## Confusion Matrices
 
 If we have two labels, True and False, then our task is to correctly predict the label for a given instance. When we do that on all the data instances, we get a set of correctly labeled instances (true positives and true negatives) and a set of incorrectly labeled instances (false positives/negatives). Our general task is to create a
+
+## Confusion Matrix Example
 
 ```         
 %    -- Defect detectors can be assessed according to the following measures:
@@ -219,6 +221,8 @@ If we have two labels, True and False, then our task is to correctly predict the
 %        effort. This ideal state rarely happens:
 ```
 
+## Metrics and Baselines
+
 My favorite, most comprehensive guide is [from Wikipedia](https://en.wikipedia.org/wiki/Confusion_matrix)
 
 Some other common metrics include:
@@ -234,7 +238,10 @@ Another key is to **have a valid baseline**. This might be ZeroR, the classifier
 
 # Hyper-parameters
 
-If we have X and Y (columns and labels) we can also think about a third set, Z, which constitutes the parameters for our classifiers and clusterers. We might also want to find an effective Z. Hyper-parameter optimization searches for optimal parameters for the learners. How should we do this search? Remember that SE data is usually pretty simple. Optimization can be very effective.
+If we have X and Y (columns and labels) we can also think about a third set, Z, which constitutes the parameters for our classifiers and clusterers.
 
-------------------------------------------------------------------------
+We might also want to find an effective Z. 
 
+Hyper-parameter optimization searches for optimal parameters for the learners. 
+
+How should we do this search? Remember that SE data is usually pretty simple. Optimization can be very effective.

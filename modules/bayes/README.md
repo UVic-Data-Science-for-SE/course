@@ -19,13 +19,13 @@ We will start with some motivation from McElreath: https://speakerdeck.com/rmcel
 - Appreciate the rationale for causal graphs and causal language. 
   
 
-| #   | Topic                                                                       | Readings | Exercises |
-| --- | --------------------------------------------------------------------------- | -------- | --------- |
-| 3-1 | [Basic Statistical Inference from a  Bayesian Perspective](bayes.qmd) • [video (Echo360)](https://echo360.ca/media/2265c066-6ff8-4452-9d9f-8e48dedd804c/public) |          |           |
-| 3-2 | [Statistical Modeling](models.qmd)                                           |          |           |
-| 3-4 | [Causal Modeling](causal.qmd)                                                |          |           |
-| 3-5 | [Probability Distributions and Priors](prior.qmd)                            |          |           |
-| extra | [Sampling](sampling.qmd)                                                     | https://chi-feng.github.io/mcmc-demo/app.html - Hamiltonian MC visualization |           |
+| Topic                                                                  | Readings                                                                     | Exercises |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------------- | --------- |
+| [Basic Statistical Inference from a  Bayesian Perspective](bayes.qmd)  |                                                                              |           |
+| [Statistical Modeling](models.qmd)                                     |                                                                              |           |
+| [Causal Modeling](causal.qmd)                                          |                                                                              |           |
+| [Probability Distributions and Priors](prior.qmd)                      |                                                                              |           |
+| [Sampling](sampling.qmd)                                               | https://chi-feng.github.io/mcmc-demo/app.html - Hamiltonian MC visualization |           |
 
 # Required Readings 
 

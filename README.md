@@ -37,30 +37,34 @@ There are no mandatory texts. We will cover public tutorials and papers. I occas
 
 # Schedule and Topics
 
-Due dates are all on Brightspace. Class format will be lectures and short in class exercises, including discussion of the readings (which you must do before class). Class in Summer 2023 will be a single 3 hour session. The plan will be to take 2 short breaks (5 mins) and one longer break (20 mins) at appropriate times. You should come to class prepared to follow along on your computer or tablet.
+Due dates are all on Brightspace. Class format will be lectures and short in class exercises, including discussion of the readings (which you must do before class). Class in Summer 2025 will be 2x3 hour sessions. The plan will be to take 2 short breaks (5 mins) and one longer break (20 mins) at appropriate times. You should come to class prepared to follow along on your computer or tablet; most of the latter half will be in class exercises. 
 
-| Week    | Topic                                                                                     | Due                            |
-| ------- | ----------------------------------------------------------------------------------------- | ------------------------------ |
-| May 9   | [Course Intro and Data Science Basics](modules/intro-basics/README.md)                    |                                |
-| May 16  | [Early Approaches and SE Data Problems](modules/early-problems/README.md)                 | A1                             |
-| May 23  | [Statistical Modeling and Bayesian Inference](modules/bayes/README.md)                    | Project Proposal               |
-| May 30  | [Ethical SE Data Science](modules/ethics/README.md)                                       |                                |
-| June 6  | [Applications I: Simple Data Mining](modules/simpleDM/README.md)                          | A2; Blog 1                     |
-| June 13 | Applications II: [Search Based SE](modules/sbse/README.md)                                | Blog 2                         |
-| June 20 | Applications III: [Traceability and Code Clones](modules/traceability-clone/README.md) | Blog 3; Project Interim report |
-| June 27 | [Applications IV: Topic Modeling](modules/NLP/README.md)                          | Blog 4;                        |
-| July 4  | Reading Break                                                                             |                                |
-| July 11 | [Applications V: Large Language Models for SE](modules/llm/README.md)                     | A3; Blog 5                     |
-| July 18 | [Applications V: Large Language Models for SE](modules/llm/README.md) (part the second)   |                                |
-| July 25 | Project presentations                                                                     | A4 (grads); Project Report     |
+| Day     | Module                                                                                                | Due                                                     |
+| ------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| July 4  | [Intro](modules/intro/README.md) * [AI4SE](modules/AI4SE/ai4se)                                       |                                                         |
+| July 9  | [Early Approaches and Problems](modules/early-problems/README)                                        |                                                         |
+| July 11 | [Basic stats](modules/basics/README)                                                                  | [Project proposal](project/project-proposal.md)         |
+| July 16 | [Bayes](modules/bayes/README.md)                                                                      |                                                         |
+| July 18 | *Project work - no class*                                                                             | Assn 1 - basic DS                                       |
+| July 23 | [Ethics](modules/ethics/README)                                                                       |                                                         |
+| July 25 | LLMs for SE                                                                                           |                                                         |
+| July 30 | LLMS in SE                                                                                            | Assn 2 - Black Mirror                                   |
+| Aug 1   | *Project work - no class*                                                                             | [Interim project report](project/project-interim.md)    |
+| Aug 6   | [Traceability • Clones](modules/traceability-clone/README.md) • [Cost](modules/cost-defect/README.md) |                                                         |
+| Aug 8   | Bug Localization/Triage                                                                               |                                                         |
+| Aug 13  | Analysing Text Discussions / Qualitative Data in SE                                                   | Assn 3 - Bayes                                          |
+| Aug 15  | Spare/extra                                                                                           |                                                         |
+| Aug 20  | Demos/Project presentations                                                                           | [Project presentation](project/project-presentation.md) |
+| Aug 23  | no class                                                                                              | [Final project report](project/project-final.md)        |
+|         |                                                                                                       |                                                         |
 
 # Assignments
 
-See the [Assignments page](Assignments/README.md). Note: grad students have to do 4 assignments, with the same total weight.  
+See the [Assignments page](Assignments/README.md).
 
 # Readings
 
-Each week there are 2-3 readings. Everyone must do the readings before the Tuesday class. **For the Applications topics (second half of term)**, summarize the readings, add your insights, and [post those to the class](blogposts.md) Teams channel. You are also expected to comment on other blog posts as part of the class participation mark, as well as engage in discussion in the class itself. 
+Each week there are 2-3 readings. Everyone must do the readings before class. There will be a short quiz on the readings, focused on analysis and synthesis of the papers (i.e., not just memorizing what the paper results were). These quizzes will be aimed at 8 minutes and everyone will have 16 minutes to do them. 
 
 # Project
 
@@ -68,17 +72,21 @@ The [project](project/README.md) is a semester long SE data science project tack
 
 # Assessment
 
-| Category                                          | Value |
-| ------------------------------------------------- | ----- |
-| Project                                           | 45%   |
-| Assignments (undergrad: 3 * 10%) (Grad: 4 * 7.5%) | 30%   |
-| Paper summary blog posts                          | 15%   |
-| Participation                                     | 10%   |
+| Category                            | Value |
+| ----------------------------------- | ----- |
+| Project                             | 45%   |
+| Assignments                         | 40%   |
+| Paper quizzes                       | 15%   |
 
-**Course engagement**: 10%
-Based on class discussions, forum posts, and group participation. We will use Sli.do or similar tool to enable participation for those less comfortable with speaking in class. At the midway point, I will post interim engagement marks so you can assess your standing. Not coming to class, not doing readings, failing to attend group meetings, are all good ways to get a 0 for this component. 
+Grads
+| Category                            | Value |
+| ----------------------------------- | ----- |
+| Project                             | 45%   |
+| Assignments                         | 30%   |
+| Paper summary presentations (grads) | 15%   |
+| Paper quizzes                       | 10%   |
 
-**Blog Posts**: 15% Assessed using a series of short, 400 word or so forum posts. See the description of how to do [blog posts](blogposts.md).
+**Paper presentations**: 15% Grad students will take turns leading a 20 minute discussion of some key papers in data science for SE. The student should read the paper and prepare a short slide deck that quickly summarizes the paper, then opens a discussion about the work. No marks for rehashing what the paper says; AI can also do this. 
 
 Assignment/project expectations will differ for graduate students and undergraduate students.
 
@@ -87,7 +95,6 @@ Course marks will be distributed via Brightspace.
 ## Instructors
 
 * [Neil Ernst](http://neilernst.net), instructor. Please message me for office hours per HEAT (TBD) or request a Zoom meeting on Brightspace or email. 
-* TBD
 
 Please use Teams to message the TAs first with programming questions and group issues. Direct personal issues to the instructor, nernst@uvic.ca
 
@@ -111,7 +118,7 @@ You are expected to be respectful of other students and the instructor/TAs: mute
 Strict monitoring of academic integrity will be performed in this course for any work submitted for marks. See course component descriptions and Course Policies and Guidelines below for details on academic integrity expectations. Substantiated academic integrity violations will be referred to the Department's Academic Integrity Committee which will determine penalty and ensure a record of the violation is kept with the university.
 
 ## AI supported work
-You are permitted to use generative AI (ChatGPT, Copilot, MidJourney etc. etc.) in this course except where explicitly forbidden (mainly, because it will get in the way of you actually learning and understanding the concepts!). Any use of these assistants beyond simple grammar help **must be accompanied by a dedicated section in the assignment submission outlining how it was used and why it helped**.
+You are expected to use generative AI (ChatGPT, Copilot, Claude, Cursor etc. etc.) in this course except where explicitly forbidden (mainly, because it will get in the way of you actually learning and understanding the concepts!). Use of these assistants beyond simple grammar help **must be accompanied by a dedicated section in the assignment submission outlining how it was used and why it helped**.
 
 ## License
 
