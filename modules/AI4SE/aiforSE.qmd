@@ -1,0 +1,76 @@
+---
+title: "Effectively using AI in SE"
+author: "Neil Ernst"
+format: 
+  revealjs:
+    theme: default
+    slide-number: true
+    logo: img/ENGN_vert_bk.jpg
+    footer: "Neil Ernst (c)"
+date: last-modified
+---
+
+# Caveats
+- I am learning as I go, as you are.
+- Things have moved fast, and there are many tools to choose from.
+- More effective models tend to cost more. 
+- I don't think AI will replace thinking.
+
+# GenAI and Programming and Data Science
+In what ways is GenAI transforming this field? What should we do in this class in response? 
+
+My policy is to encourage if not mandate the use of GenAI in this course. But careful: if GenAI has a 10x productivity speedup, that means marking standards will likewise be expecting 10x more work. Think of it as moving the median expected amount of work. Unfortunately, this does mean students who are better at using AI effectively may get better marks. 
+
+## Policies
+
+Report use of AI in an appendix for assignments and the project. Follow the standards laid out in this paper:
+
+You may not use AI to summarize papers and write your blog posts, beyond simple proof-reading. I expect you to summarize these yourself. Consequently, the marks for this part of the course, which used to be for the writeup of the post, will instead focus on your in-class contributions and quiz answers, to see if you yourself understand the paper (I can't effectively check 40 something blog posts for use of AI). 
+
+## How to Use AI as a Student
+(from https://substack.com/home/post/p-160131730)
+
+Emphasize craftsmanship. AI rewards having a structured, careful development process:
+
+1. Thinking hard and chatting about the problem and the changes you need to implement before doing anything
+2. Keeping components encapsulated with carefully-designed interfaces
+3. Controlling the scope of your changes; current AIs work best at the function or class level
+4. Testing and validation; how do you know your program works
+5. Good manual debugging skills (this was a major takeaway from the class - students found AI debugging to be unreliable)
+6. General system knowledge: networking, OS, data formats, databases
+
+## Shopify's approach
+
+![](../images/shopify-AI.jpeg)
+
+## Useful guides for using LLMs
+* https://rtl.chrisadams.me.uk/2024/12/how-i-use-llms-neat-tricks-with-simons-llm-tool/
+* all and any of Simon Willison's writing
+
+## Accessible tools (financially)
+* [Claude student version](https://www.anthropic.com/contact-sales/for-student-builders)
+* [Copilot for students](https://education.github.com/pack)
+
+# Exercise: Use LLMs {background-color="aquamarine"}
+
+## Exercise: Use LLMs {background-color="aquamarine"}
+We will do what Andrej Karpathy calls "vibe coding": a zen-like use of autocomplete to try and get the AI to do something useful. Note: not recommended for serious work! 
+
+1. Download this data file: https://github.com/datasciencedojo/datasets/blob/master/titanic.csv
+2. Setup an AI tool. I am showing `aider`. 
+3. Get the AI to parse the data file and show simple descriptive stats in R notebook. 
+4. Display the graph. 
+
+## Building Good Prompts
+
+## Adding Context
+
+## Creating Effective Evals
+An `eval` is a test that the AI's output is doing what you had hoped. It isn't a `unit test` exactly, since unit tests are repeatable and deterministic (ideally). But an eval should give you a sense that the output is what you expect. 
+
+What is an eval for a data analysis project? 
+
+- how many NaNs?
+- what is the expected mean/median for the data, and is it within range? 
+
+## Agentic Programming 

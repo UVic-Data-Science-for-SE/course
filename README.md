@@ -39,24 +39,24 @@ There are no mandatory texts. We will cover public tutorials and papers. I occas
 
 Due dates are all on Brightspace. Class format will be lectures and short in class exercises, including discussion of the readings (which you must do before class). Class in Summer 2025 will be 2x3 hour sessions. The plan will be to take 2 short breaks (5 mins) and one longer break (20 mins) at appropriate times. You should come to class prepared to follow along on your computer or tablet; most of the latter half will be in class exercises. 
 
-| Day     | Module                                                                                                | Due                                                     |
-| ------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| July 4  | [Intro](modules/intro/README.md) * [AI4SE](modules/AI4SE/ai4se)                                       |                                                         |
-| July 9  | [Early Approaches and Problems](modules/early-problems/README)                                        |                                                         |
-| July 11 | [Basic stats](modules/basics/README)                                                                  | [Project proposal](project/project-proposal.md)         |
-| July 16 | [Bayes](modules/bayes/README.md)                                                                      |                                                         |
-| July 18 | *Project work - no class*                                                                             | Assn 1 - basic DS                                       |
-| July 23 | [Ethics](modules/ethics/README)                                                                       |                                                         |
-| July 25 | LLMs for SE                                                                                           |                                                         |
-| July 30 | LLMS in SE                                                                                            | Assn 2 - Black Mirror                                   |
-| Aug 1   | *Project work - no class*                                                                             | [Interim project report](project/project-interim.md)    |
-| Aug 6   | [Traceability • Clones](modules/traceability-clone/README.md) • [Cost](modules/cost-defect/README.md) |                                                         |
-| Aug 8   | Bug Localization/Triage                                                                               |                                                         |
-| Aug 13  | Analysing Text Discussions / Qualitative Data in SE                                                   | Assn 3 - Bayes                                          |
-| Aug 15  | Spare/extra                                                                                           |                                                         |
-| Aug 20  | Demos/Project presentations                                                                           | [Project presentation](project/project-presentation.md) |
-| Aug 23  | no class                                                                                              | [Final project report](project/project-final.md)        |
-|         |                                                                                                       |                                                         |
+| Day     | Module                                                                                                   | Due                                                     |
+| ------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| July 4  | [Intro](modules/intro/README.md) * [AI4SE](modules/AI4SE/ai4se)                                          |                                                         |
+| July 9  | [Early Approaches and Problems](modules/early-problems/README)                                           |                                                         |
+| July 11 | [Basic stats](modules/basics/README)                                                                     | [Project proposal](project/project-proposal.md)         |
+| July 16 | [Bayes](modules/bayes/README.md)                                                                         |                                                         |
+| July 18 | *Project work - no class*                                                                                | [Assn 1 - basic DS](Assignments/assignment1.md)         |
+| July 23 | [Ethics](modules/ethics/README)                                                                          |                                                         |
+| July 25 | [LLMs for SE](modules/llm/README.md)                                                                     |                                                         |
+| July 30 | [LLMs for SE](modules/llm/README.md) cont.                                                               | [Assn 2 - Black Mirror](Assignments/assignment3.md)     |
+| Aug 1   | *Project work - no class*                                                                                | [Interim project report](project/project-interim.md)    |
+| Aug 6   | [Traceability • Clones](modules/traceability-clone/README.md) • [Cost](modules/cost-defect/README.md)    |                                                         |
+| Aug 8   | [Bug Localization/Triage](modules/bugs/README.md)                                                        |                                                         |
+| Aug 13  | [Analysing Text Discussions](modules/NLP/README.md) / [Qualitative Data in SE](modules/coding/README.md) | [Assn 3 - Bayes](Assignments/assignment2.md)            |
+| Aug 15  | Spare/extra                                                                                              |                                                         |
+| Aug 20  | Demos/Project presentations                                                                              | [Project presentation](project/project-presentation.md) |
+| Aug 23  | no class                                                                                                 | [Final project report](project/project-final.md)        |
+|         |                                                                                                          |                                                         |
 
 # Assignments
 

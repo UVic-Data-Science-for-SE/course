@@ -2,7 +2,7 @@
 ---
 title: Assignment 1 - R and Data Science
 author: Neil Ernst
-date: May 2023
+date: May 2025
 ---
 
 In this assignment, you will be using R to run some simple data science approaches on an SE dataset. 
@@ -14,7 +14,7 @@ We will be using RStudio/R for this and assignment 2. Follow [this overview](doc
 
 You should follow this [set up and tutorial on R.](https://avehtari.github.io/ROS-Examples/Regression_and_Other_Stories_Appendix_A.pdf).
 
-You may **NOT** use Generative AI tools on this assignment, ask friends to help, work with a buddy, get a contractor to do it for you online, etc. The whole point of this assignment is to give you experience applying R in practice. 
+You should be using GenAI on this assignment. It should take you about 10-12 hours to finish using those tools. 
 
 # Dataset and Problem
 
@@ -59,4 +59,4 @@ Write 500 words summarizing the model you created and the insights it produced. 
 - ethical questions that arise
 
 # What To Submit
-- Submit the notebook as a Rmd/Quarto file for marking, via Brightspace. You should answer all the questions (above, in bold) in the notebook directly, supported by the R code as necessary.
+- Submit the notebook as a single Quarto (qmd) file for marking, via Brightspace. You should answer all the questions (above, in bold) in the notebook directly, supported by the R code as necessary.
