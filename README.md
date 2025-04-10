@@ -37,7 +37,10 @@ There are no mandatory texts. We will cover public tutorials and papers. I occas
 
 # Schedule and Topics
 
-Due dates are all on Brightspace. Class format will be lectures and short in class exercises, including discussion of the readings (which you must do before class). Class in Summer 2025 will be 2x3 hour sessions. The plan will be to take 2 short breaks (5 mins) and one longer break (20 mins) at appropriate times. You should come to class prepared to follow along on your computer or tablet; most of the latter half will be in class exercises. 
+Due dates are all on Brightspace. Class format will be lectures and short in class exercises, including discussion of the readings (which you must do before class). 
+
+#### Summer 2025
+Class in Summer 2025 will be 2x3 hour sessions each week. That's a lot of class time. The plan will be to take 2 short breaks (5 mins) and one longer break (20 mins) at appropriate times. You should come to class prepared to follow along on your computer or tablet; most of the latter half will be in class exercises. Each class has assigned readings for each module; those readings are to be done prior to class. 
 
 | Day     | Module                                                                                                   | Due                                                     |
 | ------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
@@ -48,12 +51,12 @@ Due dates are all on Brightspace. Class format will be lectures and short in cla
 | July 18 | *Project work - no class*                                                                                | [Assn 1 - basic DS](Assignments/assignment1.md)         |
 | July 23 | [Ethics](modules/ethics/README)                                                                          |                                                         |
 | July 25 | [LLMs for SE](modules/llm/README.md)                                                                     |                                                         |
-| July 30 | [LLMs for SE](modules/llm/README.md) cont.                                                               | [Assn 2 - Black Mirror](Assignments/assignment3.md)     |
-| Aug 1   | *Project work - no class*                                                                                | [Interim project report](project/project-interim.md)    |
+| July 30 | [LLMs for SE](modules/llm/README.md) cont.                                                               |     |
+| Aug 1   | *Project work - no class*                                                                                |[Assn 2 - Black Mirror](assignment2.md) • [Interim project report](project/project-interim.md)    |
 | Aug 6   | [Traceability • Clones](modules/traceability-clone/README.md) • [Cost](modules/cost-defect/README.md)    |                                                         |
 | Aug 8   | [Bug Localization/Triage](modules/bugs/README.md)                                                        |                                                         |
-| Aug 13  | [Analysing Text Discussions](modules/NLP/README.md) / [Qualitative Data in SE](modules/coding/README.md) | [Assn 3 - Bayes](Assignments/assignment2.md)            |
-| Aug 15  | Spare/extra                                                                                              |                                                         |
+| Aug 13  | [Analysing Text Discussions](modules/NLP/README.md) / [Qualitative Data in SE](modules/coding/README.md) | [Assn 3 - Bayes](assignment3.md)            |
+| Aug 15  | Spare/buffer                                                                                             |                                                         |
 | Aug 20  | Demos/Project presentations                                                                              | [Project presentation](project/project-presentation.md) |
 | Aug 23  | no class                                                                                                 | [Final project report](project/project-final.md)        |
 |         |                                                                                                          |                                                         |
@@ -72,21 +75,24 @@ The [project](project/README.md) is a semester long SE data science project tack
 
 # Assessment
 
+#### Undergrads (SENG 404)
+
 | Category                            | Value |
 | ----------------------------------- | ----- |
 | Project                             | 45%   |
 | Assignments                         | 40%   |
 | Paper quizzes                       | 15%   |
 
-Grads
-| Category                            | Value |
-| ----------------------------------- | ----- |
-| Project                             | 45%   |
-| Assignments                         | 30%   |
-| Paper summary presentations (grads) | 15%   |
-| Paper quizzes                       | 10%   |
+#### Grads (CSC 504)
 
-**Paper presentations**: 15% Grad students will take turns leading a 20 minute discussion of some key papers in data science for SE. The student should read the paper and prepare a short slide deck that quickly summarizes the paper, then opens a discussion about the work. No marks for rehashing what the paper says; AI can also do this. 
+| Category            | Value |
+| ------------------- | ----- |
+| Project             | 45%   |
+| Assignments         | 30%   |
+| Paper presentations | 15%   |
+| Paper quizzes       | 10%   |
+
+**Paper presentations**: 15% Grad students will take turns leading a 20 minute discussion of some key papers in data science for SE. The student should read the paper and prepare a short slide deck that quickly summarizes the paper, then opens a discussion about the work. No marks for just rehashing what the paper says; AI can also do this. 
 
 Assignment/project expectations will differ for graduate students and undergraduate students.
 
@@ -94,7 +100,7 @@ Course marks will be distributed via Brightspace.
 
 ## Instructors
 
-* [Neil Ernst](http://neilernst.net), instructor. Please message me for office hours per HEAT (TBD) or request a Zoom meeting on Brightspace or email. 
+* [Neil Ernst](http://neilernst.net), instructor. Please message me to set up office hours for a meeting (Teams or email).
 
 Please use Teams to message the TAs first with programming questions and group issues. Direct personal issues to the instructor, nernst@uvic.ca
 
@@ -104,14 +110,13 @@ The class will use [Github](https://github.com/UVic-Data-Science-for-SE) (course
 
 Grades and any interviews or videos are distributed via Brightspace for privacy compliance.
 
-This course is a synchronous in-person-only offering.
+This course is a synchronous in-person-only offering. I will attempt to record the lectures, but the cameras are not great, and the class has discussions etc when I will turn off the recording.
 
-Many course activities (such as group design activities, chat sessions) will expect synchronous participation (i.e. at the scheduled time).
-Students should plan to attend all course components.
-Courses will not be able to accommodate personal scheduling issues, including time zone variations (from Pacific Daylight time). Online sessions, if any, will be hosted using Zoom video conferencing sessions, some of which will be recorded.
+Many course activities (such as group design activities, chat sessions) will expect synchronous participation (i.e. at the scheduled time). Students should plan to attend all course components.
+Courses will not be able to accommodate personal scheduling issues, including time zone variations (from Pacific Daylight time). 
 
 The university and the Faculty of Engineering has a strong mandate to support Equity, Diversity and Inclusion: https://www.uvic.ca/engineering/about/equity/index.php
-We as a teaching team will do what we can to create a positive, safe, and supportive environment for you to participate in all components of this course offering. I (the instructor) appreciate all feedback from you and ask that you feel free to message me to voice concerns or to arrange a time to discuss virtually in-person.
+We as a teaching team will do what we can to create a positive, safe, and supportive environment for you to participate in all components of this course offering. I (the instructor) appreciate all feedback from you and hope that you feel free to message me to voice concerns or to arrange a time to discuss virtually in-person.
 
 You are expected to be respectful of other students and the instructor/TAs: mute your microphone if you are not talking, participate by providing input, and asking questions using inclusive language and behavior.
 
@@ -119,7 +124,6 @@ Strict monitoring of academic integrity will be performed in this course for any
 
 ## AI supported work
 You are expected to use generative AI (ChatGPT, Copilot, Claude, Cursor etc. etc.) in this course except where explicitly forbidden (mainly, because it will get in the way of you actually learning and understanding the concepts!). Use of these assistants beyond simple grammar help **must be accompanied by a dedicated section in the assignment submission outlining how it was used and why it helped**.
-
 ## License
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).

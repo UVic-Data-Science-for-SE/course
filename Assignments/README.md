@@ -15,8 +15,7 @@ Assignments are due on Friday by midnight. You may take 2 days more to update yo
 The details of the assignments are as follows:
 
 - [Assignment 1: Getting Started with R and Data Science](assignment1.md)
-- [Assignment 2: Bayesian Inference](assignment2.md)
-- [Assignment 3: Ethical Data Science](assignment3.md)
-- [Grad Assignment: Replication Project](grad-assignment.md)
+- [Assignment 2: Ethical Data Science](assignment2.md)
+- [Assignment 3: Bayesian Inference](assignment3.md)
 
 Click on the individual links to understand what each assignment entails. 
