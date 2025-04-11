@@ -10,7 +10,7 @@ date: last-modified
 title:  Introduction to large language models in SE
 --- 
 
-# Intro
+# Intro Exercise
 
 Copilot / ChatGPT exercise. Take [the sample problem](https://github.com/UVic-Data-Science-for-SE/command_exercise/blob/main/README.md), and with your partner, solve it with ChatGPT/Copilot/TabNine etc.
 

@@ -11,14 +11,28 @@ Intro to data science applied to Software Engineering problems. Refresher/intro 
 - install and use the R programming language and RStudio
 - refresh knowledge of basic statistical approaches
 
-| Topic                                                                               | Readings   | Exercises                                                      |     |
-| ----------------------------------------------------------------------------------- | ---------- | -------------------------------------------------------------- | --- |
-| [Data Mining Basics include search and optimize](../../src/dm_basics/dm_basics.Rmd) |            |                                                                |     |
-| [Regression (notebook)](regression.qmd)                                             | ROS ch 1-5 | [install / download the RStudio Docker image](docker-image.md) |     |
+# Topics and slides
+These are the submodules I covered in class. 
+
+*  [Data Mining Basics include search and optimize](dm_basics.qmd) 
+*  [Regression (notebook)](regression.qmd)  
+
+### Readings
+1. [Confusion matrices - Wikipedia](https://en.wikipedia.org/wiki/Confusion_matrix)
+2. [R for Data Science - Tidy Data](https://r4ds.hadley.nz/data-tidy.html)
+3. [EDA in R](https://r4ds.hadley.nz/EDA.html)
+4. [Regression intro/overview, ROS ch 6.1-6.5](https://users.aalto.fi/~ave/ROS.pdf)
+
+### Exercises
+
+These are done in class. The source code below is a combo of what I typed and what I prepped before hand. 
+
+1. Basic data exploration 
+2. P-value displays
+3. Run glm 
 
 ### Optional Readings and Activities
 
-* [Facebook and static analysis](https://research.fb.com/wp-content/uploads/2018/05/from-start-ups-to-scale-ups-opportunities-and-open-problems-for-static-and-dynamic-program-analysis.pdf)
-* [Hullman and Gelman 2021](https://hdsr.mitpress.mit.edu/pub/w075glo6/release/3?readingCollection=c6a3a10e)
+These readings enrich the material but are not strictly necessary to read. 
 
-
+1. [Quarto overview](https://r4ds.hadley.nz/quarto.html)

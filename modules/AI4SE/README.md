@@ -15,13 +15,20 @@ How to use AI to do software engineering (mid 2025 version!)
 	- models
 - demo common tools 
 
-| Topic                | Readings                                                                                                                                                                                                              | Exercises  |     |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --- |
-| [AI4SE](aiforSE.qmd) | How I use LLMs; [Fowler-exploing GenAI series](https://martinfowler.com/articles/exploring-gen-ai.html#memo-13); [Fowler-patterns for GenAI series](https://martinfowler.com/articles/gen-ai-patterns/#direct-prompt) | Using LLMs |     |
-|                      |                                                                                                                                                                                                                       |            |     |
-|                      |                                                                                                                                                                                                                       |            |     |
+# Topics and slides
+These are the submodules I covered in class. 
+
+*  [AI4SE](aiforSE.qmd)
+
+### Readings
+1.  How I use LLMs; 
+2.  [Fowler-exploing GenAI series](https://martinfowler.com/articles/exploring-gen-ai.html); 
+3.  [Fowler-patterns for GenAI series](https://martinfowler.com/articles/gen-ai-patterns/)
+   
+### Exercises
+
+These are done in class. The source code below is a combo of what I typed and what I prepped before hand. 
+
+1.  Using LLMs
 
 ### Optional Readings and Activities
-
-
-
