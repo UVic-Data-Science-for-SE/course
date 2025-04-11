@@ -4,6 +4,7 @@
 .Ruserdata
 .DS_Store
 *.pptx
+*.html
 other/
 .gitignore
 Assignments/a2/soln.nb.html
@@ -35,3 +36,10 @@ mark/
 modules/traceability-clone/clone-data
 modules/traceability-clone/tracing-data
 .obsidian
+
+/.quarto/
+_mark
+modules/bayes/_extensions
+modules/llm/_extensions
+src/novielli-split
+src/pyDSSE/.venv

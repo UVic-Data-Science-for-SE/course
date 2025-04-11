@@ -1,0 +1,17 @@
+project:
+  render: 
+    - "*.qmd"
+    - "!2022_soln.qmd"
+  title: "seng404"
+output-dir:  _output
+author: "Neil Ernst"
+format: 
+  revealjs:
+    theme: default
+    slide-number: true
+    logo: img/ENGN_vert_bk.jpg
+    footer: "Neil Ernst (c)"
+date: last-modified
+
+
+
