@@ -4,12 +4,16 @@ project:
     - "!2022_soln.qmd"
   title: "seng404"
 output-dir:  _output
-author: "Neil Ernst"
+author:
+  - name: Neil Ernst
+    orcid: 0000-0001-5992-2366 
+    email: nernst@uvic.ca
+    affiliations: University of Victoria
 format: 
   revealjs:
     theme: default
     slide-number: true
-    logo: img/ENGN_vert_bk.jpg
+    logo: modules/images/ENGN_vert_bk.jpg
     footer: "Neil Ernst (c)"
 date: last-modified
 

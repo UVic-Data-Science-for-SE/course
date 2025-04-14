@@ -16,7 +16,7 @@ Some basic questions we might start with (h/t to [Greg](https://third-bit.com/20
 4. What file in my project has the most bugs? 
 5. How long will it take to write this code?
 
-### Learning Objectives
+## Learning Objectives
 
 After this class students are able to:
 
@@ -26,7 +26,7 @@ After this class students are able to:
 4. Summarize SE data science papers, quickly identifying their key contributions.
 5. Understand the ethical implications of the data science they are doing. 
 
-# Books
+# Books and Readings
 
 There are no mandatory texts. We will cover public tutorials and papers. I occasionally refer to chapters from the following, all available "free" from the Uvic library: 
 
@@ -39,7 +39,7 @@ There are no mandatory texts. We will cover public tutorials and papers. I occas
 
 Due dates are all on Brightspace. Class format will be lectures and short in class exercises, including discussion of the readings (which you must do before class). 
 
-#### Summer 2025
+## Summer 2025
 Class in Summer 2025 will be 2x3 hour sessions each week. That's a lot of class time. The plan will be to take 2 short breaks (5 mins) and one longer break (20 mins) at appropriate times. You should come to class prepared to follow along on your computer or tablet; most of the latter half will be in class exercises. Each class has assigned readings for each module; those readings are to be done prior to class. 
 
 | Day     | Module                                                                                                   | Due                                                                                            |
@@ -65,9 +65,9 @@ Class in Summer 2025 will be 2x3 hour sessions each week. That's a lot of class 
 
 See the [Assignments page](Assignments/README.md).
 
-# Readings
+# Readings and Quiz
 
-Each week there are 2-3 readings. Everyone must do the readings before class. There will be a short quiz on the readings, focused on analysis and synthesis of the papers (i.e., not just memorizing what the paper results were). These quizzes will be aimed at 8 minutes and everyone will have 16 minutes to do them. 
+Each week there are several readings/videos. Everyone must do the readings before class. There will be a short quiz on the readings, focused on analysis and synthesis of the papers (i.e., not just memorizing what the paper results were). These quizzes will be aimed at 8 minutes and everyone will have 16 minutes to do them. 
 
 # Project
 
@@ -75,7 +75,7 @@ The [project](project/README.md) is a semester long SE data science project tack
 
 # Assessment
 
-#### Undergrads (SENG 404)
+## Undergrads (SENG 404)
 
 | Category      | Value |
 | ------------- | ----- |
@@ -83,7 +83,7 @@ The [project](project/README.md) is a semester long SE data science project tack
 | Assignments   | 40%   |
 | Paper quizzes | 15%   |
 
-#### Grads (CSC 504)
+## Grads (CSC 504)
 
 | Category            | Value |
 | ------------------- | ----- |
@@ -98,34 +98,39 @@ Assignment/project expectations will differ for graduate students and undergradu
 
 Course marks will be distributed via Brightspace.
 
-## Instructors
+# Instructors
 
 * [Neil Ernst](http://neilernst.net), instructor. Please message me to set up office hours for a meeting (Teams or email).
 
 Please use Teams to message the TAs first with programming questions and group issues. Direct personal issues to the instructor, nernst@uvic.ca
 
-## Mechanics
+# Mechanics and Learning Tools
 
-The class will use [Github](https://github.com/UVic-Data-Science-for-SE) (course notes, slides), Teams (blogs, discussion, chat) and Brightspace (assignment posting, grades). 
-
-Grades and any interviews or videos are distributed via Brightspace for privacy compliance.
+The class will use [Github](https://github.com/UVic-Data-Science-for-SE) (course notes, slides), Teams (blogs, discussion, chat) and Brightspace (assignment posting, grades). Grades and any interviews or videos are distributed via Brightspace for privacy compliance.
 
 This course is a synchronous in-person-only offering. I will attempt to record the lectures, but the cameras are not great, and the class has discussions etc when I will turn off the recording.
 
 Many course activities (such as group design activities, chat sessions) will expect synchronous participation (i.e. at the scheduled time). Students should plan to attend all course components.
 Courses will not be able to accommodate personal scheduling issues, including time zone variations (from Pacific Daylight time). 
 
+## Creating Course Material
+I use [Quarto](https://quarto.org) to create the HTML slides for the course. All the notes are in Quarto Markdown, a text format, and readable directly on Github. If you would like to generate PDFs instead, clone the repo to your machine, and in the top directory, run `quarto render --to pdf`. This will also interpret all the R commands anew, so you should also have R (v 4.4.3) installed. Running R, and then inside R running `renv::restore()` will get all the relevant libraries installed. 
+
+[CmdStanR](https://github.com/stan-dev/cmdstanr?tab=readme-ov-file#installation) and `[rethinking](https://github.com/rmcelreath/rethinking?tab=readme-ov-file#installation)` need special install steps, documented in the links to those libraries. 
+
+# DEI still matters
 The university and the Faculty of Engineering has a strong mandate to support Equity, Diversity and Inclusion: https://www.uvic.ca/engineering/about/equity/index.php
-We as a teaching team will do what we can to create a positive, safe, and supportive environment for you to participate in all components of this course offering. I (the instructor) appreciate all feedback from you and hope that you feel free to message me to voice concerns or to arrange a time to discuss virtually in-person.
+We as a teaching team will do what we can to create a positive, safe, and supportive environment for you to participate in all components of this course offering. I (the instructor) appreciate all feedback from you and hope that you feel free to message me to voice concerns or to arrange a time to discuss virtually or in-person.
 
-You are expected to be respectful of other students and the instructor/TAs: mute your microphone if you are not talking, participate by providing input, and asking questions using inclusive language and behavior.
+You are expected to be respectful of other students and the instructor/TAs: minimize non-class discussions and activities (such as scrolling TikTok), participate by providing input, and asking questions using inclusive language and behavior.
 
-Strict monitoring of academic integrity will be performed in this course for any work submitted for marks. See course component descriptions and Course Policies and Guidelines below for details on academic integrity expectations. Substantiated academic integrity violations will be referred to the Department's Academic Integrity Committee which will determine penalty and ensure a record of the violation is kept with the university.
+# Integrity
+Strict monitoring of academic integrity will be performed in this course for any work submitted for marks. See course component descriptions and Course Policies and Guidelines for details on academic integrity expectations. Substantiated academic integrity violations will be referred to the Department's Academic Integrity Committee which will determine penalty and ensure a record of the violation is kept with the university.
 
 ## AI supported work
 You are expected to use generative AI (ChatGPT, Copilot, Claude, Cursor etc. etc.) in this course except where explicitly forbidden (mainly, because it will get in the way of you actually learning and understanding the concepts!). Use of these assistants beyond simple grammar help **must be accompanied by a dedicated section in the assignment submission outlining how it was used and why it helped**.
-## License
+
+# License
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-[![Alt text](https://camo.githubusercontent.com/f05d4039b67688cfdf339d2a445ad686a60551f9891734c418f7096184de5fac/68747470733a2f2f692e6372656174697665636f6d6d6f6e732e6f72672f6c2f62792d6e632d73612f342e302f38387833312e706e67)](https://camo.githubusercontent.com/f05d4039b67688cfdf339d2a445ad686a60551f9891734c418f7096184de5fac/68747470733a2f2f692e6372656174697665636f6d6d6f6e732e6f72672f6c2f62792d6e632d73612f342e302f38387833312e706e67)

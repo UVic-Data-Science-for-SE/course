@@ -138,7 +138,8 @@ The good news is we believe, empirically, that most SE data has low inherent dim
 -   SE data often binary labels and imbalanced
 -   SE data have lower intrinsic dimensionality
 
-![](rapina.png) ![](se-vs-uci.png)
+##
+![](../images/rapina.png) ![](../images/se-vs-uci.png)
 
 See 10.1109/TSE.2021.3073242
 
@@ -152,7 +153,7 @@ See 10.1109/TSE.2021.3073242
 
 In some cases you can just do a correlation analysis and chuck predictors that are correlated. For example, flag each column with `USE?` and explore how well each one helps the AIC score. Problem: exponential! Better: do a search through feature space. E.g. with PEEKING2:
 
-![](peeking.png)
+![](../images/peeking.png)
 
 ## PCA Search Algorithm
 
@@ -230,6 +231,7 @@ Some other common metrics include:
 -   ROC - AUC (and the curve itself)
 -   Matthews Correlation Coefficient
 
+## 
 These can all be implemented using library calls. The ROC curve metric is pretty useful: https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5
 
 The key is to understand what you are aiming to optimize. In some cases, like assessing ambiguous requirements, 100% recall is better than improved precision.
@@ -238,6 +240,7 @@ Another key is to **have a valid baseline**. This might be ZeroR, the classifier
 
 # Hyper-parameters
 
+##
 If we have X and Y (columns and labels) we can also think about a third set, Z, which constitutes the parameters for our classifiers and clusterers.
 
 We might also want to find an effective Z. 

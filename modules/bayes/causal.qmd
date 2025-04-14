@@ -71,7 +71,7 @@ tidy_ggdag <- dagify(
 #| label: show-dag
 #| echo: true
 amd <- dagify(
-  a ~ m + d, 
+  a ~ m + d
 ) %>%
   tidy_dagitty()
 

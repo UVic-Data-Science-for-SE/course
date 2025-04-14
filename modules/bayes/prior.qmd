@@ -1,18 +1,6 @@
 ---
 title: Prior Probability Distributions
 subtitle: "Selection and Discrimination"
-format:
-  clean-revealjs: default
-  revealjs:
-    slide-number: true
-    show-slide-number: print
-    embed-resources: true
-    chalkboard: true
-author:
-  - name: Neil Ernst
-    orcid: 0000-0001-5992-2366 
-    email: nernst@uvic.ca
-    affiliations: University of Victoria
 date: last-modified
 ---
 
@@ -93,14 +81,30 @@ data.frame(alpha = seq(5, 100, length.out = 10), beta = seq(1,10,length.out=10))
 
 # Choosing A Prior
 
-One thing to note: libraries like Python's [Seaborn](https://seaborn.pydata.org/tutorial/distributions.html) (via the `kdeplot()` function for example) allow you to *fit distributions to the data* (in this case, using kernel density estimation to 'smooth' the underlying probability density). 
+One thing to note: libraries like  [fitdistrplus](https://cran.r-project.org/web/packages/fitdistrplus/index.html) allow you to *fit distributions to the data* (in this case, using maximum likelihood density estimation to 'smooth' the underlying probability density). 
 
-```{python}
-#| label: seaborn
-import seaborn as sns
-tips = sns.load_dataset("tips")
-sns.kdeplot(data=tips, x="total_bill")
-sns.histplot(data=tips, x="total_bill")
+There are other tests to measure if the distribution you choose matches the data well, such as QQ plots. Just because the data isn't normally distributed (Gaussian) doesn't mean there isn't some underlying generative function behind it. 
+
+```{r}
+#| label: fit dist
+
+# from https://cran.r-project.org/web/packages/fitdistrplus/vignettes/fitdistrplus_vignette.html
+
+# install.packages("fitdistrplus")
+
+library(fitdistrplus)
+data("groundbeef")
+# fit <- fitdist(groundbeef, distr = "gamma", method = "mle")
+plotdist(groundbeef$serving, histo = TRUE, demp = TRUE)
+
+par(mfrow = c(1, 1), mar = c(4, 4, 2, 1))
+plot.legend <- c("Weibull", "lognormal", "gamma")
+# three different distributions we can check
+fw <- fitdist(groundbeef$serving, "weibull")
+fg <- fitdist(groundbeef$serving, "gamma")
+fln <- fitdist(groundbeef$serving, "lnorm")
+denscomp(list(fw, fln, fg), legendtext = plot.legend)
+
 ```
 
 ## Choosing A Prior - Visualizing Distributions

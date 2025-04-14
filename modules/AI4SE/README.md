@@ -21,14 +21,15 @@ These are the submodules I covered in class.
 *  [AI4SE](aiforSE.qmd)
 
 ### Readings
-1.  How I use LLMs; 
-2.  [Fowler-exploing GenAI series](https://martinfowler.com/articles/exploring-gen-ai.html); 
-3.  [Fowler-patterns for GenAI series](https://martinfowler.com/articles/gen-ai-patterns/)
+1.  [Simon Willison: How I use LLMs](https://simonwillison.net/2025/Mar/11/using-llms-for-code/)
+2.  [Fowler: Exploring GenAI series](https://martinfowler.com/articles/exploring-gen-ai.html); 
+4.  [Gene Kim/Steve Yegge pairing with Claude Code (watch)](https://www.youtube.com/watch?v=HtqxI53h7zM)
    
 ### Exercises
 
 These are done in class. The source code below is a combo of what I typed and what I prepped before hand. 
 
-1.  Using LLMs
+1.  Using Claude Code
 
 ### Optional Readings and Activities
+3.  [Fowler: Patterns for GenAI series](https://martinfowler.com/articles/gen-ai-patterns/)
