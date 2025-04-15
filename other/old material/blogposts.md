@@ -13,7 +13,7 @@ Please make any changes by the following Monday at 6pm and make sure we can easi
 
 We will be using Teams as a platform for your blogposts. Channels representing the different topics have already been created. 
 
-### Schedule (2023)
+### Schedule (2025)
 All blog posts due by 6pm Monday the week of the module. I.e., the Applications: Simple Data Mining topic will be discussed in class June 6, so your post is due June 5. 
 
 ### Blog Post Quality Criteria

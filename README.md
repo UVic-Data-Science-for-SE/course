@@ -92,9 +92,7 @@ The [project](project/README.md) is a semester long SE data science project tack
 | Paper presentations | 15%   |
 | Paper quizzes       | 10%   |
 
-**Paper presentations**: 15% Grad students will take turns leading a 20 minute discussion of some key papers in data science for SE. The student should read the paper and prepare a short slide deck that quickly summarizes the paper, then opens a discussion about the work. No marks for just rehashing what the paper says; AI can also do this. 
-
-Assignment/project expectations will differ for graduate students and undergraduate students.
+Assignment/project expectations will be higher for graduate students than undergraduate students.
 
 Course marks will be distributed via Brightspace.
 
@@ -116,7 +114,7 @@ Courses will not be able to accommodate personal scheduling issues, including ti
 ## Creating Course Material
 I use [Quarto](https://quarto.org) to create the HTML slides for the course. All the notes are in Quarto Markdown, a text format, and readable directly on Github. If you would like to generate PDFs instead, clone the repo to your machine, and in the top directory, run `quarto render --to pdf`. This will also interpret all the R commands anew, so you should also have R (v 4.4.3) installed. Running R, and then inside R running `renv::restore()` will get all the relevant libraries installed. 
 
-[CmdStanR](https://github.com/stan-dev/cmdstanr?tab=readme-ov-file#installation) and [`rethinking`](https://github.com/rmcelreath/rethinking?tab=readme-ov-file#installation)` need special install steps, documented in the links to those libraries. 
+[CmdStanR](https://github.com/stan-dev/cmdstanr?tab=readme-ov-file#installation) and [`rethinking`](https://github.com/rmcelreath/rethinking?tab=readme-ov-file#installation) need special install steps, documented in the links to those libraries. 
 
 # DEI still matters
 The university and the Faculty of Engineering has a strong mandate to support Equity, Diversity and Inclusion: https://www.uvic.ca/engineering/about/equity/index.php

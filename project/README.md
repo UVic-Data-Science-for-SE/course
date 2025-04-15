@@ -2,13 +2,13 @@
 
 *(Much of this outline taken from Dr Storey's EMSE course)*
 
-The goal of this project is to take a software analytics problem and provide a 10 page report summarizing the approach taken and conclusions drawn. Good examples will be papers published at MSR, ICPC, SANER and similar venues.
+The goal of this project is to take a software analytics problem and provide a 10 page report summarizing the approach taken and conclusions drawn. Good examples will be papers published at MSR, ICSE, SANER and similar venues.
 
 For this project, you will need to 
 1. Identify a SE problem or question
 2. Find a suitable sample and data to solve/answer that problem/question
 3. Analyze the data using the techniques covered in class (or others)
-4. Write up a report summarizing the problem and solution in academic style, as a Jupyter or R Markdown notebook.
+4. Write up a report summarizing the problem and solution in academic style, as a Jupyter or Quarto notebook.
 5. Present the results as a 5 min slideshow to your colleagues.
 
 ## Teams 
@@ -48,29 +48,13 @@ Each student/team member is required to do the following:
     - Team peer reviews of effort, via Teammates.
     - Extra points may be given for: challenging projects, original ideas, collaboration with external organizations.
 
+### Ways to get bad marks
+1. Superficial or lazy replication of existing work. Starting from an existing problem is fine, as are replications, but just re-running analysis someone else did is not enough to pass the project.
+2. Letting LLMs do all the analysis work. You can expect me to ask pointed questions about your assumptions, so your team needs to understand what you are doing.
+3. Forgetting that this is a short course and explaining you no longer have time to finish the project. 
+4. Writing the report at the end, instead of as you go.
+5. I'm sure there are others! 
 
 # Past Projects
 (nb: do not do these projects again without checking with me)
 
-## Fall 2021
-- replicating with a Bayesian analysis of the survival of Python OSS projects
-- the use of Copilot to solve undergrad assignments
-- security vulnerability types in Javascript vs Python
-- knowledge types in API reference docs
-- detecting programmer expertise by looking at commit logs
-- evolution patterns of Python API frameworks
-- Python coding style compliance on GitHub
-- Do software evolution laws hold?
-- Method chaining use in Java
-- comparing clone detection techniques
-- predicting OSS delivery capability
-- Impact of StackOverflow code snippets on cohesion metrics
-- deep learning based code completion
-- applying newer statistical techniques to software cost modeling
-- polyglot programming and evolution patterns
-- characteristics of the Python package ecosystem
-
-## Fall 2022
-- effort estimation replication
-- assurance case quality
-- (TBD)
