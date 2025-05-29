@@ -14,7 +14,7 @@ date: last-modified
 
 This course is about applying Data Science to software engineering data. Data science is a broad term, but I will use it to describe using analytical techniques to support decision making. It combines hacking, statistics, domain expertise, and problem solving. 
 
-# Syllabus walkthru
+## Syllabus 
 
 # Exercise: Icebreaker {background-color="aquamarine"}
 
@@ -38,10 +38,13 @@ Like many areas, software development produces tons of data:
 * Tool logs like build logs;
 * Application specific metrics, such as uptime or fault reports.
 
-##  
-And many others. Note that some of the data is **nominal**, some **ordinal**, and some **interval/ratio** data. Some of it is **symbolic**, such as the structure of a program's Abstract Syntax Tree. 
-
-And some is **qualitative** data, which means it is not easily amenable to statistical analysis (often hiding the deeper issues).
+##  Data Types
+* Quantitative
+  * Nominal
+  * Ordinal
+  * Interval/Ratio
+* Symbolic
+* Qualitative 
 
 ##
 We can think about either learning directly from data or learning from models that generate data. In the Bayesian context, for example, what we will do is try to model the process that created the data we see, and learn the parameters of those functions. 
@@ -118,7 +121,7 @@ And so we need to think about all of these stages in our production Data Science
 And we can combine both: optimizing the results of a data miner, finding **optimal** sets of hyper parameters, etc. Using data mining to create models to optimize. 
 
 
-# TPS exercise {background-color="aquamarine"}
+# TPS exercise {.exercise}
 
 *think* about the following question: "You are the software engineering manager or team lead at a big company. What is one key question you want to know the answer to for effectively running your team". 
 

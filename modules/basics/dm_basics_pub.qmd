@@ -90,7 +90,7 @@ sum <- jm1 %>% summarise(count = n(), loc_m = mean(loc), loc_med = median(loc), 
 binned <- jm1 %>% mutate(bin = cut(loc, 4,c("small", "medium", "large", "giant")) )
 binned %>% group_by(bin) %>% summarise(count = n(), med = median(loc))
 # show distributions
-ggplot(data = binned, mapping = aes(x=loc,y = ..density..)) + 
+ggplot(data = binned, mapping = aes(x=loc,y = after_stat(density))) + 
   geom_freqpoly(mapping = aes(colour = bin), binwidth=100)
 ggplot(data = binned, mapping = aes(x = bin, y = `v(g)`)) + 
          geom_violin()
@@ -162,6 +162,7 @@ PEEKING2 is a search algorithm that relies on a variant of PCA, which tries to f
 ```{r pca}
 jm1.pc <- prcomp(jm1[c(1:10)], center = TRUE, scale = TRUE)
 summary(jm1.pc)
+
 ```
 
 ## PCA Visualization
@@ -171,6 +172,7 @@ And we can see that PC1 contains 63% of the variance, PC2 contains 11%, etc. Thu
 ```{r vis-pca}
 library(ggfortify)
 autoplot(jm1.pc, data = jm1, colour = 'defects')
+
 ```
 
 This plot shows us the first 2 components with the associated labels. We don't see any obvious separation here.
@@ -182,8 +184,6 @@ We have been working on problems where we have columns X and labels Y. But what 
 Unsupervised learning is about finding relationships between the Xs (sort of like PCA was doing). One simple approach is to ask, can I cluster my data points into (N-dimensional) groups, such that a point $m$ is in cluster $J$ iff there is no closer cluster? This assumes "distance" in vector space means similarity in the real world, of course.
 
 One useful library for doing this, aside from the builtin libraries in Scikit-learn and R, is [Weka](https://www.cs.waikato.ac.nz/ml/weka/).
-
-------------------------------------------------------------------------
 
 # Supervised Stuff
 
