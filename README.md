@@ -63,7 +63,7 @@ Class in Summer 2025 will be 2x3 hour sessions each week. That's a lot of class 
 
 # Assignments
 
-See the [Assignments page](Assignments/README.md).
+See the [assignments page](assignments/README.md). Most details (deliverables, deadlines, rubrics) are on Brightspace.
 
 # Readings and Quiz
 
