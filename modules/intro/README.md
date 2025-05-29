@@ -15,7 +15,7 @@ Intro to data science applied to Software Engineering problems. Refresher/intro 
 # Topics and slides
 These are the submodules I covered in class. 
 
-*  [Intro notes](intro.md)
+*  [Intro notes](intro_pub.qmd)
 
 ### Readings
 1.  [Cross-tool logs at Google](https://research.google/pubs/pub49446/) 
