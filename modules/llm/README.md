@@ -15,7 +15,7 @@ AI-supported development tools, like Codex, Copilot, ChatGPT, etc., have taken a
 # Topics and slides
 These are the submodules I covered in class. 
 
-*  [LLM overview](slides/llm-intro.md) 
+*  [LLM overview](slides/llm-intro_pub.qmd) 
 *  [Research Opportunities](slides/Grad-Opportunities.md)  
 *  Theory
 *  Training/Bench	

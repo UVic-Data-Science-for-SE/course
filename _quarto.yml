@@ -1,8 +1,11 @@
 project:
   render: 
     - "*.qmd"
+    - "!*_pub.qmd"
     - "!2022_soln.qmd"
   title: "seng404"
+execute:
+    freeze: auto  # re-render only when source changes
 output-dir:  _output
 author:
   - name: Neil Ernst
@@ -14,8 +17,7 @@ format:
     theme: default
     slide-number: true
     logo: modules/images/ENGN_vert_bk.jpg
-    footer: "Neil Ernst (c)"
+    footer: "Neil Ernst (c) 2024-5"
+    css: custom.css
 date: last-modified
-
-
 

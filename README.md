@@ -44,19 +44,19 @@ Class in Summer 2025 will be 2x3 hour sessions each week. That's a lot of class 
 
 | Day     | Module                                                                                                   | Due                                                                                            |
 | ------- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| July 4  | [Intro](modules/intro/README.md) * [AI4SE](modules/AI4SE/README.md)                                      |                                                                                                |
-| July 9  | [Early Approaches and Problems](modules/early-problems/README.md)                                        |                                                                                                |
-| July 11 | [Basic stats](modules/basics/README)                                                                     | [Project proposal](project/project-proposal.md)                                                |
-| July 16 | [Bayes](modules/bayes/README.md)                                                                         |                                                                                                |
+| July 4  | [Intro](modules/intro/README.md)                                                                         |                                                                                                |
+| July 9  | [AI4SE](modules/ai4se/README.md)                                                                         |                                                                                                |
+| July 11 | [Early Approaches and Problems](modules/early-problems/README.md)                                        |                                                                                                |
+| July 16 | [Basic stats](modules/basics/README)                                                                     | [Project proposal](project/project-proposal.md)                                                |
 | July 18 | *Project work - no class*                                                                                | [Assn 1 - basic DS](Assignments/assignment1.md)                                                |
-| July 23 | [Ethics](modules/ethics/README)                                                                          |                                                                                                |
-| July 25 | [LLMs for SE](modules/llm/README.md)                                                                     |                                                                                                |
-| July 30 | [LLMs for SE](modules/llm/README.md) cont.                                                               |                                                                                                |
+| July 23 | [Bayes](modules/bayes/README.md)                                                                         |                                                                                                |
+| July 25 | [Ethics](modules/ethics/README)                                                                          |                                                                                                |
+| July 30 | [LLMs for SE](modules/llm/README.md)                                                                     |                                                                                                |
 | Aug 1   | *Project work - no class*                                                                                | [Assn 2 - Black Mirror](assignment2.md) • [Interim project report](project/project-interim.md) |
-| Aug 6   | [Traceability • Clones](modules/traceability-clone/README.md) • [Cost](modules/cost-defect/README.md)    |                                                                                                |
-| Aug 8   | [Bug Localization/Triage](modules/bugs/README.md)                                                        |                                                                                                |
-| Aug 13  | [Analysing Text Discussions](modules/NLP/README.md) / [Qualitative Data in SE](modules/coding/README.md) | [Assn 3 - Bayes](assignment3.md)                                                               |
-| Aug 15  | Spare/buffer - Productivity                                                                              |                                                                                                |
+| Aug 6   | [LLMs for SE](modules/llm/README.md) cont.                                                               |                                                                                                |
+| Aug 8   | [Traceability • Clones](modules/traceability-clone/README.md) • [Cost](modules/cost-defect/README.md)    |                                                                                                |
+| Aug 13  | [Bug Localization/Triage](modules/bugs/README.md)                                                        |                                                                                                |
+| Aug 15  | [Analysing Text Discussions](modules/NLP/README.md) / [Qualitative Data in SE](modules/coding/README.md) | [Assn 3 - Bayes](assignment3.md)                                                               |
 | Aug 20  | Demos/Project presentations                                                                              | [Project presentation](project/project-presentation.md)                                        |
 | Aug 23  | no class                                                                                                 | [Final project report](project/project-final.md)                                               |
 |         |                                                                                                          |                                                                                                |
@@ -112,7 +112,9 @@ Many course activities (such as group design activities, chat sessions) will exp
 Courses will not be able to accommodate personal scheduling issues, including time zone variations (from Pacific Daylight time). 
 
 ## Creating Course Material
-I use [Quarto](https://quarto.org) to create the HTML slides for the course. All the notes are in Quarto Markdown, a text format, and readable directly on Github. If you would like to generate PDFs instead, clone the repo to your machine, and in the top directory, run `quarto render --to pdf`. This will also interpret all the R commands anew, so you should also have R (v 4.4.3) installed. Running R, and then inside R running `renv::restore()` will get all the relevant libraries installed. 
+I use [Quarto](https://quarto.org) to create the HTML slides for the course. All the notes are in Quarto Markdown, a text format, and readable directly on Github. If you would like to generate PDFs instead, clone the repo to your machine, and in the top directory, run `quarto render --to pdf`. This will also interpret all the R commands anew, so you should also have R (v 4.4.3) installed. I didn't have good luck with R v 4.5 and these libraries.
+
+Running R, and then inside R running `renv::restore()` will get all the relevant libraries installed. 
 
 [CmdStanR](https://github.com/stan-dev/cmdstanr?tab=readme-ov-file#installation) and [`rethinking`](https://github.com/rmcelreath/rethinking?tab=readme-ov-file#installation) need special install steps, documented in the links to those libraries. 
 

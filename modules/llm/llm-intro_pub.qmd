@@ -1,16 +1,9 @@
 ---
-format:
-  clean-revealjs: default
-author:
-  - name: Neil Ernst
-    orcid: 0000-0001-5992-2366 
-    email: nernst@uvic.ca
-    affiliations: UVic
 date: last-modified
-title:  Introduction to large language models in SE
+title:  large language models in SE
 --- 
 
-# Intro Exercise
+# Intro Exercise {.exercise}
 
 Copilot / ChatGPT exercise. Take [the sample problem](https://github.com/UVic-Data-Science-for-SE/command_exercise/blob/main/README.md), and with your partner, solve it with ChatGPT/Copilot/TabNine etc.
 
@@ -25,9 +18,9 @@ What is the underlying SE for ML work that is needed for Codex? For Copilot?
 
 # What are we training on? 
 
-Large amounts of textual data (usually English or English-based source code). Natural language processing (NLP) is a branch of AI concerned with representing, reasoning, manipulating natural language and text documents (as opposed to images, videos, moving robots around, reasoning, etc). 
-
-Another task is to create language models, which are often input to the higher-order tasks above. A *language model* captures the relationships between words in a language so that it can predict which tokens go where. 
+1. Textual data
+2. Sources? 
+3. Other approaches? ASTs?
 
 ## Tasks {.scrollable}
 As we will see, one way to think about a language model is that it can solve a task like: [^bench]
@@ -35,24 +28,38 @@ As we will see, one way to think about a language model is that it can solve a t
 - **Prediction/Masking**: what replaces 🔡 in "Jim drove a 🔡 to the Drive-Thru line" (masking). Commonly used for self-supervision in training.
 - **Analogy**: "Red is to rose as 🔡 is to iris"
 - **Question Answering**: "who was president of the USA in 2002?"
+
+## Tasks
 - **[Winograd Schema](https://en.wikipedia.org/wiki/Winograd_schema_challenge)s**: The city council refused the demonstrators a permit because **they** [feared/advocated] violence.
 - **Translation**: "j'aime beaucoup la cuisine japonais" in English is ... (taking into account colloquialisms, idioms, slang etc.) "I like very much the cooking Japanese"
 - **Summarization**: what does `System.out.println("neil is an awesome instructor")` do?
 
 # Naturalness
 
-**Source code is a language!!** More importantly, it is a [very regular, natural language](https://dl.acm.org/doi/10.5555/2337223.2337322) - we can say with a much higher degree of certainty what the next token will be. If I tell you `System.out.println(` ... you can guess the next token is something convertible to `String` followed by a closing paren. If I tell you `the big red dog ran` ... you have a wide range of possible tokens (adverb, )
+**Source code is a language!!** 
+
+Complete:
+``` 
+System.out.println( ...
+```
+
+Complete:
+```
+My cat has three ... 
+```
 
 # Useful terms {.scrollable}
 
 1. **N-gram** - N tokens in a group. Bigram: "hot lunch, big fish" Tri-gram "Manchester United won"
 2. **Token** - an atomic "chunk" in the corpus. Could be a word; could be a source code token (`{`). 
 3. **Stop words** - words we don't think will be important. Typically, "the, an, and, or" (but which ones?)
-4. **Stemming**/**lemmatization** - shorten words to their essence. "Skillfully" -> skillful- / skill-
-5. **Language Model** - for a set T of tokens in a vocabulary, map a probability distribution $p(.)$ to sets $S$ of tokens in $T^*$ 
 
 ## Useful Terms (2)
+4. **Stemming**/**lemmatization** - shorten words to their essence. "Skillfully" -> skillful- / skill-
+5. **Language Model** - for a set T of tokens in a vocabulary, map a probability distribution $p(.)$ to sets $S$ of tokens in $T^*$ 
 6. **AST** - [Abstract Syntax Tree](https://arxiv.org/abs/2112.01184). A way of [representing](https://www.geeksforgeeks.org/abstract-syntax-tree-ast-in-java/) (encoding) programs using symbols and relationships. 
+
+## Useful Terms (3)
 7. **Distance**: historically ML has had a hard time understanding concepts separated in text. But this happens a lot in source code (`var theVar; ... ; theVar = 5;`). Need something to represent this span of relationship.
 8. **OOV**: out of vocabulary, a word that is not in the vocabulary (dictionary) learned in the model's training. E.g., a word that does not appear in Wikipedia, for the GloVe embedding. Such a word will have no representation (think about a self-driving car seeing a totally novel situation like a helicopter landing on the freeway).
 
@@ -87,7 +94,7 @@ This works OK ... but language is pretty complicated. The word embedding model i
 
 # Attention and Transformers
 
-Another approach is to use deep learning via attention mechanisms in transformer models. This is how BERT, GPT3, T5 etc work.
+Another approach is to use deep learning via attention mechanisms in transformer models. This is how BERT, GPT4, T5 etc work.
 
 ## Digression: supervision. 
 Supervision is when a human labels or validates the machine's results. 
@@ -98,8 +105,6 @@ Supervision is when a human labels or validates the machine's results.
 * **Self-supervised**: the machine manipulates the data to "hide" various pieces in order to train. 
 * **Masking** is a self-supervised training approach. 
  
-Which of these is most effective, and which is most costly? 
-
 ## Transformers
 
 A transformer is a ML architecture that encodes an input and decodes output:

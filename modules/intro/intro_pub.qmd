@@ -1,25 +1,28 @@
 ---
 title: "Introduction to Data Science for/in/about SE"
 author: "Neil Ernst"
-format: 
-  revealjs:
-    theme: default
-    slide-number: true
-    logo: img/ENGN_vert_bk.jpg
-    footer: "Neil Ernst (c)"
 date: last-modified
 ---
 
 # Intro
 
-This course is about applying Data Science to software engineering data. Data science is a broad term, but I will use it to describe using analytical techniques to support decision making. It combines hacking, statistics, domain expertise, and problem solving. 
+nernst@uvic.ca 
+ECS 560
 
 ## Syllabus 
 
-# Exercise: Icebreaker {background-color="aquamarine"}
+Updates? New topics?
+
+Project in 6 weeks. Plan accordingly!
+
+# Exercise: Icebreaker {.exercise}
 
 # Overview
-## The analytical techniques can include:
+
+# Short Break {.break}
+
+# Data Science 
+## Analytical techniques can include:
 
 * Descriptive stats like mean/median, variance, histograms, scatterplots
 * Inferential stats like Bayesian inference, maximum likelihood, hypothesis testing
@@ -31,12 +34,13 @@ This course is about applying Data Science to software engineering data. Data sc
 
 Like many areas, software development produces tons of data:
 
-* Productivity stats like lines of code per hour;
-* Communication patterns like developer code review histories;
-* Natural language text like issues and bug report dicussions
-* Code and code changes;
+* **Productivity** stats like lines of code per hour;
+* **Communication** patterns like developer code review histories;
+* **Natural language text **like issues and bug report dicussions
+* **Code** and code changes;
 * Tool logs like build logs;
 * Application specific metrics, such as uptime or fault reports.
+* many others
 
 ##  Data Types
 * Quantitative
@@ -47,44 +51,27 @@ Like many areas, software development produces tons of data:
 * Qualitative 
 
 ##
-We can think about either learning directly from data or learning from models that generate data. In the Bayesian context, for example, what we will do is try to model the process that created the data we see, and learn the parameters of those functions. 
-
-For example, a lot of software data is log-normal, often [zero-inflated](https://en.wikipedia.org/wiki/Zero-inflated_model), for example, the occurrence of bugs as we saw previously (many of the files may have no bugs recorded, and a rare few may have many many bugs).
-
-## 
-> The point of all the above algorithms is _choice_. Given some data (or model generating data) and some goals then there are many ways we use that data to achieve some, or all of those goals.  To say that another way, we have many choices on how we put the world together:
-
-##
 ![](https://raw.githubusercontent.com/txt/ase19/master/etc/img/dots1.png)
 
-> 
-> Some of those ways are quite silly:
-> 
+##
 
 ![width:500](https://raw.githubusercontent.com/txt/ase19/master/etc/img/dots2.png)
 
 ##
 
-> And some of those choices are very important. 
-> For example [Linares-Vásquez et al.](REFS.md#lin-2015) use a genetic algorithm (which is a kind of optimizer) to propose better color schemes for cell phones. For example, of the screens shown below, the left-hand-side  is an original, energy expensive design while the right-hand-side is far less energy demanding.
-
 ![width:1000px](https://raw.githubusercontent.com/txt/ase19/master/etc/img/cellphone.png) 
 
 ##
-
-> [Mendonca et al.](REFS.md#mendonca-2009) offer another example of exploring choice in software engineering. For example, software can be expressed as a set of choices. Here is a tree of options about a search engine. In this diagram, a filled/hollow circle means “mandatory”/”optional” (respectively). Also, white/dark fans means “and”,”or” (respectively).
-
 
 ![](https://raw.githubusercontent.com/txt/ase19/master/etc/img/translatefm.png)
 
 (Source: [Menzies](https://github.com/txt/ase19/blob/master/docs/overview.md#top))
 
-##
+## Nine step AI pipeline
 
-Typically we follow this [nine step AI pipeline](https://github.com/txt/ase19/blob/master/docs/REFS.md#amershi-2019): ![](https://github.com/txt/ase19/blob/master/etc/img/9steps.png?raw=true)
+![](https://github.com/txt/ase19/blob/master/etc/img/9steps.png?raw=true)
 
-##
-Another way to think about this is using the *six steps of statistical modeling*: 
+## six steps of statistical modeling
 
 1. specification (create a model)
 2. [identification]([url](https://en.wikipedia.org/wiki/Identifiability)) (check if, given a new parameterization, your model's predictions change)
@@ -110,15 +97,10 @@ When presented with data or a theory about how data is created, what should we d
 * Better intuition: explore means comparing data (typically visually) to a pseudo-statistical model (our prior).
 * Then, create a more rigorous statistical model and compare alternatives.
 
-## 
-
-And so we need to think about all of these stages in our production Data Science application: in this class we focus on the first 7. In general we will look at several types of tools:
+## Types of tools
 
 * **Data miners**, that tell us what is in the data and build a model: nearest neighbors, decision trees, deep learners
 * **Optimizers**, that tell us what to do, specifically, how to do something simple that has the biggest positive impact: genetic algorithms, heuristic search, etc.
-
-## 
-And we can combine both: optimizing the results of a data miner, finding **optimal** sets of hyper parameters, etc. Using data mining to create models to optimize. 
 
 
 # TPS exercise {.exercise}
@@ -130,27 +112,28 @@ Write down a quick answer you have - maybe from your past experience.
 Then *pair* with your table partner to *share* and discuss their answer and yours. We will then collect a few responses from the class as a whole. 
 
 
-# Ethics
+# Ethics Implications
 
-Since we can tweak data and analysis approaches in a variety of ways, one question we should think seriously about is ethical implications. People tend to ascribe a lot of weight to a data analysis, and ignore the many assumptions that underpin that analysis (e.g., how did we get the data in the first place? What was *Not* captured?)
-
-Some ethical dimensions include privacy, regulatory compliance and safety, diversity and inclusion, etc. ...
-
-Consider the two examples of advanced AI for code completion I attached to the readings, Github Copilot and OpenAI's Codex (both derived from GPT3). What are some possible issues with these tools? 
-
+- how did we get the data? was there consent?
+- what is missing? 
+- what assumptions are bing made in the model? 
+- whose views are not included?
+- (more to come later in term)
 
 # Cross Tool Logs example
 
-The reading this week looks at work by Google on understanding developer productivity (one dimension of it anyway). 
+1. How to read the papers
+1. Methods used
+2. Types of Constructs
+3. Belief in Results - Practical Significance
 
-The first thing to think about is a meta-analysis of the reading, and how to read academic research papers. Note how the paper is structured. This paper was published in a magazine, a more approachable format than others (journals or conferences for example). 
+# Longish Break {.break}
 
-The paper has a nice explanation of the motivation, and then gives a few short details on how it was done (why so scanty?). 
+# Setting Up R, RStudio, AI tooling
 
-## 
-The second aspect to think about is the methods used to produce insights. Were they all based on data mining? 
+We will now spend some time getting the basic tooling for this class installed. 
 
-The third aspect is the type of constructs the paper uses. One key construct here is the notion of *readability*. Do you agree with their definition? 
-
-The fourth aspect is to reflect on the results obtained. Do you believe the results? What might you do as a manager with these insights? What might be missing from the results? 
-
+::: {.notes}
+1. open terminal and 
+2. open RStudio. Go over basics of RStudio.
+3. Wait. Allow them to do this. 

@@ -1,6 +1,6 @@
 ---
 author: Neil Ernst
-title: Course Intro and Data Science Basics
+title: Course Intro
 
 ---
 
@@ -27,7 +27,7 @@ These are done in class. The source code below is a combo of what I typed and wh
 
 1. Icebreaker
 2. Think-Pair-Share
-3. What is R/RStudio? 
+3. What is R? 
 
 ### Optional Readings and Activities
 
