@@ -14,15 +14,10 @@ If you cannot see the Assignment on Brightspace, it is a group assignment, and y
 
 Assignments are due on Friday by midnight. You may take 2 days more to update your assignment (i.e., Sunday night) once you have submitted. You **must** submit something by Friday. I will not answer assignment questions after Friday, however.
 
-The details of the assignments are as follows:
+The details of the assignments are contained in Brightspace. 
 
-- [Assignment 1: Getting Started with R and Data Science](assignment1.md)
-- [Assignment 2: Ethical Data Science](assignment2.md)
-- [Assignment 3: Bayesian Inference](assignment3.md)
-
-Click on the individual links to understand what each assignment entails. 
-
-Grad students have one more assignment, a paper presentation. 
-
-- [Grad Assignment: Paper Discussion](Paper%20Discussions.md)
+- Assignment 1: Getting Started with R and Data Science
+- Assignment 2: Ethical Data Science
+- Assignment 3: Bayesian Inference
+- Grad Assignment: Paper Discussions
  
