@@ -25,20 +25,20 @@ Please note that this project should be independent from other course projects y
 
 ## Submissions, due dates, milestones
 
-All of the submissions should take place on Brightspace in the appropriate category. See Brightspace for deadlines. Do NOT wait to get started.
+All of the submissions should take place on Brightspace in the appropriate category. See Brightspace for deadlines and formal descriptions and rubrics. Do NOT wait to get started.
 
-| Milestone                                       | Aim                                    | Value           |
-| ----------------------------------------------- | -------------------------------------- | --------------- |
-| [Project Proposal](project-proposal.md)         | Explain idea and get approval          | 10% of project  |
-| [Project interim report](project-interim.md)    | Discuss progress to date and timelines | 20% of project  |
-| [Project presentation](project-presentation.md) | Show results to colleagues             | 10% of project  |
-| [Project final report](project-final.md)        | Write up results and process           | 60%  of project |
+| Milestone              | Aim                                    | Value           |
+| ---------------------- | -------------------------------------- | --------------- |
+| Project Proposal       | Explain idea and get approval          | 10% of project  |
+| Project interim report | Discuss progress to date and timelines | 20% of project  |
+| Project presentation   | Show results to colleagues             | 10% of project  |
+| Project final report   | Write up results and process           | 60%  of project |
 
 ## Project Advice
 
 Each student/team member is required to do the following:
 
-1. Follow any updates on this site and meet all of the established interim milestones.
+1. Follow any updates on this site, Teams, Brightspace, and meet all of the established interim milestones.
 2. Attend all the lectures during the semester, as these will prepare you to succeed in this project.
 3. Together with your team mates (if any), choose a topic for your project (details to follow).
 4. Contribute equitably throughout the term to the team project in terms of research, video and paper writing.
@@ -56,5 +56,5 @@ Each student/team member is required to do the following:
 5. I'm sure there are others! 
 
 # Past Projects
-(nb: do not do these projects again without checking with me)
+In lieu of a lengthy list, I will reserve the right to change your project topic if it veers too close to past semester projects. 
 
