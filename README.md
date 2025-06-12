@@ -46,17 +46,17 @@ Class in Summer 2025 will be 2x3 hour sessions each week. That's a lot of class 
 | ------- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | July 4  | [Intro](modules/intro/README.md)                                                                         |                                                                                                |
 | July 9  | [AI4SE](modules/AI4SE/README.md)                                                                         |                                                                                                |
-| July 11 | [Early Approaches and Problems](modules/early-problems/README.md)                                        |                                                                                                |
+| July 11 | [Early Approaches and Problems](modules/early-problems/README.md)                                        | Quiz: Early Approaches Readings                                                                |
 | July 16 | [Basic stats](modules/basics/README)                                                                     | [Project proposal](project/project-proposal.md)                                                |
 | July 18 | *Project work - no class*                                                                                | [Assn 1 - basic DS](Assignments/assignment1.md)                                                |
 | July 23 | [Bayes](modules/bayes/README.md)                                                                         |                                                                                                |
 | July 25 | [Ethics](modules/ethics/README)                                                                          |                                                                                                |
-| July 30 | [LLMs for SE](modules/llm/README.md)                                                                     |                                                                                                |
+| July 30 | [LLMs for SE](modules/llm/README.md)                                                                     | Quiz: LLM Readings                                                                             |
 | Aug 1   | *Project work - no class*                                                                                | [Assn 2 - Black Mirror](assignment2.md) • [Interim project report](project/project-interim.md) |
 | Aug 6   | [LLMs for SE](modules/llm/README.md) cont.                                                               |                                                                                                |
-| Aug 8   | [Traceability • Clones](modules/traceability-clone/README.md) • [Cost](modules/cost-defect/README.md)    |                                                                                                |
-| Aug 13  | [Bug Localization/Triage](modules/bugs/README.md)                                                        |                                                                                                |
-| Aug 15  | [Analysing Text Discussions](modules/NLP/README.md) / [Qualitative Data in SE](modules/coding/README.md) | [Assn 3 - Bayes](assignment3.md)                                                               |
+| Aug 8   | [Traceability • Clones](modules/traceability-clone/README.md) • [Cost](modules/cost-defect/README.md)    | Quiz: Traceability Readings                                                                    |
+| Aug 13  | [Bug Localization/Triage](modules/bugs/README.md)                                                        | Quiz: Bug Readings                                                                             |
+| Aug 15  | [Analysing Text Discussions](modules/NLP/README.md) / [Qualitative Data in SE](modules/coding/README.md) | Quiz: Text Analysis Readings [Assn 3 - Bayes](assignment3.md)                                  |
 | Aug 20  | Demos/Project presentations                                                                              | [Project presentation](project/project-presentation.md)                                        |
 | Aug 23  | no class                                                                                                 | [Final project report](project/project-final.md)                                               |
 |         |                                                                                                          |                                                                                                |
@@ -128,7 +128,19 @@ You are expected to be respectful of other students and the instructor/TAs: mini
 Strict monitoring of academic integrity will be performed in this course for any work submitted for marks. See course component descriptions and Course Policies and Guidelines for details on academic integrity expectations. Substantiated academic integrity violations will be referred to the Department's Academic Integrity Committee which will determine penalty and ensure a record of the violation is kept with the university.
 
 ## AI supported work
-You are expected to use generative AI (ChatGPT, Copilot, Claude, Cursor etc. etc.) in this course except where explicitly forbidden (mainly, because it will get in the way of you actually learning and understanding the concepts!). Use of these assistants beyond simple grammar help **must be accompanied by a dedicated section in the assignment submission outlining how it was used and why it helped**.
+You are expected to use generative AI (ChatGPT, Copilot, Claude, Cursor etc. etc.) in this course except where explicitly forbidden (mainly, because it will get in the way of you actually learning and understanding the concepts!). In fact, some assignments will require it. Learning to use Al is an emerging skill, and I provide a tutorial in the 2nd class about how to use them. 
+
+I am happy to meet and help with these tools during office hours or after class. If you are struggling to access an AI tool financially, please meet with me so we can arrange something. 
+
+Be aware of the limits of AI tools: 
+
+* If you provide minimum effort prompts, you will get low quality results. You will need to refine your prompts in order to get good outcomes. This will take work.
+* Don't trust anything it says. If it gives you a number or fact, or writes code that looks really good, assume it is wrong unless you either know the answer or can check in with another source. **You are responsible for any errors** or omissions of the tool. 
+* It works best for topics you understand. So learn the topics. This will require discipline to not default to using the AI all the time. 
+* AI is a tool, but one that you need to acknowledge using. Please include a paragraph at the end of any assignment that uses AI explaining what you used the AI for and what prompts you used to get the results. Failure to do so is in violation of academic integrity policies. 
+* Be thoughtful about when this tool is useful. Don't use it if it isn't appropriate for the case or circumstance.
+
+(derived from https://www.oneusefulthing.org/p/my-class-required-ai-heres-what-ive)
 
 # License
 

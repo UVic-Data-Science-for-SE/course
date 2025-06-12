@@ -38,3 +38,11 @@ These are done in class. The source code below is a combo of what I typed and wh
 ### Optional Readings and Activities
 3.  [Fowler: Patterns for GenAI series](https://martinfowler.com/articles/gen-ai-patterns/)	
 1. [Kalliamvakou: quantifying GitHub Copilot’s impact on developer productivity and happiness](https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/)
+2. [Lewis et al., Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/pdf/2005.11401)
+3. [Willison, LLM tutorial](https://simonwillison.net/2025/May/15/building-on-llms/) - I drew on this a lot for my notes.
+
+#### Other things I've come across
+1. https://bramcohen.com/p/vibe-coding - helfpul prompt suggestions to fix Claude mistakes
+2. https://annievella.com/posts/the-software-engineering-identity-crisis/ - on the transition from craft to oversight in SE
+3. https://fortune.com/2025/05/18/ai-chatbots-study-impact-earnings-hours-worked-any-occupation/ - maybe AI isn't as great as it is made out to be?
+4. https://www.anildash.com//2025/05/20/mcp-web20-20/ Guy who has been around protocols for a while talks MCP.

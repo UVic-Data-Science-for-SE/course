@@ -35,5 +35,6 @@ These readings enrich the material but are not strictly necessary to read.
 
 * [Facebook and static analysis](https://research.fb.com/wp-content/uploads/2018/05/from-start-ups-to-scale-ups-opportunities-and-open-problems-for-static-and-dynamic-program-analysis.pdf)
 * [Hullman and Gelman 2021, "Designing for Interactive Exploratory Data Analysis Requires Theories of Graphical Inference"](https://hdsr.mitpress.mit.edu/pub/w075glo6/release/3?readingCollection=c6a3a10e)
+* [Thoughts on Applicability, Titus Winters](http://alumni.cs.ucr.edu/~titus/applicability.pdf)
 
 
