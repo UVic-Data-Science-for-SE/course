@@ -1,9 +1,9 @@
 # Project Outline
 
-The goal of this project is to take a software analytics problem and provide a 10 page report summarizing the approach taken and conclusions drawn. Good examples will be papers published at [MSR](https://2025.msrconf.org), [ICSE](https://conf.researchr.org/home/icse-2025), [SANER](https://conf.researchr.org/home/saner-2024) and similar venues.
+The goal of this project is to take a software analytics problem and provide a 10 page report summarizing the approach taken and conclusions drawn. Good examples are papers published at [MSR](https://2025.msrconf.org), [ICSE](https://conf.researchr.org/home/icse-2025), [SANER](https://conf.researchr.org/home/saner-2024) and similar venues.
 
 For this project, you will need to 
-1. Identify a SE problem or question, likely as defined in an existing research paper. 
+1. Identify a SE problem or question. 
 2. Find a suitable sample and data to solve/answer that problem/question.
 3. Analyze the data using the techniques covered in class (or others).
 4. Write up a report summarizing the problem and solution in academic style, as a Quarto notebook.
