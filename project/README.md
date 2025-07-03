@@ -1,9 +1,9 @@
 # Project Outline
 
-The goal of this project is to take a software analytics problem and provide a 10 page report summarizing the approach taken and conclusions drawn. Good examples will be papers published at [MSR](https://2025.msrconf.org), [ICSE](https://conf.researchr.org/home/icse-2025), [SANER](https://conf.researchr.org/home/saner-2024) and similar venues.
+The goal of this project is to take a software analytics problem and provide a 10 page report summarizing the approach taken and conclusions drawn. Good examples are papers published at [MSR](https://2025.msrconf.org), [ICSE](https://conf.researchr.org/home/icse-2025), [SANER](https://conf.researchr.org/home/saner-2024) and similar venues.
 
 For this project, you will need to 
-1. Identify a SE problem or question, likely as defined in an existing research paper. 
+1. Identify a SE problem or question. 
 2. Find a suitable sample and data to solve/answer that problem/question.
 3. Analyze the data using the techniques covered in class (or others).
 4. Write up a report summarizing the problem and solution in academic style, as a Quarto notebook.
@@ -11,7 +11,7 @@ For this project, you will need to
 
 ## Teams 
 
-The project should ideally be completed in teams of 3-4 students, but students can complete it alone or in pairs if they wish.  The main contribution from this project is about the insights you gained concerning the empirical aspects rather than new knowledge gained through the study. You **MAY NOT** mix graduate students and undergraduate students in your teams.
+The project should ideally be completed in teams of 3-5 students, but students can complete it alone or in pairs if they wish.  The main contribution from this project is about the insights you gained concerning the empirical aspects rather than new knowledge gained through the study. You **MAY NOT** mix graduate students and undergraduate students in your teams.
 
 ## Research Ethics
 
@@ -75,6 +75,7 @@ Each student/team member is required to do the following:
 2. Letting LLMs do all the analysis work. You can expect me to ask pointed questions about your assumptions, so your team needs to understand what you are doing.
 3. Forgetting that this is a short course and explaining you no longer have time to finish the project as originally conceived. 
 4. Writing the report at the end, instead of as you go.
+5. Do nothing to help your team. I reserve the right to adjust individual marks if there is evidence someone is not contributing. Not having any evidence of your work in GitHub (commits, discussions) would be a problem. 
 
 # Past Projects
 In lieu of a lengthy list, I will reserve the right to change your project topic if it veers too close to past semester projects. 
