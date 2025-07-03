@@ -8,7 +8,8 @@ Early work in DS for SE, and some possible challenges.
 
 # Learning Outcomes
 
-- How the field started; lessons from the past. Taylorism. Is SE "engineering" or factory work? Contrarianism.
+- Appreciate how the field started; lessons from the past. Taylorism. 
+- Differentiate between SE "engineering" and factory work?
 - Challenges with SE data mining and data sources.
 - Understand limitations with SE inferences
   

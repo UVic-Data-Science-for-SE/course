@@ -11,6 +11,7 @@ How to use AI to do software engineering (mid 2025 version!)
 - be able to explain components of the AI4SE lifecycle:
 	- prompting
 	- context and RAG
+	- tool use with MCP
 	- evals
 	- models and pitfalls
 - use a modern LLM for software development
@@ -23,6 +24,7 @@ These are the submodules I covered in class.
 
 ### Readings (before class)
 1.  [Simon Willison: How I use LLMs](https://simonwillison.net/2025/Mar/11/using-llms-for-code/)
+2.  [Simon Willison: The Last 6 Months in LLMs](https://simonwillison.net/2025/Jun/6/six-months-in-llms/)
 3.  [Fowler: Exploring GenAI series](https://martinfowler.com/articles/exploring-gen-ai.html); 
 4.  [Gene Kim/Steve Yegge pairing with Claude Code (watch)](https://www.youtube.com/watch?v=HtqxI53h7zM)
 
@@ -36,7 +38,7 @@ These are done in class. The source code below is a combo of what I typed and wh
 2.  Using Claude Code
 
 ### Optional Readings and Activities
-3.  [Fowler: Patterns for GenAI series](https://martinfowler.com/articles/gen-ai-patterns/)	
+3. [Fowler: Patterns for GenAI series](https://martinfowler.com/articles/gen-ai-patterns/)	
 1. [Kalliamvakou: quantifying GitHub Copilot’s impact on developer productivity and happiness](https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/)
 2. [Lewis et al., Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/pdf/2005.11401)
 3. [Willison, LLM tutorial](https://simonwillison.net/2025/May/15/building-on-llms/) - I drew on this a lot for my notes.

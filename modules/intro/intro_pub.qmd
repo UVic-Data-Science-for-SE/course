@@ -15,9 +15,20 @@ Updates? New topics?
 
 Project in 6 weeks. Plan accordingly!
 
+## AI - General Philosophy
+
+>What’s the essential skill that students need to be learning, such that when they get out of school they are more capable humans than when they went in?
+
+> the answer ... isn’t simply a body of knowledge to be memorized or a set of skills to be mastered. It’s a stance. A stance from which to address the world and all its challenges. A stance built on self-confidence and resilience: the conviction that one has a fighting chance to overcome or circumvent whatever obstacles the world throws in one’s path. **The way you acquire it is by trying, and sometimes failing, to do difficult things.** It can be discouraging, but if you have good mentors, and if you’re collaborating with friends who are in the same boat, you can find ways to succeed, and develop a knack for it. That’s true self-reliance.
+
+-- Neal Stephenson [via newsletter](https://substack.com/app-link/post?publication_id=2694786&post_id=166816228]
+
 # Exercise: Icebreaker {.exercise}
 
 # Overview
+
+<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/app/presentation/alfcrmis7rrgrk77617qq7xkvbtiu251/embed' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+
 
 # Short Break {.break}
 
@@ -91,11 +102,11 @@ When presented with data or a theory about how data is created, what should we d
 
 ##
 
-* Explore vs. confirm
+* **Explore** vs. **confirm**
   * Confirm: verify data support/reject hypothesis
 * Hard to draw a line (Hullman and Gelman, 2021)
-* Better intuition: explore means comparing data (typically visually) to a pseudo-statistical model (our prior).
-* Then, create a more rigorous statistical model and compare alternatives.
+* Better intuition: **explore** means comparing data (typically visually) to a pseudo-statistical model (our prior).
+* Only then do we create a more rigorous statistical model and compare alternatives.
 
 ## Types of tools
 
@@ -103,22 +114,22 @@ When presented with data or a theory about how data is created, what should we d
 * **Optimizers**, that tell us what to do, specifically, how to do something simple that has the biggest positive impact: genetic algorithms, heuristic search, etc.
 
 
-# TPS exercise {.exercise}
+# Exercise: TPS on team metrics {.exercise}
 
-*think* about the following question: "You are the software engineering manager or team lead at a big company. What is one key question you want to know the answer to for effectively running your team". 
+Visit SonarCloud.io and explore the data science dashboard there.
 
-Write down a quick answer you have - maybe from your past experience. 
+* Q. what is the part of the code that needs attention? How do you know this? 
+* Q. what do you make of "issues"? Where do you start with a remediation project?  
 
-Then *pair* with your table partner to *share* and discuss their answer and yours. We will then collect a few responses from the class as a whole. 
+![sonar cloud qr code](../images/sonarcloud-mw-qr.png)
 
+{.notes}
+Since we can tweak data and analysis approaches in a variety of ways, one question we should think seriously about is ethical implications. People tend to ascribe a lot of weight to a data analysis, and ignore the many assumptions that underpin that analysis (e.g., how did we get the data in the first place? What was *Not* captured?)
 
-# Ethics Implications
+Some ethical dimensions include privacy, regulatory compliance and safety, diversity and inclusion, etc. ...
 
-- how did we get the data? was there consent?
-- what is missing? 
-- what assumptions are bing made in the model? 
-- whose views are not included?
-- (more to come later in term)
+Consider the two examples of advanced AI for code completion I attached to the readings, Github Copilot and OpenAI's Codex (both derived from GPT3). What are some possible issues with these tools? 
+:::
 
 # Cross Tool Logs example
 
@@ -129,11 +140,7 @@ Then *pair* with your table partner to *share* and discuss their answer and your
 
 # Longish Break {.break}
 
-# Setting Up R, RStudio, AI tooling
+# Activity: Setting Up R, RStudio, AI tooling
 
 We will now spend some time getting the basic tooling for this class installed. 
 
-::: {.notes}
-1. open terminal and 
-2. open RStudio. Go over basics of RStudio.
-3. Wait. Allow them to do this. 

@@ -14,18 +14,32 @@ date: last-modified
 - I am learning as I go, as you are.
 - Things have moved fast, and there are many tools to choose from.
 - More effective models tend to cost more. 
-- I don't think AI will replace thinking.
+- I don't believe AI will replace thinking. 
 
 ## Vibe Coding {.exercise}
 
 ![](../images/F633DAA1-BDAB-4D44-A629-350A9617DDB0.png)
 
+[Office Scene](https://www.youtube.com/watch?v=QOtuX0jL85Y)
+
 ## GenAI and Programming and Data Science
 In what ways is GenAI transforming this field? What should we do in this class in response? 
 
+##
+How I use it:
+1. to answer questions for background I forgot or didn't know
+2. to write scripts to manage notes and marks
+3. to code up answers to the exercises to test my questions
+
+I do not use it to mark your assignments, tempting as that is. 
+
+## 
+
+![](../images/IMG_1556.PNG)
+
 ## Policies
 
-See the [course README file](https://github.com/UVic-Data-Science-For-SE/).
+See the [course README file](https://github.com/UVic-Data-Science-For-SE/) and the [University position statement](https://teachanywhere.uvic.ca/academic-integrity/genai-position-statement/).
 
 ## How to Use AI as a Student
 (from https://substack.com/home/post/p-160131730)
@@ -50,10 +64,11 @@ Emphasize craftsmanship. AI rewards having a structured, careful development pro
 ## Accessible tools (financially)
 * [Claude student version](https://www.anthropic.com/contact-sales/for-student-builders)
 * [Copilot for students](https://education.github.com/pack)
+* [Pricing](https://www.llm-prices.com)
 
 # Exercise: Use LLMs {.exercise}
 
-## Exercise: Use LLMs {background-color="aquamarine"}
+## Exercise: Use LLMs {.exercise}
 We will do what Andrej Karpathy calls "vibe coding": a zen-like use of autocomplete to try and get the AI to do something useful. Kent Beck has this nice image of how this works.
 
 1. Download this data file: https://github.com/datasciencedojo/datasets/blob/master/titanic.csv
@@ -61,32 +76,118 @@ We will do what Andrej Karpathy calls "vibe coding": a zen-like use of autocompl
 3. Get the AI to parse the data file and show simple descriptive stats in R notebook. 
 4. Display the graph. 
 
-<!-- there is something more than 'vibe coding' which is interactive and iterative development, wandering a path but with some goal in mind -->
+## Vibe Coding Vs AI-assisted Engineering
+
+via [Gergely](https://substack.com/app-link/post?publication_id=458709&post_id=165108402)
+
+| Vibes, man           | Engineering, Madam      |
+| -------------------- | ----------------------- |
+| 'continue monkey'    | Testing                 |
+| 'Don't look at code' | Security                |
+| 'Let it rip'         | Maintainability         |
+| 'Keep Going!'        | Reliability             |
+| 'YOLO'               | Correctness             |
+|                      | Performance and scaling |
+
+# Adding Context
 
 ## Building Good Prompts
 As Simon Willison [writes](https://simonwillison.net/2025/May/21/chatgpt-new-memory/), 
 
-> The entire game when it comes to prompting LLMs is to carefully control their context-the inputs (and subsequent outputs) that make it into the current conversation with the model.
+> The entire game when it comes to prompting LLMs is to carefully control their **context**---the inputs (and subsequent outputs) that make it into the current conversation with the model.
 
 So how can we do that? 
+
+## The Challenge
+An LLM is trained on vast amounts of general data, like all of Wikipedia and all of GitHub.
+
+But our problem is a particular one, and we don't know if the LLM's distribution matches ours. 
+
+So we need to **steer it** to the space of solutions that apply to us. 
+
+Another term for this is `context engineering`^[https://twitter.com/karpathy/status/1937902205765607626]
+
+## Quote
+> +1 for "context engineering" over "prompt engineering".
+
+> People associate prompts with short task descriptions you'd give an LLM in your day-to-day use. When in every industrial-strength LLM app, context engineering is the delicate art and science of **filling the context window with just the right information for the next step**. *Science* because doing this right involves task descriptions and explanations, few shot examples, RAG, related (possibly multimodal) data, tools, state and history, compacting [...] Doing this well is highly non-trivial. And *art* because of the guiding intuition around LLM psychology of people spirits. [...]
+
+[Andrej Karpathy via Simon Willison](https://simonwillison.net/2025/Jun/27/context-engineering/)
+
+## Context Issues
+[(derived from the article here)
+](https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html)
+
+> Context is not free... every token influences the model's behavior.
+
+
+* **Context Poisoning**: When a hallucination or other error makes it into the context, where it is repeatedly referenced.
+* **Context Distraction**: When a context grows so long that the model over-focuses on the context, neglecting what it learned during training.
+* **Context Confusion**: When superfluous information in the context is used by the model to generate a low-quality response.
+* **Context Clash**: When you accrue new information and tools in your context that conflicts with other information in the prompt. ^[https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html]
+
+## Tactics for improving Context
+
+1. Use **RAG**
+2. Be Deliberate in **Tool Choice**: More tools is not better.
+3. Context **Quarantine**: Use sub-agents to isolate (modularity!)
+4. **Prune** the context: use a tool to remove unnecessary docs
+5. **Summarize**: give the model the summary, not everything.
+6. **Offload**: don't put everything into the context.
+
+# Context and RAG
 
 ## Adding Context With RAG
 A lot of the challenge with software engineering is understanding what the current program is supposed to be doing---what Peter Naur [called the "theory" of the program](https://pages.cs.wisc.edu/~remzi/Naur.pdf).
 
 The LLM is no different. We need to tell it what to do. 
 
+## Two Problems
+1. LLMs are limited to the data they are trained on (e.g., mostly English texts, wikipedia) as of a given date.
+2. They exude confidence in their answers and have no way of knowing "truth" -> hallucinations.
+
+## RAG aka Prompt-Stuffing
+
+> RAG: try to figure out the most relevant documents for the user’s question and stuff as many of them as possible into the prompt.
+-- Simon Willison
+
+* Simon's example: Stuff a lot of Python docs into the prompt, and now the LLM 'knows' that info. 
+* Super helpful for giving local context, especially for documents the LLM might not have seen (proprietary docs).
+
+## How? 
+
+Combine well understood information retrieval approaches with transformers to condition the result on the document set.
+
+Given input sequence $x$, and text documents $z$, we want to generate output sequence $y$.
+
+1. Use a **retriever** $p_\eta(z|x)$ with parameters $\eta$ that returns distributions over text passages given a query $x$.
+2. Use a **generator** $p_θ(y_i|x,z,y_{1:i−1})$ parametrized by θ that generates a current token based on a context of the previous $i−1$ tokens $y_{1:i−1}$, the original input $x$ and a retrieved passage $z$.
+3. **Marginalize** over the probabilities to produce the most likely answer $z$. 
+
+## Intuition
+
+* Vanilla LLM can produce K sequences to our question (e.g., "what university is best for CS in Canada?"). 
+* We typically cut off the sequences at a threshold (ultimately so K=1). 
+* The rank of the K answers will reflect training data (e.g., universities like UofT with the most documents about them). 
+* If we apply RAG, we can bias the rankings according to the provided RAG documents (for example, a bunch of internal documents from CSCAN discussing computer science departments). 
+* The selected sequence ($y$) will be a weighted combination of the final sequences.
+
+## Discussion {.activity}
+
+Why does this work? 
+
+## Tools
+1. [Cognita](https://github.com/truefoundry/cognita)
+
+# Testing Prompts and Outputs with Evals
+
 ## Creating Effective Evals
 An `eval` is a test that the AI's output is doing what you had hoped. It isn't a `unit test` exactly, since unit tests are repeatable and deterministic (ideally). But an eval should give you a sense that the output is what you expect. 
 
-What is an eval for a data analysis project? 
-
-- how many NaNs?
-- what is the expected mean/median for the data, and is it within range? 
-
-### 
+### PromptFoo
 This is an emerging space. One approach is [described here](https://simonwillison.net/2025/Apr/24/exploring-promptfoo/). It uses the [PromptFoo](https://www.promptfoo.dev/docs/installation/) tool to manage the workflow.  
 
-### 
+### Assertions
 
 The idea is that you prompt the LLM to do something (e.g., generate code), it returns a result, and then the eval is used to examine if the LLM did the right thing. If not, you a) change the model b) add context via RAG or MCP c) redo the prompt. 
 
@@ -118,7 +219,7 @@ For example,
 `__expected: contains:NO`
 
 
-## Eval Exercise {background-color="cyan"}
+## Eval Exercise {.exercise}
 
 > Install and Configure PromptFoo. 
 > Select your preferred AI tool. 
@@ -132,10 +233,51 @@ What do you need to develop these evals?
 - domain expertise: it helps to know the correct answer. In the sample, that means comprehensive knowledge about food stamps, US federal and state laws and regulations, acronyms, legal cases, etc.
 - sense for how often things might change
 - cleverness at writing prompts and assertions. This is an art, not a science. 
-- $$ to run against different models!
+- costs $$ to run against different models!
 
-## Other topics to discuss
+## Tool Use and Agents
+* Call other programs to do stuff, some of which are other GenAI calls.
+* E.g. rather than asking the LLM to add 2+2, just say "python -c 'print(2+2)'"
+* Gets more interesting when we pre-specify prompts for LLM calls
+* Let's look at [Google's framework](https://github.com/google/adk-samples)
 
-* Agentic Programming 
+### 
+
+```
+root_agent = Agent(
+    name="weather_time_agent",
+    model="gemini-2.0-flash",
+    description=(
+        "Agent to answer questions about the time and weather in a city."
+    ),
+    instruction=(
+        "You are a helpful agent who can answer user questions about the time and weather in a city."
+    ),
+    tools=[get_weather, get_current_time],
+)
+```
+
+### 
+![](https://google.github.io/adk-docs/assets/adk-web-dev-ui-chat.png)
+
+# Talking to Others with MCP
+
+## Overview
+Problem: I don't want the AI to speculate on how to access my API - I have a precise set of calls it can use.
+
+I don't want it to reinvent regular expressions -- just use `sed, grep, awk` etc.
+
+How to tell the AI what is available? Need to connect it to the API so it can discover what is possible. 
+
+> NEVER try to edit a file by running terminal commands unless the user specifically asks for it. (Copilot instructions) ^[https://simonwillison.net/2025/Jun/30/vscode-copilot-chat/]
+
+## MCP
+> MCP solves this problem by providing a standardized way for AI models to discover what tools are available, understand how to use them correctly, and maintain conversation context while switching between different tools. It brings determinism and structure to agent-tool interactions, enabling reliable integration without custom code for each new tool" ^[https://jonturow.substack.com/p/what-mcps-rise-really-shows-a-tale]
+
+## More Readings
 * [Model Context Protocol](https://jonturow.substack.com/p/what-mcps-rise-really-shows-a-tale) 
+* [Spec for MCP](https://modelcontextprotocol.io/introduction)
+* [Best Practices for Agentic Coding](https://www.anthropic.com/engineering/claude-code-best-practices)
+
+## Other topics to discuss {.activity}
 * What becomes of SWE, SDET, Principal SE roles? 
