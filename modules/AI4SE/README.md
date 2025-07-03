@@ -43,8 +43,12 @@ These are done in class. The source code below is a combo of what I typed and wh
 2. [Lewis et al., Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/pdf/2005.11401)
 3. [Willison, LLM tutorial](https://simonwillison.net/2025/May/15/building-on-llms/) - I drew on this a lot for my notes.
 
-#### Other things I've come across
-1. https://bramcohen.com/p/vibe-coding - helfpul prompt suggestions to fix Claude mistakes
-2. https://annievella.com/posts/the-software-engineering-identity-crisis/ - on the transition from craft to oversight in SE
-3. https://fortune.com/2025/05/18/ai-chatbots-study-impact-earnings-hours-worked-any-occupation/ - maybe AI isn't as great as it is made out to be?
-4. https://www.anildash.com//2025/05/20/mcp-web20-20/ Guy who has been around protocols for a while talks MCP.
+#### Case Studies/Anecdotes (so many ... send me more!)
+
+* [Tim Bray, Claude and Go and pointers](https://www.tbray.org/ongoing/When/202x/2025/07/01/First-AI-Code)
+* [Thoughtworks Consultants on what works](https://newsletter.pragmaticengineer.com/p/two-years-of-using-ai)
+* [Kent Beck on building a library](https://tidyfirst.substack.com/p/augmented-coding-beyond-the-vibes)
+* https://bramcohen.com/p/vibe-coding - helfpul prompt suggestions to fix Claude mistakes
+* https://annievella.com/posts/the-software-engineering-identity-crisis/ - on the transition from craft to oversight in SE
+* https://fortune.com/2025/05/18/ai-chatbots-study-impact-earnings-hours-worked-any-occupation/ - maybe AI isn't as great as it is made out to be?
+* https://www.anildash.com//2025/05/20/mcp-web20-20/ Guy who has been around protocols for a while talks MCP.
