@@ -80,7 +80,9 @@ We will do what Andrej Karpathy calls "vibe coding": a zen-like use of autocompl
 
 via [Gergely](https://substack.com/app-link/post?publication_id=458709&post_id=165108402)
 
-| Vibes, man           | Engineering, Madam      |
+or "Augmented Coding" vs 
+
+| Vibes, man           | Augmented               |
 | -------------------- | ----------------------- |
 | 'continue monkey'    | Testing                 |
 | 'Don't look at code' | Security                |
@@ -90,6 +92,10 @@ via [Gergely](https://substack.com/app-link/post?publication_id=458709&post_id=1
 |                      | Performance and scaling |
 
 # Adding Context
+
+## What Is Context? 
+
+![context venn diagram via https://www.philschmid.de/context-engineering](https://www.philschmid.de/static/blog/context-engineering/context.png)
 
 ## Building Good Prompts
 As Simon Willison [writes](https://simonwillison.net/2025/May/21/chatgpt-new-memory/), 
@@ -120,9 +126,10 @@ Another term for this is `context engineering`^[https://twitter.com/karpathy/sta
 
 > Context is not free... every token influences the model's behavior.
 
-
 * **Context Poisoning**: When a hallucination or other error makes it into the context, where it is repeatedly referenced.
 * **Context Distraction**: When a context grows so long that the model over-focuses on the context, neglecting what it learned during training.
+
+## Issues (2) 
 * **Context Confusion**: When superfluous information in the context is used by the model to generate a low-quality response.
 * **Context Clash**: When you accrue new information and tools in your context that conflicts with other information in the prompt. ^[https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html]
 
@@ -274,10 +281,6 @@ How to tell the AI what is available? Need to connect it to the API so it can di
 ## MCP
 > MCP solves this problem by providing a standardized way for AI models to discover what tools are available, understand how to use them correctly, and maintain conversation context while switching between different tools. It brings determinism and structure to agent-tool interactions, enabling reliable integration without custom code for each new tool" ^[https://jonturow.substack.com/p/what-mcps-rise-really-shows-a-tale]
 
-## More Readings
-* [Model Context Protocol](https://jonturow.substack.com/p/what-mcps-rise-really-shows-a-tale) 
-* [Spec for MCP](https://modelcontextprotocol.io/introduction)
-* [Best Practices for Agentic Coding](https://www.anthropic.com/engineering/claude-code-best-practices)
 
 ## Other topics to discuss {.activity}
 * What becomes of SWE, SDET, Principal SE roles? 

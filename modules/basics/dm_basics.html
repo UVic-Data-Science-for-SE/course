@@ -6,11 +6,11 @@
 <script src="dm_basics_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="dm_basics_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="dm_basics_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="dm_basics_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.42">
+<link href="dm_basics_files/libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.43">
 
   <meta name="author" content="Neil Ernst">
-  <meta name="dcterms.date" content="2025-04-08">
+  <meta name="dcterms.date" content="2025-04-23">
   <title>R and Data Mining Basics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -31,6 +31,7 @@
     }
   </style>
   <link rel="stylesheet" href="dm_basics_files/libs/revealjs/dist/theme/quarto-2f366650f320edcfcf53d73c80250a32.css">
+  <link rel="stylesheet" href="../../custom.css">
   <link href="dm_basics_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="dm_basics_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="dm_basics_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -138,11 +139,11 @@ Neil Ernst
 </div>
 </div>
 
-  <p class="date">2025-04-08</p>
+  <p class="date">2025-04-23</p>
 </section>
 <section class="slide level2">
 
-<p>This is a <a href="https://quarto.org">Quarto</a>-based notebook. When you execute code within the notebook, the results appear beneath the code.</p>
+<p>This is a <a href="https://quarto.org">Quarto</a>-based slideshow. When you execute code within the notebook, the results appear beneath the code.</p>
 </section>
 <section>
 <section id="data-exploration" class="title-slide slide level1 center">
@@ -297,7 +298,10 @@ Neil Ernst
 <li>SE data often binary labels and imbalanced</li>
 <li>SE data have lower intrinsic dimensionality</li>
 </ul>
-<p><img data-src="rapina.png"> <img data-src="se-vs-uci.png"></p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><img data-src="../images/rapina.png"> <img data-src="../images/se-vs-uci.png"></p>
 <p>See 10.1109/TSE.2021.3073242</p>
 </section>
 <section id="so-what-to-do" class="slide level2">
@@ -312,7 +316,7 @@ Neil Ernst
 <h2>Principle Components Analysis</h2>
 <p>In some cases you can just do a correlation analysis and chuck predictors that are correlated. For example, flag each column with <code>USE?</code> and explore how well each one helps the AIC score. Problem: exponential! Better: do a search through feature space. E.g. with PEEKING2:</p>
 
-<img data-src="peeking.png" class="r-stretch"></section>
+<img data-src="../images/peeking.png" class="r-stretch"></section>
 <section id="pca-search-algorithm" class="slide level2">
 <h2>PCA Search Algorithm</h2>
 <p>PEEKING2 is a search algorithm that relies on a variant of PCA, which tries to find the principle components which capture the most variance in the data</p>
@@ -336,16 +340,13 @@ Cumulative Proportion  0.99215 0.99969 1.00000</code></pre>
 
 <img data-src="dm_basics_files/figure-revealjs/vis-pca-1.png" width="960" class="r-stretch"><p>This plot shows us the first 2 components with the associated labels. We don’t see any obvious separation here.</p>
 </section></section>
-<section>
 <section id="unsupervised-stuff" class="title-slide slide level1 center">
 <h1>Unsupervised Stuff</h1>
 <p>We have been working on problems where we have columns X and labels Y. But what if we only have X? This is 99% of the adata in the world, of course, annoying CAPTCHAs notwithstanding.</p>
 <p>Unsupervised learning is about finding relationships between the Xs (sort of like PCA was doing). One simple approach is to ask, can I cluster my data points into (N-dimensional) groups, such that a point <span class="math inline">\(m\)</span> is in cluster <span class="math inline">\(J\)</span> iff there is no closer cluster? This assumes “distance” in vector space means similarity in the real world, of course.</p>
 <p>One useful library for doing this, aside from the builtin libraries in Scikit-learn and R, is <a href="https://www.cs.waikato.ac.nz/ml/weka/">Weka</a>.</p>
 </section>
-<section class="slide level2">
 
-</section></section>
 <section>
 <section id="supervised-stuff" class="title-slide slide level1 center">
 <h1>Supervised Stuff</h1>
@@ -388,18 +389,26 @@ Cumulative Proportion  0.99215 0.99969 1.00000</code></pre>
 <li>ROC - AUC (and the curve itself)</li>
 <li>Matthews Correlation Coefficient</li>
 </ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
 <p>These can all be implemented using library calls. The ROC curve metric is pretty useful: https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5</p>
 <p>The key is to understand what you are aiming to optimize. In some cases, like assessing ambiguous requirements, 100% recall is better than improved precision.</p>
 <p>Another key is to <strong>have a valid baseline</strong>. This might be ZeroR, the classifier that predicts the majority class; a random classifier; or the current SOTA (state of the art).</p>
 </section></section>
+<section>
 <section id="hyper-parameters" class="title-slide slide level1 center">
 <h1>Hyper-parameters</h1>
+
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
 <p>If we have X and Y (columns and labels) we can also think about a third set, Z, which constitutes the parameters for our classifiers and clusterers.</p>
 <p>We might also want to find an effective Z.</p>
 <p>Hyper-parameter optimization searches for optimal parameters for the learners.</p>
 <p>How should we do this search? Remember that SE data is usually pretty simple. Optimization can be very effective.</p>
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="img/ENGN_vert_bk.jpg" class="slide-logo"></p>

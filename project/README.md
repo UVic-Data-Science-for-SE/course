@@ -67,7 +67,7 @@ Each student/team member is required to do the following:
 5. Grade will be determined on a combination of the following:
     - the final report and meeting milestones throughout the term
     - Your grade will also reflect how much you refer to and integrate course concepts throughout the term.
-    - Team peer reviews of effort, via Teammates.
+    - Team peer reviews of effort.
     - Extra points may be given for: challenging projects, original ideas, collaboration with external organizations.
 
 ### Ways to get bad marks
