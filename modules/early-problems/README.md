@@ -47,4 +47,4 @@ These readings enrich the material but are not strictly necessary to read.
 * [Promises and Perils of Mining Github](https://kblincoe.github.io/publications/2014_MSR_Promises_Perils.pdf)
 * [Threats of Aggregating Software Repository Data](https://www.cs.mcgill.ca/~martin/papers/icsme2018.pdf) 
 * [Sampling in SE Research](https://arxiv.org/pdf/2002.07764.pdf)
-
+* [https://www.researchgate.net/publication/328352541_Inferencing_into_the_void_problems_with_implicit_populations_Comments_on_Empirical_software_engineering_experts_on_the_use_of_students_and_professionals_in_experiments'] Students in SE research

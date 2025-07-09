@@ -1,14 +1,14 @@
 ---
 author: Neil Ernst
-title: Search-based SE and SE/Non-SE data
+title: Testing and out of sample data
 ---
 
-Search-based software engineering is a combination of optimization approaches to heuristically search for solutions to common SE problems like test optimization.
-Our second unit will be the way in which SE data differs from non-SE data.
+
 
 # Learning Outcomes
-- introductory understanding of how heuristics can improve SE problem solutions
+- compare approaches to using data science to improve software tests
 - awareness of domain-specific nature of SE machine learning needs
+- risks of overfitting
 
 ## Lecture Notes
 
@@ -16,13 +16,12 @@ Our second unit will be the way in which SE data differs from non-SE data.
 
 ## Required Readings
 
-- Harman, [Search-Based SE](https://www.sciencedirect.com/science/article/pii/S0950584901001896)
-- McMinn, [Search-based software testing](https://mcminn.io/publications/c18.pdf)
+- Zhang et al., [exLong: Generating Exceptional Behavior Tests with Large Language Models](https://arxiv.org/abs/2405.14619)
+- Bhatta et al. [Understanding Test Deletion in Java Applications](https://hifromajay.github.io/papers/msr25.pdf)
 
 - Novielli, [Sentiment trained on nonSE data](https://arxiv.org/abs/2004.00300)
-- Binkley, [The need for software specific NL techniques](https://link.springer.com/article/10.1007/s10664-017-9566-5)
-
+- Zimmermann, [Cross-project Defect Prediction: A Large Scale Experiment on Data vs. Domain vs. Process](https://www.zora.uzh.ch/id/eprint/25785/10/Zimmermann_Nagappan_Gall_Giger_Murphy_2009.pdf)
 
 ## Optional Readings and Activities
-- (opt) Menzies, [SSBSE notes](https://github.com/txt/ase16/blob/master/doc/talk4ssbse.md)
+<!-- - (opt) Menzies, [SSBSE notes](https://github.com/txt/ase16/blob/master/doc/talk4ssbse.md) -->
 

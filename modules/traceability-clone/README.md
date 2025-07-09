@@ -14,7 +14,7 @@ title: Traceability/Code Clones
 * Guo, [Semantically Enhanced Software Traceability using DL Techniques](https://ieeexplore.ieee.org/abstract/document/7985645)
 
 * Roy and Cordy, [A Survey on Software Clone Detection Research](https://research.cs.queensu.ca/TechReports/Reports/2007-541.pdf) **Section 1-5, and then 16-17.**
-* Cory Kapser and Michael W. Godfrey, [“Cloning Considered Harmful” Considered Harmful](https://plg.uwaterloo.ca/~migod/papers/2006/wcre06-clonePatterns.pdf)
+* Majdinasab et al., [Trained without My Consent: Detecting Code Inclusion in Language Models Trained on Code](https://www.semanticscholar.org/paper/Trained-without-My-Consent%3A-Detecting-Code-in-on-Majdinasab-Nikanjam/266d35fa042220236d25b8f7101914a44df4febd)
 
 # Optional Readings and Activities
 
