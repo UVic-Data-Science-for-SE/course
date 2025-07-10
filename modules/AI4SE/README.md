@@ -34,8 +34,9 @@ In the previous class we installed a common set of AI tools. **Make sure that th
 
 These are done in class. The source code below is a combo of what I typed and what I prepped before hand. 
 
-1.  Vibe Coding example
-2.  Using Claude Code
+1.  Vibe Coding example - no code worth sharing
+2.  [Using Gemini to do "data science"](../../src/ai4se/titanic_analysis.qmd) (file is AI generated)
+3.  [Promptfoo](https://www.promptfoo.dev) and [promptfoo config file](../../src/ai4se/promptfooconfig.yaml)
 
 ### Optional Readings and Activities (so many ... send more!)
 * [Fowler: Patterns for GenAI series](https://martinfowler.com/articles/gen-ai-patterns/)	

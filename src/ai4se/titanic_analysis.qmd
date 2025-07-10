@@ -1,0 +1,68 @@
+---
+title: "Titanic Data Analysis"
+format: html
+editor: visual
+---
+
+## Introduction
+
+This notebook analyzes the Titanic dataset (`titanic.csv`).
+
+## Load Data
+
+```{r}
+# Load the dataset
+titanic_data <- read.csv("titanic.csv")
+```
+
+## Descriptive Statistics
+
+```{r}
+# Display the first few rows of the data
+head(titanic_data)
+
+# Display descriptive statistics
+summary(titanic_data)
+```
+
+## Logistic Regression Model
+
+```{r}
+# Fit a logistic regression model to predict survival based on gender and class
+model <- glm(Survived ~ Sex + Pclass, data = titanic_data, family = binomial)
+
+# Display the model summary
+summary(model)
+```
+
+### Model Explanation
+
+The logistic regression model predicts the probability of a passenger surviving the Titanic disaster based on their `Sex` and `Pclass` (passenger class).
+
+-   **`glm()` function:** This is used to fit generalized linear models. We specify `family = binomial` because the outcome variable, `Survived`, is binary (0 for died, 1 for survived).
+-   **`Survived ~ Sex + Pclass`:** This is the model formula.
+    -   `Survived` is the dependent variable (what we want to predict).
+    -   `Sex` and `Pclass` are the independent variables (the predictors).
+-   **Coefficients:** The summary of the model will show coefficients for `Sex` and `Pclass`.
+    -   The `(Intercept)` is the log-odds of survival for a baseline passenger.
+    -   The coefficient for `Sex` shows how the log-odds of survival change for a male passenger compared to a female passenger, holding class constant. A negative coefficient means males were less likely to survive.
+    -   The coefficient for `Pclass` shows how the log-odds of survival change for each class compared to the reference class (1st class). We expect negative coefficients for 2nd and 3rd class, meaning they were less likely to survive than 1st class passengers.
+-   **Significance:** The p-values (usually denoted as `Pr(>|z|)`) in the summary tell us if the predictors are statistically significant. A small p-value (typically \< 0.05) suggests that the predictor has a significant association with the outcome.
+
+## Was it more important to be a woman or a first-class passenger?
+
+To answer this, we need to compare the magnitude of the coefficients for `Sex` and `Pclass`. A larger absolute coefficient value indicates a stronger impact on the survival probability.
+
+```{r}
+# Display the model coefficients
+summary(model)$coefficients
+```
+
+### Interpretation
+
+When you look at the output of the model summary, you will compare the absolute value of the coefficient for `Sexmale` with the coefficients for `Pclass2` and `Pclass3`.
+
+-   The coefficient for being male (`Sexmale`) is a large negative number, indicating a significantly lower chance of survival compared to being female.
+-   The coefficients for being in 2nd or 3rd class are also negative, but their magnitude is typically smaller than the coefficient for being male.
+
+**Conclusion:** The model shows that being a woman was a more significant factor for survival than being a first-class passenger. The survival advantage of being female was greater than the survival advantage of being in first class versus a lower class.

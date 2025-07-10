@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+
+# Learn more about building a configuration: https://promptfoo.dev/docs/configuration/guide
+
+description: "Test MongoDB"
+
+prompts:
+  - "{{prompt}}"
+  
+
+providers:
+  # - "openai:gpt-4o-mini"
+  - "openai:gpt-4o"
+
+tests:
+  - vars:
+      prompt: "What port does MongoDB use by default. Only answer with the port number."
+      assert:
+      - type: equals
+        value: '27017'
+  - vars:
+      prompt: "What is the maximum number of voting members to deploy in MongoDB"
+      assert:
+      - type: assert-set
+        threshold: 0.5 
+        assert:
+          - type: contains 
+            value: seven
+          - type: contains
+            value: 7
+  - vars:
+      prompt: "What is the benefit of MongoDB for web app development, compared to PostgresQL?"
+    assert:
+      # For more information on model-graded evals, see https://promptfoo.dev/docs/configuration/expected-outputs/model-graded
+      - type: llm-rubric
+        value: the output should mention that MongoDB is document-oriented
+
+
+
