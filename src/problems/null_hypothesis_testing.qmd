@@ -1,0 +1,297 @@
+---
+title: "Null Hypothesis Testing: AI vs Human Bug Fixing"
+format: 
+  html:
+    code-fold: false
+    toc: true
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Research Question
+
+**Does using AI coding assistants affect the time it takes developers to fix bugs?**
+
+```{r libraries}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(broom)
+```
+
+# Dataset Creation
+
+```{r create-data}
+set.seed(42)  # For reproducibility
+
+# Generate bug fixing times (in minutes)
+# AI group: slower on average due to over-reliance and verification needs
+ai_times <- c(
+  rnorm(15, mean = 28, sd = 8),  # Regular bugs
+  rnorm(10, mean = 45, sd = 12), # Complex bugs where AI struggles
+  rnorm(5, mean = 35, sd = 10)   # Medium complexity
+)
+
+# Non-AI group: faster on average, more consistent
+no_ai_times <- c(
+  rnorm(15, mean = 22, sd = 6),  # Regular bugs
+  rnorm(10, mean = 35, sd = 10), # Complex bugs
+  rnorm(5, mean = 28, sd = 8)    # Medium complexity
+)
+
+# Ensure no negative times
+ai_times <- pmax(ai_times, 5)
+no_ai_times <- pmax(no_ai_times, 5)
+
+# Create dataset
+bug_data <- data.frame(
+  group = factor(c(rep("With AI", length(ai_times)), 
+                   rep("Without AI", length(no_ai_times)))),
+  time_minutes = c(ai_times, no_ai_times),
+  developer_id = 1:(length(ai_times) + length(no_ai_times))
+)
+
+# Round to realistic values
+bug_data$time_minutes <- round(bug_data$time_minutes, 1)
+```
+
+# Data Tables
+
+## With AI Assistance Group
+
+```{r ai-table}
+ai_data <- bug_data %>% 
+  filter(group == "With AI") %>%
+  arrange(time_minutes) %>%
+  mutate(
+    developer_id = paste0("AI-", 1:n()),
+    bug_type = case_when(
+      time_minutes < 25 ~ "Simple",
+      time_minutes < 40 ~ "Medium",
+      TRUE ~ "Complex"
+    )
+  ) %>%
+  select(Developer = developer_id, 
+         `Time (minutes)` = time_minutes, 
+         `Bug Type` = bug_type)
+
+kable(ai_data, 
+      caption = "Bug Fixing Times - Developers Using AI Assistance") %>%
+  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  row_spec(which(ai_data$`Bug Type` == "Complex"), background = "#ffebee") %>%
+  row_spec(which(ai_data$`Bug Type` == "Medium"), background = "#fff3e0") %>%
+  row_spec(which(ai_data$`Bug Type` == "Simple"), background = "#e8f5e8")
+```
+
+## Without AI Assistance Group
+
+```{r no-ai-table}
+no_ai_data <- bug_data %>% 
+  filter(group == "Without AI") %>%
+  arrange(time_minutes) %>%
+  mutate(
+    developer_id = paste0("H-", 1:n()),
+    bug_type = case_when(
+      time_minutes < 25 ~ "Simple",
+      time_minutes < 40 ~ "Medium", 
+      TRUE ~ "Complex"
+    )
+  ) %>%
+  select(Developer = developer_id, 
+         `Time (minutes)` = time_minutes, 
+         `Bug Type` = bug_type)
+
+kable(no_ai_data, 
+      caption = "Bug Fixing Times - Developers Without AI Assistance") %>%
+  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  row_spec(which(no_ai_data$`Bug Type` == "Complex"), background = "#ffebee") %>%
+  row_spec(which(no_ai_data$`Bug Type` == "Medium"), background = "#fff3e0") %>%
+  row_spec(which(no_ai_data$`Bug Type` == "Simple"), background = "#e8f5e8")
+```
+
+# Descriptive Statistics
+The first thing to do is examine the data descriptively. This is how we might build our intuition about what happened. 
+
+```{r descriptive-stats}
+summary_stats <- bug_data %>%
+  group_by(group) %>%
+  summarise(
+    n = n(),
+    mean_time = round(mean(time_minutes), 2),
+    median_time = round(median(time_minutes), 2),
+    sd_time = round(sd(time_minutes), 2),
+    min_time = round(min(time_minutes), 2),
+    max_time = round(max(time_minutes), 2)
+  )
+
+kable(summary_stats, 
+      col.names = c("Group", "N", "Mean", "Median", "SD", "Min", "Max"),
+      caption = "Descriptive Statistics - Bug Fixing Times (minutes)") %>%
+  kable_styling(bootstrap_options = "striped")
+```
+Think for a second what these results suggest to you. We want some machinery to make this comparison more official, of course, but what are your impressions? 
+
+# Data Visualization
+
+```{r visualization}
+# Box plot comparison
+p1 <- ggplot(bug_data, aes(x = group, y = time_minutes, fill = group)) +
+  geom_boxplot(alpha = 0.7) +
+  geom_jitter(width = 0.2, alpha = 0.6) +
+  labs(title = "Bug Fixing Times by Group",
+       x = "Group",
+       y = "Time (minutes)",
+       fill = "Group") +
+  theme_minimal() +
+  scale_fill_manual(values = c("With AI" = "#ff7f7f", "Without AI" = "#7f7fff"))
+
+# Histogram comparison
+p2 <- ggplot(bug_data, aes(x = time_minutes, fill = group)) +
+  geom_histogram(alpha = 0.6, bins = 10, position = "identity") +
+  facet_wrap(~group, ncol = 1) +
+  labs(title = "Distribution of Bug Fixing Times",
+       x = "Time (minutes)",
+       y = "Frequency",
+       fill = "Group") +
+  theme_minimal() +
+  scale_fill_manual(values = c("With AI" = "#ff7f7f", "Without AI" = "#7f7fff"))
+
+print(p1)
+print(p2)
+```
+
+# Null Hypothesis Testing
+
+## Formulating Hypotheses
+
+**Null Hypothesis (H₀)**: There is no difference in mean bug fixing times between developers using AI and those not using AI.
+- H₀: μ₁ = μ₂ (where μ₁ = mean time with AI, μ₂ = mean time without AI)
+
+**Alternative Hypothesis (H₁)**: There is a significant difference in mean bug fixing times between the two groups.
+- H₁: μ₁ ≠ μ₂ (two-tailed test)
+
+## Two-Sample t-Test
+
+```{r t-test}
+# Perform two-sample t-test
+t_test_result <- t.test(time_minutes ~ group, data = bug_data, 
+                       var.equal = TRUE, alternative = "two.sided")
+
+# Extract key results
+t_stat <- round(t_test_result$statistic, 3)
+p_value <- round(t_test_result$p.value, 4)
+ci_lower <- round(t_test_result$conf.int[1], 2)
+ci_upper <- round(t_test_result$conf.int[2], 2)
+df <- t_test_result$parameter
+
+cat("Two-Sample t-Test Results:\n")
+cat("t-statistic:", t_stat, "\n")
+cat("Degrees of freedom:", df, "\n")
+cat("p-value:", p_value, "\n")
+cat("95% Confidence Interval: [", ci_lower, ",", ci_upper, "]\n")
+```
+
+## Effect Size (Cohen's d)
+
+```{r effect-size}
+# Calculate Cohen's d
+pooled_sd <- sqrt(((length(ai_times) - 1) * var(ai_times) + 
+                   (length(no_ai_times) - 1) * var(no_ai_times)) / 
+                  (length(ai_times) + length(no_ai_times) - 2))
+
+cohens_d <- (mean(ai_times) - mean(no_ai_times)) / pooled_sd
+
+cat("Effect Size (Cohen's d):", round(cohens_d, 3), "\n")
+cat("Interpretation:", 
+    if(abs(cohens_d) < 0.2) "Negligible" 
+    else if(abs(cohens_d) < 0.5) "Small" 
+    else if(abs(cohens_d) < 0.8) "Medium" 
+    else "Large", "\n")
+```
+
+## Results Summary
+
+```{r results-summary}
+results_table <- data.frame(
+  Test = "Two-Sample t-Test",
+  `t-statistic` = t_stat,
+  `p-value` = p_value,
+  `Effect Size (d)` = round(cohens_d, 3),
+  `95% CI Lower` = ci_lower,
+  `95% CI Upper` = ci_upper,
+  Decision = ifelse(p_value < 0.05, "Reject H₀", "Fail to reject H₀")
+)
+
+kable(results_table, 
+      caption = "Statistical Test Results Summary") %>%
+  kable_styling(bootstrap_options = "striped")
+```
+
+# Interpretation
+
+## Statistical Conclusion
+
+```{r interpretation}
+alpha <- 0.05
+
+cat("Statistical Interpretation:\n")
+cat("α (significance level):", alpha, "\n")
+cat("p-value:", p_value, "\n")
+
+if(p_value < alpha) {
+  cat("Decision: Reject the null hypothesis\n")
+  cat("Conclusion: There is statistically significant evidence that AI assistance affects bug fixing times.\n")
+} else {
+  cat("Decision: Fail to reject the null hypothesis\n")
+  cat("Conclusion: There is insufficient evidence to conclude that AI assistance affects bug fixing times.\n")
+}
+
+cat("\nPractical Significance:\n")
+cat("Mean difference:", round(mean(ai_times) - mean(no_ai_times), 2), "minutes\n")
+cat("Effect size:", round(cohens_d, 3), "(", 
+    if(abs(cohens_d) < 0.2) "negligible" 
+    else if(abs(cohens_d) < 0.5) "small" 
+    else if(abs(cohens_d) < 0.8) "medium" 
+    else "large", "effect)\n")
+```
+
+## Key Findings
+
+1. **Developers using AI assistance took longer on average** to fix bugs compared to those working without AI assistance.
+
+2. **The difference is statistically significant** (p < 0.05)
+
+3. **The effect size is moderate**, indicating a meaningful practical difference.
+
+4. **Possible explanations**:
+   - AI-assisted developers may rely too heavily on AI suggestions
+   - Time spent verifying AI-generated solutions
+   - Over-thinking simple problems when AI provides complex solutions
+   - Learning curve for effectively using AI tools
+
+## Limitations and Considerations
+
+- **Sample size**: Relatively small sample sizes may limit generalizability
+- **Skill level**: Developer experience with AI tools not controlled
+- **Bug complexity**: Mixed complexity levels in both groups
+- **AI tool variation**: Different AI tools may produce different results
+- **Learning effect**: Developers may improve with more AI experience
+
+# Practice Questions
+
+1. What would happen to our conclusion if we used α = 0.01 instead of 0.05?
+
+2. How might we design a follow-up study to better understand these results?
+
+3. What other factors should we consider when interpreting these findings?
+
+4. If we found no significant difference, what would that mean for practice?
+
+``` {r}
+write.csv(ai_data, "ai_bug_fixing_times.csv", row.names = FALSE)
+write.csv(no_ai_data, "no_ai_bug_fixing_times.csv", row.names = FALSE)
+```

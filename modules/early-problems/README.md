@@ -16,8 +16,8 @@ Early work in DS for SE, and some possible challenges.
   # Topics and slides
 These are the submodules I covered in class. 
 
-* [Early Work in DSSE](early.md)
-* [Problems in Data Science for SE](problems.qmd)
+* [Early Work in DSSE](early_pub.md)
+* [Problems in Data Science for SE](problems_pub.qmd)
 
 ### Readings
 * [Tu and Godfrey, Linux evolution](https://ieeexplore.ieee.org/document/883030) 
@@ -30,15 +30,18 @@ These are the submodules I covered in class.
 
 These are done in class. The source code below is a combo of what I typed and what I prepped before hand. 
 
-1. Sampling exercise
-2. Data validity exercise
-3. Explore a repo using CodeScene metrics
+3. Explore a repo using SonarQube metrics - linked in the notes
+4. [Write R code to load and explore simple data](../../src/problems/null_hypothesis_testing.qmd)
+5. [Power calculations app](https://btkbef-neil0ernst.shinyapps.io/power-app/)
+6. Sampling exercise (in class)
+7. Data validity exercise
 
 
 ### Optional Readings and Activities
 
 These readings enrich the material but are not strictly necessary to read. 
 
+* [Does AI help productivity, small N study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/)
 * [Kitchenham, Empirical SE Guidelines](http://people.ucalgary.ca/~far/Lectures/SENG421/PDF/Guidelines.pdf)
 * [Interview with Bossavit](https://blog.fogbugz.com/10x-programmer-and-other-myths-in-software-engineering)
 * [How to read a paper (from ResearchSkills class)](https://github.com/neilernst/ResearchSkillsUVic/blob/main/resources/reviewing/M4%20Reading.md#efficiently-reading-a-paper)

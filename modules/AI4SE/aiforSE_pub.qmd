@@ -1,12 +1,6 @@
 ---
 title: "Effectively using AI in SE"
 author: "Neil Ernst"
-format: 
-  revealjs:
-    theme: default
-    slide-number: true
-    logo: img/ENGN_vert_bk.jpg
-    footer: "Neil Ernst (c)"
 date: last-modified
 ---
 
@@ -22,11 +16,21 @@ date: last-modified
 
 [Office Scene](https://www.youtube.com/watch?v=QOtuX0jL85Y)
 
+## Vibe Coding {.exercise}
+Let's try an exercise. 
+
+1. Go to your favorite GenAI tool. 
+2. Write an app that uses animated HTML to create a DVD box that moves around the screen. 
+3. Just use any prompt you wish. 
+4. Take 5 minutes and we will check some of the solutions together. 
+
+
 ## GenAI and Programming and Data Science
 In what ways is GenAI transforming this field? What should we do in this class in response? 
 
 ##
 How I use it:
+
 1. to answer questions for background I forgot or didn't know
 2. to write scripts to manage notes and marks
 3. to code up answers to the exercises to test my questions
@@ -46,14 +50,18 @@ See the [course README file](https://github.com/UVic-Data-Science-For-SE/) and t
 
 Emphasize craftsmanship. AI rewards having a structured, careful development process:
 
+
 1. Thinking hard and chatting about the problem and the changes you need to implement before doing anything
 2. Keeping components encapsulated with carefully-designed interfaces
 3. Controlling the scope of your changes; current AIs work best at the function or class level
+
+
+## As A Student (2) 
 4. Testing and validation; how do you know your program works
 5. Good manual debugging skills (this was a major takeaway from the class - students found AI debugging to be unreliable)
 6. General system knowledge: networking, OS, data formats, databases
 
-## Shopify's approach
+## Shopify's approach (and others, like MSFT)
 
 ![](../images/shopify-AI.jpeg)
 
@@ -66,21 +74,24 @@ Emphasize craftsmanship. AI rewards having a structured, careful development pro
 * [Copilot for students](https://education.github.com/pack)
 * [Pricing](https://www.llm-prices.com)
 
+# Break {.break}
+
 # Exercise: Use LLMs {.exercise}
 
 ## Exercise: Use LLMs {.exercise}
-We will do what Andrej Karpathy calls "vibe coding": a zen-like use of autocomplete to try and get the AI to do something useful. Kent Beck has this nice image of how this works.
+We will do what Andrej Karpathy calls "vibe coding": a zen-like use of autocomplete to try and get the AI to do something useful. 
 
+Kent Beck has this nice model of how this works. You add features, hurting modularity, then get the modularity - the options - back.
+
+## Exercise: Steps {.exercise}
 1. Download this data file: https://github.com/datasciencedojo/datasets/blob/master/titanic.csv
-2. Setup an AI tool. I am showing `aider`. 
-3. Get the AI to parse the data file and show simple descriptive stats in R notebook. 
+2. Setup an AI tool. I am showing `gemini`. 
+3. Get the AI to parse the data file and show simple descriptive stats in an R notebook. 
 4. Display the graph. 
 
 ## Vibe Coding Vs AI-assisted Engineering
 
-via [Gergely](https://substack.com/app-link/post?publication_id=458709&post_id=165108402)
-
-or "Augmented Coding" vs 
+vs "Augmented Coding" (Kent Beck)
 
 | Vibes, man           | Augmented               |
 | -------------------- | ----------------------- |
@@ -90,6 +101,8 @@ or "Augmented Coding" vs
 | 'Keep Going!'        | Reliability             |
 | 'YOLO'               | Correctness             |
 |                      | Performance and scaling |
+
+via [Gergely](https://substack.com/app-link/post?publication_id=458709&post_id=165108402)
 
 # Adding Context
 
@@ -113,10 +126,11 @@ So we need to **steer it** to the space of solutions that apply to us.
 
 Another term for this is `context engineering`^[https://twitter.com/karpathy/status/1937902205765607626]
 
-## Quote
+## Quote {.smaller}
 > +1 for "context engineering" over "prompt engineering".
 
 > People associate prompts with short task descriptions you'd give an LLM in your day-to-day use. When in every industrial-strength LLM app, context engineering is the delicate art and science of **filling the context window with just the right information for the next step**. *Science* because doing this right involves task descriptions and explanations, few shot examples, RAG, related (possibly multimodal) data, tools, state and history, compacting [...] Doing this well is highly non-trivial. And *art* because of the guiding intuition around LLM psychology of people spirits. [...]
+
 
 [Andrej Karpathy via Simon Willison](https://simonwillison.net/2025/Jun/27/context-engineering/)
 
@@ -165,6 +179,8 @@ The LLM is no different. We need to tell it what to do.
 
 Combine well understood information retrieval approaches with transformers to condition the result on the document set.
 
+
+## How? Math intuition
 Given input sequence $x$, and text documents $z$, we want to generate output sequence $y$.
 
 1. Use a **retriever** $p_\eta(z|x)$ with parameters $\eta$ that returns distributions over text passages given a query $x$.
@@ -191,18 +207,29 @@ Why does this work?
 ## Creating Effective Evals
 An `eval` is a test that the AI's output is doing what you had hoped. It isn't a `unit test` exactly, since unit tests are repeatable and deterministic (ideally). But an eval should give you a sense that the output is what you expect. 
 
-### PromptFoo
-This is an emerging space. One approach is [described here](https://simonwillison.net/2025/Apr/24/exploring-promptfoo/). It uses the [PromptFoo](https://www.promptfoo.dev/docs/installation/) tool to manage the workflow.  
+Q: What is an eval for a data analysis project? 
 
-### Assertions
+## PromptFoo
+This is an emerging space. One approach is [described here](https://simonwillison.net/2025/Apr/24/exploring-promptfoo/). 
 
-The idea is that you prompt the LLM to do something (e.g., generate code), it returns a result, and then the eval is used to examine if the LLM did the right thing. If not, you a) change the model b) add context via RAG or MCP c) redo the prompt. 
+It uses the [PromptFoo](https://www.promptfoo.dev/docs/installation/) tool to manage the workflow.  
 
-Key to eval is the assertion for what the model should look for. In `PromptFoo` there are several [types of assertions](https://www.promptfoo.dev/docs/configuration/expected-outputs/) ^[assert]
+## Assertions
 
-^[assert]: They call them assertions, but that's because it's the term used in testing. In this case, the eval is really not going to force any failures, and you might need to interpret the answer in any case. 
+The idea is that you 
 
-### "Assertions"
+1. prompt the LLM to do something (e.g., generate code), 
+2. it returns a result, and then 
+3. the eval is used to examine if the LLM did the right thing. If not, you 
+4. change the model 
+5. add context via RAG or MCP or
+6. redo the prompt. 
+
+## Assertions (2)
+
+Key to eval is the assertion for what the model should look for. In `PromptFoo` there are several [types of assertions](https://www.promptfoo.dev/docs/configuration/expected-outputs/) ^[They call them assertions, but that's because it's the term used in testing. In this case, the eval is really not going to force any failures, and you might need to interpret the answer in any case.]
+
+## "Assertions"
 1. Deterministic 
    1. contains
    2. equals
@@ -210,31 +237,36 @@ Key to eval is the assertion for what the model should look for. In `PromptFoo` 
    4. levinshtein
    5. regex
    6. ...
-2. Model-graded (we use another LLM to judge)
+   
+## Assertions 
+1. Model-graded (we use another LLM to judge)
    1. llm-rubric
    2. select-best
    3. ...
 
+## Assertions with PromptFoo
 The model-graded assertions take a prompt to the LLM that will judge the output. E.g., `select-best` might say "choose the most concise and accurate response". Now, whether the other LLM will do that is subject to that LLM's performance (you can see the recursion here).
 
-### 
+## 
 A `.yaml` file holds all the evals for a given problem. [This Google sheet](https://docs.google.com/spreadsheets/d/1-0zlX-80w7edpOlZWUPvTkp28J4HS_ZyKnuDjDtKeoc/edit?gid=0#gid=0) gives some examples for an application that tries to parse government websites for food assistance. 
 
-For example, 
-`capability: It gives accurate advice about asset limits based on your state`
-`question: I am trying to figure out if I can get food stamps. I lost my job 2 months ago, so have not had any income. But I do have $10,000 in my bank account. I live in Texas. Can I be eligible for food stamps? Answer with only one of: YES, NO, REFUSE.`
-`__expected: contains:NO`
+## Example assertions
+`**capability**: It gives accurate advice about asset limits based on your state`
+
+`**question**: I am trying to figure out if I can get food stamps. I lost my job 2 months ago, so have not had any income. But I do have $10,000 in my bank account. I live in Texas. Can I be eligible for food stamps? Answer with only one of: YES, NO, REFUSE.`
+
+`**__expected**: contains:NO`
 
 
 ## Eval Exercise {.exercise}
 
-> Install and Configure PromptFoo. 
-> Select your preferred AI tool. 
-> We are creating a system tht will use an LLM to give us updated information on how to use MongoDB. 
-> Create 2 capabilities the LLM should give users, two prompts users might ask, and the PromptFoo validation criteria using assertions.
->
-> Then run this example. 
+1. Install and Configure PromptFoo. 
+2. Select your preferred AI tool. 
+3. We are creating a system that will use an LLM to give us updated information on how to use MongoDB. 
+4. Create 2 capabilities the LLM should give users, two prompts users might ask, and the PromptFoo validation criteria using assertions.
+5. Then run this example. 
 
+## Evals - How To Make It Effective
 What do you need to develop these evals?
 
 - domain expertise: it helps to know the correct answer. In the sample, that means comprehensive knowledge about food stamps, US federal and state laws and regulations, acronyms, legal cases, etc.
@@ -248,7 +280,7 @@ What do you need to develop these evals?
 * Gets more interesting when we pre-specify prompts for LLM calls
 * Let's look at [Google's framework](https://github.com/google/adk-samples)
 
-### 
+## 
 
 ```
 root_agent = Agent(

@@ -7,6 +7,11 @@ date: last-modified
 # Intro
 
 nernst@uvic.ca 
+
+Assoc Professor in Computer Science
+
+Acting BSEng Director
+
 ECS 560
 
 ## Syllabus 
@@ -19,7 +24,7 @@ Project in 6 weeks. Plan accordingly!
 
 >What’s the essential skill that students need to be learning, such that when they get out of school they are more capable humans than when they went in?
 
-## Answer: resilience
+## Answer: resilience {.smaller}
 
 > the answer ... isn’t simply a body of knowledge to be memorized or a set of skills to be mastered. It’s a stance. A stance from which to address the world and all its challenges. A stance built on self-confidence and resilience: the conviction that one has a fighting chance to overcome or circumvent whatever obstacles the world throws in one’s path. **The way you acquire it is by trying, and sometimes failing, to do difficult things.** It can be discouraging, but if you have good mentors, and if you’re collaborating with friends who are in the same boat, you can find ways to succeed, and develop a knack for it. That’s true self-reliance.
 
@@ -43,7 +48,7 @@ Project in 6 weeks. Plan accordingly!
 * Predicting future values of data
 * Finding a function that successfully captures the generative model e.g. with a neural network
 
-# Software Data
+## Software Data
 
 Like many areas, software development produces tons of data:
 
@@ -68,11 +73,11 @@ Like many areas, software development produces tons of data:
 
 ##
 
-![width:500](https://raw.githubusercontent.com/txt/ase19/master/etc/img/dots2.png)
+![](https://raw.githubusercontent.com/txt/ase19/master/etc/img/dots2.png)
 
 ##
 
-![width:1000px](https://raw.githubusercontent.com/txt/ase19/master/etc/img/cellphone.png) 
+![](https://raw.githubusercontent.com/txt/ase19/master/etc/img/cellphone.png) 
 
 ##
 
@@ -116,36 +121,11 @@ When presented with data or a theory about how data is created, what should we d
 * **Optimizers**, that tell us what to do, specifically, how to do something simple that has the biggest positive impact: genetic algorithms, heuristic search, etc.
 
 
-# Exercise: Team metrics {.exercise}
-
-## QR Code {.exercise}
-
-![sonar cloud qr code](../images/sonarcloud-mw-qr.png)
-
-## Steps {.exercise}
-Visit [https://sonarcloud.io/summary/new_code?id=mediawiki-core](https://sonarcloud.io/summary/new_code?id=mediawiki-core) and explore the data science dashboard there.
-
-* Q. what is the part of the code that needs attention? How do you know this? 
-* Q. what do you make of "issues"? Where do you start with a remediation project?  
-
-
-## TPS {.exercise}
-
-::: {.incremental}
-* *think* about the following question: "You are the software engineering manager or team lead at a big company. What is one key question you want to know the answer to for effectively running your team". 
-* Write down a quick answer you have - maybe from your past experience. 
-* Then *pair* with your table partner to *share* and discuss their answer and yours. We will then collect a few responses from the class as a whole. 
-:::
-
-## TPS Menti
-
-<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/app/presentation/aljckroc6j8cxz7hmx1cr37mre8d1g4n/embed' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
-
 # Ethics Implications
 
 - how did we get the data? was there consent?
 - what is missing? 
-- what assumptions are bing made in the model? 
+- what assumptions are being made in the model? 
 - whose views are not included?
 - (more to come later in term)
 

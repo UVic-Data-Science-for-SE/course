@@ -27,60 +27,120 @@ What are the data sources?
 * Source code
 * Structured data 
 * Stack Overflow
-* 
+* AI chat logs
+* ...
 
-# What are some challenges? 
+## What are some challenges? 
+
+::: {.incremental}
 1. Using the data that is available, instead of the data that answers the question.
 2. Ignoring domain assumptions that produced the data, e.g. the human aspects (Secret Life of Bugs)
 3. Sampling opportunistically (convenience) instead of systematically.
 4. Not understanding the sensitivity of your instrument (the Kangaroo problem)
 5. Questionable research practices
-
+:::
 
 ## 
-One of the biggest problems - and best places to spend money - is **getting good data**. The most obvious example of this is building big telescopes or high energy physics instruments. 
+One of the biggest problems - and best places to spend money - is **getting good data**. 
 
-Too often we go and use grad students to do a task instead of spending more time getting professionals. If you are looking for a small effect, you need to have a precision instrument! 
+The most obvious example of this is building bigger telescopes or high energy physics instruments. 
 
-## Power Analysis {.incremental}
+
+## Example 
+
+::: {.incremental}
+* Suppose I want to know how productive AI is making software developers. 
+* I decide to run a controlled experiment: we will compare developers in two groups, with and without AI. 
+* How should I go about doing this study?
+* Crossover - use the tool, then don't use it. 
+* Population inferences - are my groups random? 
+* Say I use 4th year students?
+::: 
+
+## Inference (review!)
+What are we trying to accomplish? We would like some confidence that our experiment will reveal some true effect in the world.
+
+The traditional frequentist (STAT260) approach is null-hypothesis significance testing (NHST) with p-values. ^[Much more here - https://lakens.github.io/statistical_inferences/01-pvalue.html] 
+
+## Inference (2)
+We run a test calculating the probability of the **observed difference** or a more extreme difference, under the assumption that there is no real difference between the groups. 
+
+We want a test that can find such a difference *if it exists* (else FN, type 2 error), and not find the difference if *it does not exist* (else FP, type 1 error). 
+
+NB: A non-significant p-value **does not mean** that the null hypothesis is true.
+
+## An example 
+> Let's get people to solve bugs with AI and without AI. Which one will be quicker to fix bugs? Our null hypothesis might be that it won't matter. Our alternative might be that it does matter.
+>
+
+We can do some statistical testing to see which hypothesis might best explain the data. In the conventional framework, we would assume the null is true, and see if it continues to explain the numbers we see from doing the experiment (in this case, how fast bugs are fixed). 
+
+## Example - R code {.exercise}
+
+Load the two sample files into R, and run a t-test to evaluate the hypothesis that AI makes developers faster. Make sure to print out the descriptive stats first.
+
+# Long Break {.break}
+
+## Example - conclusions
+If the data seem really unlikely under the null model, i.e., the AI users are nearly always slower, then we can reject the null. 
+
+We will need to define expected *effect size*, *power of detecting that effect*, and the threshold $\alpha$ at which we reject the null. 
+
+Note: not the same as *practical significance*: A study might have statistical relevance but not practical. Can you think of examples? 
+
+## Effect sizes (briefly)
+* Still need to connect statistical outcomes (difference of means) to real-world impact -- **practical significance**.
+* E.g. Cliff's D, $R^2$ (explained variance), Cohen's d, etc. 
+
+## Effect sizes
+from  Section 2.3 of my [paper](https://arxiv.org/pdf/1809.09849.pdf): 
+
+> "effect size ignores the **context of decision making**. A raw number reflecting (for example) the standardized difference of means is hard for practitioners to interpret and must be contextualized.
+> Contextual, subjective judgment of observed effect sizes must be made and a ritualized interpretation avoided
+
+## Power Analysis 
+
+::: {.incremental}
 * Power is the probability before a study is done that it will achieve statistical significance for $\alpha < 0.05$ (or other values).
 * First, we guess an "effect size" for our test (e.g., difference of means), then guess at sample size and variation.
 * Most funders would expect studies to have power > 80%.
 * Power analysis is inherently exploratory and hypothetical - simulation can help.
 * What about study costs? Maybe it is cheap to collect data. 
-* See Fig 16.1 of Regression and other stories.
+<!-- * See Fig 16.1 of Regression and other stories. -->
+:::
 
-##
-![winners curse from Regression and Other Stories, Fig 16.1](../images/winnerscurse.png)
+## Power example {.example}
+Visit here:
+
+![](shiny-qrcode.png)
+
+<!-- ## Winner's Curse
+![winners curse from Regression and Other Stories, Fig 16.1](../images/winnerscurse.png) -->
 
 ## Noisy data
 * when noise is high and signal is low,  statistically significant results are unlikely to replicate.
-* type M - magnitude and type S - sign errors more likely in low-powered studies
+* type M - magnitude and type S - sign errors more likely in low-powered studies  
 * Best approach is to design a study to maximize effect size rather than population
 * E.g., look at groups more likely to respond, increase treatment amounts
 * Everything has an effect!
 
-## Effect sizes (briefly)
-* Connect statistical outcomes (difference of means) to real-world impact -- **practical significance**.
-* E.g. Cliff's D, R^2 (explained variance), Cohen's d, etc. 
-* Section 2.3 of my [paper](https://arxiv.org/pdf/1809.09849.pdf)
-> "effect size ignores the context of decision making. A raw number reflecting (for example) the standardized difference of means is hard for practitioners to interpret and must be contextualized.
-> contextual, subjective judgment of observed effect sizes must be made and a ritualized interpretation avoided
-* Bayesian analysis would implicitly ask us to do this: what effect is substantive? (avoid the golem!)
-
 # Secret Life of Bugs
 What is the "secret"?
+
 > The histories of even simple bugs are strongly dependent on social, organizational, and technical knowledge that cannot be solely extracted through automation of electronic repositories
 
 ## Levels
+::: {.incremental}
 1. Bug record data: bug tracker, resolution, people involved, commits associated
 2. Automated conversation analysis: examining comments
 3. Sense-making by informed observer
 4. Direct narrative reports by participants
+:::
 
 ## Stark differences in data available
-![](../images/secret-humans.png)
+![number of people involved](../images/secret-humans.png)
 
+## Number of events
 ![](../images/secret-events.png)
 
 # Sampling 
@@ -105,32 +165,36 @@ What is the "secret"?
 4. Software people are expensive
 5. Real data is often under NDA
 6. Software projects cover a vast universe of domains and contexts
-7. ... (crowd sourcing anecdote)
 
 ## Bad Smells in Software Samples
+
+::: {.incremental}
 * Arguing that a convenience sample of software projects is representative because they are “real-world” projects.
 * Incorrectly using the term “random” to mean arbitrary.
 * Assuming that a small sample is representative because it is random.
 * Assuming that a large random sample is representative despite being selected from an obviously biased sampling frame.
 * Implying that results should generalize to large populations without any claim to having a representative sample.
-  
-([Baltes and Ralph](https://arxiv.org/pdf/2002.07764.pdf))
+:::
 
-# Exercise
-Design a sampling strategy for the inferential question we considered earlier, i.e.
+^[[Baltes and Ralph](https://arxiv.org/pdf/2002.07764.pdf)]
+
+# Exercise {.exercise}
+Design a sampling strategy for the following question:
+
 > (1) You are the manager of 10 teams at Spotify doing software development. Each team uses their own tools; some use Slack, others use email and IRC. Is there a connection between Slack use and team reported productivity?
 
 and
 
 > (2) You are looking to see how many bugs exist in primarily machine-learning software (e.g., building and training ML models with Tensorflow) vs other types of software
 
+<!-- # Data Analytics Methodology Problems
 
-# Data Analytics Methodology Problems
+<!-- ##
+![](../images/bad-smells.png) 
 
 ##
-![width:300px](../images/bad-smells.png)
 
-##
+::: {.smaller}
 1. Not interesting
 2. Not using related work
 3. Deprecated or suspect data
@@ -143,24 +207,31 @@ and
 10. Not tuning
 11. Over complicating
 12. No rationale for learner choice
-   
-See also [ACM SigSOFT Empirical Review Standards](https://github.com/acmsigsoft/EmpiricalStandards)
+::: -->
+
+^[See also [ACM SigSOFT Empirical Review Standards](https://github.com/acmsigsoft/EmpiricalStandards)]
 
 # Git Promises and Perils
 
-## {.incremental}
+## Git Promises and Perils
+::: {.incremental}
 - **promises**: analysis Git enables
 - **perils**: dangers with relying on Git
 *in general: the data we see may not be an impartial log of events*
+:::
+
+## Perils
 - Git new on the scene at the time (replacing SVN/CVS)
 - Git is distributed
 - Git histories can be cleaned
   - delete/omit commits, squash / condense commits into one
-  - lose the rich history of how a change was arrived at (Tesla example)
+  - lose the rich history of how a change was arrived at 
 - Git branches are potentially confusing 
 
-## Github Promises and Perils {.incremental}
-- Daniel's Venn diagram of Github projects, public, useful
+
+## Github Promises and Perils 
+
+::: {.incremental}
 - Repos =/= project (forks for PRs)
 - Many projects inactive or uninteresting
 - Some repos are for data storage or personal use
@@ -168,18 +239,27 @@ See also [ACM SigSOFT Empirical Review Standards](https://github.com/acmsigsoft/
 * PRs don't record all commits.
 * Most pull requests appear as non-merged even if they are actually merged.
 * Many active projects do not conduct all their software development in GitHub
+:::
 
-## Exercise {.background }
+<!-- ## Exercise {.exercise}
 
-You are the CTO at Spotify, concerned that your big AI investment is not being used. How can you measure the extent to which your developers are using AI, and whther it is a useful tool for them? 
+You are the CTO at Spotify, concerned that your big AI investment is not being used. How can you measure the extent to which your developers are using AI, and whther it is a useful tool for them?  -->
 
-# Other Challenges
+## Other Challenges
 - temporal pollution
 - [likes and stars](https://www.sciencedirect.com/science/article/pii/S0164121218301961)
 - bots
 - gender and demographics
 
-
+# Summary
+## Summary
+* Both statistics tools AND data acquisition have potential problems
+* Doing a high quality study supports our claims for **practical significance**
+* Good data science means paying close attention to:
+  * sampling approach
+  * experimental designs
+  * inferential tools
+  * potential problems and perils 
 
 
 
