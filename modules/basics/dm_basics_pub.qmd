@@ -1,14 +1,12 @@
 ---
 title: "R and Data Mining Basics"
 author: "Neil Ernst"
-format: 
-  revealjs:
-    theme: default
-    slide-number: true
-    logo: img/ENGN_vert_bk.jpg
-    footer: "Neil Ernst (c)"
 date: last-modified
 ---
+
+# Overview
+
+## 
 
 This is a [Quarto](https://quarto.org)-based slideshow. When you execute code within the notebook, the results appear beneath the code.
 
@@ -19,44 +17,82 @@ library(foreign)
 
 # Data Exploration
 
-(A lot of this material is from [R for Data Science](https://r4ds.had.co.nz/), a freely available book)
+A lot of this material is from [R for Data Science](https://r4ds.had.co.nz/), a freely available book.
 
 ![](https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png)
 
 ## Understanding the Data
 
-One of the first tasks is to better understand the data. We looked at that in the Bayesian context from the *epistemological* and *ontological* perspectives: how we think the data were created, and what properties exist in our data.
+One of the first tasks is to better understand the data.
 
-Often that means background reading, e.g., a literature review or domain modeling. What are your intuitions about how the data would be generated, e.g., for job application information?
+Both *epistemological* and *ontological* perspectives: how we **think the data were created**, and **what properties exist** in our data.
+
+Often that means background reading, e.g., a literature review or domain modeling.
+
+What are your intuitions about how the data would be generated, e.g., for job application information?
 
 ## Loading Data
 
-Next, take the data and get it loaded into R or Jupyter. My favourite toolset is the [`Tidyverse`](https://www.tidyverse.org/), a set of libraries and philosophies for manipulating R data frames.
+Next, take the data and get it loaded into R or Jupyter.
 
-Loading data is initially easy but quickly becomes a major challenge as data gets larger and more complex. A non-trivial amount of effort can be spent wrangling data into the correct format. A big part of TidyR is to get the data into a "shape" that is easy to work with.
+My favourite toolset is the [`Tidyverse`](https://www.tidyverse.org/), a set of libraries and philosophies for manipulating R data frames.
+
+Loading data is initially easy but quickly becomes a major challenge as data gets larger and more complex. A non-trivial amount of effort can be spent wrangling data into the correct format.
+
+A big part of TidyR is to get the data into a "shape" that is easy to work with.
 
 ## Example Dataset
 
-Let us consider the following datasets: http://promise.site.uottawa.ca/SERepository/datasets-page.html. They are mostly in a common data exchange format called ARFF.
+Let us consider the following datasets from the SEACRAFT SE data repository. Look at files in the common ML self-describing text format ARFF.
+
+https://zenodo.org/records/268514 ![qr code to link above](qr-jm1.png)
 
 ```{r}
-jm1 = read.arff("http://promise.site.uottawa.ca/SERepository/datasets/jm1.arff")
+jm1 = read.arff("https://zenodo.org/records/268514/files/JM1''.arff?download=1")
 jm1 <- as_tibble(jm1)
 ```
+
+## JM1 / NASA defects
 
 ## Tidy Data Principles
 
 Tidy Data:
 
-1. Each variable must have its own column.
-2. Each observation must have its own row.
-3. Each value must have its own cell.
+1.  Each variable must have its own column.
+2.  Each observation must have its own row.
+3.  Each value must have its own cell.
 
 Factors: factors are categorical data, possibly ordered, like "letter grade" (ordered) or country name.
 
-Let's say we are interested in how well Halstead complexity `v(g)` predicts defects.
+## Tidying
 
-## Filtering and Aggregating
+The `jm1` dataset is pretty tidy but in *wide* format. That means we have many columns of data. Another approach is *long* format.
+
+## Exercise {.exercise}
+
+Take some time and convert the `jm1` dataset to long form. Hint: the long form is of the form 'id, variable, value' and values have to be compatible.
+
+Long forms are usually more useful for data wrangling purposes.
+
+## Pivoting
+
+```{r}
+jm1_long <- jm1 %>%  pivot_longer(c(LOC_TOTAL,CYCLOMATIC_COMPLEXITY))
+```
+
+## Short Break {.break}
+
+## Filtering and Aggregating {.exercise}
+
+Let's say we are interested in how well Halstead complexity predicts defects.
+
+What is Halstead complexity? What are these complexity metrics in general? Do some research with your partner.
+
+::: notes
+what do you think about the utility of these metrics?
+:::
+
+## Chaining
 
 In Tidyverse language, use the TidyVerse chaining operator `%>%` (pipe) to group operations on dataframes/tibbles.
 
@@ -66,62 +102,114 @@ Useful operations include `mutate`, `filter`, `summarize/group_by`. I find these
 
 I suggest you load your data into a data frame and then chain filters into it, rather than "fixing" the dataset in a separate step. That way you get to see all the data wrangling in one place. It can be *really* easy to miss a step and end up with outliers that are included, aggregations that don't make sense, etc.
 
-```{r filter}
-jm1 = jm1 %>% mutate(norm = i / loc) 
-invisible(as.logical(jm1$defects)) #(but should be logical)
-jm1 %>% count(defects)
+## 
+
+```{r}
+#| label: filter
+jm1 = jm1 %>% mutate(norm = HALSTEAD_EFFORT / LOC_TOTAL) 
+invisible(as.logical(jm1$label)) #(but should be logical)
+jm1 %>% count(label)
+```
+
+## 
+
+```{r}
 ggplot(data = jm1) +
-  geom_point(mapping = aes(y=`v(g)`, x=defects))
-jm1 %>% filter(loc > 1000) %>% select(`v(g)`)
+  geom_point(mapping = aes(y=`CYCLOMATIC_COMPLEXITY`, x=label))
+jm1 %>% filter(LOC_TOTAL > 1000) %>% select(`CYCLOMATIC_COMPLEXITY`)
 ```
 
 ## Probability Distributions
 
 The `ggplot()` library in R (and MatPlotLib in Python) are best in class visualization approaches with a vast amount of options and when combined with the filtering/aggregating, can do almost anything.
 
-Use ggplot to explore your data and dimensionality as we showed in the R walkthru. Don't feel bad about using SO or references; I did preparing this tutorial!
+Use ggplot to explore your data and dimensionality.
 
-Visualization can help understand what is happening. Descriptive stats such as mean, median, variance can give some numeric information conditional on the distribution involved. These are typically generalized as **location** and **dispersion**, e.g., where the big clump of data lives in the normal, and how spread out it is.
+## Exercise {.exercise}
+
+What distribution fits the data set? Hint: this is sometimes done with kernel density plots.
+
+## Visualization
+
+Visualization can help understand what is happening. Descriptive stats such as mean, median, variance can give some numeric information conditional on the distribution involved.
+
+These are typically generalized as **location** and **dispersion**, e.g., where the big clump of data lives in the normal, and how spread out it is.
 
 ## Binning and Summarizing
 
 ```{r binning}
-sum <- jm1 %>% summarise(count = n(), loc_m = mean(loc), loc_med = median(loc), loc_sd = sd(loc))
-binned <- jm1 %>% mutate(bin = cut(loc, 4,c("small", "medium", "large", "giant")) )
-binned %>% group_by(bin) %>% summarise(count = n(), med = median(loc))
-# show distributions
-ggplot(data = binned, mapping = aes(x=loc,y = after_stat(density))) + 
-  geom_freqpoly(mapping = aes(colour = bin), binwidth=100)
-ggplot(data = binned, mapping = aes(x = bin, y = `v(g)`)) + 
-         geom_violin()
+sum <- jm1 %>% summarise(count = n(), LOC_TOTAL_m = mean(LOC_TOTAL), LOC_TOTAL_med = median(LOC_TOTAL), LOC_TOTAL_sd = sd(LOC_TOTAL))
+binned <- jm1 %>% mutate(bin = cut(LOC_TOTAL, 4,c("small", "medium", "large", "giant")) )
+binned %>% group_by(bin) %>% summarise(count = n(), med = median(LOC_TOTAL))
 
-d <- density(jm1$loc)
+```
+
+## 
+
+```{r}
+# show distributions
+#by group
+ggplot(data = binned, mapping = aes(x=LOC_TOTAL,y = after_stat(density))) + 
+  geom_freqpoly(mapping = aes(colour = bin), binwidth=100)
+```
+
+## 
+
+```{r}
+# by bin using violins
+ggplot(data = binned, mapping = aes(x = bin, y = `CYCLOMATIC_COMPLEXITY`)) + 
+         geom_violin()
+# KDE 
+d <- density(jm1$LOC_TOTAL)
 plot(d)
 ```
 
+## So What?
+
+Recall that understanding the underlying distribution allows us to
+
+1.  take a shortcut in modeling the data generating procedure (i.e., "it is like a coin flip" or "it is like human heights")
+2.  simplify the inference to simulate and predict
+3.  leverage well known statistical tests
+
 ## Correlation
 
-Thinking back to our causal models, some of the variables are correlated, possibly causally. We should look for correlation because it is a great source of confusion; either implying some effect that is really due to a hidden mediator, or making us run extra analyses that are all based on the same underlying mechanism.
+Thinking back to our causal models, some of the variables are **correlated**, possibly causally.
+
+We should look for correlation because it is a great source of confusion; either implying some effect that is really due to a hidden mediator, or making us run extra analyses that are all based on the same underlying mechanism.
+
+##  {.exercise}
 
 Furthermore, correlation - aka *multi-collinearity* - is something we try to remove in regression analysis as it makes the model overly sensitive and possibly inaccurate.
+
+*What types of correlation are likely in the data? Hint: think to first principles for the way the metrics get constructed, and how you know source code is created (your "data generating process").*
 
 ## Correlation Analysis
 
 Keep in mind this can be a problem with artificial variables too (the ones made up of other variables).
 
 ```{r correlation}
-ggplot(binned, aes(x=loc, y = `v(g)`)) + geom_point() + geom_smooth(method=lm)
-ggplot(binned, aes(sample= `v(g)`)) + geom_qq_line() + geom_qq()
+## scatter plot and linear model
+ggplot(binned, aes(x=LOC_TOTAL, y = `CYCLOMATIC_COMPLEXITY`)) + geom_point() + geom_smooth(method=lm)
+```
+
+## 
+
+```{r}
+## qq plot
+ggplot(binned, aes(sample= `CYCLOMATIC_COMPLEXITY`)) + geom_qq_line() + geom_qq()
 # correlation is the covariance normalized by standard deviations to normalize from -1 to 1
 ```
 
 We can use QQ plots (quantile-quantile) to examine fit to a distribution. The distribution's known shape is the central line and the actual data fit is the dots.
 
+## Correlation matrices
+
 We can also use
 
 ```{r}
 library(corrplot)
-cor_loc <- cor(binned$loc, binned$`v(g)`)
+cor_LOC_TOTAL <- cor(binned$LOC_TOTAL, binned$`CYCLOMATIC_COMPLEXITY`)
 corrplot(cor(jm1[, 1:10]))
 ```
 
@@ -129,17 +217,24 @@ as a rough approximation of correlation. Remember to plot the data first, to see
 
 # Dimensionality Reduction
 
-One challenge with datasets with lots of dimensions (variables/features/columns) is that running algorithms gets worse. For example, if we have an algoritym like nearest neighbours with a distance function, the distance function will perform very poorly in high-dimension spaces (the curse of dimensionality).
+## 
 
-The good news is we believe, empirically, that most SE data has low inherent dimensionality. This is important since, as Fisher points out, \> Further advances in advanced software analytics will be stunted unless we can tame their associated CPU costs.
+One challenge with datasets with lots of dimensions (variables/features/columns) is that running algorithms gets worse.
 
-## Compare SE datasets to UCI
+For example, if we have an algorithm like nearest neighbours with a distance function, the distance function will perform very poorly in high-dimension spaces (the curse of dimensionality).
+
+The good news is we believe, empirically, that most SE data has low inherent dimensionality. This is important since, as Fisher points out,
+
+> Further advances in advanced software analytics will be stunted unless we can tame their associated CPU costs.
+
+## Compare SE datasets to UCI (standard ML test data)
 
 -   SE data often binary labels and imbalanced
 -   SE data have lower intrinsic dimensionality
 
-##
-![](../images/rapina.png) ![](../images/se-vs-uci.png)
+## 
+
+![](../images/se-vs-uci.png)
 
 See 10.1109/TSE.2021.3073242
 
@@ -151,13 +246,19 @@ See 10.1109/TSE.2021.3073242
 
 ## Principle Components Analysis
 
-In some cases you can just do a correlation analysis and chuck predictors that are correlated. For example, flag each column with `USE?` and explore how well each one helps the AIC score. Problem: exponential! Better: do a search through feature space. E.g. with PEEKING2:
+In some cases you can do a correlation analysis and throw out predictors that are correlated.
+
+For example, flag each column with `USE?` and explore how well each one helps the performance of the classifiers score. Problem: exponential! Better: do a search through feature space.
+
+```{=html}
+<!--  E.g. with PEEKING2:
 
 ![](../images/peeking.png)
 
 ## PCA Search Algorithm
 
-PEEKING2 is a search algorithm that relies on a variant of PCA, which tries to find the principle components which capture the most variance in the data
+PEEKING2 is a search algorithm that relies on a variant of PCA, which tries to find the principle components which capture the most variance in the data -->
+```
 
 ```{r pca}
 jm1.pc <- prcomp(jm1[c(1:10)], center = TRUE, scale = TRUE)
@@ -167,35 +268,56 @@ summary(jm1.pc)
 
 ## PCA Visualization
 
-And we can see that PC1 contains 63% of the variance, PC2 contains 11%, etc. Thus the variance in our 10 columns has been reduced to 3-4 principle components.
+And we can see that PC1 contains 59% of the variance, PC2 contains 11%, etc. Thus the variance in our 10 columns has been reduced to 3-4 principle components.
 
 ```{r vis-pca}
 library(ggfortify)
-autoplot(jm1.pc, data = jm1, colour = 'defects')
-
+autoplot(jm1.pc, data = jm1, colour = 'label')
 ```
 
 This plot shows us the first 2 components with the associated labels. We don't see any obvious separation here.
 
-# Unsupervised Stuff
+# Unsupervised Classification
 
-We have been working on problems where we have columns X and labels Y. But what if we only have X? This is 99% of the adata in the world, of course, annoying CAPTCHAs notwithstanding.
+We have been working on problems where we have columns X and labels Y.
 
-Unsupervised learning is about finding relationships between the Xs (sort of like PCA was doing). One simple approach is to ask, can I cluster my data points into (N-dimensional) groups, such that a point $m$ is in cluster $J$ iff there is no closer cluster? This assumes "distance" in vector space means similarity in the real world, of course.
+But what if we only have X? This is 99% of the data in the world, of course, annoying CAPTCHAs notwithstanding.
+
+## Unsupervised
+
+Unsupervised learning is about finding relationships between the Xs (sort of like PCA was doing). One simple approach is to ask, can I cluster my data points into (N-dimensional) groups, such that a point $m$ is in cluster $J$ *iff* there is no closer cluster?
+
+This assumes "distance" in vector space means similarity in the real world, of course.
+
+## Weka
 
 One useful library for doing this, aside from the builtin libraries in Scikit-learn and R, is [Weka](https://www.cs.waikato.ac.nz/ml/weka/).
 
-# Supervised Stuff
+![](weka-dl.png)
+
+# Supervised Classification
+
+## 
 
 Now let's say we have Y (the labels / ground truth) and want to partition our data so we maximize the accuracy with which we label the instances.
 
 There's a long list of approaches to this problem (so-called shallow learning): decision trees, support vector machines, etc.
 
-I like Weka for exploration but for bigger datasets and more extensive experimentation, the command line or a notebook (hence usually Python) is best. Aside: SAVE YOUR EXPERIMENTS! Always record the steps and params you chose for a given exploration. It will save you headaches later.
+## Exercise: Weka {.exercise}
+
+I like Weka for exploration but for bigger datasets and more extensive experimentation, the command line or a notebook (hence usually Python) is best.
+
+*Load your JM1 data into Weka and explore using a supervised classifier. What performance do you get?*
+
+Aside: SAVE YOUR EXPERIMENTS! Always record the steps and params you chose for a given exploration. It will save you headaches later. Tools like Data Version Control can help with this.
 
 ## Confusion Matrices
 
-If we have two labels, True and False, then our task is to correctly predict the label for a given instance. When we do that on all the data instances, we get a set of correctly labeled instances (true positives and true negatives) and a set of incorrectly labeled instances (false positives/negatives). Our general task is to create a
+If we have two labels, True and False, then our task is to correctly predict the label for a given instance.
+
+When we do that on all the data instances, we get a set of correctly labeled instances (true positives and true negatives) and a set of incorrectly labeled instances (false positives/negatives).
+
+Our general task is to create a confusion matrix.
 
 ## Confusion Matrix Example
 
@@ -216,7 +338,7 @@ If we have two labels, True and False, then our task is to correctly predict the
 %        probability of false alarm = pf           = c/(a+c)
 %        precision                  = prec         = d/(c+d)
 %        effort                     = amount of code selected by detector
-%                                   = (c.LOC + d.LOC)/(Total LOC)
+%                                   = (c.LOC_TOTAL + d.LOC_TOTAL)/(Total LOC_TOTAL)
 %
 %        Ideally, detectors have high PDs, low PFs, and low
 %        effort. This ideal state rarely happens:
@@ -230,21 +352,40 @@ Some other common metrics include:
 
 -   ROC - AUC (and the curve itself)
 -   Matthews Correlation Coefficient
+-   others, more specific to different communities (MSE, specificity, IoU...)
 
 ## 
-These can all be implemented using library calls. The ROC curve metric is pretty useful: https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5
+
+These can all be implemented using library calls. The [ROC curve metric is pretty useful](https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5)
 
 The key is to understand what you are aiming to optimize. In some cases, like assessing ambiguous requirements, 100% recall is better than improved precision.
 
 Another key is to **have a valid baseline**. This might be ZeroR, the classifier that predicts the majority class; a random classifier; or the current SOTA (state of the art).
 
-# Hyper-parameters
+## Exercise {.exercise}
 
-##
+What is a valid baseline for a defect predictor?
+
+## Summary
+
+There now exist many libraries and tools for taking even poorly structured data and turning it into data products.
+
+Thinking carefully about what you are trying to answer, and how the ata is presented, are critical.
+
+Sometimes simpler is better. In some cases, well tuned ML algorithms like XGBoost can outperform radically expensive deep models.
+
+# Long Break {.break}
+
+```{=html}
+<!-- # Hyper-parameters
+
+## 
+
 If we have X and Y (columns and labels) we can also think about a third set, Z, which constitutes the parameters for our classifiers and clusterers.
 
-We might also want to find an effective Z. 
+We might also want to find an effective Z.
 
-Hyper-parameter optimization searches for optimal parameters for the learners. 
+Hyper-parameter optimization searches for optimal parameters for the learners.
 
-How should we do this search? Remember that SE data is usually pretty simple. Optimization can be very effective.
+How should we do this search? Remember that SE data is usually pretty simple. Optimization can be very effective. -->
+```

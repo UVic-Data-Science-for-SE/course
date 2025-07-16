@@ -6,6 +6,9 @@ project:
   title: "seng404"
 execute:
     freeze: auto  # re-render only when source changes
+    echo: true     # show code
+    eval: true     # run code
+    results: show  # show output
 output-dir:  _output
 author:
   - name: Neil Ernst
@@ -16,8 +19,10 @@ format:
   revealjs:
     theme: default
     slide-number: true
+    code-fold: true  # optionally allow folding
+    # highlight-style: obsidian
     logo: modules/images/ENGN_vert_bk.jpg
-    footer: "Neil Ernst (c) 2024-5"
+    footer: "Neil Ernst ©️ 2024-5"
     css: custom.css
 date: last-modified
 

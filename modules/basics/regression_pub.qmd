@@ -1,17 +1,15 @@
 ---
-title: "R and Data Mining Basics"
-author: "nernst"
-date: "May 2023"
-format: html
+title: "Linear Regression"
+author: "Neil Ernst"
+date: last-modified
 ---
 
-This is a [Quarto](https://quarto.org)-based notebook. When you execute code within the notebook, the results appear beneath the code.
 
 ```{r}
 #| label: setup
 library(tidyverse)
 library(foreign)
-jm1 = read.arff("http://promise.site.uottawa.ca/SERepository/datasets/jm1.arff")
+jm1 = read.arff('jm1.arff') #("https://zenodo.org/records/268514/files/JM1''.arff?download=1")
 jm1 <- as_tibble(jm1)
 jm1$defects <- as.logical(jm1$defects)
 
@@ -19,7 +17,12 @@ jm1$defects <- as.logical(jm1$defects)
 
 # Regression
 
-A useful approach, which we covered in Assignment 1, is to do a simple linear regression. In the simplest sense this is about finding the line that best fits the data. Extending the line to unseen datapoints is a *prediction* about what the y value should be for that data (a set of observations X).
+## Regression basics
+A useful approach, which we cover in Assignment 1, is to do a simple linear regression. 
+
+In the simplest sense this is about finding the line that best fits the data. 
+
+Extending the line to unseen datapoints is a *prediction* about what the y value should be for that data (a set of observations X).
 
 ## Digression: Modeling
 
@@ -27,8 +30,11 @@ The word 'model' is overloaded in computer science (i.e., overused). Here, I wil
 
 For example, obviously how each individual in this course got to be the height they are is subject to a vast array of forces, including genetics (the big one), nutrition, air pollution, etc. 
 
-In data science, we would like to abstract all of this complexity at the individual level with an abstraction for the sample, and talk about averages, deviations, and assume that randomness in sufficiently large numbers [^1] will take care of the individual variation.
+## Modeling 
+In data science, we would like to abstract all of this complexity at the individual level with an abstraction for the sample, and talk about averages, deviations, and assume that randomness in sufficiently large numbers ^[what it means for a sample to be sufficiently large, of course, is an important question. If for example we have a class with a bunch of Dutch exchange students, even our class of 65 students will be too small to say much about UVic students in general.] 
+ will take care of the individual variation.
 
+##
 Another approach is to throw up our hands and forget about representing the data using an underlying generative model, and instead fit functions of high dimensionality to represent the way the data is distributed, the neural approach. We will see both in this course. 
 
 ## OLS regression
@@ -39,7 +45,7 @@ It looks like: $y_i = \beta x_i + \alpha + \epsilon_i$
 
 And our task is to find $\alpha, \beta$ to minimize the (squared) error in our estimated $\hat{y}$, i.e. the value $y_i - \hat{y}$ for all the $y$ s. 
 
-If we think about y as predicting individual height h, we can simply say your height is some intercept $\alpha$ and an error term. The error term $\epsilon$ here is capturing things like the inherent error in our measurements (if we are measuring 100 students, we might get sloppy).
+If we think about y as predicting bug count/defects h, we can simply say your file's bugginess is some intercept $\alpha$ and an error term. The error term $\epsilon$ here is capturing things like the inherent error in our measurements (if we are measuring 100 files, we might get sloppy).
 
 ##
 This regression equation has a precise (algebraic) solution using the [*ordinary least squares*](https://en.wikipedia.org/wiki/Least_squares) technique. 
@@ -76,6 +82,8 @@ We could maybe write `defects ~ loc + v(g)`. These are two separate models; the 
 Finally, we have a parameter `family=binomial`. This parameter is saying that for this regression model, the sampler (in this case, a maximum likelihood estimation (MLE, a variant of Newton's method)) should do logistic regression and predict a binary outcome. Both logistic and linear regression are variants of *generalized linear models*. 
 
 # Interpreting Regression Results
+
+##
 (see also ROS, chapter 6.3, and chapter 10, p133)
 
 We now have a model fit object `fit` that we will want to explore. Hopefully, we will see that it fits the equation for a linear model we mentioned above, with intercepts and coefficients:
@@ -83,9 +91,14 @@ We now have a model fit object `fit` that we will want to explore. Hopefully, we
 ```{r}
 #| label: fit linear model
 print(fit_1)
+```
+
+##
+``` {r}
 summary(fit_1)
 ```
 
+##
 This prints out coefficient on the predictor ('m') and the intercept (that's the `b` in the `y=mx + b + e` notation). The second column reflects the uncertainty in the estimate. So what do we make of this? The first thing we should do is print out one of the interactions:
 
 ```{r}
@@ -97,14 +110,28 @@ abline(a_hat, b_hat, col='red')
 
 ```
 
-Here we have our two values for defective files, and the LOC on the y-axis. A red line indicates the regression equation that fits this data using OLS. From our `fit_1` object, we can see the intercept is b=-1.9, and m is 0.01 (the slope of the red line). Recall our model: we think (or, we are testing), the idea that if code has more lines, it is more likely to have defects. So what this model predicts is that the change in lines of code increases 'defect' likelihood by 0.01 (1%) of the number of lines. This corresponds to a defect rate of 1 bug per 100 lines of code, which is actually pretty close to reports: Microsoft at one point estimated 10-20 defects per 1000 LOC [^2].
+##
+Here we have our two values for defective files, and the LOC on the y-axis. 
 
+A red line indicates the regression equation that fits this data using OLS. From our `fit_1` object, we can see the intercept is b=-1.9, and m is 0.01 (the slope of the red line). 
+
+**Recall our model**: we think (or, we are testing), the idea that if code has more lines, it is more likely to have defects. 
+
+##
+So what this model predicts is that the change in lines of code increases 'defect' likelihood by 0.01 (1%) of the number of lines. 
+
+This corresponds to a defect rate of 1 bug per 100 lines of code, which is actually pretty close to reports: Microsoft at one point estimated 10-20 defects per 1000 LOC ^[As reported in McConnell's Code Complete]
+
+##
 A few issues to note here:
 
 - coefficients represent the mean change in the dependent variable for each 1 unit change in an independent variable when you hold all of the other **independent** variables constant.
-- this is just one model, and if we follow our workflow, we should now be comparing this model to others, which might be changes to this one, or adding new features. 
+- this is just one model, and if we follow our workflow, we should now be comparing this model to others, which might be changes to this one, or adding new features.
+
+## 
 - we have a negative intercept, which makes no sense because we can't have negative LOC. We would want to fix that in our revised model.
 - we have a lot of data distributed around the 1-100 LOC mark. We should adjust our model (at the very least, our visualization) to accommodate this non-normal distribution. 
+- some of our files have NO bugs, and these "zeros" are inflating the estimates.
 
 # Bayesian regression 
 From a Bayesian point of view we can use the `rstanarm` library, which is the same format as the `glm()` command, but uses a Bayesian interpretation and sampler:
@@ -118,12 +145,19 @@ print(fit_b,digits=3)
 
 ```
 
+##
 A bunch of text should fly by in the console; this is the sampler running on the likelihood. 
 
 Happily (I think you would agree) the Bayesian approach finds similar parameters as the frequentist/MLE approach before. 
 
-You might say "the outputs of both of these approaches are very similar" and thus, who cares if it is frequentist. Pragmatically I suppose that is true but you can get into trouble in the edges. In some sense we would hope that two different inferential approaches will find the *same* outcomes, if that outcome is a real thing.
+##
+You might say "the outputs of both of these approaches are very similar" and thus, who cares if it is frequentist. 
 
+Pragmatically I suppose that is true but you can get into trouble in the edges. 
+
+In some sense we would hope that two different inferential approaches will find the *same* outcomes, if that outcome is a real thing.
+
+##
 | Bayes                                                        | Frequentist                                                                    |
 |------------------------------------|------------------------------------|
 | Prior captures past knowledge                                | Assumption of ignorance about past                                             |
@@ -133,7 +167,10 @@ You might say "the outputs of both of these approaches are very similar" and thu
 
 # Model Comparison and Evaluation
 
-For the frequentist linear regression approach, we have a metric such as $R^2$, which measures the goodness of fit or proportion of variance explained. A perfect linear model would have $R^2$ of 1.0, indicating *all* the variance in the data is captured in the model. 
+## 
+For the frequentist linear regression approach, we have a metric such as $R^2$, which measures the goodness of fit or proportion of variance explained. 
+
+A perfect linear model would have $R^2$ of 1.0, indicating *all* the variance in the data is captured in the model. 
 
 ##
 ```{r}
@@ -141,16 +178,28 @@ For the frequentist linear regression approach, we have a metric such as $R^2$, 
 m1 <- 'mpg ~ hp'
 m1_o <- lm(m1, data=mtcars)
 summary(m1_o)
+```
+
+##
+``` {r}
+# confidencce intervals
 new_data <- data.frame(hp=c(250,300,450))
 predict(m1_o, newdata=new_data,interval="confidence")
 ```
-For our `fit_1` object above, which is a logistic regression model, a better measure is the classification accuracy (defective/not defective). We can use the model's fitted values (`fit_1$fitted.values`) to compare. I'm not an expert in this, however. 
+
+For our `fit_1` object above, which is a logistic regression model, a better measure is the classification accuracy (defective/not defective). 
+
+We can use the model's fitted values (`fit_1$fitted.values`) to compare. I'm not an expert in this, however. 
+
+## The Bayesian intuition
+
+Having a Bayesian model is helpful in capturing an intuition about the data. 
+
+It produces a fit object that is really a *posterior probability distribution* that gives us the ability to do stuff like sample from it, retrieve arbitrary intervals, etc. 
 
 ##
+As *Regression and Other Stories* notes (p. 99), we should interpret the coefficients as comparisons. 
 
-Having a Bayesian model is helpful in capturing an intuition about the data. It produces a fit object that is really a *posterior probability distribution* that gives us the ability to do stuff like sample from it, retrieve arbitrary intervals, etc. 
-
-As *Regression and Other Stories* notes (p. 99), we should interpret the coefficients as comparisons, in this example, height and earnings: 
 > We can say that, under the fitted model, the average difference in earnings, comparing two people of the same sex but one inch different in height, is $600. **The safest interpretation of a regression is as a comparison** (emphasis added)
 
 ## 
@@ -159,19 +208,32 @@ Similarly, in our case we are implicitly comparing two files, with 100 lines of 
 ```{r}
 #| label: examining bayesian predictions
 plot.new()
+x <- seq(min(jm1$loc, na.rm=TRUE), max(jm1$loc, na.rm=TRUE), length.out=100)
 sims_1 <- as.matrix(fit_b)
 n_sims <- nrow(sims_1)
+plot(x, invlogit(sims_1[1,1] + sims_1[1,2]*x), type="n", xlab="loc", ylab="Predicted Probability")
 for (j in sample(n_sims, 20)){
-    curve(invlogit(sims_1[j,1] + sims_1[j,2]*x), col="gray", lwd=0.5, add=TRUE)
+    curve(invlogit(sims_1[j,1] + sims_1[j,2]*x), from=min(x), to=max(x), col="gray", lwd=0.5, add=TRUE)
 }
 ```
 
 ## Overfitting
-One problem is that a model with 8 datapoints is perfectly explained by 8 variables. This overfitting issue can occur in regression as well, if we have models - like this jm1 dataset - with many variables. It also makes interpretation harder, as we have to explain the outputs based on more of these inputs. Thus we might penalize the regression model to prevent overfitting and reward simpler models. Two such approaches are *ridge* and *lasso* regression. In ridge regression we penalize the $\beta$ parameter above and seek to minimize the error AND the penalty; in lasso (least absolute shrinkage and selection operator) the penalty acts to see which coefficients can be forced to 0 (and discarded). This creates a sparser model; our error will probably be higher, but the explainability and generalizability should be increased.
+One problem is that a model with 8 datapoints is perfectly explained by 8 variables. 
 
-Scikit-learn has a [nice Python explanation of this problem](https://scikit-learn.org/stable/auto_examples/inspection/plot_linear_model_coefficient_interpretation.html#linear-models-with-sparse-coefficients).
+This overfitting issue can occur in regression as well, if we have models - like this jm1 dataset - with many variables. 
 
+It also makes interpretation harder, as we have to explain the outputs based on more of these inputs. 
 
-[^1]: what it means for a sample to be sufficiently large, of course, is an important question. If for example we have a class with a bunch of Dutch exchange students, even our class of 65 students will be too small to say much about UVic students in general. 
+## 
+Thus we might penalize the regression model to prevent overfitting and reward simpler models. Two such approaches are *ridge* and *lasso* regression. 
 
-[^2]: As reported in McConnell's Code Complete, and quoted here: https://stackoverflow.com/questions/2898571/basis-for-claim-that-the-number-of-bugs-per-line-of-code-is-constant-regardless
+<!-- In ridge regression we penalize the $\beta$ parameter above and seek to minimize the error AND the penalty; in lasso (least absolute shrinkage and selection operator) the penalty acts to see which coefficients can be forced to 0 (and discarded). This creates a sparser model; our error will probably be higher, but the explainability and generalizability should be increased.
+
+Scikit-learn has a [nice Python explanation of this problem](https://scikit-learn.org/stable/auto_examples/inspection/plot_linear_model_coefficient_interpretation.html#linear-models-with-sparse-coefficients). -->
+
+## Summary
+
+- Regression is a core inferential tool in both frequentist and bayesian settings
+- Very common in many other disciplines!
+- Careful attention to the assumptions and interpretations of the coefficients - as comparisons - is key. 
+

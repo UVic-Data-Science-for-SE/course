@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.43">
 
   <meta name="author" content="Neil Ernst">
-  <meta name="dcterms.date" content="2025-04-23">
+  <meta name="dcterms.date" content="2025-07-16">
   <title>R and Data Mining Basics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="dm_basics_files/libs/revealjs/dist/theme/quarto-2f366650f320edcfcf53d73c80250a32.css">
   <link rel="stylesheet" href="../../custom.css">
@@ -139,31 +204,58 @@ Neil Ernst
 </div>
 </div>
 
-  <p class="date">2025-04-23</p>
+  <p class="date">2025-07-16</p>
 </section>
-<section class="slide level2">
+<section>
+<section id="overview" class="title-slide slide level1 center">
+<h1>Overview</h1>
 
-<p>This is a <a href="https://quarto.org">Quarto</a>-based slideshow. When you execute code within the notebook, the results appear beneath the code.</p>
 </section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>This is a <a href="https://quarto.org">Quarto</a>-based slideshow. When you execute code within the notebook, the results appear beneath the code.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href=""></a><span class="fu">library</span>(foreign)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section></section>
 <section>
 <section id="data-exploration" class="title-slide slide level1 center">
 <h1>Data Exploration</h1>
-<p>(A lot of this material is from <a href="https://r4ds.had.co.nz/">R for Data Science</a>, a freely available book)</p>
+<p>A lot of this material is from <a href="https://r4ds.had.co.nz/">R for Data Science</a>, a freely available book.</p>
 
 <img data-src="https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png" class="r-stretch"></section>
 <section id="understanding-the-data" class="slide level2">
 <h2>Understanding the Data</h2>
-<p>One of the first tasks is to better understand the data. We looked at that in the Bayesian context from the <em>epistemological</em> and <em>ontological</em> perspectives: how we think the data were created, and what properties exist in our data.</p>
-<p>Often that means background reading, e.g., a literature review or domain modeling. What are your intuitions about how the data would be generated, e.g., for job application information?</p>
+<p>One of the first tasks is to better understand the data.</p>
+<p>Both <em>epistemological</em> and <em>ontological</em> perspectives: how we <strong>think the data were created</strong>, and <strong>what properties exist</strong> in our data.</p>
+<p>Often that means background reading, e.g., a literature review or domain modeling.</p>
+<p>What are your intuitions about how the data would be generated, e.g., for job application information?</p>
 </section>
 <section id="loading-data" class="slide level2">
 <h2>Loading Data</h2>
-<p>Next, take the data and get it loaded into R or Jupyter. My favourite toolset is the <a href="https://www.tidyverse.org/"><code>Tidyverse</code></a>, a set of libraries and philosophies for manipulating R data frames.</p>
-<p>Loading data is initially easy but quickly becomes a major challenge as data gets larger and more complex. A non-trivial amount of effort can be spent wrangling data into the correct format. A big part of TidyR is to get the data into a “shape” that is easy to work with.</p>
+<p>Next, take the data and get it loaded into R or Jupyter.</p>
+<p>My favourite toolset is the <a href="https://www.tidyverse.org/"><code>Tidyverse</code></a>, a set of libraries and philosophies for manipulating R data frames.</p>
+<p>Loading data is initially easy but quickly becomes a major challenge as data gets larger and more complex. A non-trivial amount of effort can be spent wrangling data into the correct format.</p>
+<p>A big part of TidyR is to get the data into a “shape” that is easy to work with.</p>
 </section>
 <section id="example-dataset" class="slide level2">
 <h2>Example Dataset</h2>
-<p>Let us consider the following datasets: http://promise.site.uottawa.ca/SERepository/datasets-page.html. They are mostly in a common data exchange format called ARFF.</p>
+<p>Let us consider the following datasets from the SEACRAFT SE data repository. Look at files in the common ML self-describing text format ARFF.</p>
+<p>https://zenodo.org/records/268514 <img data-src="qr-jm1.png" alt="qr code to link above"></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>jm1 <span class="ot">=</span> <span class="fu">read.arff</span>(<span class="st">"https://zenodo.org/records/268514/files/JM1''.arff?download=1"</span>)</span>
+<span id="cb2-2"><a href=""></a>jm1 <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(jm1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="jm1-nasa-defects" class="slide level2">
+<h2>JM1 / NASA defects</h2>
 </section>
 <section id="tidy-data-principles" class="slide level2">
 <h2>Tidy Data Principles</h2>
@@ -174,135 +266,263 @@ Neil Ernst
 <li>Each value must have its own cell.</li>
 </ol>
 <p>Factors: factors are categorical data, possibly ordered, like “letter grade” (ordered) or country name.</p>
-<p>Let’s say we are interested in how well Halstead complexity <code>v(g)</code> predicts defects.</p>
 </section>
-<section id="filtering-and-aggregating" class="slide level2">
+<section id="tidying" class="slide level2">
+<h2>Tidying</h2>
+<p>The <code>jm1</code> dataset is pretty tidy but in <em>wide</em> format. That means we have many columns of data. Another approach is <em>long</em> format.</p>
+</section>
+<section id="exercise" class="slide level2 exercise">
+<h2>Exercise</h2>
+<p>Take some time and convert the <code>jm1</code> dataset to long form. Hint: the long form is of the form ‘id, variable, value’ and values have to be compatible.</p>
+<p>Long forms are usually more useful for data wrangling purposes.</p>
+</section>
+<section id="pivoting" class="slide level2">
+<h2>Pivoting</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>jm1_long <span class="ot">&lt;-</span> jm1 <span class="sc">%&gt;%</span>  <span class="fu">pivot_longer</span>(<span class="fu">c</span>(LOC_TOTAL,CYCLOMATIC_COMPLEXITY))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="short-break" class="slide level2 break">
+<h2>Short Break</h2>
+</section>
+<section id="filtering-and-aggregating" class="slide level2 exercise">
 <h2>Filtering and Aggregating</h2>
+<p>Let’s say we are interested in how well Halstead complexity predicts defects.</p>
+<p>What is Halstead complexity? What are these complexity metrics in general? Do some research with your partner.</p>
+<aside class="notes">
+<p>what do you think about the utility of these metrics?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="chaining" class="slide level2">
+<h2>Chaining</h2>
 <p>In Tidyverse language, use the TidyVerse chaining operator <code>%&gt;%</code> (pipe) to group operations on dataframes/tibbles.</p>
 <p>Useful operations include <code>mutate</code>, <code>filter</code>, <code>summarize/group_by</code>. I find these operations extremely powerful for manipulating the data. You can think of them as data frame analogues for SQL query statements.</p>
 </section>
 <section id="data-wrangling" class="slide level2">
 <h2>Data Wrangling</h2>
 <p>I suggest you load your data into a data frame and then chain filters into it, rather than “fixing” the dataset in a separate step. That way you get to see all the data wrangling in one place. It can be <em>really</em> easy to miss a step and end up with outliers that are included, aggregations that don’t make sense, etc.</p>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>jm1 <span class="ot">=</span> jm1 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">norm =</span> HALSTEAD_EFFORT <span class="sc">/</span> LOC_TOTAL) </span>
+<span id="cb4-2"><a href=""></a><span class="fu">invisible</span>(<span class="fu">as.logical</span>(jm1<span class="sc">$</span>label)) <span class="co">#(but should be logical)</span></span>
+<span id="cb4-3"><a href=""></a>jm1 <span class="sc">%&gt;%</span> <span class="fu">count</span>(label)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 2
-  defects     n
-  &lt;fct&gt;   &lt;int&gt;
-1 false    8779
-2 true     2106</code></pre>
+  label     n
+  &lt;fct&gt; &lt;int&gt;
+1 N      6110
+2 Y      1672</code></pre>
 </div>
+</div>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> jm1) <span class="sc">+</span></span>
+<span id="cb6-2"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y=</span><span class="st">`</span><span class="at">CYCLOMATIC_COMPLEXITY</span><span class="st">`</span>, <span class="at">x=</span>label))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>jm1 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(LOC_TOTAL <span class="sc">&gt;</span> <span class="dv">1000</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="st">`</span><span class="at">CYCLOMATIC_COMPLEXITY</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 8 × 1
-  `v(g)`
-   &lt;dbl&gt;
-1    402
-2    286
-3    127
-4    207
-5    268
-6    263
-7    128
-8    470</code></pre>
+<pre><code># A tibble: 6 × 1
+  CYCLOMATIC_COMPLEXITY
+                  &lt;dbl&gt;
+1                   127
+2                   402
+3                   263
+4                   207
+5                   470
+6                   286</code></pre>
 </div>
 </div>
-<img data-src="dm_basics_files/figure-revealjs/filter-1.png" width="960" class="r-stretch"></section>
+<img data-src="dm_basics_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
 <section id="probability-distributions" class="slide level2">
 <h2>Probability Distributions</h2>
 <p>The <code>ggplot()</code> library in R (and MatPlotLib in Python) are best in class visualization approaches with a vast amount of options and when combined with the filtering/aggregating, can do almost anything.</p>
-<p>Use ggplot to explore your data and dimensionality as we showed in the R walkthru. Don’t feel bad about using SO or references; I did preparing this tutorial!</p>
-<p>Visualization can help understand what is happening. Descriptive stats such as mean, median, variance can give some numeric information conditional on the distribution involved. These are typically generalized as <strong>location</strong> and <strong>dispersion</strong>, e.g., where the big clump of data lives in the normal, and how spread out it is.</p>
+<p>Use ggplot to explore your data and dimensionality.</p>
+</section>
+<section id="exercise-1" class="slide level2 exercise">
+<h2>Exercise</h2>
+<p>What distribution fits the data set? Hint: this is sometimes done with kernel density plots.</p>
+</section>
+<section id="visualization" class="slide level2">
+<h2>Visualization</h2>
+<p>Visualization can help understand what is happening. Descriptive stats such as mean, median, variance can give some numeric information conditional on the distribution involved.</p>
+<p>These are typically generalized as <strong>location</strong> and <strong>dispersion</strong>, e.g., where the big clump of data lives in the normal, and how spread out it is.</p>
 </section>
 <section id="binning-and-summarizing" class="slide level2">
 <h2>Binning and Summarizing</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>sum <span class="ot">&lt;-</span> jm1 <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(), <span class="at">LOC_TOTAL_m =</span> <span class="fu">mean</span>(LOC_TOTAL), <span class="at">LOC_TOTAL_med =</span> <span class="fu">median</span>(LOC_TOTAL), <span class="at">LOC_TOTAL_sd =</span> <span class="fu">sd</span>(LOC_TOTAL))</span>
+<span id="cb9-2"><a href=""></a>binned <span class="ot">&lt;-</span> jm1 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">bin =</span> <span class="fu">cut</span>(LOC_TOTAL, <span class="dv">4</span>,<span class="fu">c</span>(<span class="st">"small"</span>, <span class="st">"medium"</span>, <span class="st">"large"</span>, <span class="st">"giant"</span>)) )</span>
+<span id="cb9-3"><a href=""></a>binned <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(bin) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(), <span class="at">med =</span> <span class="fu">median</span>(LOC_TOTAL))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
   bin    count   med
   &lt;fct&gt;  &lt;int&gt; &lt;dbl&gt;
-1 small  10876   23 
-2 medium     6 1262.
-3 large      2 1853 
-4 giant      1 3442 </code></pre>
+1 small   7775    26
+2 medium     5  1280
+3 large      1  1882
+4 giant      1  3442</code></pre>
 </div>
+</div>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="co"># show distributions</span></span>
+<span id="cb11-2"><a href=""></a><span class="co">#by group</span></span>
+<span id="cb11-3"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> binned, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>LOC_TOTAL,<span class="at">y =</span> <span class="fu">after_stat</span>(density))) <span class="sc">+</span> </span>
+<span id="cb11-4"><a href=""></a>  <span class="fu">geom_freqpoly</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">colour =</span> bin), <span class="at">binwidth=</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="dm_basics_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="co"># by bin using violins</span></span>
+<span id="cb12-2"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> binned, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bin, <span class="at">y =</span> <span class="st">`</span><span class="at">CYCLOMATIC_COMPLEXITY</span><span class="st">`</span>)) <span class="sc">+</span> </span>
+<span id="cb12-3"><a href=""></a>         <span class="fu">geom_violin</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="dm_basics_files/figure-revealjs/binning-1.png" width="960"></p>
+<p><img data-src="dm_basics_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
 </figure>
 </div>
 </div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="co"># KDE </span></span>
+<span id="cb13-2"><a href=""></a>d <span class="ot">&lt;-</span> <span class="fu">density</span>(jm1<span class="sc">$</span>LOC_TOTAL)</span>
+<span id="cb13-3"><a href=""></a><span class="fu">plot</span>(d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="dm_basics_files/figure-revealjs/binning-2.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="dm_basics_files/figure-revealjs/binning-3.png" width="960"></p>
+<p><img data-src="dm_basics_files/figure-revealjs/unnamed-chunk-5-2.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
+<section id="so-what" class="slide level2">
+<h2>So What?</h2>
+<p>Recall that understanding the underlying distribution allows us to</p>
+<ol type="1">
+<li>take a shortcut in modeling the data generating procedure (i.e., “it is like a coin flip” or “it is like human heights”)</li>
+<li>simplify the inference to simulate and predict</li>
+<li>leverage well known statistical tests</li>
+</ol>
+</section>
 <section id="correlation" class="slide level2">
 <h2>Correlation</h2>
-<p>Thinking back to our causal models, some of the variables are correlated, possibly causally. We should look for correlation because it is a great source of confusion; either implying some effect that is really due to a hidden mediator, or making us run extra analyses that are all based on the same underlying mechanism.</p>
+<p>Thinking back to our causal models, some of the variables are <strong>correlated</strong>, possibly causally.</p>
+<p>We should look for correlation because it is a great source of confusion; either implying some effect that is really due to a hidden mediator, or making us run extra analyses that are all based on the same underlying mechanism.</p>
+</section>
+<section id="section-5" class="slide level2 exercise">
+<h2></h2>
 <p>Furthermore, correlation - aka <em>multi-collinearity</em> - is something we try to remove in regression analysis as it makes the model overly sensitive and possibly inaccurate.</p>
+<p><em>What types of correlation are likely in the data? Hint: think to first principles for the way the metrics get constructed, and how you know source code is created (your “data generating process”).</em></p>
 </section>
 <section id="correlation-analysis" class="slide level2">
 <h2>Correlation Analysis</h2>
 <p>Keep in mind this can be a problem with artificial variables too (the ones made up of other variables).</p>
 <div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="dm_basics_files/figure-revealjs/correlation-1.png" width="960"></p>
-</figure>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="do">## scatter plot and linear model</span></span>
+<span id="cb14-2"><a href=""></a><span class="fu">ggplot</span>(binned, <span class="fu">aes</span>(<span class="at">x=</span>LOC_TOTAL, <span class="at">y =</span> <span class="st">`</span><span class="at">CYCLOMATIC_COMPLEXITY</span><span class="st">`</span>)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
 </div>
+<img data-src="dm_basics_files/figure-revealjs/correlation-1.png" width="960" class="r-stretch"></section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="do">## qq plot</span></span>
+<span id="cb15-2"><a href=""></a><span class="fu">ggplot</span>(binned, <span class="fu">aes</span>(<span class="at">sample=</span> <span class="st">`</span><span class="at">CYCLOMATIC_COMPLEXITY</span><span class="st">`</span>)) <span class="sc">+</span> <span class="fu">geom_qq_line</span>() <span class="sc">+</span> <span class="fu">geom_qq</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="co"># correlation is the covariance normalized by standard deviations to normalize from -1 to 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="dm_basics_files/figure-revealjs/correlation-2.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>We can use QQ plots (quantile-quantile) to examine fit to a distribution. The distribution’s known shape is the central line and the actual data fit is the dots.</p>
+<img data-src="dm_basics_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"><p>We can use QQ plots (quantile-quantile) to examine fit to a distribution. The distribution’s known shape is the central line and the actual data fit is the dots.</p>
+</section>
+<section id="correlation-matrices" class="slide level2">
+<h2>Correlation matrices</h2>
 <p>We can also use</p>
 <div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="dm_basics_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
-</figure>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">library</span>(corrplot)</span>
+<span id="cb17-2"><a href=""></a>cor_LOC_TOTAL <span class="ot">&lt;-</span> <span class="fu">cor</span>(binned<span class="sc">$</span>LOC_TOTAL, binned<span class="sc">$</span><span class="st">`</span><span class="at">CYCLOMATIC_COMPLEXITY</span><span class="st">`</span>)</span>
+<span id="cb17-3"><a href=""></a><span class="fu">corrplot</span>(<span class="fu">cor</span>(jm1[, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
 </div>
-</div>
-</div>
-<p>as a rough approximation of correlation. Remember to plot the data first, to see what the numbers are telling you.</p>
+<img data-src="dm_basics_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"><p>as a rough approximation of correlation. Remember to plot the data first, to see what the numbers are telling you.</p>
 </section></section>
 <section>
 <section id="dimensionality-reduction" class="title-slide slide level1 center">
 <h1>Dimensionality Reduction</h1>
-<p>One challenge with datasets with lots of dimensions (variables/features/columns) is that running algorithms gets worse. For example, if we have an algoritym like nearest neighbours with a distance function, the distance function will perform very poorly in high-dimension spaces (the curse of dimensionality).</p>
-<p>The good news is we believe, empirically, that most SE data has low inherent dimensionality. This is important since, as Fisher points out, &gt; Further advances in advanced software analytics will be stunted unless we can tame their associated CPU costs.</p>
+
 </section>
-<section id="compare-se-datasets-to-uci" class="slide level2">
-<h2>Compare SE datasets to UCI</h2>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p>One challenge with datasets with lots of dimensions (variables/features/columns) is that running algorithms gets worse.</p>
+<p>For example, if we have an algorithm like nearest neighbours with a distance function, the distance function will perform very poorly in high-dimension spaces (the curse of dimensionality).</p>
+<p>The good news is we believe, empirically, that most SE data has low inherent dimensionality. This is important since, as Fisher points out,</p>
+<blockquote>
+<p>Further advances in advanced software analytics will be stunted unless we can tame their associated CPU costs.</p>
+</blockquote>
+</section>
+<section id="compare-se-datasets-to-uci-standard-ml-test-data" class="slide level2">
+<h2>Compare SE datasets to UCI (standard ML test data)</h2>
 <ul>
 <li>SE data often binary labels and imbalanced</li>
 <li>SE data have lower intrinsic dimensionality</li>
 </ul>
 </section>
-<section id="section" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
-<p><img data-src="../images/rapina.png"> <img data-src="../images/se-vs-uci.png"></p>
-<p>See 10.1109/TSE.2021.3073242</p>
+
+<img data-src="../images/se-vs-uci.png" class="r-stretch"><p>See 10.1109/TSE.2021.3073242</p>
 </section>
 <section id="so-what-to-do" class="slide level2">
 <h2>So What To Do?</h2>
@@ -314,49 +534,84 @@ Neil Ernst
 </section>
 <section id="principle-components-analysis" class="slide level2">
 <h2>Principle Components Analysis</h2>
-<p>In some cases you can just do a correlation analysis and chuck predictors that are correlated. For example, flag each column with <code>USE?</code> and explore how well each one helps the AIC score. Problem: exponential! Better: do a search through feature space. E.g. with PEEKING2:</p>
+<p>In some cases you can do a correlation analysis and throw out predictors that are correlated.</p>
+<p>For example, flag each column with <code>USE?</code> and explore how well each one helps the performance of the classifiers score. Problem: exponential! Better: do a search through feature space.</p>
+<!--  E.g. with PEEKING2:
 
-<img data-src="../images/peeking.png" class="r-stretch"></section>
-<section id="pca-search-algorithm" class="slide level2">
-<h2>PCA Search Algorithm</h2>
-<p>PEEKING2 is a search algorithm that relies on a variant of PCA, which tries to find the principle components which capture the most variance in the data</p>
+![](../images/peeking.png)
+
+## PCA Search Algorithm
+
+PEEKING2 is a search algorithm that relies on a variant of PCA, which tries to find the principle components which capture the most variance in the data -->
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a>jm1.pc <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(jm1[<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)], <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-2"><a href=""></a><span class="fu">summary</span>(jm1.pc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Importance of components:
-                          PC1    PC2    PC3     PC4     PC5     PC6    PC7
-Standard deviation     2.5055 1.0327 1.0158 0.83045 0.63651 0.42912 0.3962
-Proportion of Variance 0.6278 0.1066 0.1032 0.06896 0.04051 0.01841 0.0157
-Cumulative Proportion  0.6278 0.7344 0.8376 0.90657 0.94708 0.96550 0.9812
+                          PC1    PC2     PC3     PC4     PC5     PC6     PC7
+Standard deviation     2.4198 1.0908 0.94116 0.82625 0.72482 0.57774 0.53704
+Proportion of Variance 0.5856 0.1190 0.08858 0.06827 0.05254 0.03338 0.02884
+Cumulative Proportion  0.5856 0.7045 0.79312 0.86139 0.91393 0.94730 0.97614
                            PC8     PC9    PC10
-Standard deviation     0.33102 0.27443 0.05608
-Proportion of Variance 0.01096 0.00753 0.00031
-Cumulative Proportion  0.99215 0.99969 1.00000</code></pre>
+Standard deviation     0.39455 0.25513 0.13340
+Proportion of Variance 0.01557 0.00651 0.00178
+Cumulative Proportion  0.99171 0.99822 1.00000</code></pre>
 </div>
 </div>
 </section>
 <section id="pca-visualization" class="slide level2">
 <h2>PCA Visualization</h2>
-<p>And we can see that PC1 contains 63% of the variance, PC2 contains 11%, etc. Thus the variance in our 10 columns has been reduced to 3-4 principle components.</p>
+<p>And we can see that PC1 contains 59% of the variance, PC2 contains 11%, etc. Thus the variance in our 10 columns has been reduced to 3-4 principle components.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="fu">library</span>(ggfortify)</span>
+<span id="cb20-2"><a href=""></a><span class="fu">autoplot</span>(jm1.pc, <span class="at">data =</span> jm1, <span class="at">colour =</span> <span class="st">'label'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 
+</div>
 <img data-src="dm_basics_files/figure-revealjs/vis-pca-1.png" width="960" class="r-stretch"><p>This plot shows us the first 2 components with the associated labels. We don’t see any obvious separation here.</p>
 </section></section>
-<section id="unsupervised-stuff" class="title-slide slide level1 center">
-<h1>Unsupervised Stuff</h1>
-<p>We have been working on problems where we have columns X and labels Y. But what if we only have X? This is 99% of the adata in the world, of course, annoying CAPTCHAs notwithstanding.</p>
-<p>Unsupervised learning is about finding relationships between the Xs (sort of like PCA was doing). One simple approach is to ask, can I cluster my data points into (N-dimensional) groups, such that a point <span class="math inline">\(m\)</span> is in cluster <span class="math inline">\(J\)</span> iff there is no closer cluster? This assumes “distance” in vector space means similarity in the real world, of course.</p>
-<p>One useful library for doing this, aside from the builtin libraries in Scikit-learn and R, is <a href="https://www.cs.waikato.ac.nz/ml/weka/">Weka</a>.</p>
-</section>
-
 <section>
-<section id="supervised-stuff" class="title-slide slide level1 center">
-<h1>Supervised Stuff</h1>
+<section id="unsupervised-classification" class="title-slide slide level1 center">
+<h1>Unsupervised Classification</h1>
+<p>We have been working on problems where we have columns X and labels Y.</p>
+<p>But what if we only have X? This is 99% of the data in the world, of course, annoying CAPTCHAs notwithstanding.</p>
+</section>
+<section id="unsupervised" class="slide level2">
+<h2>Unsupervised</h2>
+<p>Unsupervised learning is about finding relationships between the Xs (sort of like PCA was doing). One simple approach is to ask, can I cluster my data points into (N-dimensional) groups, such that a point <span class="math inline">\(m\)</span> is in cluster <span class="math inline">\(J\)</span> <em>iff</em> there is no closer cluster?</p>
+<p>This assumes “distance” in vector space means similarity in the real world, of course.</p>
+</section>
+<section id="weka" class="slide level2">
+<h2>Weka</h2>
+<p>One useful library for doing this, aside from the builtin libraries in Scikit-learn and R, is <a href="https://www.cs.waikato.ac.nz/ml/weka/">Weka</a>.</p>
+
+<img data-src="weka-dl.png" class="r-stretch"></section></section>
+<section>
+<section id="supervised-classification" class="title-slide slide level1 center">
+<h1>Supervised Classification</h1>
+
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
 <p>Now let’s say we have Y (the labels / ground truth) and want to partition our data so we maximize the accuracy with which we label the instances.</p>
 <p>There’s a long list of approaches to this problem (so-called shallow learning): decision trees, support vector machines, etc.</p>
-<p>I like Weka for exploration but for bigger datasets and more extensive experimentation, the command line or a notebook (hence usually Python) is best. Aside: SAVE YOUR EXPERIMENTS! Always record the steps and params you chose for a given exploration. It will save you headaches later.</p>
+</section>
+<section id="exercise-weka" class="slide level2 exercise">
+<h2>Exercise: Weka</h2>
+<p>I like Weka for exploration but for bigger datasets and more extensive experimentation, the command line or a notebook (hence usually Python) is best.</p>
+<p><em>Load your JM1 data into Weka and explore using a supervised classifier. What performance do you get?</em></p>
+<p>Aside: SAVE YOUR EXPERIMENTS! Always record the steps and params you chose for a given exploration. It will save you headaches later. Tools like Data Version Control can help with this.</p>
 </section>
 <section id="confusion-matrices" class="slide level2">
 <h2>Confusion Matrices</h2>
-<p>If we have two labels, True and False, then our task is to correctly predict the label for a given instance. When we do that on all the data instances, we get a set of correctly labeled instances (true positives and true negatives) and a set of incorrectly labeled instances (false positives/negatives). Our general task is to create a</p>
+<p>If we have two labels, True and False, then our task is to correctly predict the label for a given instance.</p>
+<p>When we do that on all the data instances, we get a set of correctly labeled instances (true positives and true negatives) and a set of incorrectly labeled instances (false positives/negatives).</p>
+<p>Our general task is to create a confusion matrix.</p>
 </section>
 <section id="confusion-matrix-example" class="slide level2">
 <h2>Confusion Matrix Example</h2>
@@ -376,7 +631,7 @@ Cumulative Proportion  0.99215 0.99969 1.00000</code></pre>
 %        probability of false alarm = pf           = c/(a+c)
 %        precision                  = prec         = d/(c+d)
 %        effort                     = amount of code selected by detector
-%                                   = (c.LOC + d.LOC)/(Total LOC)
+%                                   = (c.LOC_TOTAL + d.LOC_TOTAL)/(Total LOC_TOTAL)
 %
 %        Ideally, detectors have high PDs, low PFs, and low
 %        effort. This ideal state rarely happens:</code></pre>
@@ -388,32 +643,45 @@ Cumulative Proportion  0.99215 0.99969 1.00000</code></pre>
 <ul>
 <li>ROC - AUC (and the curve itself)</li>
 <li>Matthews Correlation Coefficient</li>
+<li>others, more specific to different communities (MSE, specificity, IoU…)</li>
 </ul>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
-<p>These can all be implemented using library calls. The ROC curve metric is pretty useful: https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5</p>
+<p>These can all be implemented using library calls. The <a href="https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5">ROC curve metric is pretty useful</a></p>
 <p>The key is to understand what you are aiming to optimize. In some cases, like assessing ambiguous requirements, 100% recall is better than improved precision.</p>
 <p>Another key is to <strong>have a valid baseline</strong>. This might be ZeroR, the classifier that predicts the majority class; a random classifier; or the current SOTA (state of the art).</p>
+</section>
+<section id="exercise-2" class="slide level2 exercise">
+<h2>Exercise</h2>
+<p>What is a valid baseline for a defect predictor?</p>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<p>There now exist many libraries and tools for taking even poorly structured data and turning it into data products.</p>
+<p>Thinking carefully about what you are trying to answer, and how the ata is presented, are critical.</p>
+<p>Sometimes simpler is better. In some cases, well tuned ML algorithms like XGBoost can outperform radically expensive deep models.</p>
 </section></section>
-<section>
-<section id="hyper-parameters" class="title-slide slide level1 center">
-<h1>Hyper-parameters</h1>
+<section id="long-break" class="title-slide slide level1 break center">
+<h1>Long Break</h1>
+<!-- # Hyper-parameters
+
+## 
+
+If we have X and Y (columns and labels) we can also think about a third set, Z, which constitutes the parameters for our classifiers and clusterers.
+
+We might also want to find an effective Z.
+
+Hyper-parameter optimization searches for optimal parameters for the learners.
+
+How should we do this search? Remember that SE data is usually pretty simple. Optimization can be very effective. -->
 
 </section>
-<section id="section-2" class="slide level2">
-<h2></h2>
-<p>If we have X and Y (columns and labels) we can also think about a third set, Z, which constitutes the parameters for our classifiers and clusterers.</p>
-<p>We might also want to find an effective Z.</p>
-<p>Hyper-parameter optimization searches for optimal parameters for the learners.</p>
-<p>How should we do this search? Remember that SE data is usually pretty simple. Optimization can be very effective.</p>
-
-</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="img/ENGN_vert_bk.jpg" class="slide-logo"></p>
+<p><img src="../../modules/images/ENGN_vert_bk.jpg" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Neil Ernst (c)</p>
+<p>Neil Ernst ©️ 2024-5</p>
 </div>
 </div></div>
 

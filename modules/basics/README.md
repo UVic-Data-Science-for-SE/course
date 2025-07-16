@@ -8,8 +8,8 @@ Intro to data science applied to Software Engineering problems. Refresher/intro 
 # Learning Outcomes
 
 - position data science in the scope of SE activities
-- install and use the R programming language and RStudio
 - refresh knowledge of basic statistical approaches
+- re-examine concepts on regression and interpretation of coefficients
 
 # Topics and slides
 These are the submodules I covered in class. 
