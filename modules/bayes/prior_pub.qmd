@@ -11,6 +11,8 @@ library(tidyverse)
 
 # A short digression into priors
 
+##
+
 How should we choose our priors? Isn't this biasing the inference?
 
 We will **set** likelihoods using statistical probability distributions (in R type `?Distributions`). These distributions cover a range of widely understood generative processes. Our *priors* will come from our choice of the parameters for these distributions. 
@@ -27,7 +29,7 @@ We will **set** likelihoods using statistical probability distributions (in R ty
 
 And [many many others](https://en.wikipedia.org/wiki/List_of_probability_distributions).
 
-# Probability Distributions
+## Probability Distributions
 A probability distribution maps an event (along the x-axis) to its probability of happening (a Probability Density Function, PDF).
 
 Probabilities range from 0-1. A Cumulative Density Function (CDF) represents the cumulative probability, eventually approaching 1. 
@@ -42,7 +44,7 @@ and the parameters are $\mu$, $\sigma$, and data points x $\in$ X.
 
 Often our interest in a Bayesian context is recovering the location parameter $\mu$ and the shape parameter $\sigma$ of the posterior distribution.
 
-# Looking at Distributions in R
+## Looking at Distributions in R
  In R, these distributions are included by default, and can be used typically with the following prefixes:
 
 ` d`, for "density", `r` for "random generation" (ie. draw one number from the distribution at random), `p` for the distribution, `q` for quantile. To do a simulation of the grades of 100 students at random assuming the grades are normally distributed with $\mu=$ 75 and $\sigma$=10, we could say 
@@ -81,10 +83,12 @@ data.frame(alpha = seq(5, 100, length.out = 10), beta = seq(1,10,length.out=10))
 
 # Choosing A Prior
 
+##
 One thing to note: libraries like  [fitdistrplus](https://cran.r-project.org/web/packages/fitdistrplus/index.html) allow you to *fit distributions to the data* (in this case, using maximum likelihood density estimation to 'smooth' the underlying probability density). 
 
 There are other tests to measure if the distribution you choose matches the data well, such as QQ plots. Just because the data isn't normally distributed (Gaussian) doesn't mean there isn't some underlying generative function behind it. 
 
+##
 ```{r}
 #| label: fit dist
 
@@ -110,14 +114,10 @@ denscomp(list(fw, fln, fg), legendtext = plot.legend)
 ## Choosing A Prior - Visualizing Distributions
 [A handy set of probability distributions](https://observablehq.com/collection/@mattiasvillani/distributions)
 
-## Choosing A Prior 
+## Choosing A Prior {.incremental}
 
 - This is fine in our *inductive* mode, but totally unacceptable in a *deductive* study. Why?
-
-. . . 
-
 - In a principled Bayesian workflow we would try to choose the prior based on our domain understanding first, perhaps basing this on what we have seen in similar research projects.
-
 
 ## Weakly-informative, Uninformative, Opionated
 A prior acts like a sea anchor or drogue chute on the engine of the data and likelihood. 
@@ -148,6 +148,7 @@ Here are the three choices, after I ran simple inference with Stan. See also `?r
 
 First, the flat prior on the `wt` parameter. This data is from `mtcars`, a built-in dataset about cars and weight, miles per gallon (mpg), etc.
 
+##
 
 ```{r}
 #| label: stan and flat priors
@@ -161,7 +162,7 @@ mean(mtcars$mpg) # 20.091
 flat_prior_test <- stan_glm(m1, family=gaussian, data=mtcars, prior=NULL)
 ```
 
-----
+##
 
 ```{r}
 #| label: stan out
@@ -176,7 +177,7 @@ prior_summary(flat_prior_test)
 pp_check(flat_prior_test)
 ```
 
-----
+##
 
 ```{r}
 #| label: stan_weak
@@ -186,7 +187,7 @@ prior_summary(weak_prior_test)
 pp_check(weak_prior_test)
 ```
 
-----
+##
 
 ```{r} 
 #| label: stan_strong
@@ -207,7 +208,7 @@ One of the bigger challenges for non-statisticians like us is understanding the 
 * The logNormal simulates the possibility that there is a fat tail (skewness) in the data, which is often the case in software data (especially for networks). Of course we could take the log of the measured data that is logNormally distributed and then model the result using the simple Normal distribution.
 * The Uniform is an equal probability distribution across all outcomes, and often models the situation when we don't know any better.
   
-# Effect of prior on data (and vice-versa)
+## Effect of prior on data (and vice-versa)
 
 ![](mcilreath-globetossing.png)
 

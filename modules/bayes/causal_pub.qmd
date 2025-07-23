@@ -1,35 +1,37 @@
 ---
-Title: A short intro to causal models and DAGs
-format:
-  clean-revealjs: default
-author:
-  - name: Neil Ernst
-    orcid: 0000-0001-5992-2366 
-    email: nernst@uvic.ca
-    affiliations: UVic
+title: A short intro to causal models and DAGs
 date: last-modified
 ---
 
-# Causal Models as Directed Acyclic Graphs
+# Causal Models
+
+## Causal Models as Directed Acyclic Graphs
 (McElreath chapter 5; hint: helpful for assignment)
 
-A DAG can show the causal associations in the model you are building. It helps answer the question, What are the elements that matter in understanding the inference and potential confounding factors? 
+A DAG can show the causal associations in the model you are building. 
+
+It helps answer the question, What are the elements that matter in understanding the inference and potential confounding factors? 
+
+## Correlations 
+
+![](../images/power-valentine.png)
+
 
 ## A DAG
 
 - The DAG forces us to be explicit about our theory about how the phenomenon comes to be. 
-- There are testable implications of the causal graph. For example, are two variables associated? (presumably Yes, if they are connected). 
+- There are testable implications of the causal graph. 
+  - For example, are two variables associated? (presumably Yes, if they are connected). 
 - Are two variables independent? We can look at simple correlations to check this. 
 
-# Benefits of Causal Modeling
+## Benefits of Causal Modeling
 > Is there any additional value in knowing a variable, once I already know all of the other predictor variables?
 
 This might help us identify when we are collecting useless extra data.
 
 If we look at the model in Statistical Rethinking, 5.1.3, we see how we build a model to check the ways in which two variables, or factors, influence the model.
 
-
-# Causal Workflow
+## Causal Workflow
 
 The point of causal modeling is to create a model *outside of statistics* to describe what we think is happening in our research world. 
 
@@ -37,12 +39,36 @@ It is about **causation**, i.e., we specifically want to see if some interventio
 
 If we don't care about causation then this model wouldn't apply. But note in my experience that is usually the type of question data science is curious about. 
 
-# Example: Age at Marriage
-From S.R. chapter 5.
+<!-- ## Example: Age at Marriage
 
 
-# Example {.scrollable}
+
+^[From S.R. chapter 5.] -->
+
+## Example: Does Sentiment in Comments Affect Prioritization
+
+Does expressing negative sentiments in code comments affect prioritization of those comments? ^[via https://arxiv.org/pdf/2501.01068]
+
+> // USED ONLY FOR REGRESSION TESTING!!!! todo:  obviously get rid of all this junk
+
+> // Used only for regression testing! todo: clearly remove all this unnecessary code
+
+
+
+## Exercise {.exercise}
+With your project team, draw a DAG expressing causality in this experiment. 
+
+- what are the important constructs (nodes)?
+- what influence do constructs have on each other (arrows)?
+- what is the 'dependent' node(s)?
+
+## One Solution
+
+![](../images/nathan-dag.png)
+
+## Example 
 (reference: github.com/r-causal/ggdag)
+
 ```{r}
 #| label: dag-test
 #| echo: true
@@ -62,31 +88,21 @@ tidy_ggdag <- dagify(
   outcome = "y"
 ) %>%
   tidy_dagitty()
-
+ggdag(tidy_ggdag)
 ```
 
-----
+## And Now What?
 
-```{r}
-#| label: show-dag
-#| echo: true
-amd <- dagify(
-  a ~ m + d
-) %>%
-  tidy_dagitty()
-
-tidy_ggdag
-ggdag(amd) +
-  theme_dag()
-```
-
-
-# Extra: Causal Workflow: paths {.scrollable}
+- refines our thinking about what we are studying (the theory)
+- allows for causal reasoning (eg. the *do-calculus*)
+- typically we cannot run RCTs on a lot of questions. We can't expose some people to possibly toxic substances.
+- causal reasoning provides a framework for identifying true causality (as opposed to correlation).
+  
+# Extra
+## Causal Workflow: paths {.scrollable}
 1. Identify the data we have collected or will collect (lines of code, complexity, hours worked, etc). Since the universe is itself causal, we clearly cannot collect data on everything. 
 2. Consider unobserved (latent) variables - we won't or cannot measure it (e.g. for privacy reasons), but we need to account for it. 
 3. Decompose the DAG into three elemental paths: **forks** ($X \leftarrow Z \rightarrow Y$) **pipes** ($X \rightarrow Z \rightarrow Y$) and **colliders** ($X \rightarrow Z \leftarrow Y$)
-
-
 
 ## Pipes
 
