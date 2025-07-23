@@ -19,13 +19,12 @@ We will start with some motivation from McElreath: https://speakerdeck.com/rmcel
 - Appreciate the rationale for causal graphs and causal language. 
   
 
-| Topic                                                                  | Readings                                                                     | Exercises |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------------- | --------- |
-| [Basic Statistical Inference from a  Bayesian Perspective](bayes.qmd)  |                                                                              |           |
-| [Statistical Modeling](models.qmd)                                     |                                                                              |           |
-| [Causal Modeling](causal.qmd)                                          |                                                                              |           |
-| [Probability Distributions and Priors](prior.qmd)                      |                                                                              |           |
-| [Sampling](sampling.qmd)                                               | https://chi-feng.github.io/mcmc-demo/app.html - Hamiltonian MC visualization |           |
+| Topic                                                                 | Readings                                                                     | Exercises |
+| --------------------------------------------------------------------- | ---------------------------------------------------------------------------- | --------- |
+| [Basic Statistical Inference from a  Bayesian Perspective](bayes.qmd) |                                                                              |           |
+| [Statistical Modeling](models_pub.qmd)                                |                                                                              |           |
+| [Causal Modeling](causal_pub.qmd)                                     |                                                                              |           |
+| [Probability Distributions and Priors](prior_pub.qmd)                 |                                                                              |           |
 
 # Required Readings 
 
@@ -41,11 +40,8 @@ We will start with some motivation from McElreath: https://speakerdeck.com/rmcel
 * (opt) [Gelman, Bayesian Data Analysis](http://www.stat.columbia.edu/~gelman/book/) (book)
 * https://www.bayesrulesbook.com
 * [A Conceptual introduction to HMC](https://arxiv.org/pdf/1701.02434.pdf)
+* https://chi-feng.github.io/mcmc-demo/app.html - Hamiltonian MC visualization 
 
 # Exercises
 
-* Get familiar with [RStudio notebooks](https://blog.rstudio.com/2016/10/05/r-notebooks/) as that is what we will use for Assignment 1.  
-* Use [Docker to install locally](../docker.md)
-* VS Code users may want to use the VS Code [Remote Containers](https://code.visualstudio.com/docs/remote/containers) extension in order to start a command line session for R - `Remote-Containers: Attach to Running Container`. Ask the TAs for technical help with Docker and the image.
-* You can also use the CS department JupyterHub machine. 
 * Make sure you can get the sample [tutorial](https://github.com/neilernst/icse_tutorial) notebook to run in its entirety.
