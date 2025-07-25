@@ -31,5 +31,5 @@ Data mining, data science, and machine learning open up problematic (and interes
 
 ### Exercises
 
-* Assignment 3, on Brightspace
-* Watch [The Social Dilemma](https://www.documentaryarea.tv/player.php?title=The%20Social%20Dilemma) **OR** listen to [the RabbitHole podcast](https://www.nytimes.com/2020/04/16/podcasts/rabbit-hole-internet-youtube-virus.html)
+* Assignment 2, on Brightspace
+* Black Mirror exercise in class - see the templates for the [exercise here](https://docs.google.com/presentation/d/1W-TcA4OY5ZnKy1Pdb2O3gU799syT1mai79QRyVUahUo/edit?usp=sharing) and [slide template here](https://docs.google.com/document/d/1hOaqDfByc8bPcAKygp6IneMaGMcp44jC5uhO-9JV9IM/edit?usp=sharing).
