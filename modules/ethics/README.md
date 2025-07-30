@@ -13,7 +13,7 @@ Data mining, data science, and machine learning open up problematic (and interes
 
 | #   | Topic                                                    | Readings  | Exercises |
 | --- | -------------------------------------------------------- | --------- | --------- |
-| 1-1 | [Ethical Considerations in Data Science 4 SE](ethics.md) | see below | see below |
+| 1-1 | [Ethical Considerations in Data Science 4 SE](ethics_pub.qmd) | see below | see below |
 
 ### Required Readings
 

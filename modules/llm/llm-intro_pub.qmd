@@ -5,36 +5,58 @@ title:  large language models in SE
 
 # Intro Exercise {.exercise}
 
-Copilot / ChatGPT exercise. Take [the sample problem](https://github.com/UVic-Data-Science-for-SE/command_exercise/blob/main/README.md), and with your partner, solve it with ChatGPT/Copilot/TabNine etc.
+::: {.incremental}
 
+1. Take [the sample problem](https://github.com/UVic-Data-Science-for-SE/command_exercise/blob/main/README.md), and with your partner, solve it with ChatGPT/Copilot.
+2. Now add some tests to that code. 
+:::
 
-# Discussion
+![](command-link.png)
 
-What is the underlying SE for ML work that is needed for Codex? For Copilot? 
+## Discussion
 
-[Requirements Classification example](https://colab.research.google.com/drive/1B_5ow3rvS0Qz1y-KyJtlMNnmgmx9w3kJ#scrollTo=cyoj29J24hPX)
+In your team, please discuss the following. We will then go thru each pair in turn to discuss the questions.
+
+::: {.incremental}
+- How does it know what identifiers to use?
+- What is it using to suggest Command pattern completions?
+- What is the *natural* part of this code? What is the complex piece?
+- What would you want a human rater to improve?
+::: 
+
+<!-- What is the underlying SE for ML work that is needed for Codex? For Copilot?  -->
+
+<!-- [Requirements Classification example](https://colab.research.google.com/drive/1B_5ow3rvS0Qz1y-KyJtlMNnmgmx9w3kJ#scrollTo=cyoj29J24hPX) -->
 
 <!--[https://github.com/tobhey/NoRBERT](https://github.com/tobhey/NoRBERT) and -->
 
-# What are we training on? 
+# Large Language Models for Software Engineering
+
+## What Did We Do Before
+
+How did "AI" help in Software Engineering tasks in the past? 
+
+## What are we training on? 
 
 1. Textual data
 2. Sources? 
 3. Other approaches? ASTs?
 
-## Tasks {.scrollable}
+## Tasks for LLMs {}
 As we will see, one way to think about a language model is that it can solve a task like: [^bench]
 
 - **Prediction/Masking**: what replaces 🔡 in "Jim drove a 🔡 to the Drive-Thru line" (masking). Commonly used for self-supervision in training.
 - **Analogy**: "Red is to rose as 🔡 is to iris"
 - **Question Answering**: "who was president of the USA in 2002?"
 
-## Tasks
-- **[Winograd Schema](https://en.wikipedia.org/wiki/Winograd_schema_challenge)s**: The city council refused the demonstrators a permit because **they** [feared/advocated] violence.
+## Tasks for LLMs
+- **[Winograd Schemas](https://en.wikipedia.org/wiki/Winograd_schema_challenge)**: The city council refused the demonstrators a permit because **they** [feared/advocated] violence.
 - **Translation**: "j'aime beaucoup la cuisine japonais" in English is ... (taking into account colloquialisms, idioms, slang etc.) "I like very much the cooking Japanese"
 - **Summarization**: what does `System.out.println("neil is an awesome instructor")` do?
 
-# Naturalness
+## Mentimeter / Quiz discussion
+
+## Naturalness
 
 **Source code is a language!!** 
 
@@ -48,7 +70,7 @@ Complete:
 My cat has three ... 
 ```
 
-# Useful terms {.scrollable}
+## Useful terms {.scrollable}
 
 1. **N-gram** - N tokens in a group. Bigram: "hot lunch, big fish" Tri-gram "Manchester United won"
 2. **Token** - an atomic "chunk" in the corpus. Could be a word; could be a source code token (`{`). 
@@ -63,12 +85,12 @@ My cat has three ...
 7. **Distance**: historically ML has had a hard time understanding concepts separated in text. But this happens a lot in source code (`var theVar; ... ; theVar = 5;`). Need something to represent this span of relationship.
 8. **OOV**: out of vocabulary, a word that is not in the vocabulary (dictionary) learned in the model's training. E.g., a word that does not appear in Wikipedia, for the GloVe embedding. Such a word will have no representation (think about a self-driving car seeing a totally novel situation like a helicopter landing on the freeway).
 
-# Tokenizing 
+## Tokenizing 
 Convert text into numeric representations of the text. Remember that in training we will be using these tokens billions of times. 
 
 Try out [https://simonwillison.net/2023/Jun/8/gpt-tokenizers/](https://simonwillison.net/2023/Jun/8/gpt-tokenizers/)
 
-# Simple model: N-grams
+## Simple model: N-grams
 Create a language model by effectively counting how often a particular set of n tokens occurs. For example (from the Hindle paper):
 
 $p(a_4|a_1a_2a_3) = \frac{count(a_1a_2a_3a_4)}{count(a_1a_2a_3*)}$
@@ -77,20 +99,43 @@ Measure success by log *perplexity*, or cross-entropy:
 
 $H_{\mathcal{M}}(s) = - \frac{1}{n} log~p_\mathcal{M}(a_1 ... a_n)$
 
-# Encoding
+## Building an n-gram model {.exercise}
+With your project team, build a simple n-gram model for answering Jeopardy questions. I've uploaded a sample you can use on Teams.
+
+## {.exercise}
+- what did you expect to be the case?
+- what value of N worked best? what is hard about Jeopardy?
+- try one of the sample questions with an LLM like Copilot. Does it do better? Why?
+- add a perplexity scoring mechanism 
+- what types of tests or evals should you be trying? 
+  
+## Encoding
 
 After preprocessing, we need to encode the tokens - a word like "function" - into a numeric representation. 
 
 * **Count embedding**: each word is represented by its frequency
 * **TF-IDF** - represent using a ratio of how common a token is to its inverse document frequency
-* [**Word embedding**](https://towardsdatascience.com/creating-word-embeddings-coding-the-word2vec-algorithm-in-python-using-deep-learning-b337d0ba17a8): Each word is encoded into a vector (rank 1 tensor) of real numbers representing different dimensions (often 100, 200). E.g., `function` = `[0.322, 0.113, 0.567,..]`. Importantly, words that "mean" similar things (for our domain of interest) should be closer together on some distance metric. 
+
+## Encoding 
+
+* [**Word embedding**](https://towardsdatascience.com/implementing-word2vec-in-pytorch-from-the-ground-up-c7fe5bf99889/): Each word is encoded into a vector (rank 1 tensor) of real numbers representing different dimensions (often 100, 200). E.g., `function` = `[0.322, 0.113, 0.567,..]`. Importantly, words that "mean" similar things (for our domain of interest) should be closer together on some distance metric. 
 
 ## Reuse
-* Most of the time [we can re-use embeddings](https://nlp.stanford.edu/projects/glove/) but should be careful the source data is close to our data (e.g., the train control system might not be represented by Wikipedia).
 
-<img src="https://nlp.stanford.edu/projects/glove/images/man_woman.jpg" width="400px"/>
+* Most of the time [we can re-use embeddings](https://nlp.stanford.edu/projects/glove/)
+* Careful that the source data is close to our data (e.g., the train control system might not be represented by Wikipedia).
 
-This works OK ... but language is pretty complicated. The word embedding model is restricted to looking a few tokens ahead or behind (the window/context). That means learning more complex relationships (e.g., this phrase modifies a previous noun) are hard to do.
+## 
+![](../images/man_woman.jpg)
+
+This works OK ... but language is pretty complicated. 
+
+The word embedding model is restricted to looking **a few tokens ahead or behind** (the window/context). 
+
+That means learning more complex relationships (e.g., this phrase modifies a previous noun) are hard to do.
+
+# Break
+Can we improve on these approaches? 
 
 # Attention and Transformers
 
@@ -127,7 +172,7 @@ Get low-paid gig workers to solve the *knowledge acquisition bottleneck*.
 
 From https://huggingface.co/blog/rlhf:
 
-# RLHF
+## RLHF
     
 >  the **policy** is a language model that takes in a prompt and returns a sequence of text (or just probability distributions over text). 
 > The **action space** of this policy is all the tokens corresponding to the vocabulary of the language model
@@ -136,13 +181,13 @@ From https://huggingface.co/blog/rlhf:
 
 What other RLHF approaches have you been subjected to? 
 
-# RLHF Process
+## RLHF Process
 
 <img width="500px" src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/blog/rlhf/reward-model.png" alt="the arch of RLHF: prompts are fed to a LLM, and the outputs are scored by humans to create a preference model">
 
 source: https://huggingface.co/blog/rlhf
 
-# Validation approaches
+## Validation approaches
 What constitutes a good test for LLM coding?
 
 - BLEU score: how many n-grams match between the gold set and the predicted set, penalized for lack of brevity?
@@ -154,22 +199,9 @@ What constitutes a good test for LLM coding?
 ## Challenges
 Test set pollution: we have to assume the training data includes problems from online (e.g. LeetCode)
 
-"match-based metrics are unable to account for the large and complex space of programs functionally equivalent to a reference solution"
+Discuss: "match-based metrics are unable to account for the large and complex space of programs functionally equivalent to a reference solution"
 
 What languages and programming problem types should be in the test set? 
-
-# Putting it all together
-
-```{mermaid}
-flowchart LR
-  Z[Collect Training Data] --> A[Data Curation]
-  A --> B[Tokenize]
-  B --> C[Train]
-  C --> D(LLM)
-  D --> E[Evaluate][Result one]
-  C --> E[Result two]
-```
-
 
 # Sources and Further Reading
 
