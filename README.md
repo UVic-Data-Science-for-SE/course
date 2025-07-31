@@ -1,6 +1,6 @@
 #  Data Science for Software Engineering
 
-See the [HEAT course syllabus](https://heat.csc.uvic.ca/coview/course/2023051/SENG480B) for all mark weights and course policies, textbooks, etc. The syllabus also contains the important information on course communication and schedules. Note that all three sections share the same syllabus.
+See the [HEAT course syllabus](https://heat.csc.uvic.ca/coview/course/2025053/SENG404) for all mark weights and course policies, textbooks, etc. The syllabus also contains the important information on course communication and schedules. Note that all three sections share the same syllabus.
 
 Course content will be mostly based on paper discussions with some more technical lecture sessions on specific tools. Attendance and engagement in class is mandatory and essential. [Email me](mailto:nernst@uvic.ca) if you think you may miss a lecture.
 
