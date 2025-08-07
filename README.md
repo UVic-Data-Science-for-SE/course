@@ -42,24 +42,24 @@ Due dates are all on Brightspace. Class format will be lectures and short in cla
 ## Summer 2025
 Class in Summer 2025 will be 2x3 hour sessions each week. That's a lot of class time. The plan will be to take 2 short breaks (5 mins) and one longer break (20 mins) at appropriate times. You should come to class prepared to follow along on your computer or tablet; most of the latter half will be in class exercises. Each class has assigned readings for each module; those readings are to be done prior to class. 
 
-| Day     | Module                                                                                                   | Due                                                                                            |
-| ------- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| July 4  | [Intro](modules/intro/README.md)                                                                         |                                                                                                |
-| July 9  | [AI4SE](modules/AI4SE/README.md)                                                                         |      install an AI coding tool and R / RStudio / VS Code                                                                                          |
-| July 11 | [Early Approaches and Problems](modules/early-problems/README.md)                                        | Quiz: Early Approaches Readings                                                                |
-| July 16 | [Basic stats](modules/basics/README.md)                                                                     | [Project proposal](project/project-proposal.md)                                                |
-| July 18 | *Project work - no class*                                                                                | [Assn 1 - basic DS](Assignments/assignment1.md)                                                |
-| July 23 | [Bayes](modules/bayes/README.md)                                                                         |                                                                                                |
-| July 25 | [Ethics](modules/ethics/README.md)                                                                          |                                                                                                |
-| July 30 | [LLMs for SE](modules/llm/README.md)                                                                     | Quiz: LLM Readings                                                                             |
-| Aug 1   | *Project work - no class*                                                                                | [Assn 2 - Black Mirror](assignment2.md) • [Interim project report](project/project-interim.md) |
-| Aug 6   | [LLMs for SE](modules/llm/README.md) cont.                                                               |                                                                                                |
-| Aug 8   | [Traceability • Clones](modules/traceability-clone/README.md) • [Cost](modules/cost-defect/README.md)    | Quiz: Traceability Readings                                                                    |
-| Aug 13  | [Bug Localization/Triage](modules/bugs/README.md)                                                        | Quiz: Bug Readings                                                                             |
-| Aug 15  | [Analysing Text Discussions](modules/NLP/README.md) / [Qualitative Data in SE](modules/coding/README.md) | Quiz: Text Analysis Readings [Assn 3 - Bayes](assignment3.md)                                  |
-| Aug 20  | Demos/Project presentations                                                                              | [Project presentation](project/project-presentation.md)                                        |
-| Aug 23  | no class                                                                                                 | [Final project report](project/project-final.md)                                               |
-|         |                                                                                                          |                                                                                                |
+| Day     | Module                                                                                                           | Due                                                                                            |
+| ------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| July 4  | [Intro](modules/intro/README.md)                                                                                 |                                                                                                |
+| July 9  | [AI4SE](modules/AI4SE/README.md)                                                                                 | install an AI coding tool and R / RStudio / VS Code                                            |
+| July 11 | [Early Approaches and Problems](modules/early-problems/README.md)                                                | Quiz: Early Approaches Readings                                                                |
+| July 16 | [Basic stats](modules/basics/README.md)                                                                          | [Project proposal](project/project-proposal.md)                                                |
+| July 18 | *Project work - no class*                                                                                        | [Assn 1 - basic DS](Assignments/assignment1.md)                                                |
+| July 23 | [Bayes](modules/bayes/README.md)                                                                                 |                                                                                                |
+| July 25 | [Ethics](modules/ethics/README.md)                                                                               |                                                                                                |
+| July 30 | [LLMs for SE](modules/llm/README.md)                                                                             | Quiz: LLM Readings                                                                             |
+| Aug 1   | *Project work - no class*                                                                                        | [Assn 2 - Black Mirror](assignment2.md) • [Interim project report](project/project-interim.md) |
+| Aug 6   | [LLMs for SE](modules/llm/README.md) cont.                                                                       |                                                                                                |
+| Aug 8   | [Cost](modules/cost-defect/README.md)  • Work on A3                                                              | Quiz: Clone Readings                                                                           |
+| Aug 13  | [Traceability • Clones](modules/traceability-clone/README.md)        •     [Testing/Out of Sample](modules/sbse/README.md) | Quiz: Traceability  Readings                                                                   |
+| Aug 15  | [Analysing Text Discussions](modules/NLP/README.md) • [Qualitative Data in SE](modules/coding/README.md)         | Quiz: Text Analysis Readings • [Assn 3 - Bayes](assignment3.md)                                  |
+| Aug 20  | Demos/Project presentations                                                                                      | [Project presentation](project/project-presentation.md)                                        |
+| Aug 23  | no class                                                                                                         | [Final project report](project/project-final.md)                                               |
+|         |                                                                                                                  |                                                                                                |
 
 # Assignments
 
