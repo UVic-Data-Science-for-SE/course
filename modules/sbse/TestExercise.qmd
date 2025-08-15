@@ -1,0 +1,22 @@
+---
+title: Within and Out of Sample Data
+date: last-modified
+---
+
+## Discussion
+
+We discussed the need for out of sample training data. This is known as the principle of Generalizability. 
+
+## Exercise {.exercise}
+1. Two tools for building web apps are Vue.js and React. These both basically do the same thing, and are written in the same languages (JS/TS). 
+2. Go to [React](https://github.com/facebook/react) and to [Vue.js](https://github.com/vuejs/core)
+3. Find a PR in both repos that deals with something similar. For example, you might want to look at security issues or UI issues. 
+
+## Exercise cont {.exercise}
+
+One example: https://github.com/vuejs/core/pull/13550 and https://github.com/facebook/react/pull/30451 both deal with whitespace issues.
+
+4. Pretend you and your group are building a Data Science tool to help with PR assignment. What elements of each project will make it:
+   1. Harder to generalize your results?
+   2. Easier to generalize your results?  
+5. Report back. 

@@ -1,0 +1,30 @@
+---
+author: Neil Ernst
+title: Intro to Qual Coding
+---
+
+## Coding Practice {.exercise}
+
+We have data on change rationale from people who edited StackOverflow (SO) questions. Questions can be edited by moderators or the original asker.
+
+We want to know "Why do people edit a SO question?"? 
+
+1. I've added 14 CSV files to the teams channel. 
+2. Pick one of the files to work on, corresponding to your Brightspace group ID. 
+
+## {.exercise}
+3. Read each row entry, using
+   1. your prior understanding of SO, 
+   2. the link to the question in the CSV, and 
+   3. the text itself
+4. assign a short label to each of the ten entries by yourself.
+5. Then check your labels with the ones your group added. 
+6. Now run the 10 entries through the GenAI tool of your choice.
+   
+## Reflection
+
+::: {.incremental}
+- did you and your colleagues agree? Where and why? 
+- what value did the LLM add? 
+- what is your assessment of why people edit these questions? 
+:::

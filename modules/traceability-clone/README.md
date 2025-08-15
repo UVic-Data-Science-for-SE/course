@@ -8,6 +8,10 @@ title: Traceability/Code Clones
 - identify four types of code clones and their potential benefits and harms
 
 
+## Exercises
+
+* [exercise](CloneExercise.qmd)
+
 ## Required Readings
 
 * Roy and Cordy, [A Survey on Software Clone Detection Research](https://research.cs.queensu.ca/TechReports/Reports/2007-541.pdf) **Section 1-5, and then 16-17.**

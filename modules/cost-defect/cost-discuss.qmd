@@ -1,0 +1,42 @@
+---
+title: Cost and Effort Estimates; Defect Prediction
+date: last-modified
+---
+
+# Discussion
+
+## Estimation Quotes to Affirm and Challenge {.exercise}
+
+Go through the two estimation readings (COCOMO and Agile Effort...).
+
+Find at least one quote that you agree with (AFFIRM) and one quote you wish to CHALLENGE.
+
+Form a group with 3 other students. Discuss the two quotes you found and the reasons you chose them. 
+
+Report back to the class with the group's two chosen quotes. 
+
+## Estimation
+
+A story point or a COCOMO output is just an *estimate* of what effort and cost will be required. 
+
+Ask an AI about the "no estimates" movement. What is a problem with no estimates? 
+<!-- 
+## Estimation {.incremental}
+
+- what is a story point? How do we assign them? 
+- compare story points with the self-reported time on the METR study
+- what is within vs cross- project analysis? How does that relate to our discussion of Bayesian analysis? 
+- how is TF-IDF relevant to the story point estimation method?
+- What would a critique of SP approaches be?  -->
+
+## Defects 
+
+::: {.incremental}
+* what is "JIT" defect prediction?
+* when and how do we do JIT defect prediction? why do we care?
+* how can we figure out what a defect-inducing change is?
+* Table 5 of the JIT paper and what "change level" is - vs JS specific. What is the intuition here?
+* why do we want to do "transfer learning"? 
+* what is "data hungry" approaches?
+* what is the gist of the early vs late distinction? The "first 150 commits" - why?
+:::

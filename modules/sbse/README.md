@@ -12,10 +12,13 @@ title: Testing and out of sample data
 
 * in class discussion, no notes
 
+## Exercises
+
+* [exercise](TestExercise.qmd)
+
 ## Required Readings
 
 - Bhatta et al. [Understanding Test Deletion in Java Applications](https://hifromajay.github.io/papers/msr25.pdf)
-
 - Novielli, [Sentiment trained on nonSE data](https://arxiv.org/abs/2004.00300)
 - Zimmermann, [Cross-project Defect Prediction: A Large Scale Experiment on Data vs. Domain vs. Process](https://www.zora.uzh.ch/id/eprint/25785/10/Zimmermann_Nagappan_Gall_Giger_Murphy_2009.pdf)
 

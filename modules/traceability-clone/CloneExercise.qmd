@@ -1,0 +1,53 @@
+---
+title: Clones and Tracing
+date: last-modified
+---
+
+## TPS
+- can you be creative with software code? 
+  - what elements are creative? 
+  - what elements are hard to automate? 
+
+## Creativity
+
+![](quake-sqrt.png)
+^[https://en.wikipedia.org/wiki/Fast_inverse_square_root]
+
+## Clones 
+
+::: {.incremental}
+
+- how would you know if your code (from above) appeared in an ML dataset?
+- (What does it mean to write like Ernest Hemingway?)
+- why do we create clones? Why have you created them? 
+- what are the four types of clones? 
+- why do we want to find these things? 
+
+:::
+
+## Recall that there are four levels of code clones:
+
+- **Type I**: **Identical code fragments** except for variations in whitespace (may be also variations in layout) and comments.
+- **Type II**: Structurally/syntactically identical fragments except for variations in **identifiers, literals, types, layout and comments**.
+
+## cont
+
+- **Type III**: Copied fragments with further modifications. **Statements can be changed, added or removed** in addition to variations in identifiers, literals, types, layout and comments..
+- **Type IV**: Two or more code fragments that perform the **same computation** but
+implemented through **different syntactic variants**.
+
+## Exercise {.exercise}
+I've uploaded two files to the Teams channel. Each contains a method pair that might be a clone.
+
+With a partner, 
+
+1. load all files into your IDE
+2. read over them so you understand what they do.
+3. identify which pairings, if any, are clones, and why you say that.
+4. Ask an AI tool what *it* thinks. 
+5. for the clones, identify which type they are
+
+::: {.notes}
+./bigclonebenchdata/23232384.txt	./bigclonebenchdata/576772.txt	-1
+
+:::
